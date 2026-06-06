@@ -13,6 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 RAW_ROOT = ROOT / "raw_chain_cache"
 OUTPUT_EVENTS = ROOT / "outputs" / "cpoc_events.csv"
 OUTPUT_ENDPOINTS = ROOT / "outputs" / "cpoc_history_endpoint_summary.csv"
+OUTPUT_MODEL_MATRIX = ROOT / "outputs" / "cpoc_event_model_weight_matrix.csv"
+MODEL_EPOCH_MATRIX = ROOT / "outputs" / "model_cpoc_epoch_matrix.csv"
 
 EVENT_COLUMNS = [
     "epoch",
@@ -31,6 +33,24 @@ ENDPOINT_COLUMNS = [
     "record_count",
     "found",
     "note",
+]
+
+MODEL_MATRIX_COLUMNS = [
+    "epoch",
+    "event_sequence",
+    "trigger_height",
+    "generation_start_height",
+    "phase",
+    "kimi_confirmed_weight",
+    "kimi_preserved_weight",
+    "kimi_total_weight",
+    "qwen_confirmed_weight",
+    "qwen_preserved_weight",
+    "qwen_total_weight",
+    "total_confirmed_weight",
+    "total_preserved_weight",
+    "total_weight",
+    "data_basis",
 ]
 
 ARTIFACT_KEYS = {
@@ -126,6 +146,40 @@ def build_endpoint_rows(epoch: int) -> list[dict[str, str]]:
     return rows
 
 
+def model_weight_by_epoch() -> dict[str, dict[str, str]]:
+    if not MODEL_EPOCH_MATRIX.exists():
+        return {}
+    with MODEL_EPOCH_MATRIX.open(newline="") as fh:
+        return {row["epoch"]: row for row in csv.DictReader(fh)}
+
+
+def build_model_matrix_rows(event_rows: list[dict[str, str]]) -> list[dict[str, str]]:
+    weights = model_weight_by_epoch()
+    rows: list[dict[str, str]] = []
+    for event in event_rows:
+        weight = weights.get(event["epoch"], {})
+        rows.append(
+            {
+                "epoch": event["epoch"],
+                "event_sequence": event["event_sequence"],
+                "trigger_height": event["trigger_height"],
+                "generation_start_height": event["generation_start_height"],
+                "phase": event["phase"],
+                "kimi_confirmed_weight": weight.get("kimi_confirmed_node_weight", ""),
+                "kimi_preserved_weight": weight.get("kimi_preserved_node_weight", ""),
+                "kimi_total_weight": weight.get("kimi_node_weight_sum", ""),
+                "qwen_confirmed_weight": weight.get("qwen_confirmed_node_weight", ""),
+                "qwen_preserved_weight": weight.get("qwen_preserved_node_weight", ""),
+                "qwen_total_weight": weight.get("qwen_node_weight_sum", ""),
+                "total_confirmed_weight": weight.get("total_confirmed_node_weight", ""),
+                "total_preserved_weight": weight.get("total_preserved_node_weight", ""),
+                "total_weight": weight.get("total_node_weight_sum", ""),
+                "data_basis": "event + epoch model weight snapshot",
+            }
+        )
+    return rows
+
+
 def main() -> int:
     epochs = [265, 266]
     OUTPUT_EVENTS.parent.mkdir(parents=True, exist_ok=True)
@@ -135,6 +189,7 @@ def main() -> int:
     for epoch in epochs:
         event_rows.extend(build_events(epoch))
         endpoint_rows.extend(build_endpoint_rows(epoch))
+    model_matrix_rows = build_model_matrix_rows(event_rows)
 
     with OUTPUT_EVENTS.open("w", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=EVENT_COLUMNS)
@@ -146,8 +201,14 @@ def main() -> int:
         writer.writeheader()
         writer.writerows(endpoint_rows)
 
+    with OUTPUT_MODEL_MATRIX.open("w", newline="") as fh:
+        writer = csv.DictWriter(fh, fieldnames=MODEL_MATRIX_COLUMNS)
+        writer.writeheader()
+        writer.writerows(model_matrix_rows)
+
     print(f"Wrote {OUTPUT_EVENTS.relative_to(ROOT)} with {len(event_rows)} rows.")
     print(f"Wrote {OUTPUT_ENDPOINTS.relative_to(ROOT)} with {len(endpoint_rows)} rows.")
+    print(f"Wrote {OUTPUT_MODEL_MATRIX.relative_to(ROOT)} with {len(model_matrix_rows)} rows.")
     return 0
 
 

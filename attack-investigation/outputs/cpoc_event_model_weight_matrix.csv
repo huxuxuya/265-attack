@@ -1,0 +1,7 @@
+epoch,event_sequence,trigger_height,generation_start_height,phase,kimi_confirmed_weight,kimi_preserved_weight,kimi_total_weight,qwen_confirmed_weight,qwen_preserved_weight,qwen_total_weight,total_confirmed_weight,total_preserved_weight,total_weight,data_basis
+265,0,4095682,4095684,CONFIRMATION_POC_COMPLETED,336641,40635,377276,1106344,121555,1227899,1442985,162190,1605175,event + epoch model weight snapshot
+265,1,4098879,4098881,CONFIRMATION_POC_COMPLETED,336641,40635,377276,1106344,121555,1227899,1442985,162190,1605175,event + epoch model weight snapshot
+265,2,4102890,4102892,CONFIRMATION_POC_COMPLETED,336641,40635,377276,1106344,121555,1227899,1442985,162190,1605175,event + epoch model weight snapshot
+266,0,4115094,4115096,CONFIRMATION_POC_COMPLETED,16235,43698,59933,802093,84004,886097,818328,127702,946030,event + epoch model weight snapshot
+266,1,4116984,4116986,CONFIRMATION_POC_COMPLETED,16235,43698,59933,802093,84004,886097,818328,127702,946030,event + epoch model weight snapshot
+266,2,4118103,4118105,CONFIRMATION_POC_COMPLETED,16235,43698,59933,802093,84004,886097,818328,127702,946030,event + epoch model weight snapshot

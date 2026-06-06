@@ -103,6 +103,19 @@ Per-cPoC event table from [`outputs/cpoc_events.csv`](outputs/cpoc_events.csv):
 | 266 | 1 | 4,116,984 | 4,116,986 | CONFIRMATION_POC_COMPLETED |
 | 266 | 2 | 4,118,103 | 4,118,105 | CONFIRMATION_POC_COMPLETED |
 
+Per-cPoC model weight matrix from [`outputs/cpoc_event_model_weight_matrix.csv`](outputs/cpoc_event_model_weight_matrix.csv):
+
+| epoch | event | trigger height | Kimi confirmed | Kimi preserved | Kimi total | Qwen confirmed | Qwen preserved | Qwen total | total confirmed | total preserved | total weight |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 265 | 0 | 4,095,682 | 336,641 | 40,635 | 377,276 | 1,106,344 | 121,555 | 1,227,899 | 1,442,985 | 162,190 | 1,605,175 |
+| 265 | 1 | 4,098,879 | 336,641 | 40,635 | 377,276 | 1,106,344 | 121,555 | 1,227,899 | 1,442,985 | 162,190 | 1,605,175 |
+| 265 | 2 | 4,102,890 | 336,641 | 40,635 | 377,276 | 1,106,344 | 121,555 | 1,227,899 | 1,442,985 | 162,190 | 1,605,175 |
+| 266 | 0 | 4,115,094 | 16,235 | 43,698 | 59,933 | 802,093 | 84,004 | 886,097 | 818,328 | 127,702 | 946,030 |
+| 266 | 1 | 4,116,984 | 16,235 | 43,698 | 59,933 | 802,093 | 84,004 | 886,097 | 818,328 | 127,702 | 946,030 |
+| 266 | 2 | 4,118,103 | 16,235 | 43,698 | 59,933 | 802,093 | 84,004 | 886,097 | 818,328 | 127,702 | 946,030 |
+
+The weights in this matrix are `event + epoch model weight snapshot`, not per-event participant validation rows. They repeat inside an epoch because the archive endpoints returned cPoC events, while stage-level participant/commit endpoints did not return per-event host rows for epochs 265 and 266.
+
 Endpoint availability summary from [`outputs/cpoc_history_endpoint_summary.csv`](outputs/cpoc_history_endpoint_summary.csv):
 
 | epoch | poc start height | confirmation events | validation snapshot | v2 validations | v2 commits | weight distributions | batches | legacy validations |
@@ -168,6 +181,7 @@ python3 scripts/fetch_raw_data.py --epochs 265 266
 - `outputs/model_cpoc_epoch_matrix.csv`: compact per-epoch Kimi/Qwen matrix.
 - `outputs/cpoc_events.csv`: per-cPoC confirmation event history.
 - `outputs/cpoc_history_endpoint_summary.csv`: cPoC endpoint availability and record counts.
+- `outputs/cpoc_event_model_weight_matrix.csv`: per-cPoC event rows with epoch-level Kimi/Qwen confirmed, preserved, and total weights.
 - `outputs/gov_settlement_audit.csv`: comparison of formula remainder, gov balance movements, and paid rewards.
 - `outputs/not_received_hosts_detail.csv`: per-host zero-reward detail with reason and proof-grade amount status.
 - `outputs/reward_status_count_summary.csv`: per-epoch and total counts by received/not-received reason.
