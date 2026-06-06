@@ -168,8 +168,14 @@ function nodeMatches(node, filter) {
 }
 
 function weightCell(item) {
-  const delta = item.delta === null ? "" : ` <span class="${item.delta < 0 ? "negative" : "muted"}">(${item.delta > 0 ? "+" : ""}${fmtInt(item.delta)})</span>`;
-  return `<span class="cell-state state-${item.severity}">${fmtInt(item.confirmationWeight)}${delta}</span>`;
+  const delta = item.delta === null ? "" : `<span class="${item.delta < 0 ? "negative" : "muted"}">${item.delta > 0 ? "+" : ""}${fmtInt(item.delta)}</span>`;
+  return `<span class="cell-state state-${item.severity}"><span>${fmtInt(item.confirmationWeight)}</span>${delta}</span>`;
+}
+
+function compactModels(node) {
+  const kimi = modelEntry(node, "Kimi");
+  const qwen = modelEntry(node, "Qwen");
+  return `<span title="Kimi ${fmtInt(kimi)} / Qwen ${fmtInt(qwen)}">${fmtInt(kimi)} / ${fmtInt(qwen)}</span>`;
 }
 
 function renderNodes() {
@@ -191,13 +197,10 @@ function renderNodes() {
         <tr>
           <td>
             <div class="address" title="${node.address}">${node.shortAddress}</div>
-            <div class="muted" title="${mlNodes}">${mlNodes || "no model ml_nodes"}</div>
+            <div class="node-meta" title="${mlNodes || "no model ml_nodes"}">${node.notRewarded ? "not paid" : "paid"}</div>
           </td>
           <td>${badges}</td>
-          <td>
-            <div>Kimi ${fmtInt(modelEntry(node, "Kimi"))}</div>
-            <div>Qwen ${fmtInt(modelEntry(node, "Qwen"))}</div>
-          </td>
+          <td>${compactModels(node)}</td>
           <td>${weightCell(entry)}</td>
           <td>${weightCell(c0)}</td>
           <td>${weightCell(c1)}</td>

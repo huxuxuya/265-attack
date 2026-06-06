@@ -275,18 +275,21 @@ main {
 
 table {
   width: 100%;
-  min-width: 1180px;
+  min-width: 920px;
   border-collapse: collapse;
-  font-size: 13px;
+  table-layout: fixed;
+  font-size: 12px;
 }
 
 th,
 td {
-  padding: 9px 10px;
+  padding: 7px 8px;
   border-bottom: 1px solid var(--line);
   text-align: right;
   vertical-align: middle;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 th {
@@ -294,9 +297,56 @@ th {
   top: 0;
   background: #f8fafc;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 10px;
   text-transform: uppercase;
   z-index: 1;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  position: sticky;
+  left: 0;
+  width: 132px;
+  max-width: 132px;
+  background: var(--surface);
+  z-index: 2;
+}
+
+th:nth-child(1) {
+  z-index: 3;
+  background: #f8fafc;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 80px;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 92px;
+}
+
+th:nth-child(n + 4):nth-child(-n + 7),
+td:nth-child(n + 4):nth-child(-n + 7) {
+  width: 86px;
+}
+
+th:nth-child(8),
+td:nth-child(8) {
+  width: 74px;
+}
+
+th:nth-child(9),
+td:nth-child(9),
+th:nth-child(10),
+td:nth-child(10) {
+  width: 104px;
+}
+
+th:nth-child(11),
+td:nth-child(11) {
+  width: 72px;
 }
 
 th:first-child,
@@ -313,16 +363,26 @@ tbody tr:hover {
 .address {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.node-meta {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
   min-height: 22px;
-  margin-right: 4px;
-  padding: 2px 7px;
+  margin-right: 2px;
+  padding: 2px 5px;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 750;
 }
 
@@ -337,11 +397,14 @@ tbody tr:hover {
 }
 
 .cell-state {
-  display: inline-block;
-  min-width: 82px;
-  padding: 4px 7px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 66px;
+  padding: 3px 5px;
   border-radius: 6px;
   font-weight: 700;
+  line-height: 1.15;
 }
 
 .state-entry,
