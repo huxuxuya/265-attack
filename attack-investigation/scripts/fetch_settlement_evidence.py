@@ -81,7 +81,7 @@ def default_rest_url() -> str:
         return normalize_url(os.environ["GONKA_REST_URL"])
     if os.environ.get("GONKA_RPC_URL"):
         return derive_rest_url_from_rpc_url(os.environ["GONKA_RPC_URL"])
-    return "http://node1.gonka.ai:8000"
+    raise RuntimeError("GONKA_RPC_URL or GONKA_REST_URL must be set")
 
 
 def default_rpc_url() -> str:
@@ -91,7 +91,7 @@ def default_rpc_url() -> str:
         if parsed.port is None:
             return urllib.parse.urlunparse((parsed.scheme, f"{parsed.hostname}:26657", "", "", "", "")).rstrip("/")
         return normalized
-    return "http://node1.gonka.ai:26657"
+    raise RuntimeError("GONKA_RPC_URL must be set for RPC evidence")
 
 
 def transform_rest_path(base_url: str, path: str) -> str:
@@ -304,14 +304,14 @@ def write_manifest(rows: list[dict[str, str]]) -> None:
 def main() -> int:
     load_dotenv(ENV_PATHS)
     parser = argparse.ArgumentParser()
-    parser.add_argument("--rest-url", default=default_rest_url())
-    parser.add_argument("--rpc-url", default=default_rpc_url())
+    parser.add_argument("--rest-url", default=None)
+    parser.add_argument("--rpc-url", default=None)
     parser.add_argument("--timeout", type=int, default=45)
     parser.add_argument("--epochs", nargs="+", type=int, default=[265, 266])
     args = parser.parse_args()
 
-    rest_url = normalize_url(args.rest_url)
-    rpc_url = normalize_url(args.rpc_url)
+    rest_url = normalize_url(args.rest_url or default_rest_url())
+    rpc_url = normalize_url(args.rpc_url or default_rpc_url())
     gov = gov_address()
     heights = settlement_heights()
     manifest_rows: list[dict[str, str]] = []

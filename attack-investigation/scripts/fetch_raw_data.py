@@ -118,7 +118,7 @@ def default_base_url() -> str:
     rpc_url = os.environ.get("GONKA_RPC_URL")
     if rpc_url:
         return derive_rest_url_from_rpc_url(rpc_url)
-    return "http://node1.gonka.ai:8000"
+    raise RuntimeError("GONKA_RPC_URL or GONKA_REST_URL must be set")
 
 
 def transform_path_for_base_url(base_url: str, path: str) -> str:
@@ -278,25 +278,26 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--base-url",
-        default=default_base_url(),
+        default=None,
         help=(
             "Base node URL. Defaults to GONKA_REST_URL, then a REST URL derived from "
-            "GONKA_RPC_URL, then http://node1.gonka.ai:8000."
+            "GONKA_RPC_URL."
         ),
     )
     parser.add_argument("--epochs", nargs="+", type=int, default=[265, 266])
     parser.add_argument("--timeout", type=int, default=30)
     parser.add_argument("--delay", type=float, default=0.2)
     args = parser.parse_args()
+    base_url = args.base_url or default_base_url()
 
     all_rows: list[dict[str, str]] = []
     for epoch in args.epochs:
-        first_rows = fetch_specs(args.base_url, epoch, BASE_SPECS, args.timeout, args.delay)
+        first_rows = fetch_specs(base_url, epoch, BASE_SPECS, args.timeout, args.delay)
         all_rows.extend(first_rows)
 
-        height_specs = discover_height_specs(args.base_url, epoch, args.timeout)
+        height_specs = discover_height_specs(base_url, epoch, args.timeout)
         if height_specs:
-            all_rows.extend(fetch_specs(args.base_url, epoch, height_specs, args.timeout, args.delay))
+            all_rows.extend(fetch_specs(base_url, epoch, height_specs, args.timeout, args.delay))
 
     write_manifest(all_rows)
     failures = [row for row in all_rows if not row["status"].isdigit() or not row["status"].startswith("2")]

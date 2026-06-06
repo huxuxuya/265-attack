@@ -14,6 +14,7 @@ Current findings from saved raw chain data and currently available source claim 
 - Across epochs 265 and 266, 75 hosts received rewards and 26 hosts received zero reward: 4 `no_final_validation_weight`, 19 `downtime_punishment_candidate`, 2 `zero_reward_no_recorded_work_status_unresolved`, and 1 `zero_reward_status_unresolved`.
 - Model subgroup data from the archive node shows Kimi entry weight dropping from 377276 in epoch 265 to 59933 in epoch 266, an 84.11% drop. Qwen entry weight drops from 1227899 to 886097, a 27.84% drop.
 - Historical `preserved_nodes_snapshot` was saved at `poc_start_block_height` for both epochs, so model cPoC tables can split node weight into confirmed vs preserved buckets.
+- cPoC history from the archive node shows 3 `CONFIRMATION_POC_COMPLETED` events in epoch 265 and 3 in epoch 266.
 
 ## Not Confirmed
 
@@ -22,6 +23,7 @@ Current findings from saved raw chain data and currently available source claim 
 - `confirmation_weight = 0` is not confirmed as a standalone zero-reward cause because v0.2.13 skips confirmation rescale when `confirmation_weight_scales` is empty.
 - The two extra epoch 266 same-height gov transfers are not confirmed as attack remainder. They require separate memo/state proof.
 - The Kimi weight drop is not, by itself, proof of attack causality. It is a chain-visible signal that must be compared with external vLLM failure evidence, inference shutdown timing, and exact participant/node logs.
+- Stage-level participant cPoC validations, v2 commits, batches, and weight distributions are not currently available from the fetched archive endpoints for epochs 265 and 266: those endpoints returned empty lists, and validation snapshot returned `found=false`.
 
 ## Policy-Dependent
 

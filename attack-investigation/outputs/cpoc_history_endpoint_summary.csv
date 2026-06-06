@@ -1,0 +1,15 @@
+epoch,poc_start_block_height,artifact,record_key,record_count,found,note
+265,4089970,confirmation_poc_events,events,3,,archive endpoint returned records
+265,4089970,poc_validation_snapshot_by_stage_start,snapshot,0,false,archive endpoint returned found=false
+265,4089970,poc_v2_validations_for_stage,poc_validation,0,,archive endpoint returned empty list
+265,4089970,all_poc_v2_store_commits,commits,0,,archive endpoint returned empty list
+265,4089970,all_mlnode_weight_distributions,distributions,0,,archive endpoint returned empty list
+265,4089970,poc_batches_for_stage,poc_batch,0,,archive endpoint returned empty list
+265,4089970,poc_validations_for_stage,poc_validation,0,,archive endpoint returned empty list
+266,4105361,confirmation_poc_events,events,3,,archive endpoint returned records
+266,4105361,poc_validation_snapshot_by_stage_start,snapshot,0,false,archive endpoint returned found=false
+266,4105361,poc_v2_validations_for_stage,poc_validation,0,,archive endpoint returned empty list
+266,4105361,all_poc_v2_store_commits,commits,0,,archive endpoint returned empty list
+266,4105361,all_mlnode_weight_distributions,distributions,0,,archive endpoint returned empty list
+266,4105361,poc_batches_for_stage,poc_batch,0,,archive endpoint returned empty list
+266,4105361,poc_validations_for_stage,poc_validation,0,,archive endpoint returned empty list

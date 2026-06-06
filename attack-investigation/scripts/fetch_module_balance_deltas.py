@@ -87,7 +87,7 @@ def default_base_url() -> str:
     rpc_url = os.environ.get("GONKA_RPC_URL")
     if rpc_url:
         return derive_rest_url_from_rpc_url(rpc_url)
-    return "http://node1.gonka.ai:8000"
+    raise RuntimeError("GONKA_RPC_URL or GONKA_REST_URL must be set")
 
 
 def join_url(base_url: str, path: str) -> str:
@@ -227,13 +227,13 @@ def main() -> int:
     load_dotenv(ENV_PATHS)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--base-url", default=default_base_url())
+    parser.add_argument("--base-url", default=None)
     parser.add_argument("--epochs", nargs="+", type=int, default=[265, 266])
     parser.add_argument("--timeout", type=int, default=30)
     parser.add_argument("--delay", type=float, default=0.1)
     args = parser.parse_args()
 
-    base_url = normalize_base_url(args.base_url)
+    base_url = normalize_base_url(args.base_url or default_base_url())
     manifest_rows: list[dict[str, str]] = []
 
     module_url = join_url(base_url, "/cosmos/auth/v1beta1/module_accounts")

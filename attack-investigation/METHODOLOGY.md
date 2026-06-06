@@ -21,6 +21,7 @@ Every node request must be handled in this order:
 
 The build scripts read from `raw_chain_cache/` only. They do not query the node.
 The manifest redacts the configured node host as `<base-url>` so environment-provided node URLs are not committed.
+Fetch scripts require `GONKA_RPC_URL` or `GONKA_REST_URL`; they do not fall back to a public node.
 
 ## Gov Balance Check
 
@@ -69,6 +70,24 @@ This distinction matters: a gov balance jump can include multiple EndBlock trans
 - `model_cpoc_epoch_matrix.csv`: compact Kimi/Qwen matrix.
 
 For model cPoC tables, `preserved_node_weight` is calculated by matching subgroup `ml_nodes[].node_id` against the historical `preserved_nodes_snapshot`. `confirmed_node_weight` is the remaining subgroup node `poc_weight`. Deprecated `timeslot_allocation` is not used as the source of truth when historical snapshot data is available.
+
+`fetch_cpoc_history.py` reads the archive node from `GONKA_RPC_URL`/`GONKA_REST_URL` and saves:
+
+- `confirmation_poc_events/{epoch}`;
+- `poc_validation_snapshot/{poc_start_block_height}`;
+- `poc_v2_validations_for_stage/{poc_start_block_height}`;
+- `all_poc_v2_store_commits/{poc_start_block_height}`;
+- `all_mlnode_weight_distributions/{poc_start_block_height}`;
+- `poc_batches_for_stage/{poc_start_block_height}`;
+- `poc_validations_for_stage/{poc_start_block_height}`;
+- SHA-256 entries in `manifests/cpoc_history_manifest.md`.
+
+`build_cpoc_history_tables.py` builds:
+
+- `cpoc_events.csv`: one row per confirmation cPoC event;
+- `cpoc_history_endpoint_summary.csv`: one row per fetched endpoint with record counts and `found=false`/empty-list notes.
+
+These tables distinguish available event-level cPoC history from missing stage-level participant validation/commit rows. Empty endpoint responses are reported as data availability facts, not converted into host-level failure reasons.
 
 `build_reward_status_tables.py` builds:
 

@@ -88,6 +88,30 @@ Definitions:
 
 This is the table to use for the Kimi attack hypothesis: if vLLM failures stopped Kimi nodes from entering or serving, the first chain-visible place to inspect is the Kimi subgroup weight and the confirmed-vs-preserved split.
 
+## cPoC History
+
+cPoC history was fetched from the archive node configured by `GONKA_RPC_URL`; fetch scripts do not use any public-node fallback. Raw artifacts and SHA-256 hashes are recorded in [`manifests/cpoc_history_manifest.md`](manifests/cpoc_history_manifest.md).
+
+Per-cPoC event table from [`outputs/cpoc_events.csv`](outputs/cpoc_events.csv):
+
+| epoch | event | trigger height | generation start height | phase |
+|---:|---:|---:|---:|---|
+| 265 | 0 | 4,095,682 | 4,095,684 | CONFIRMATION_POC_COMPLETED |
+| 265 | 1 | 4,098,879 | 4,098,881 | CONFIRMATION_POC_COMPLETED |
+| 265 | 2 | 4,102,890 | 4,102,892 | CONFIRMATION_POC_COMPLETED |
+| 266 | 0 | 4,115,094 | 4,115,096 | CONFIRMATION_POC_COMPLETED |
+| 266 | 1 | 4,116,984 | 4,116,986 | CONFIRMATION_POC_COMPLETED |
+| 266 | 2 | 4,118,103 | 4,118,105 | CONFIRMATION_POC_COMPLETED |
+
+Endpoint availability summary from [`outputs/cpoc_history_endpoint_summary.csv`](outputs/cpoc_history_endpoint_summary.csv):
+
+| epoch | poc start height | confirmation events | validation snapshot | v2 validations | v2 commits | weight distributions | batches | legacy validations |
+|---:|---:|---:|---|---:|---:|---:|---:|---:|
+| 265 | 4,089,970 | 3 | found=false | 0 | 0 | 0 | 0 | 0 |
+| 266 | 4,105,361 | 3 | found=false | 0 | 0 | 0 | 0 | 0 |
+
+So the archive node gives proof-grade confirmation cPoC event history for these epochs, but the fetched stage-level participant/commit endpoints returned empty lists or `found=false`. That means host-level cPoC failure reasons still need either exact v0.2.13 replay or additional indexed logs; the saved chain endpoints alone do not currently provide per-host cPoC validation rows.
+
 ## Layout
 
 - `raw_chain_cache/epoch_265/`, `raw_chain_cache/epoch_266/`: raw node responses and request errors.
@@ -112,6 +136,8 @@ python3 scripts/build_gov_endblock_transfers.py
 python3 scripts/fetch_model_group_data.py
 python3 scripts/build_model_cpoc_weight_table.py
 python3 scripts/build_model_cpoc_epoch_matrix.py
+python3 scripts/fetch_cpoc_history.py
+python3 scripts/build_cpoc_history_tables.py
 python3 scripts/build_gov_settlement_audit.py
 python3 scripts/build_reward_status_tables.py
 ```
@@ -140,6 +166,8 @@ python3 scripts/fetch_raw_data.py --epochs 265 266
 - `outputs/model_cpoc_weight_table.csv`: host-level model subgroup PoC/cPoC weights.
 - `outputs/model_cpoc_weight_summary.csv`: per-epoch per-model aggregate weights.
 - `outputs/model_cpoc_epoch_matrix.csv`: compact per-epoch Kimi/Qwen matrix.
+- `outputs/cpoc_events.csv`: per-cPoC confirmation event history.
+- `outputs/cpoc_history_endpoint_summary.csv`: cPoC endpoint availability and record counts.
 - `outputs/gov_settlement_audit.csv`: comparison of formula remainder, gov balance movements, and paid rewards.
 - `outputs/not_received_hosts_detail.csv`: per-host zero-reward detail with reason and proof-grade amount status.
 - `outputs/reward_status_count_summary.csv`: per-epoch and total counts by received/not-received reason.

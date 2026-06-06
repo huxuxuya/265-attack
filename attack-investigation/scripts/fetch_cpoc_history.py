@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch model-specific EpochGroupData subgroups for investigated epochs."""
+"""Fetch raw cPoC/PoC history artifacts for investigated epochs."""
 
 from __future__ import annotations
 
@@ -18,8 +18,14 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW_ROOT = ROOT / "raw_chain_cache"
-MANIFEST = ROOT / "manifests" / "model_group_data_manifest.md"
+MANIFEST = ROOT / "manifests" / "cpoc_history_manifest.md"
 ENV_PATHS = [ROOT / ".env", ROOT.parent / ".env"]
+
+
+@dataclass(frozen=True)
+class RequestSpec:
+    name: str
+    path: str
 
 
 @dataclass(frozen=True)
@@ -69,7 +75,7 @@ def default_base_url() -> str:
         return normalize_base_url(os.environ["GONKA_REST_URL"])
     if os.environ.get("GONKA_RPC_URL"):
         return derive_rest_url_from_rpc_url(os.environ["GONKA_RPC_URL"])
-    raise RuntimeError("GONKA_RPC_URL or GONKA_REST_URL must be set")
+    raise RuntimeError("GONKA_RPC_URL or GONKA_REST_URL must be set for cPoC history fetch")
 
 
 def transform_path_for_base_url(base_url: str, path: str) -> str:
@@ -107,11 +113,8 @@ def read_json(path: Path) -> Any | None:
         return None
 
 
-def fetch(url: str, timeout: int, height: int | None = None) -> FetchResult:
-    headers = {"User-Agent": "265-attack-investigation/1.0"}
-    if height is not None:
-        headers["x-cosmos-block-height"] = str(height)
-    request = urllib.request.Request(url, headers=headers)
+def fetch(url: str, timeout: int) -> FetchResult:
+    request = urllib.request.Request(url, headers={"User-Agent": "265-attack-investigation/1.0"})
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
             return FetchResult(response.status, response.read(), "")
@@ -146,33 +149,60 @@ def write_artifact(path: Path, result: FetchResult) -> dict[str, str]:
     return artifact
 
 
-def model_file_name(model_id: str) -> str:
-    return "".join(ch if ch.isalnum() else "_" for ch in model_id).strip("_").lower()
-
-
 def parent_group(epoch: int) -> dict[str, Any]:
     data = read_json(RAW_ROOT / f"epoch_{epoch}" / "epoch_group_data.json")
     return data.get("epoch_group_data", {}) if isinstance(data, dict) else {}
 
 
-def model_ids_for_epoch(epoch: int) -> list[str]:
+def specs_for_epoch(epoch: int) -> list[RequestSpec]:
     group = parent_group(epoch)
-    models = group.get("sub_group_models") or []
-    return [str(model) for model in models if model]
+    poc_start = group.get("poc_start_block_height")
+    if poc_start in (None, ""):
+        return []
+    return [
+        RequestSpec(
+            "confirmation_poc_events",
+            f"/chain-api/productscience/inference/inference/confirmation_poc_events/{epoch}",
+        ),
+        RequestSpec(
+            "poc_validation_snapshot_by_stage_start",
+            f"/chain-api/productscience/inference/inference/poc_validation_snapshot/{poc_start}",
+        ),
+        RequestSpec(
+            "poc_v2_validations_for_stage",
+            f"/chain-api/productscience/inference/inference/poc_v2_validations_for_stage/{poc_start}",
+        ),
+        RequestSpec(
+            "all_poc_v2_store_commits",
+            f"/chain-api/productscience/inference/inference/all_poc_v2_store_commits/{poc_start}",
+        ),
+        RequestSpec(
+            "all_mlnode_weight_distributions",
+            f"/chain-api/productscience/inference/inference/all_mlnode_weight_distributions/{poc_start}",
+        ),
+        RequestSpec(
+            "poc_batches_for_stage",
+            f"/chain-api/productscience/inference/inference/poc_batches_for_stage/{poc_start}",
+        ),
+        RequestSpec(
+            "poc_validations_for_stage",
+            f"/chain-api/productscience/inference/inference/poc_validations_for_stage/{poc_start}",
+        ),
+    ]
 
 
 def write_manifest(rows: list[dict[str, str]]) -> None:
     lines = [
-        "# Model Group Data Manifest",
+        "# cPoC History Manifest",
         "",
         f"Generated at: {utc_now()}",
         "",
-        "| epoch | model_id | url | status | artifact | sha256 | stderr | stderr_sha256 | fetched_at_utc |",
+        "| epoch | request | url | status | artifact | sha256 | stderr | stderr_sha256 | fetched_at_utc |",
         "|---:|---|---|---|---|---|---|---|---|",
     ]
     for row in rows:
         lines.append(
-            "| {epoch} | {model_id} | {url} | {status} | {artifact} | {sha256} | {stderr} | "
+            "| {epoch} | {request} | {url} | {status} | {artifact} | {sha256} | {stderr} | "
             "{stderr_sha256} | {fetched_at_utc} |".format(**row)
         )
     MANIFEST.write_text("\n".join(lines) + "\n")
@@ -183,56 +213,29 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--base-url", default=None)
     parser.add_argument("--epochs", nargs="+", type=int, default=[265, 266])
-    parser.add_argument("--timeout", type=int, default=45)
+    parser.add_argument("--timeout", type=int, default=90)
     args = parser.parse_args()
 
-    rows: list[dict[str, str]] = []
     base_url = normalize_base_url(args.base_url or default_base_url())
+    rows: list[dict[str, str]] = []
     for epoch in args.epochs:
-        for model_id in model_ids_for_epoch(epoch):
-            encoded_model = urllib.parse.quote(model_id, safe="")
-            url = join_url(
-                base_url,
-                f"/chain-api/productscience/inference/inference/epoch_group_data/{epoch}?model_id={encoded_model}",
-            )
+        for spec in specs_for_epoch(epoch):
+            url = join_url(base_url, spec.path)
             result = fetch(url, args.timeout)
             artifact = write_artifact(
-                RAW_ROOT / f"epoch_{epoch}" / "model_group_data" / f"{model_file_name(model_id)}.json",
+                RAW_ROOT / f"epoch_{epoch}" / "cpoc_history" / f"{spec.name}.json",
                 result,
             )
             rows.append(
                 {
                     "epoch": str(epoch),
-                    "model_id": model_id,
+                    "request": spec.name,
                     "url": redact_url(url),
                     "status": str(result.status),
                     "fetched_at_utc": utc_now(),
                     **artifact,
                 }
             )
-        group = parent_group(epoch)
-        poc_start = group.get("poc_start_block_height")
-        if poc_start not in (None, ""):
-            snapshot_url = join_url(
-                base_url,
-                "/chain-api/productscience/inference/inference/preserved_nodes_snapshot",
-            )
-            result = fetch(snapshot_url, args.timeout, int(poc_start))
-            artifact = write_artifact(
-                RAW_ROOT / f"epoch_{epoch}" / "model_group_data" / f"preserved_nodes_snapshot_at_{poc_start}.json",
-                result,
-            )
-            rows.append(
-                {
-                    "epoch": str(epoch),
-                    "model_id": "preserved_nodes_snapshot",
-                    "url": redact_url(snapshot_url),
-                    "status": str(result.status),
-                    "fetched_at_utc": utc_now(),
-                    **artifact,
-                }
-            )
-
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     write_manifest(rows)
     print(f"Wrote {MANIFEST.relative_to(ROOT)} with {len(rows)} rows.")

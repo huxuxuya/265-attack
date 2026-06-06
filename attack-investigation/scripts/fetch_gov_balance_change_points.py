@@ -84,7 +84,7 @@ def default_base_url() -> str:
     rpc_url = os.environ.get("GONKA_RPC_URL")
     if rpc_url:
         return derive_rest_url_from_rpc_url(rpc_url)
-    return "http://node1.gonka.ai:8000"
+    raise RuntimeError("GONKA_RPC_URL or GONKA_REST_URL must be set")
 
 
 def join_url(base_url: str, path: str) -> str:
@@ -221,7 +221,7 @@ def write_manifest(rows: list[dict[str, str]]) -> None:
 def main() -> int:
     load_dotenv(ENV_PATHS)
     parser = argparse.ArgumentParser()
-    parser.add_argument("--base-url", default=default_base_url())
+    parser.add_argument("--base-url", default=None)
     parser.add_argument("--epochs", nargs="+", type=int, default=[265, 266])
     parser.add_argument("--timeout", type=int, default=30)
     parser.add_argument("--delay", type=float, default=0.02)
@@ -232,7 +232,7 @@ def main() -> int:
         print("No gov module account found in raw_chain_cache/module_accounts.json", file=sys.stderr)
         return 1
 
-    base_url = normalize_base_url(args.base_url)
+    base_url = normalize_base_url(args.base_url or default_base_url())
     url = join_url(base_url, f"/cosmos/bank/v1beta1/balances/{gov}/by_denom?denom={DENOM}")
     manifest_rows: list[dict[str, str]] = []
     output_rows: list[dict[str, str]] = []
