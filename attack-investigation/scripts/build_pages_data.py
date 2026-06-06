@@ -259,6 +259,27 @@ def node_models(address: str, members: dict[str, dict[str, dict[str, Any]]]) -> 
     return output
 
 
+def node_model_rows(models: list[dict[str, Any]], checkpoints: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    output: list[dict[str, Any]] = []
+    for model in models:
+        output.append(
+            {
+                "model": model["model"],
+                "entryWeight": model["entryWeight"],
+                "checkpoints": [
+                    {
+                        "checkpoint": checkpoint["checkpoint"],
+                        "confirmationWeight": checkpoint["confirmationWeight"],
+                        "delta": checkpoint["delta"],
+                        "severity": checkpoint["severity"],
+                    }
+                    for checkpoint in checkpoints
+                ],
+            }
+        )
+    return output
+
+
 def severity(previous: int, current: int) -> str:
     if previous <= 0:
         return "not_applicable"
@@ -337,6 +358,7 @@ def build_nodes(unpaid_pool_gnk: Decimal) -> tuple[list[dict[str, Any]], dict[st
                 "shortAddress": short_address(address),
                 "models": models,
                 "modelNames": [item["model"] for item in models],
+                "modelRows": node_model_rows(models, checkpoints),
                 "checkpoints": checkpoints,
                 "totalPositiveDrop": total_positive_drop,
                 "totalNegativeDelta": total_negative_delta,

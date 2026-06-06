@@ -172,10 +172,26 @@ function weightCell(item) {
   return `<span class="cell-state state-${item.severity}"><span>${fmtInt(item.confirmationWeight)}</span>${delta}</span>`;
 }
 
-function compactModels(node) {
-  const kimi = modelEntry(node, "Kimi");
-  const qwen = modelEntry(node, "Qwen");
-  return `<span title="Kimi ${fmtInt(kimi)} / Qwen ${fmtInt(qwen)}">${fmtInt(kimi)} / ${fmtInt(qwen)}</span>`;
+function modelStackCell(node, checkpointKey = null) {
+  if (!node.modelRows.length) return '<span class="muted">none</span>';
+  const rows = node.modelRows.map((modelRow) => {
+    const item = checkpointKey
+      ? modelRow.checkpoints.find((checkpointItem) => checkpointItem.checkpoint === checkpointKey)
+      : null;
+    const value = checkpointKey ? item.confirmationWeight : modelRow.entryWeight;
+    const delta = checkpointKey && item.delta !== null
+      ? `<span class="model-delta ${item.delta < 0 ? "negative" : "muted"}">${item.delta > 0 ? "+" : ""}${fmtInt(item.delta)}</span>`
+      : "";
+    const severityClass = checkpointKey ? ` state-${item.severity}` : "";
+    return `
+      <div class="model-line${severityClass}" title="${modelRow.model}: ${fmtInt(value)}">
+        <span class="model-key">${modelRow.model}</span>
+        <span class="model-value">${fmtInt(value)}</span>
+        ${delta}
+      </div>
+    `;
+  });
+  return `<div class="model-stack">${rows.join("")}</div>`;
 }
 
 function renderNodes() {
@@ -183,10 +199,6 @@ function renderNodes() {
   const rows = state.data.nodes.filter((node) => nodeMatches(node, state.filter));
   tbody.innerHTML = rows
     .map((node) => {
-      const entry = checkpoint(node, "epoch_entry");
-      const c0 = checkpoint(node, "after_cpoc_0");
-      const c1 = checkpoint(node, "after_cpoc_1");
-      const c2 = checkpoint(node, "after_cpoc_2");
       const badges = node.modelNames
         .map((name) => `<span class="badge badge-${name.toLowerCase()}">${name}</span>`)
         .join("");
@@ -200,11 +212,11 @@ function renderNodes() {
             <div class="node-meta" title="${mlNodes || "no model ml_nodes"}">${node.notRewarded ? "not paid" : "paid"}</div>
           </td>
           <td>${badges}</td>
-          <td>${compactModels(node)}</td>
-          <td>${weightCell(entry)}</td>
-          <td>${weightCell(c0)}</td>
-          <td>${weightCell(c1)}</td>
-          <td>${weightCell(c2)}</td>
+          <td>${modelStackCell(node)}</td>
+          <td>${modelStackCell(node, "epoch_entry")}</td>
+          <td>${modelStackCell(node, "after_cpoc_0")}</td>
+          <td>${modelStackCell(node, "after_cpoc_1")}</td>
+          <td>${modelStackCell(node, "after_cpoc_2")}</td>
           <td class="negative">${fmtInt(node.totalPositiveDrop)}</td>
           <td><strong>${fmtGnk(node.estimatedLostGnk)}</strong></td>
           <td>${fmtGnk(node.paidGnk)}</td>

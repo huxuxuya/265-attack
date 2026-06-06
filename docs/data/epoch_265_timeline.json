@@ -291,6 +291,68 @@
         "Kimi",
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 96900,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 7870,
+              "delta": -89030,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 7870,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1347,
+              "delta": -6523,
+              "severity": "severe_drop"
+            }
+          ],
+          "entryWeight": 1068,
+          "model": "Kimi"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 96900,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 7870,
+              "delta": -89030,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 7870,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1347,
+              "delta": -6523,
+              "severity": "severe_drop"
+            }
+          ],
+          "entryWeight": 265943,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 96900,
@@ -482,6 +544,68 @@
         "Kimi",
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 66311,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 66311,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 66311,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 323,
+              "delta": -65988,
+              "severity": "severe_drop"
+            }
+          ],
+          "entryWeight": 52279,
+          "model": "Kimi"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 66311,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 66311,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 66311,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 323,
+              "delta": -65988,
+              "severity": "severe_drop"
+            }
+          ],
+          "entryWeight": 923,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 66311,
@@ -580,6 +704,68 @@
       "modelNames": [
         "Kimi",
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 189884,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 189121,
+              "delta": -763,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 186719,
+              "delta": -2402,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 172607,
+              "delta": -14112,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 136007,
+          "model": "Kimi"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 189884,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 189121,
+              "delta": -763,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 186719,
+              "delta": -2402,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 172607,
+              "delta": -14112,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 50745,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -783,6 +969,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 15510,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 15510,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 15510,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": -15510,
+              "severity": "severe_drop"
+            }
+          ],
+          "entryWeight": 43169,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 15510,
@@ -918,6 +1136,38 @@
       "modelNames": [
         "Kimi"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 15035,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -15035,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 11913,
+          "model": "Kimi"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 15035,
@@ -996,6 +1246,38 @@
       "missedRequests": 68,
       "modelNames": [
         "Kimi"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 14601,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -14601,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 11569,
+          "model": "Kimi"
+        }
       ],
       "models": [
         {
@@ -1076,6 +1358,38 @@
       "modelNames": [
         "Kimi"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 14200,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 7031,
+              "delta": -7169,
+              "severity": "moderate_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 7031,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": -7031,
+              "severity": "severe_drop"
+            }
+          ],
+          "entryWeight": 11252,
+          "model": "Kimi"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 14200,
@@ -1154,6 +1468,38 @@
       "missedRequests": 70,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 11921,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -11921,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 33180,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -1249,6 +1595,38 @@
       "missedRequests": 52,
       "modelNames": [
         "Kimi"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 91510,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 89709,
+              "delta": -1801,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 82373,
+              "delta": -7336,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 82373,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 72507,
+          "model": "Kimi"
+        }
       ],
       "models": [
         {
@@ -1350,6 +1728,68 @@
         "Kimi",
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 10081,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 10081,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 2363,
+              "delta": -7718,
+              "severity": "moderate_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 2363,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 6116,
+          "model": "Kimi"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 10081,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 10081,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 2363,
+              "delta": -7718,
+              "severity": "moderate_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 2363,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 6578,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 10081,
@@ -1436,6 +1876,38 @@
       "modelNames": [
         "Kimi"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 7572,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -7572,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 6000,
+          "model": "Kimi"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 7572,
@@ -1510,6 +1982,38 @@
       "missedRequests": 42,
       "modelNames": [
         "Kimi"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 7463,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -7463,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 5914,
+          "model": "Kimi"
+        }
       ],
       "models": [
         {
@@ -1586,6 +2090,38 @@
       "modelNames": [
         "Kimi"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 7063,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -7063,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 5597,
+          "model": "Kimi"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 7063,
@@ -1660,6 +2196,38 @@
       "missedRequests": 562,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 6665,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -6665,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 18551,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -1744,6 +2312,68 @@
       "modelNames": [
         "Kimi",
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 39091,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 36473,
+              "delta": -2618,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 36473,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 36473,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 1042,
+          "model": "Kimi"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 39091,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 36473,
+              "delta": -2618,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 36473,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 36473,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 105138,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -1878,6 +2508,38 @@
       "missedRequests": 0,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 135634,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 134153,
+              "delta": -1481,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 133292,
+              "delta": -861,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 133104,
+              "delta": -188,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 377497,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -2102,6 +2764,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 22227,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 20784,
+              "delta": -1443,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 20784,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 20784,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 61863,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 22227,
@@ -2205,6 +2899,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 19360,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 18249,
+              "delta": -1111,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 18249,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 18249,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 53883,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 19360,
@@ -2304,6 +3030,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1035,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -1035,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 2882,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 1035,
@@ -2378,6 +3136,38 @@
       "missedRequests": 3,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1254,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 1254,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1254,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 236,
+              "delta": -1018,
+              "severity": "severe_drop"
+            }
+          ],
+          "entryWeight": 3491,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -2454,6 +3244,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 974,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 974,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 581,
+              "delta": -393,
+              "severity": "moderate_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 581,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 2712,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 974,
@@ -2529,6 +3351,68 @@
       "modelNames": [
         "Kimi",
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 33800,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 33491,
+              "delta": -309,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 33491,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 33491,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 22160,
+          "model": "Kimi"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 33800,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 33491,
+              "delta": -309,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 33491,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 33491,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 16235,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -2619,6 +3503,38 @@
       "missedRequests": 2,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 13299,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 13119,
+              "delta": -180,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 13104,
+              "delta": -15,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 13039,
+              "delta": -65,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 37016,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -2715,6 +3631,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 476,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 476,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 236,
+              "delta": -240,
+              "severity": "moderate_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 225,
+              "delta": -11,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 1327,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 476,
@@ -2789,6 +3737,38 @@
       "missedRequests": 22,
       "modelNames": [
         "Kimi"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 7646,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 7532,
+              "delta": -114,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 7532,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 7495,
+              "delta": -37,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 6059,
+          "model": "Kimi"
+        }
       ],
       "models": [
         {
@@ -2865,6 +3845,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1295,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 1295,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1185,
+              "delta": -110,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1185,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 3606,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 1295,
@@ -2939,6 +3951,38 @@
       "missedRequests": 1,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1886,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 1797,
+              "delta": -89,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1797,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1797,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 5250,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -3019,6 +4063,68 @@
       "modelNames": [
         "Kimi",
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 5411,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 5339,
+              "delta": -72,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 5334,
+              "delta": -5,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 5334,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 2580,
+          "model": "Kimi"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 5411,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 5339,
+              "delta": -72,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 5334,
+              "delta": -5,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 5334,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 6000,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -3106,6 +4212,38 @@
       "modelNames": [
         "Kimi"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 3859,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 3859,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 3784,
+              "delta": -75,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 3784,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 3058,
+          "model": "Kimi"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 3859,
@@ -3180,6 +4318,38 @@
       "missedRequests": 0,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 2031,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 2031,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 2031,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1961,
+              "delta": -70,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 5655,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -3256,6 +4426,68 @@
       "modelNames": [
         "Kimi",
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 8455,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 8412,
+              "delta": -43,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 8412,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 8412,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 5912,
+          "model": "Kimi"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 8455,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 8412,
+              "delta": -43,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 8412,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 8412,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 2769,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -3343,6 +4575,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1472,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 1472,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1472,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1444,
+              "delta": -28,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 4097,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 1472,
@@ -3417,6 +4681,38 @@
       "missedRequests": 0,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 2104,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 2079,
+              "delta": -25,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 2079,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 2079,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 5857,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -3493,6 +4789,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 974,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 952,
+              "delta": -22,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 952,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 952,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 2712,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 974,
@@ -3567,6 +4895,38 @@
       "missedRequests": 1,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 633,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 633,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 624,
+              "delta": -9,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 624,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 1764,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -3643,6 +5003,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1183,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 1183,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1183,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1174,
+              "delta": -9,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 3294,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 1183,
@@ -3718,6 +5110,68 @@
       "modelNames": [
         "Kimi",
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 12437,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 12437,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 12437,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 12431,
+              "delta": -6,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 9492,
+          "model": "Kimi"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 12437,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 12437,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 12437,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 12431,
+              "delta": -6,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 1275,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -3805,6 +5259,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1166,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 1166,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1166,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1163,
+              "delta": -3,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 3247,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 1166,
@@ -3879,6 +5365,38 @@
       "missedRequests": 1,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 8127,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 8127,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 8127,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 8127,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 22620,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -3958,6 +5476,38 @@
       "missedRequests": 15,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 9526,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 9526,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 9526,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 9526,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 26514,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -4050,6 +5600,38 @@
       "modelNames": [
         "Kimi"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 7428,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 7428,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 7428,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 7428,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 5886,
+          "model": "Kimi"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 7428,
@@ -4124,6 +5706,38 @@
       "missedRequests": 0,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 7151,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 7151,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 7151,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 7151,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 19904,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -4228,6 +5842,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 912,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 912,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 912,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 912,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 2539,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 912,
@@ -4302,6 +5948,38 @@
       "missedRequests": 0,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 463,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 463,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 463,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 463,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 1290,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -4378,6 +6056,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 364,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 364,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 364,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 364,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 1014,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 364,
@@ -4453,6 +6163,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 621,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 621,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 621,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 621,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 1731,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 621,
@@ -4526,6 +6268,7 @@
       "invalidatedInferences": 0,
       "missedRequests": 0,
       "modelNames": [],
+      "modelRows": [],
       "models": [],
       "notRewarded": true,
       "paidGnk": "0.000000",
@@ -4587,6 +6330,7 @@
       "invalidatedInferences": 0,
       "missedRequests": 0,
       "modelNames": [],
+      "modelRows": [],
       "models": [],
       "notRewarded": true,
       "paidGnk": "0.000000",
@@ -4649,6 +6393,38 @@
       "missedRequests": 0,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 633,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 633,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 633,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 633,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 1764,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -4724,6 +6500,38 @@
       "missedRequests": 1,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 4886,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 4886,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 4886,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 4886,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 13601,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -4804,6 +6612,38 @@
       "modelNames": [
         "Qwen"
       ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 2073,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 2073,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 2073,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 2073,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 5770,
+          "model": "Qwen"
+        }
+      ],
       "models": [
         {
           "entryConfirmationWeight": 2073,
@@ -4878,6 +6718,38 @@
       "missedRequests": 0,
       "modelNames": [
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 593,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 593,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 593,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 593,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 1652,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
@@ -4954,6 +6826,68 @@
       "modelNames": [
         "Kimi",
         "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 2111,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 2111,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 2111,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 2111,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 865,
+          "model": "Kimi"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 2111,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 2111,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 2111,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 2111,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 2841,
+          "model": "Qwen"
+        }
       ],
       "models": [
         {
