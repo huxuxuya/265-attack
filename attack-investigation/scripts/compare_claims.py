@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compare source compensation totals with saved chain settlement summary."""
+"""Compare source compensation totals with the formula-derived reward remainder."""
 
 from __future__ import annotations
 
@@ -78,9 +78,9 @@ def main() -> int:
         if not has_claim_rows:
             notes = "no source claim rows loaded"
         elif difference is None:
-            notes = "undistributed remainder not computable from saved raw data"
+            notes = "formula-derived remainder not computable from saved raw data"
         else:
-            notes = "difference is source compensation minus settlement-visible undistributed remainder"
+            notes = "difference is source compensation minus formula-derived base reward remainder"
         output_rows.append(
             {
                 "epoch": epoch,

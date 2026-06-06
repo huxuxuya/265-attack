@@ -12,24 +12,37 @@ The main rule is: save raw data first, calculate later.
 
 ## Main Numbers
 
-All money values are in GNK, not nGNK. Current summary from [`outputs/epoch_summary.csv`](outputs/epoch_summary.csv):
+All money values are in GNK, not nGNK. Current summary from [`outputs/epoch_summary.csv`](outputs/epoch_summary.csv) and [`outputs/gov_settlement_audit.csv`](outputs/gov_settlement_audit.csv):
 
-| epoch | participants | received reward | did not receive | final group | excluded | reward pool, GNK | paid to miners, GNK | not paid / remainder, GNK | gov module delta during epoch, GNK | gov boundary delta, GNK | burned, GNK |
-|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 265 | 53 | 37 | 16 | 51 | 2 | 284,924,015.171652 | 185,565,043.741173 | 99,358,971.430479 | 99,367,460.084386 | 0.000000 | 0.000000 |
-| 266 | 48 | 38 | 10 | 46 | 2 | 284,788,676.264445 | 261,173,638.858560 | 23,615,037.405885 | 26,427,646.580643 | 0.000000 | 0.000000 |
-| TOTAL | 101 | 75 | 26 | 97 | 4 | 569,712,691.436097 | 446,738,682.599733 | 122,974,008.836364 | 125,795,106.665029 | 0.000000 | 0.000000 |
+| epoch | participants | received reward | did not receive | final group | excluded | paid to miners, GNK | main gov jump, GNK | paid + main gov jump, GNK | formula reward, GNK | formula remainder, GNK | full gov delta, GNK | burned, GNK |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 265 | 53 | 37 | 16 | 51 | 2 | 185,565,043.741173 | 99,367,459.994521 | 284,932,503.735694 | 284,924,015.171652 | 99,358,971.430479 | 99,367,460.084386 | 0.000000 |
+| 266 | 48 | 38 | 10 | 46 | 2 | 261,173,638.858560 | 26,427,696.577043 | 287,601,335.435603 | 284,788,676.264445 | 23,615,037.405885 | 26,427,646.580643 | 0.000000 |
+| TOTAL | 101 | 75 | 26 | 97 | 4 | 446,738,682.599733 | 125,795,156.571564 | 572,533,839.171297 | 569,712,691.436097 | 122,974,008.836364 | 125,795,106.665029 | 0.000000 |
 
 Notes:
 
-- `reward pool` is calculated from saved chain `bitcoin_reward_params`: `initial_epoch_reward`, `decay_rate`, and `genesis_epoch`.
-- `not paid / remainder` is `reward pool - paid to miners`.
-- `gov module delta during epoch` is the direct `gov` module-account balance change from `effective_block_height` to `last_block_height`; see [`outputs/module_balance_deltas.csv`](outputs/module_balance_deltas.csv).
+- `formula reward` is calculated from saved chain `bitcoin_reward_params`: `initial_epoch_reward`, `decay_rate`, and `genesis_epoch`.
+- `formula remainder` is `formula reward - paid to miners`. It is a model output, not a direct gov-wallet transfer.
+- `main gov jump` is the largest direct `gov` module-account balance change found inside the epoch by historical balance scan; see [`outputs/gov_balance_change_points.csv`](outputs/gov_balance_change_points.csv).
+- `paid + main gov jump` is the chain-observed paid rewards plus the largest gov balance jump. This is the best current chain-observed settlement-sized total, and it does not equal `formula reward`.
+- `full gov delta` is the direct `gov` module-account balance change from `effective_block_height` to `last_block_height`; see [`outputs/module_balance_deltas.csv`](outputs/module_balance_deltas.csv).
 - `gov boundary delta` is the direct `gov` module-account balance change from `last_block_height` to `last_block_height + 1`. It is zero for both epochs, so the saved data does not show a one-block settlement transfer to gov at the epoch boundary.
 - `did not receive` is the number of participants with `rewarded_coins = 0` in settlement data.
 - Per-miner zero-reward reasons are in [`outputs/unpaid_miners_detail.csv`](outputs/unpaid_miners_detail.csv).
 - `affected_rows` can be greater than unique affected addresses because one address can have multiple classes, for example `excluded_operator` and `zero_reward_reconstruction`.
 - `source_compensation_gonka` is not loaded yet because no source claim files are present under `source_claims/votkon/` or `source_claims/case3/`.
+
+## Gov Balance Check
+
+The earlier `formula remainder` and `full gov delta` values differ because they are different measurements. `formula remainder` is based on the current script's base reward formula; `full gov delta` is a direct balance delta and includes every gov balance movement inside the epoch.
+
+| epoch | main gov jump height | main gov jump, GNK | other gov changes, GNK | full gov delta, GNK | formula remainder, GNK | main jump - formula remainder, GNK |
+|---:|---:|---:|---:|---:|---:|---:|
+| 265 | 4,105,641 | 99,367,459.994521 | 0.089865 | 99,367,460.084386 | 99,358,971.430479 | 8,488.564042 |
+| 266 | 4,121,032 | 26,427,696.577043 | -49.996400 | 26,427,646.580643 | 23,615,037.405885 | 2,812,659.171158 |
+
+So the error was treating `formula reward - paid rewards` as the exact amount sent to gov. The chain balance scan shows the gov movement directly, and it is larger than the formula remainder in both epochs.
 
 ## Unpaid Miner Reasons
 
@@ -70,6 +83,8 @@ python3 scripts/classify_affected.py
 python3 scripts/compare_claims.py
 python3 scripts/fetch_module_balance_deltas.py
 python3 scripts/build_unpaid_miners_detail.py
+python3 scripts/fetch_gov_balance_change_points.py
+python3 scripts/build_gov_settlement_audit.py
 ```
 
 If `GONKA_REST_URL` is set, `fetch_raw_data.py` uses it as the default base URL. If only
@@ -90,5 +105,7 @@ python3 scripts/fetch_raw_data.py --epochs 265 266
 - `outputs/module_balance_deltas.csv`: module-account balance deltas around epoch boundaries.
 - `outputs/unpaid_miners_detail.csv`: zero-reward miners with chain-visible reason details.
 - `outputs/unpaid_reason_summary.csv`: per-epoch counts by zero-reward reason.
+- `outputs/gov_balance_change_points.csv`: exact gov module-account balance change heights found by historical balance scan.
+- `outputs/gov_settlement_audit.csv`: comparison of formula remainder, gov balance movements, and paid rewards.
 
-`undistributed_remainder_gonka` means "not distributed to participants by settlement." It is not evidence that the same amount went to a government wallet unless a direct wallet balance delta is separately verified.
+`undistributed_remainder_gonka` is currently formula-derived from base reward parameters minus paid rewards. It is not evidence that the same amount went to a government wallet unless a direct wallet balance delta is separately verified.

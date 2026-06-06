@@ -34,6 +34,18 @@ It saves raw JSON under `raw_chain_cache/*/module_balances/`, records SHA-256 va
 
 The key gov-wallet test is `delta_last_to_next_gnk` for the `gov` module. A zero value means the epoch-boundary balance delta does not confirm that the settlement remainder was transferred to the gov module account at that boundary.
 
+`fetch_gov_balance_change_points.py` performs a direct historical balance scan for the `gov` module account inside each investigated epoch. It saves every requested height under `raw_chain_cache/*/gov_balance_change_points/`, records SHA-256 values in `manifests/gov_balance_change_points_manifest.md`, and writes `outputs/gov_balance_change_points.csv`.
+
+`build_gov_settlement_audit.py` compares:
+
+- direct paid rewards from `epoch_performance_summary`;
+- base reward formula from `bitcoin_reward_params`;
+- formula remainder as `base reward formula - paid rewards`;
+- largest direct gov balance jump inside the epoch;
+- full gov balance delta from `effective_block_height` to `last_block_height`.
+
+This distinction matters: formula remainder is not the same measurement as a gov balance transfer. If they differ, the direct balance movement is the chain fact and the formula remainder is a model output that needs explanation.
+
 ## Chain summary fields
 
 `build_epoch_summary.py` derives:
@@ -42,12 +54,12 @@ The key gov-wallet test is `delta_last_to_next_gnk` for the `gov` module. A zero
 - final group count from `epoch_group_data` validation/member arrays when present;
 - excluded count from saved participant API data when available. If that endpoint fails, it uses a chain-derived fallback: `(performance summary participants union epoch group members) - validation_weights`;
 - zero reward count from performance summary rows with `rewarded_coins == 0`;
-- reward pool from explicit settlement reward fields when present, otherwise from saved `bitcoin_reward_params` using `initial_epoch_reward * (1 + decay_rate) ^ (epoch - genesis_epoch)`;
+- base reward formula from explicit settlement reward fields when present, otherwise from saved `bitcoin_reward_params` using `initial_epoch_reward * (1 + decay_rate) ^ (epoch - genesis_epoch)`;
 - burned amount from the sum of `burned_coins`;
 - actual rewarded amount from the sum of `rewarded_coins`;
-- undistributed remainder as reward pool minus actual rewarded amount.
+- formula remainder as base reward formula minus actual rewarded amount.
 
-`undistributed_remainder_gonka` is a settlement accounting value. It is not labeled as a verified gov-wallet transfer unless a separate balance-delta check is performed.
+`undistributed_remainder_gonka` is a formula-derived accounting value in the current script. It is not labeled as a verified gov-wallet transfer unless a separate balance-delta check is performed.
 
 ## Classification classes
 
@@ -86,7 +98,7 @@ These classes are deliberately not merged into one compensation bucket. Any merg
 `compare_claims.py` compares source compensation against chain settlement facts:
 
 - `source_compensation_gonka` is taken from source claim rows;
-- `undistributed_remainder_gonka` is the settlement-visible remainder, if computable from saved chain data;
+- `undistributed_remainder_gonka` is the current formula-derived base reward remainder, if computable from saved chain data;
 - `difference` is `source_compensation_gonka - undistributed_remainder_gonka` when both values exist.
 
-The difference is not a fraud finding by itself. It identifies where the source compensation model diverges from chain settlement accounting.
+The difference is not a fraud finding by itself. It identifies where the source compensation model diverges from the current base reward formula. Direct gov balance movements are audited separately in `gov_settlement_audit.csv`.

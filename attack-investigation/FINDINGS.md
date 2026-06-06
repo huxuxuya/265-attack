@@ -5,13 +5,14 @@ Current findings from saved raw chain data and currently available source claim 
 ## Confirmed
 
 - Raw data was saved for epochs 265 and 266 from the configured archive REST node with SHA-256 entries in `manifests/raw_chain_cache_manifest.md`.
-- Epoch 265: 53 settlement-visible participants, 37 rewarded, 16 not rewarded, 51 final group members, 2 chain-derived excluded participants, 284924015.171652 GNK reward pool, 185565043.741173 GNK paid to miners, 99358971.430479 GNK not paid by settlement, 99367460.084386 GNK gov module balance increase during the epoch, 0 GNK gov boundary delta, 0 GNK burned.
-- Epoch 266: 48 settlement-visible participants, 38 rewarded, 10 not rewarded, 46 final group members, 2 chain-derived excluded participants, 284788676.264445 GNK reward pool, 261173638.858560 GNK paid to miners, 23615037.405885 GNK not paid by settlement, 26427646.580643 GNK gov module balance increase during the epoch, 0 GNK gov boundary delta, 0 GNK burned.
+- Epoch 265: 53 settlement-visible participants, 37 rewarded, 16 not rewarded, 51 final group members, 2 chain-derived excluded participants, 185565043.741173 GNK paid to miners, 99367459.994521 GNK main gov balance jump at height 4105641, 99367460.084386 GNK full gov balance increase during the epoch, 0 GNK burned.
+- Epoch 266: 48 settlement-visible participants, 38 rewarded, 10 not rewarded, 46 final group members, 2 chain-derived excluded participants, 261173638.858560 GNK paid to miners, 26427696.577043 GNK main gov balance jump at height 4121032, 26427646.580643 GNK full gov balance increase during the epoch, 0 GNK burned.
+- The base reward formula currently used by `build_epoch_summary.py` does not match the chain-observed `paid rewards + main gov jump`: epoch 265 differs by 8488.564042 GNK, and epoch 266 differs by 2812659.171158 GNK.
 
 ## Not Confirmed
 
 - No source claim files are currently present under `source_claims/votkon/` or `source_claims/case3/`, so no individual claim rows have been confirmed or rejected yet.
-- The gov module balance increased during both epochs, but the increase is not exactly equal to `not_paid_rewards_gnk`.
+- The formula remainder is not confirmed as the exact amount sent to gov. Direct gov balance movement is larger than the formula remainder in both investigated epochs.
 - The direct `last_block_height -> last_block_height + 1` gov boundary delta is 0 GNK for both epochs, so the data does not confirm a one-block settlement transfer to gov at the epoch boundary.
 
 ## Policy-Dependent
@@ -35,4 +36,4 @@ The final report must separately show:
 - source compensation model;
 - policy questions for the committee.
 
-Current chain facts do not prove that any undistributed amount went to a government wallet. That requires a separate direct balance-delta check.
+Current chain facts show direct gov module balance jumps inside both epochs, but those jumps do not equal the current base formula remainder. The report must not equate formula remainder with gov transfer without explaining that formula gap.

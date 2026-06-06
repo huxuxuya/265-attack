@@ -1,0 +1,3 @@
+epoch,main_gov_jump_height,paid_rewards_gnk,base_reward_formula_gnk,formula_remainder_gnk,main_gov_jump_gnk,other_gov_changes_gnk,gov_delta_during_epoch_gnk,main_gov_jump_minus_formula_remainder_gnk,gov_delta_minus_formula_remainder_gnk,paid_plus_main_gov_jump_gnk,paid_plus_main_gov_jump_minus_base_formula_gnk
+265,4105641,185565043.741173,284924015.171652,99358971.430479,99367459.994521,0.089865,99367460.084386,8488.564042,8488.653907,284932503.735694,8488.564042
+266,4121032,261173638.858560,284788676.264445,23615037.405885,26427696.577043,-49.996400,26427646.580643,2812659.171158,2812609.174758,287601335.435603,2812659.171158
