@@ -90,29 +90,29 @@ This is the table to use for the Kimi attack hypothesis: if vLLM failures stoppe
 
 ## cPoC History
 
-cPoC history was fetched from the archive node configured by `GONKA_RPC_URL`; fetch scripts do not use any public-node fallback. Raw artifacts and SHA-256 hashes are recorded in [`manifests/cpoc_history_manifest.md`](manifests/cpoc_history_manifest.md).
+cPoC history was fetched from the archive node configured by `GONKA_RPC_URL`; fetch scripts do not use any public-node fallback. Raw artifacts and SHA-256 hashes are recorded in [`manifests/cpoc_history_manifest.md`](manifests/cpoc_history_manifest.md) and [`manifests/cpoc_block_headers_manifest.md`](manifests/cpoc_block_headers_manifest.md).
 
 Per-cPoC event table from [`outputs/cpoc_events.csv`](outputs/cpoc_events.csv):
 
-| epoch | event | trigger height | generation start height | phase |
-|---:|---:|---:|---:|---|
-| 265 | 0 | 4,095,682 | 4,095,684 | CONFIRMATION_POC_COMPLETED |
-| 265 | 1 | 4,098,879 | 4,098,881 | CONFIRMATION_POC_COMPLETED |
-| 265 | 2 | 4,102,890 | 4,102,892 | CONFIRMATION_POC_COMPLETED |
-| 266 | 0 | 4,115,094 | 4,115,096 | CONFIRMATION_POC_COMPLETED |
-| 266 | 1 | 4,116,984 | 4,116,986 | CONFIRMATION_POC_COMPLETED |
-| 266 | 2 | 4,118,103 | 4,118,105 | CONFIRMATION_POC_COMPLETED |
+| epoch | epoch start height | epoch start UTC | PoC start height | PoC start UTC | event | trigger height | trigger UTC | generation start height | generation start UTC | phase |
+|---:|---:|---|---:|---|---:|---:|---|---:|---|---|
+| 265 | 4,090,370 | 2026-05-15T23:22:59.307709486Z | 4,089,970 | 2026-05-15T22:48:39.749969021Z | 0 | 4,095,682 | 2026-05-16T06:55:01.082396994Z | 4,095,684 | 2026-05-16T06:55:12.342855969Z | CONFIRMATION_POC_COMPLETED |
+| 265 | 4,090,370 | 2026-05-15T23:22:59.307709486Z | 4,089,970 | 2026-05-15T22:48:39.749969021Z | 1 | 4,098,879 | 2026-05-16T11:26:01.538574339Z | 4,098,881 | 2026-05-16T11:26:12.807058766Z | CONFIRMATION_POC_COMPLETED |
+| 265 | 4,090,370 | 2026-05-15T23:22:59.307709486Z | 4,089,970 | 2026-05-15T22:48:39.749969021Z | 2 | 4,102,890 | 2026-05-16T17:05:17.376272472Z | 4,102,892 | 2026-05-16T17:05:28.860049742Z | CONFIRMATION_POC_COMPLETED |
+| 266 | 4,105,761 | 2026-05-16T21:05:03.752208771Z | 4,105,361 | 2026-05-16T20:31:35.236757476Z | 0 | 4,115,094 | 2026-05-17T10:17:35.985273381Z | 4,115,096 | 2026-05-17T10:17:47.361110040Z | CONFIRMATION_POC_COMPLETED |
+| 266 | 4,105,761 | 2026-05-16T21:05:03.752208771Z | 4,105,361 | 2026-05-16T20:31:35.236757476Z | 1 | 4,116,984 | 2026-05-17T12:58:00.256207082Z | 4,116,986 | 2026-05-17T12:58:08.366589465Z | CONFIRMATION_POC_COMPLETED |
+| 266 | 4,105,761 | 2026-05-16T21:05:03.752208771Z | 4,105,361 | 2026-05-16T20:31:35.236757476Z | 2 | 4,118,103 | 2026-05-17T14:32:57.269081652Z | 4,118,105 | 2026-05-17T14:33:05.401916199Z | CONFIRMATION_POC_COMPLETED |
 
 Per-cPoC model weight matrix from [`outputs/cpoc_event_model_weight_matrix.csv`](outputs/cpoc_event_model_weight_matrix.csv):
 
-| epoch | event | trigger height | Kimi confirmed | Kimi preserved | Kimi total | Qwen confirmed | Qwen preserved | Qwen total | total confirmed | total preserved | total weight |
-|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 265 | 0 | 4,095,682 | 336,641 | 40,635 | 377,276 | 1,106,344 | 121,555 | 1,227,899 | 1,442,985 | 162,190 | 1,605,175 |
-| 265 | 1 | 4,098,879 | 336,641 | 40,635 | 377,276 | 1,106,344 | 121,555 | 1,227,899 | 1,442,985 | 162,190 | 1,605,175 |
-| 265 | 2 | 4,102,890 | 336,641 | 40,635 | 377,276 | 1,106,344 | 121,555 | 1,227,899 | 1,442,985 | 162,190 | 1,605,175 |
-| 266 | 0 | 4,115,094 | 16,235 | 43,698 | 59,933 | 802,093 | 84,004 | 886,097 | 818,328 | 127,702 | 946,030 |
-| 266 | 1 | 4,116,984 | 16,235 | 43,698 | 59,933 | 802,093 | 84,004 | 886,097 | 818,328 | 127,702 | 946,030 |
-| 266 | 2 | 4,118,103 | 16,235 | 43,698 | 59,933 | 802,093 | 84,004 | 886,097 | 818,328 | 127,702 | 946,030 |
+| epoch | event | trigger UTC | Kimi confirmed | Kimi preserved | Kimi total | Qwen confirmed | Qwen preserved | Qwen total | total confirmed | total preserved | total weight |
+|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 265 | 0 | 2026-05-16T06:55:01.082396994Z | 336,641 | 40,635 | 377,276 | 1,106,344 | 121,555 | 1,227,899 | 1,442,985 | 162,190 | 1,605,175 |
+| 265 | 1 | 2026-05-16T11:26:01.538574339Z | 336,641 | 40,635 | 377,276 | 1,106,344 | 121,555 | 1,227,899 | 1,442,985 | 162,190 | 1,605,175 |
+| 265 | 2 | 2026-05-16T17:05:17.376272472Z | 336,641 | 40,635 | 377,276 | 1,106,344 | 121,555 | 1,227,899 | 1,442,985 | 162,190 | 1,605,175 |
+| 266 | 0 | 2026-05-17T10:17:35.985273381Z | 16,235 | 43,698 | 59,933 | 802,093 | 84,004 | 886,097 | 818,328 | 127,702 | 946,030 |
+| 266 | 1 | 2026-05-17T12:58:00.256207082Z | 16,235 | 43,698 | 59,933 | 802,093 | 84,004 | 886,097 | 818,328 | 127,702 | 946,030 |
+| 266 | 2 | 2026-05-17T14:32:57.269081652Z | 16,235 | 43,698 | 59,933 | 802,093 | 84,004 | 886,097 | 818,328 | 127,702 | 946,030 |
 
 The weights in this matrix are `event + epoch model weight snapshot`, not per-event participant validation rows. They repeat inside an epoch because the archive endpoints returned cPoC events, while stage-level participant/commit endpoints did not return per-event host rows for epochs 265 and 266.
 
@@ -150,6 +150,7 @@ python3 scripts/fetch_model_group_data.py
 python3 scripts/build_model_cpoc_weight_table.py
 python3 scripts/build_model_cpoc_epoch_matrix.py
 python3 scripts/fetch_cpoc_history.py
+python3 scripts/fetch_cpoc_block_headers.py
 python3 scripts/build_cpoc_history_tables.py
 python3 scripts/build_gov_settlement_audit.py
 python3 scripts/build_reward_status_tables.py
@@ -179,9 +180,9 @@ python3 scripts/fetch_raw_data.py --epochs 265 266
 - `outputs/model_cpoc_weight_table.csv`: host-level model subgroup PoC/cPoC weights.
 - `outputs/model_cpoc_weight_summary.csv`: per-epoch per-model aggregate weights.
 - `outputs/model_cpoc_epoch_matrix.csv`: compact per-epoch Kimi/Qwen matrix.
-- `outputs/cpoc_events.csv`: per-cPoC confirmation event history.
+- `outputs/cpoc_events.csv`: per-cPoC confirmation event history with epoch start and UTC block times.
 - `outputs/cpoc_history_endpoint_summary.csv`: cPoC endpoint availability and record counts.
-- `outputs/cpoc_event_model_weight_matrix.csv`: per-cPoC event rows with epoch-level Kimi/Qwen confirmed, preserved, and total weights.
+- `outputs/cpoc_event_model_weight_matrix.csv`: per-cPoC event rows with UTC times and epoch-level Kimi/Qwen confirmed, preserved, and total weights.
 - `outputs/gov_settlement_audit.csv`: comparison of formula remainder, gov balance movements, and paid rewards.
 - `outputs/not_received_hosts_detail.csv`: per-host zero-reward detail with reason and proof-grade amount status.
 - `outputs/reward_status_count_summary.csv`: per-epoch and total counts by received/not-received reason.

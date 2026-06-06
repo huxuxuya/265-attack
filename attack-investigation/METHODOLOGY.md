@@ -82,11 +82,19 @@ For model cPoC tables, `preserved_node_weight` is calculated by matching subgrou
 - `poc_validations_for_stage/{poc_start_block_height}`;
 - SHA-256 entries in `manifests/cpoc_history_manifest.md`.
 
+`fetch_cpoc_block_headers.py` reads saved cPoC events and epoch metadata, then saves block headers for:
+
+- epoch `effective_block_height`;
+- epoch `poc_start_block_height`;
+- every cPoC `trigger_height`;
+- every cPoC `generation_start_height`;
+- SHA-256 entries in `manifests/cpoc_block_headers_manifest.md`.
+
 `build_cpoc_history_tables.py` builds:
 
-- `cpoc_events.csv`: one row per confirmation cPoC event;
+- `cpoc_events.csv`: one row per confirmation cPoC event with epoch start and UTC block times;
 - `cpoc_history_endpoint_summary.csv`: one row per fetched endpoint with record counts and `found=false`/empty-list notes.
-- `cpoc_event_model_weight_matrix.csv`: cPoC event rows joined with the epoch-level Kimi/Qwen confirmed, preserved, and total weight matrix.
+- `cpoc_event_model_weight_matrix.csv`: cPoC event rows joined with UTC block times and the epoch-level Kimi/Qwen confirmed, preserved, and total weight matrix.
 
 These tables distinguish available event-level cPoC history from missing stage-level participant validation/commit rows. Empty endpoint responses are reported as data availability facts, not converted into host-level failure reasons.
 The model weights repeat for cPoC events inside the same epoch because the available chain data gives event history and epoch model snapshots, but not per-event participant validation rows.

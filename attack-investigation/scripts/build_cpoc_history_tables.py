@@ -18,9 +18,15 @@ MODEL_EPOCH_MATRIX = ROOT / "outputs" / "model_cpoc_epoch_matrix.csv"
 
 EVENT_COLUMNS = [
     "epoch",
+    "epoch_start_height",
+    "epoch_start_time_utc",
+    "poc_start_block_height",
+    "poc_start_time_utc",
     "event_sequence",
     "trigger_height",
+    "trigger_time_utc",
     "generation_start_height",
+    "generation_start_time_utc",
     "phase",
     "poc_seed_block_hash",
 ]
@@ -37,9 +43,15 @@ ENDPOINT_COLUMNS = [
 
 MODEL_MATRIX_COLUMNS = [
     "epoch",
+    "epoch_start_height",
+    "epoch_start_time_utc",
+    "poc_start_block_height",
+    "poc_start_time_utc",
     "event_sequence",
     "trigger_height",
+    "trigger_time_utc",
     "generation_start_height",
+    "generation_start_time_utc",
     "phase",
     "kimi_confirmed_weight",
     "kimi_preserved_weight",
@@ -82,6 +94,28 @@ def poc_start_height(epoch: int) -> str:
     return "" if value is None else str(value)
 
 
+def epoch_start_height(epoch: int) -> str:
+    data = read_json(RAW_ROOT / f"epoch_{epoch}" / "epoch_group_data.json")
+    if not isinstance(data, dict):
+        return ""
+    group = data.get("epoch_group_data")
+    if not isinstance(group, dict):
+        return ""
+    value = group.get("effective_block_height")
+    return "" if value is None else str(value)
+
+
+def block_time_utc(epoch: int, height: str) -> str:
+    if not height:
+        return ""
+    data = read_json(RAW_ROOT / f"epoch_{epoch}" / "cpoc_history" / "block_headers" / f"block_{height}.json")
+    if not isinstance(data, dict):
+        return ""
+    header = data.get("block", {}).get("header", {})
+    value = header.get("time") if isinstance(header, dict) else ""
+    return "" if value is None else str(value)
+
+
 def record_count(value: Any) -> int:
     if isinstance(value, list):
         return len(value)
@@ -103,15 +137,25 @@ def build_events(epoch: int) -> list[dict[str, str]]:
     data = read_json(RAW_ROOT / f"epoch_{epoch}" / "cpoc_history" / "confirmation_poc_events.json")
     events = data.get("events", []) if isinstance(data, dict) else []
     rows: list[dict[str, str]] = []
+    epoch_start = epoch_start_height(epoch)
+    poc_start = poc_start_height(epoch)
     for event in events:
         if not isinstance(event, dict):
             continue
+        trigger_height = str(event.get("trigger_height", ""))
+        generation_start_height = str(event.get("generation_start_height", ""))
         rows.append(
             {
                 "epoch": str(epoch),
+                "epoch_start_height": epoch_start,
+                "epoch_start_time_utc": block_time_utc(epoch, epoch_start),
+                "poc_start_block_height": poc_start,
+                "poc_start_time_utc": block_time_utc(epoch, poc_start),
                 "event_sequence": str(event.get("event_sequence", "")),
-                "trigger_height": str(event.get("trigger_height", "")),
-                "generation_start_height": str(event.get("generation_start_height", "")),
+                "trigger_height": trigger_height,
+                "trigger_time_utc": block_time_utc(epoch, trigger_height),
+                "generation_start_height": generation_start_height,
+                "generation_start_time_utc": block_time_utc(epoch, generation_start_height),
                 "phase": str(event.get("phase", "")),
                 "poc_seed_block_hash": str(event.get("poc_seed_block_hash", "")),
             }
@@ -161,9 +205,15 @@ def build_model_matrix_rows(event_rows: list[dict[str, str]]) -> list[dict[str, 
         rows.append(
             {
                 "epoch": event["epoch"],
+                "epoch_start_height": event["epoch_start_height"],
+                "epoch_start_time_utc": event["epoch_start_time_utc"],
+                "poc_start_block_height": event["poc_start_block_height"],
+                "poc_start_time_utc": event["poc_start_time_utc"],
                 "event_sequence": event["event_sequence"],
                 "trigger_height": event["trigger_height"],
+                "trigger_time_utc": event["trigger_time_utc"],
                 "generation_start_height": event["generation_start_height"],
+                "generation_start_time_utc": event["generation_start_time_utc"],
                 "phase": event["phase"],
                 "kimi_confirmed_weight": weight.get("kimi_confirmed_node_weight", ""),
                 "kimi_preserved_weight": weight.get("kimi_preserved_node_weight", ""),
