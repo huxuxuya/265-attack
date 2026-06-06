@@ -15,6 +15,7 @@ OUTPUT_HISTORY = ROOT / "outputs" / "cpoc_confirmation_weight_history.csv"
 OUTPUT_KIMI_DELTA = ROOT / "outputs" / "kimi_cpoc_confirmation_drop_265.csv"
 OUTPUT_EFFECTS = ROOT / "outputs" / "per_cpoc_confirmation_effects.csv"
 OUTPUT_MODEL_PROGRESSION = ROOT / "outputs" / "model_confirmed_weight_progression.csv"
+OUTPUT_MODEL_PROGRESSION_WIDE = ROOT / "outputs" / "model_confirmed_weight_progression_wide.csv"
 
 MODEL_FILES = {
     "Kimi": "moonshotai_kimi_k2_6.json",
@@ -89,6 +90,34 @@ MODEL_PROGRESSION_COLUMNS = [
     "failed_participants",
     "confirmed_weight",
     "confirmed_weight_delta_from_previous_checkpoint",
+    "data_basis",
+]
+
+MODEL_PROGRESSION_WIDE_COLUMNS = [
+    "epoch",
+    "checkpoint",
+    "cpoc_sequence",
+    "height",
+    "time_utc_seconds",
+    "kimi_entry_weight",
+    "qwen_entry_weight",
+    "model_entry_weight_total",
+    "kimi_active",
+    "qwen_active",
+    "model_memberships_total",
+    "participants_union_total",
+    "kimi_passed",
+    "qwen_passed",
+    "passed_union_total",
+    "kimi_failed",
+    "qwen_failed",
+    "failed_union_total",
+    "kimi_confirmed_weight",
+    "qwen_confirmed_weight",
+    "confirmed_weight_union_total",
+    "kimi_delta",
+    "qwen_delta",
+    "confirmed_weight_union_delta",
     "data_basis",
 ]
 
@@ -314,6 +343,23 @@ def model_checkpoint(epoch: int, height: int, model: str) -> dict[str, int]:
     }
 
 
+def union_checkpoint(epoch: int, height: int) -> dict[str, int]:
+    addresses = set()
+    for model in MODEL_FILES:
+        addresses.update(model_addresses(epoch, model))
+    snapshot = snapshot_rows(epoch, height)
+    by_addr = {str(row["member_address"]): row for row in snapshot if row.get("member_address")}
+    rows = [by_addr[address] for address in addresses if address in by_addr]
+    passed = sum(1 for row in rows if confirmation_weight(row) > 0)
+    active = len(rows)
+    return {
+        "active_participants": active,
+        "passed_participants": passed,
+        "failed_participants": active - passed,
+        "confirmed_weight": sum(confirmation_weight(row) for row in rows),
+    }
+
+
 def model_progression_checkpoints(epoch: int) -> list[tuple[str, str, int]]:
     group = parent_group(epoch)
     rows: list[tuple[str, str, int]] = []
@@ -321,6 +367,58 @@ def model_progression_checkpoints(epoch: int) -> list[tuple[str, str, int]]:
         rows.append(("epoch_entry", "", int(group["effective_block_height"])))
     for sequence, height in sorted(AFTER_CPOC_HEIGHTS.get(epoch, {}).items()):
         rows.append((f"after_cpoc_{sequence}", str(sequence), height))
+    return rows
+
+
+def build_model_progression_wide_rows(epochs: list[int]) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    previous: dict[tuple[int, str], int] = {}
+    for epoch in epochs:
+        for checkpoint, sequence, height in model_progression_checkpoints(epoch):
+            kimi = model_checkpoint(epoch, height, "Kimi")
+            qwen = model_checkpoint(epoch, height, "Qwen")
+            union = union_checkpoint(epoch, height)
+            current = {
+                "Kimi": kimi["confirmed_weight"],
+                "Qwen": qwen["confirmed_weight"],
+                "Union": union["confirmed_weight"],
+            }
+            deltas = {}
+            for key, value in current.items():
+                previous_key = (epoch, key)
+                deltas[key] = "" if previous_key not in previous else str(value - previous[previous_key])
+                previous[previous_key] = value
+            kimi_entry = model_entry_weight(epoch, "Kimi")
+            qwen_entry = model_entry_weight(epoch, "Qwen")
+            rows.append(
+                {
+                    "epoch": str(epoch),
+                    "checkpoint": checkpoint,
+                    "cpoc_sequence": sequence,
+                    "height": str(height),
+                    "time_utc_seconds": time_utc_seconds(epoch, height),
+                    "kimi_entry_weight": str(kimi_entry),
+                    "qwen_entry_weight": str(qwen_entry),
+                    "model_entry_weight_total": str(kimi_entry + qwen_entry),
+                    "kimi_active": str(kimi["active_participants"]),
+                    "qwen_active": str(qwen["active_participants"]),
+                    "model_memberships_total": str(kimi["active_participants"] + qwen["active_participants"]),
+                    "participants_union_total": str(union["active_participants"]),
+                    "kimi_passed": str(kimi["passed_participants"]),
+                    "qwen_passed": str(qwen["passed_participants"]),
+                    "passed_union_total": str(union["passed_participants"]),
+                    "kimi_failed": str(kimi["failed_participants"]),
+                    "qwen_failed": str(qwen["failed_participants"]),
+                    "failed_union_total": str(union["failed_participants"]),
+                    "kimi_confirmed_weight": str(kimi["confirmed_weight"]),
+                    "qwen_confirmed_weight": str(qwen["confirmed_weight"]),
+                    "confirmed_weight_union_total": str(union["confirmed_weight"]),
+                    "kimi_delta": deltas["Kimi"],
+                    "qwen_delta": deltas["Qwen"],
+                    "confirmed_weight_union_delta": deltas["Union"],
+                    "data_basis": "model subgroup membership + parent epoch_group_data confirmation_weight; union totals de-duplicate shared model participants",
+                }
+            )
     return rows
 
 
@@ -434,14 +532,17 @@ def main() -> int:
     delta_rows = build_kimi_delta_rows()
     effect_rows = build_effect_rows([265, 266])
     model_progression_rows = build_model_progression_rows([265, 266])
+    model_progression_wide_rows = build_model_progression_wide_rows([265, 266])
     write_csv(OUTPUT_HISTORY, HISTORY_COLUMNS, history_rows)
     write_csv(OUTPUT_KIMI_DELTA, KIMI_DELTA_COLUMNS, delta_rows)
     write_csv(OUTPUT_EFFECTS, EFFECT_COLUMNS, effect_rows)
     write_csv(OUTPUT_MODEL_PROGRESSION, MODEL_PROGRESSION_COLUMNS, model_progression_rows)
+    write_csv(OUTPUT_MODEL_PROGRESSION_WIDE, MODEL_PROGRESSION_WIDE_COLUMNS, model_progression_wide_rows)
     print(f"Wrote {OUTPUT_HISTORY.relative_to(ROOT)} with {len(history_rows)} rows.")
     print(f"Wrote {OUTPUT_KIMI_DELTA.relative_to(ROOT)} with {len(delta_rows)} rows.")
     print(f"Wrote {OUTPUT_EFFECTS.relative_to(ROOT)} with {len(effect_rows)} rows.")
     print(f"Wrote {OUTPUT_MODEL_PROGRESSION.relative_to(ROOT)} with {len(model_progression_rows)} rows.")
+    print(f"Wrote {OUTPUT_MODEL_PROGRESSION_WIDE.relative_to(ROOT)} with {len(model_progression_wide_rows)} rows.")
     return 0
 
 

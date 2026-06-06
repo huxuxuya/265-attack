@@ -72,28 +72,20 @@ Reason notes:
 
 cPoC history and confirmation snapshots were fetched from the archive node configured by `GONKA_RPC_URL`; fetch scripts do not use any public-node fallback. Raw artifacts and SHA-256 hashes are recorded in [`manifests/cpoc_history_manifest.md`](manifests/cpoc_history_manifest.md), [`manifests/cpoc_block_headers_manifest.md`](manifests/cpoc_block_headers_manifest.md), and [`manifests/cpoc_confirmation_snapshots_manifest.md`](manifests/cpoc_confirmation_snapshots_manifest.md).
 
-Main progression table from [`outputs/model_confirmed_weight_progression.csv`](outputs/model_confirmed_weight_progression.csv):
+Main progression table from [`outputs/model_confirmed_weight_progression_wide.csv`](outputs/model_confirmed_weight_progression_wide.csv):
 
-| epoch | checkpoint | height | UTC | model | entry weight | active | passed | failed | confirmed weight | delta |
-|---:|---|---:|---|---|---:|---:|---:|---:|---:|---:|
-| 265 | epoch_entry | 4,090,370 | 2026-05-15T23:22:59Z | Kimi | 377,276 | 20 | 20 | 0 | 640,858 |  |
-| 265 | epoch_entry | 4,090,370 | 2026-05-15T23:22:59Z | Qwen | 1,227,899 | 41 | 41 | 0 | 740,929 |  |
-| 265 | after_cpoc_0 | 4,095,963 | 2026-05-16T07:18:59Z | Kimi | 377,276 | 20 | 15 | 5 | 487,205 | -153,653 |
-| 265 | after_cpoc_0 | 4,095,963 | 2026-05-16T07:18:59Z | Qwen | 1,227,899 | 41 | 38 | 3 | 624,122 | -116,807 |
-| 265 | after_cpoc_1 | 4,099,160 | 2026-05-16T11:49:56Z | Kimi | 377,276 | 20 | 15 | 5 | 469,669 | -17,536 |
-| 265 | after_cpoc_1 | 4,099,160 | 2026-05-16T11:49:56Z | Qwen | 1,227,899 | 41 | 38 | 3 | 612,369 | -11,753 |
-| 265 | after_cpoc_2 | 4,103,171 | 2026-05-16T17:29:07Z | Kimi | 377,276 | 20 | 14 | 6 | 375,972 | -93,697 |
-| 265 | after_cpoc_2 | 4,103,171 | 2026-05-16T17:29:07Z | Qwen | 1,227,899 | 41 | 37 | 4 | 508,838 | -103,531 |
-| 266 | epoch_entry | 4,105,761 | 2026-05-16T21:05:03Z | Kimi | 59,933 | 8 | 8 | 0 | 115,164 |  |
-| 266 | epoch_entry | 4,105,761 | 2026-05-16T21:05:03Z | Qwen | 886,097 | 40 | 40 | 0 | 334,904 |  |
-| 266 | after_cpoc_0 | 4,115,375 | 2026-05-17T10:41:34Z | Kimi | 59,933 | 8 | 8 | 0 | 115,022 | -142 |
-| 266 | after_cpoc_0 | 4,115,375 | 2026-05-17T10:41:34Z | Qwen | 886,097 | 40 | 34 | 6 | 317,276 | -17,628 |
-| 266 | after_cpoc_1 | 4,117,265 | 2026-05-17T13:21:54Z | Kimi | 59,933 | 8 | 8 | 0 | 113,940 | -1,082 |
-| 266 | after_cpoc_1 | 4,117,265 | 2026-05-17T13:21:54Z | Qwen | 886,097 | 40 | 33 | 7 | 313,238 | -4,038 |
-| 266 | after_cpoc_2 | 4,118,384 | 2026-05-17T14:56:50Z | Kimi | 59,933 | 8 | 8 | 0 | 111,574 | -2,366 |
-| 266 | after_cpoc_2 | 4,118,384 | 2026-05-17T14:56:50Z | Qwen | 886,097 | 40 | 33 | 7 | 312,409 | -829 |
+| epoch | checkpoint | height | UTC | Kimi entry | Qwen entry | total entry | Kimi passed/active | Qwen passed/active | total passed/active | Kimi confirmed | Qwen confirmed | total confirmed | total delta |
+|---:|---|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 265 | epoch_entry | 4,090,370 | 2026-05-15T23:22:59Z | 377,276 | 1,227,899 | 1,605,175 | 20/20 | 41/41 | 51/51 | 640,858 | 740,929 | 917,306 |  |
+| 265 | after_cpoc_0 | 4,095,963 | 2026-05-16T07:18:59Z | 377,276 | 1,227,899 | 1,605,175 | 15/20 | 38/41 | 43/51 | 487,205 | 624,122 | 739,681 | -177,625 |
+| 265 | after_cpoc_1 | 4,099,160 | 2026-05-16T11:49:56Z | 377,276 | 1,227,899 | 1,605,175 | 15/20 | 38/41 | 43/51 | 469,669 | 612,369 | 720,517 | -19,164 |
+| 265 | after_cpoc_2 | 4,103,171 | 2026-05-16T17:29:07Z | 377,276 | 1,227,899 | 1,605,175 | 14/20 | 37/41 | 41/51 | 375,972 | 508,838 | 609,918 | -110,599 |
+| 266 | epoch_entry | 4,105,761 | 2026-05-16T21:05:03Z | 59,933 | 886,097 | 946,030 | 8/8 | 40/40 | 45/45 | 115,164 | 334,904 | 393,991 |  |
+| 266 | after_cpoc_0 | 4,115,375 | 2026-05-17T10:41:34Z | 59,933 | 886,097 | 946,030 | 8/8 | 34/40 | 39/45 | 115,022 | 317,276 | 376,221 | -17,770 |
+| 266 | after_cpoc_1 | 4,117,265 | 2026-05-17T13:21:54Z | 59,933 | 886,097 | 946,030 | 8/8 | 33/40 | 38/45 | 113,940 | 313,238 | 371,996 | -4,225 |
+| 266 | after_cpoc_2 | 4,118,384 | 2026-05-17T14:56:50Z | 59,933 | 886,097 | 946,030 | 8/8 | 33/40 | 38/45 | 111,574 | 312,409 | 369,530 | -2,466 |
 
-`entry weight` is the model subgroup PoC entry weight at epoch entry. `confirmed weight` is the parent epoch group's `validation_weights[].confirmation_weight` summed over the addresses active in that model. `passed` means active model participants with `confirmation_weight > 0` at that checkpoint. The `after_cpoc_*` rows use the first saved height where the cPoC result is visible in parent chain state.
+`entry` is model subgroup PoC entry weight at epoch entry. `confirmed` is parent `validation_weights[].confirmation_weight` summed over addresses active in that model. `total` de-duplicates addresses that are active in both Kimi and Qwen, so it can be lower than `Kimi + Qwen`. The `after_cpoc_*` rows use the first saved height where the cPoC result is visible in parent chain state.
 
 For the epoch 265 claim, the key row is Kimi `after_cpoc_2`: confirmed weight `469,669 -> 375,972` from the previous checkpoint, with passed participants `15 -> 14`. Address-level severe drops are in [`outputs/kimi_cpoc_confirmation_drop_265.csv`](outputs/kimi_cpoc_confirmation_drop_265.csv).
 
@@ -154,7 +146,8 @@ python3 scripts/fetch_raw_data.py --epochs 265 266
 - `outputs/model_cpoc_weight_table.csv`: host-level model subgroup PoC/cPoC weights.
 - `outputs/model_cpoc_weight_summary.csv`: per-epoch per-model aggregate weights.
 - `outputs/model_cpoc_epoch_matrix.csv`: compact per-epoch Kimi/Qwen matrix.
-- `outputs/model_confirmed_weight_progression.csv`: main cPoC progression by epoch, model, checkpoint, height, active/passed participants, entry weight, and confirmed weight.
+- `outputs/model_confirmed_weight_progression_wide.csv`: main cPoC progression by epoch/checkpoint with Kimi, Qwen, and de-duplicated total columns.
+- `outputs/model_confirmed_weight_progression.csv`: long-form version of the main progression table.
 - `outputs/epoch_entry_context.csv`, `outputs/cpoc_events.csv`, `outputs/cpoc_history_endpoint_summary.csv`, `outputs/cpoc_event_model_weight_matrix.csv`, `outputs/cpoc_confirmation_weight_history.csv`, `outputs/per_cpoc_confirmation_effects.csv`, `outputs/kimi_cpoc_confirmation_drop_265.csv`: audit/detail tables behind the main progression table.
 - `outputs/gov_settlement_audit.csv`: comparison of formula remainder, gov balance movements, and paid rewards.
 - `outputs/not_received_hosts_detail.csv`: per-host zero-reward detail with reason and proof-grade amount status.
