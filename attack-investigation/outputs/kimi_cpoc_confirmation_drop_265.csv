@@ -1,0 +1,7 @@
+epoch,address,before_height,before_confirmation_weight,after_height,after_confirmation_weight,delta_confirmation_weight,drop_pct,weight_at_after_height,reputation_at_after_height,severity
+265,gonka168rtjfkszuhcggg4dfyse4yh7xn9zwfglnkns2,4102892,12437,4103171,12431,-6,0.000482,12499,100,small_change
+265,gonka17pw6099q758qwzewtrqmqpf5c2lrhr97fwqexu,4102892,186719,4103171,172607,-14112,0.075579,189884,100,small_change
+265,gonka1830lqug50lse998x2lakk4pj5ypfumz5pasz0y,4102892,7031,4103171,0,-7031,1.000000,13490,88,severe_drop
+265,gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk,4102892,7870,4103171,1347,-6523,0.828844,96900,100,severe_drop
+265,gonka1j7x6dv42xehe9e5au4ku3wvzwtqlegfjhlvzj6,4102892,66311,4103171,323,-65988,0.995129,66311,16,severe_drop
+265,gonka1wkgawwdzj623ss8eywayzdj6qcgr2llygactje,4102892,7532,4103171,7495,-37,0.004912,7264,0,small_change

@@ -100,6 +100,15 @@ For model cPoC tables, `preserved_node_weight` is calculated by matching subgrou
 These tables distinguish available event-level cPoC history from missing stage-level participant validation/commit rows. Empty endpoint responses are reported as data availability facts, not converted into host-level failure reasons.
 The model weights repeat for cPoC events inside the same epoch because the available chain data gives event history and epoch model snapshots, but not per-event participant validation rows.
 
+`fetch_cpoc_confirmation_snapshots.py` saves historical parent `epoch_group_data/{epoch}` snapshots at epoch start, cPoC generation-start heights, selected claim-check heights, and epoch last height. It also saves block headers for those heights and records SHA-256 entries in `manifests/cpoc_confirmation_snapshots_manifest.md`.
+
+`build_cpoc_confirmation_history.py` builds:
+
+- `cpoc_confirmation_weight_history.csv`: parent and Kimi-subset sums of `validation_weights[].confirmation_weight` at each saved height;
+- `kimi_cpoc_confirmation_drop_265.csv`: address-level Kimi `confirmation_weight` deltas from height `4102892` to claimed drop height `4103171`.
+
+This is separate from model subgroup `poc_weight` and preserved-node tables. A cPoC confirmation degradation can appear in parent `confirmation_weight` while model subgroup entry `poc_weight` remains unchanged.
+
 `build_reward_status_tables.py` builds:
 
 - `not_received_hosts_detail.csv`: every host with `rewarded_coins = 0`, the reason class, direct chain received amount, and proof-grade amount status;

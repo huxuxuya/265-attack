@@ -125,6 +125,38 @@ Per-cPoC model weight matrix from [`outputs/cpoc_event_model_weight_matrix.csv`]
 
 The weights in this matrix are `event + epoch model weight snapshot`, not per-event participant validation rows. They repeat inside an epoch because the archive endpoints returned cPoC events, while stage-level participant/commit endpoints did not return per-event host rows for epochs 265 and 266.
 
+## cPoC Confirmation Weight Drop
+
+The model weight tables above use model subgroup `poc_weight` and preserved-node snapshots. The claimed epoch 265 CPoC degradation is visible in the parent epoch group's `validation_weights[].confirmation_weight`, not in the model subgroup `poc_weight` totals. Historical parent snapshots were saved under `raw_chain_cache/*/cpoc_confirmation_snapshots/` and hashed in [`manifests/cpoc_confirmation_snapshots_manifest.md`](manifests/cpoc_confirmation_snapshots_manifest.md).
+
+Confirmation-weight history from [`outputs/cpoc_confirmation_weight_history.csv`](outputs/cpoc_confirmation_weight_history.csv):
+
+| epoch | height | UTC | stage | parent confirmation weight | parent zero confirmation | Kimi confirmation weight | Kimi zero confirmation |
+|---:|---:|---|---|---:|---:|---:|---:|
+| 265 | 4,090,370 | 2026-05-15T23:22:59.307709486Z | epoch_start | 917,306 | 0 | 640,858 | 0 |
+| 265 | 4,095,684 | 2026-05-16T06:55:12.342855969Z | cpoc_0_generation_start | 917,306 | 0 | 640,858 | 0 |
+| 265 | 4,098,881 | 2026-05-16T11:26:12.807058766Z | cpoc_1_generation_start | 739,681 | 8 | 487,205 | 5 |
+| 265 | 4,102,892 | 2026-05-16T17:05:28.860049742Z | cpoc_2_generation_start | 720,517 | 8 | 469,669 | 5 |
+| 265 | 4,103,171 | 2026-05-16T17:29:07.824615184Z | claimed_drop_height | 609,918 | 10 | 375,972 | 6 |
+| 265 | 4,105,760 | 2026-05-16T21:04:58.191657980Z | epoch_last | 609,918 | 10 | 375,972 | 6 |
+| 266 | 4,105,761 | 2026-05-16T21:05:03.752208771Z | epoch_start | 393,991 | 1 | 115,164 | 0 |
+| 266 | 4,115,096 | 2026-05-17T10:17:47.361110040Z | cpoc_0_generation_start | 393,991 | 1 | 115,164 | 0 |
+| 266 | 4,116,986 | 2026-05-17T12:58:08.366589465Z | cpoc_1_generation_start | 376,221 | 7 | 115,022 | 0 |
+| 266 | 4,118,105 | 2026-05-17T14:33:05.401916199Z | cpoc_2_generation_start | 371,996 | 8 | 113,940 | 0 |
+| 266 | 4,121,151 | 2026-05-17T18:51:39.177841027Z | epoch_last | 369,530 | 8 | 111,574 | 0 |
+
+At the claimed epoch 265 height `4,103,171`, parent confirmation weight drops `720,517 -> 609,918` from the previous cPoC generation snapshot. Kimi confirmation weight drops `469,669 -> 375,972`.
+
+Severe Kimi drops at `4,103,171` from [`outputs/kimi_cpoc_confirmation_drop_265.csv`](outputs/kimi_cpoc_confirmation_drop_265.csv):
+
+| address | before height | before confirmation | after height | after confirmation | delta | drop pct | after weight | after reputation |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| gonka1830lqug50lse998x2lakk4pj5ypfumz5pasz0y | 4,102,892 | 7,031 | 4,103,171 | 0 | -7,031 | 100.000000% | 13,490 | 88 |
+| gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk | 4,102,892 | 7,870 | 4,103,171 | 1,347 | -6,523 | 82.884400% | 96,900 | 100 |
+| gonka1j7x6dv42xehe9e5au4ku3wvzwtqlegfjhlvzj6 | 4,102,892 | 66,311 | 4,103,171 | 323 | -65,988 | 99.512900% | 66,311 | 16 |
+
+This matches the "3 participants affected" claim if "affected" means severe Kimi `confirmation_weight` degradation at the claimed height. It does not mean the Kimi `poc_weight` entry total dropped inside epoch 265; that entry weight remains stable in the model subgroup table.
+
 Endpoint availability summary from [`outputs/cpoc_history_endpoint_summary.csv`](outputs/cpoc_history_endpoint_summary.csv):
 
 | epoch | poc start height | confirmation events | validation snapshot | v2 validations | v2 commits | weight distributions | batches | legacy validations |
@@ -161,6 +193,8 @@ python3 scripts/build_model_cpoc_epoch_matrix.py
 python3 scripts/fetch_cpoc_history.py
 python3 scripts/fetch_cpoc_block_headers.py
 python3 scripts/build_cpoc_history_tables.py
+python3 scripts/fetch_cpoc_confirmation_snapshots.py
+python3 scripts/build_cpoc_confirmation_history.py
 python3 scripts/build_gov_settlement_audit.py
 python3 scripts/build_reward_status_tables.py
 ```
@@ -193,6 +227,8 @@ python3 scripts/fetch_raw_data.py --epochs 265 266
 - `outputs/cpoc_events.csv`: per-cPoC confirmation event history with epoch start and UTC block times.
 - `outputs/cpoc_history_endpoint_summary.csv`: cPoC endpoint availability and record counts.
 - `outputs/cpoc_event_model_weight_matrix.csv`: per-cPoC event rows with UTC times and epoch-level Kimi/Qwen confirmed, preserved, and total weights.
+- `outputs/cpoc_confirmation_weight_history.csv`: historical parent/Kimi `confirmation_weight` sums across cPoC heights.
+- `outputs/kimi_cpoc_confirmation_drop_265.csv`: address-level Kimi `confirmation_weight` deltas around the claimed epoch 265 drop height.
 - `outputs/gov_settlement_audit.csv`: comparison of formula remainder, gov balance movements, and paid rewards.
 - `outputs/not_received_hosts_detail.csv`: per-host zero-reward detail with reason and proof-grade amount status.
 - `outputs/reward_status_count_summary.csv`: per-epoch and total counts by received/not-received reason.
