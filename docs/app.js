@@ -44,7 +44,8 @@ function renderKpis(data) {
     ["Epoch reward pool", fmtGnk(totals.epochRewardPoolGnk), "GONKA scheduled for settlement"],
     ["Paid to miners", fmtGnk(totals.paidRewardsGnk), "Exact rewarded_coins sum"],
     ["Not distributed", fmtGnk(totals.unpaidPoolGnk), "Exact settlement remainder"],
-    ["Source compensation", fmtGnk(totals.sourceCompensationGnk), "counterfactual model"],
+    ["Vote #67 paid", fmtGnk(totals.vote67PaidGnk), "e265 fixed amount"],
+    ["Drop loss", fmtGnk(totals.dropLossGnk), "observed cPoC2 weight loss"],
     ["Participants", `${totals.finalGroupCount}/${totals.participantsTotal}`, "final group / total"],
     ["Kimi confirmed drop", fmtInt(kimiDrop), "entry to after cPoC 2"],
   ];
@@ -218,7 +219,8 @@ function renderNodes() {
           <td>${modelStackCell(node, "after_cpoc_1")}</td>
           <td>${modelStackCell(node, "after_cpoc_2")}</td>
           <td class="negative">${fmtInt(node.totalPositiveDrop)}</td>
-          <td title="${node.sourceCompensationBasis}"><strong>${fmtGnk(node.sourceCompensationGnk)}</strong></td>
+          <td title="${node.vote67PaidBasis}"><strong>${fmtGnk(node.vote67PaidGnk)}</strong></td>
+          <td title="${node.dropLossBasis}"><strong>${fmtGnk(node.dropLossGnk)}</strong></td>
           <td>${fmtGnk(node.paidGnk)}</td>
           <td>${fmtInt(node.missedRequests)} / ${fmtInt(node.invalidatedInferences)}</td>
         </tr>

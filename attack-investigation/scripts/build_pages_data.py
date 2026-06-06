@@ -396,9 +396,16 @@ def build_nodes(unpaid_pool_gnk: Decimal) -> tuple[list[dict[str, Any]], dict[st
         source_weight = as_decimal(entry_row.get("weight"))
         correct_reward_raw = Decimal("0")
         compensation_raw = Decimal("0")
+        drop_loss_raw = Decimal("0")
+        healthy_confirmation = Decimal("0")
+        end_confirmation = Decimal("0")
         if address in E265_SOURCE_COMPENSATION_ADDRESSES and total_epoch_weight > 0:
             correct_reward_raw = reward_raw * source_weight / total_epoch_weight
             compensation_raw = max(Decimal("0"), correct_reward_raw - rewarded_ngnk)
+            healthy_confirmation = as_decimal(snapshots["after_cpoc_1"].get(address, {}).get("confirmation_weight"))
+            end_confirmation = as_decimal(snapshots["after_cpoc_2"].get(address, {}).get("confirmation_weight"))
+            drop_loss_weight = max(Decimal("0"), healthy_confirmation - end_confirmation)
+            drop_loss_raw = reward_raw * drop_loss_weight / total_epoch_weight
         raw_nodes.append(
             {
                 "address": address,
@@ -415,6 +422,16 @@ def build_nodes(unpaid_pool_gnk: Decimal) -> tuple[list[dict[str, Any]], dict[st
                 "sourceCompensationWeight": int(source_weight),
                 "sourceCorrectRewardGnk": money(from_ngonka(correct_reward_raw)),
                 "sourceCompensationGnk": money(from_ngonka(compensation_raw)),
+                "vote67PaidGnk": money(from_ngonka(compensation_raw)),
+                "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+                "dropLossGnk": money(from_ngonka(drop_loss_raw)),
+                "dropLossWeight": int(max(Decimal("0"), healthy_confirmation - end_confirmation)),
+                "dropLossBasis": (
+                    "Observed cPoC drop loss: max(0, healthy confirmation before cPoC2 - end confirmation after cPoC2) "
+                    "/ total epoch weight * epoch reward."
+                    if drop_loss_raw > 0
+                    else "No e265 cPoC2 drop-loss calculation for this address."
+                ),
                 "sourceCompensationBasis": (
                     "E265 source model: max(0, entry weight / total epoch weight * epoch reward - actual rewards)."
                     if compensation_raw > 0
@@ -458,10 +475,13 @@ def build_nodes(unpaid_pool_gnk: Decimal) -> tuple[list[dict[str, Any]], dict[st
         )
 
     source_compensation_total = sum(as_decimal(row["sourceCompensationGnk"]) for row in raw_nodes)
+    drop_loss_total = sum(as_decimal(row["dropLossGnk"]) for row in raw_nodes)
     return raw_nodes, {
         "totalPositiveDrop": total_positive_drop,
         "checkpointEstimates": checkpoint_estimates,
         "sourceCompensationTotalGnk": money(source_compensation_total),
+        "vote67PaidTotalGnk": money(source_compensation_total),
+        "dropLossTotalGnk": money(drop_loss_total),
         "sourceCompensationCheckpoint": "after_cpoc_2",
         "sourceCompensationBasis": (
             "E265 source model from votkon/gonka-kimi-restitution: max(0, entry weight / total epoch weight "
@@ -514,12 +534,15 @@ def main() -> None:
     nodes.sort(
         key=lambda item: (
             as_decimal(item["sourceCompensationGnk"]),
+            as_decimal(item["dropLossGnk"]),
             as_decimal(item["estimatedLostGnk"]),
             item["totalPositiveDrop"],
         ),
         reverse=True,
     )
     totals["sourceCompensationGnk"] = payout["sourceCompensationTotalGnk"]
+    totals["vote67PaidGnk"] = payout["vote67PaidTotalGnk"]
+    totals["dropLossGnk"] = payout["dropLossTotalGnk"]
     data = {
         "metadata": {
             "title": "Epoch 265 cPoC attack timeline",

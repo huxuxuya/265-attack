@@ -1,5 +1,6 @@
 {
   "epochTotals": {
+    "dropLossGnk": "27457.515490",
     "epoch": 265,
     "epochRewardPoolGnk": "284932.503736",
     "finalGroupCount": 51,
@@ -10,7 +11,8 @@
     "rewardedCount": 37,
     "sourceCompensationGnk": "30592.104862",
     "unpaidPoolBasis": "Exact chain settlement remainder; not per-host allocation.",
-    "unpaidPoolGnk": "99367.459995"
+    "unpaidPoolGnk": "99367.459995",
+    "vote67PaidGnk": "30592.104862"
   },
   "events": [
     {
@@ -291,6 +293,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "Observed cPoC drop loss: max(0, healthy confirmation before cPoC2 - end confirmation after cPoC2) / total epoch weight * epoch reward.",
+      "dropLossGnk": "20794.740473",
+      "dropLossWeight": 65988,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "21331.541733",
       "inferenceCount": 45444,
@@ -410,6 +415,8 @@
       "totalNegativeDelta": -65988,
       "totalPositiveDrop": 65988,
       "validatedInferences": 45437,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "20896.527179",
       "worstSeverity": "severe_drop"
     },
     {
@@ -457,6 +464,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: max(0, healthy confirmation before cPoC2 - end confirmation after cPoC2) / total epoch weight * epoch reward.",
+      "dropLossGnk": "4447.102163",
+      "dropLossWeight": 14112,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "5585.031317",
       "inferenceCount": 127237,
@@ -680,6 +690,8 @@
       "totalNegativeDelta": -17277,
       "totalPositiveDrop": 17277,
       "validatedInferences": 127237,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "5444.485833",
       "worstSeverity": "small_drop"
     },
     {
@@ -727,6 +739,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "Observed cPoC drop loss: max(0, healthy confirmation before cPoC2 - end confirmation after cPoC2) / total epoch weight * epoch reward.",
+      "dropLossGnk": "2215.672854",
+      "dropLossWeight": 7031,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "4590.348133",
       "inferenceCount": 5394,
@@ -796,6 +811,8 @@
       "totalNegativeDelta": -14200,
       "totalPositiveDrop": 14200,
       "validatedInferences": 5386,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "4251.091850",
       "worstSeverity": "severe_drop"
     },
     {
@@ -843,6 +860,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "30888.840504",
       "inferenceCount": 22976,
@@ -1054,6 +1074,8 @@
       "totalNegativeDelta": -95553,
       "totalPositiveDrop": 95553,
       "validatedInferences": 22969,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "severe_drop"
     },
     {
@@ -1101,6 +1123,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "5013.823912",
       "inferenceCount": 2856,
@@ -1226,6 +1251,8 @@
       "totalNegativeDelta": -15510,
       "totalPositiveDrop": 15510,
       "validatedInferences": 2856,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "severe_drop"
     },
     {
@@ -1273,6 +1300,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "4860.273534",
       "inferenceCount": 7222,
@@ -1342,6 +1372,8 @@
       "totalNegativeDelta": -15035,
       "totalPositiveDrop": 15035,
       "validatedInferences": 7222,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "severe_drop"
     },
     {
@@ -1389,6 +1421,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "4719.976978",
       "inferenceCount": 6599,
@@ -1458,6 +1493,8 @@
       "totalNegativeDelta": -14601,
       "totalPositiveDrop": 14601,
       "validatedInferences": 6600,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "severe_drop"
     },
     {
@@ -1505,6 +1542,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "3853.629584",
       "inferenceCount": 3177,
@@ -1590,6 +1630,8 @@
       "totalNegativeDelta": -11921,
       "totalPositiveDrop": 11921,
       "validatedInferences": 3138,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "severe_drop"
     },
     {
@@ -1637,6 +1679,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "2953.662739",
       "inferenceCount": 55808,
@@ -1726,6 +1771,8 @@
       "totalNegativeDelta": -9137,
       "totalPositiveDrop": 9137,
       "validatedInferences": 55796,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -1773,6 +1820,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "2494.951190",
       "inferenceCount": 2703,
@@ -1880,6 +1930,8 @@
       "totalNegativeDelta": -7718,
       "totalPositiveDrop": 7718,
       "validatedInferences": 2703,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "moderate_drop"
     },
     {
@@ -1927,6 +1979,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "2447.754652",
       "inferenceCount": 3360,
@@ -1992,6 +2047,8 @@
       "totalNegativeDelta": -7572,
       "totalPositiveDrop": 7572,
       "validatedInferences": 3360,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "severe_drop"
     },
     {
@@ -2039,6 +2096,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "2412.518881",
       "inferenceCount": 3193,
@@ -2104,6 +2164,8 @@
       "totalNegativeDelta": -7463,
       "totalPositiveDrop": 7463,
       "validatedInferences": 3193,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "severe_drop"
     },
     {
@@ -2151,6 +2213,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "2283.213300",
       "inferenceCount": 2054,
@@ -2216,6 +2281,8 @@
       "totalNegativeDelta": -7063,
       "totalPositiveDrop": 7063,
       "validatedInferences": 2054,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "severe_drop"
     },
     {
@@ -2263,6 +2330,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "2154.554247",
       "inferenceCount": 974,
@@ -2336,6 +2406,8 @@
       "totalNegativeDelta": -6665,
       "totalPositiveDrop": 6665,
       "validatedInferences": 974,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "severe_drop"
     },
     {
@@ -2383,6 +2455,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "846.305029",
       "inferenceCount": 11620,
@@ -2538,6 +2613,8 @@
       "totalNegativeDelta": -2618,
       "totalPositiveDrop": 2618,
       "validatedInferences": 11595,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -2585,6 +2662,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "817.857801",
       "inferenceCount": 37997,
@@ -2798,6 +2878,8 @@
       "totalNegativeDelta": -2530,
       "totalPositiveDrop": 2530,
       "validatedInferences": 37997,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -2845,6 +2927,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "466.469884",
       "inferenceCount": 5979,
@@ -2938,6 +3023,8 @@
       "totalNegativeDelta": -1443,
       "totalPositiveDrop": 1443,
       "validatedInferences": 5933,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -2985,6 +3072,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "359.146252",
       "inferenceCount": 2647,
@@ -3074,6 +3164,8 @@
       "totalNegativeDelta": -1111,
       "totalPositiveDrop": 1111,
       "validatedInferences": 2647,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -3121,6 +3213,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "334.578191",
       "inferenceCount": 0,
@@ -3186,6 +3281,8 @@
       "totalNegativeDelta": -1035,
       "totalPositiveDrop": 1035,
       "validatedInferences": 0,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "severe_drop"
     },
     {
@@ -3233,6 +3330,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "329.082704",
       "inferenceCount": 212,
@@ -3298,6 +3398,8 @@
       "totalNegativeDelta": -1018,
       "totalPositiveDrop": 1018,
       "validatedInferences": 212,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "severe_drop"
     },
     {
@@ -3345,6 +3447,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "127.042734",
       "inferenceCount": 810,
@@ -3410,6 +3515,8 @@
       "totalNegativeDelta": -393,
       "totalPositiveDrop": 393,
       "validatedInferences": 810,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "moderate_drop"
     },
     {
@@ -3457,6 +3564,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "99.888561",
       "inferenceCount": 14619,
@@ -3568,6 +3678,8 @@
       "totalNegativeDelta": -309,
       "totalPositiveDrop": 309,
       "validatedInferences": 14619,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -3615,6 +3727,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "84.048628",
       "inferenceCount": 2677,
@@ -3700,6 +3815,8 @@
       "totalNegativeDelta": -260,
       "totalPositiveDrop": 260,
       "validatedInferences": 2677,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -3747,6 +3864,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "81.139252",
       "inferenceCount": 192,
@@ -3812,6 +3932,8 @@
       "totalNegativeDelta": -251,
       "totalPositiveDrop": 251,
       "validatedInferences": 192,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "moderate_drop"
     },
     {
@@ -3859,6 +3981,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "48.812857",
       "inferenceCount": 1285,
@@ -3924,6 +4049,8 @@
       "totalNegativeDelta": -151,
       "totalPositiveDrop": 151,
       "validatedInferences": 1285,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -3971,6 +4098,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "35.559035",
       "inferenceCount": 484,
@@ -4036,6 +4166,8 @@
       "totalNegativeDelta": -110,
       "totalPositiveDrop": 110,
       "validatedInferences": 484,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -4083,6 +4215,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "28.770492",
       "inferenceCount": 215,
@@ -4152,6 +4287,8 @@
       "totalNegativeDelta": -89,
       "totalPositiveDrop": 89,
       "validatedInferences": 215,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -4199,6 +4336,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "24.891324",
       "inferenceCount": 2796,
@@ -4306,6 +4446,8 @@
       "totalNegativeDelta": -77,
       "totalPositiveDrop": 77,
       "validatedInferences": 2796,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -4353,6 +4495,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "24.244796",
       "inferenceCount": 3295,
@@ -4418,6 +4563,8 @@
       "totalNegativeDelta": -75,
       "totalPositiveDrop": 75,
       "validatedInferences": 3295,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -4465,6 +4612,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "22.628477",
       "inferenceCount": 0,
@@ -4530,6 +4680,8 @@
       "totalNegativeDelta": -70,
       "totalPositiveDrop": 70,
       "validatedInferences": 0,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -4577,6 +4729,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "13.900350",
       "inferenceCount": 4119,
@@ -4684,6 +4839,8 @@
       "totalNegativeDelta": -43,
       "totalPositiveDrop": 43,
       "validatedInferences": 4119,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -4731,6 +4888,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "9.051391",
       "inferenceCount": 1816,
@@ -4796,6 +4956,8 @@
       "totalNegativeDelta": -28,
       "totalPositiveDrop": 28,
       "validatedInferences": 1816,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -4843,6 +5005,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "8.081599",
       "inferenceCount": 0,
@@ -4908,6 +5073,8 @@
       "totalNegativeDelta": -25,
       "totalPositiveDrop": 25,
       "validatedInferences": 0,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -4955,6 +5122,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "7.111807",
       "inferenceCount": 0,
@@ -5020,6 +5190,8 @@
       "totalNegativeDelta": -22,
       "totalPositiveDrop": 22,
       "validatedInferences": 0,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -5067,6 +5239,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "2.909376",
       "inferenceCount": 202,
@@ -5132,6 +5307,8 @@
       "totalNegativeDelta": -9,
       "totalPositiveDrop": 9,
       "validatedInferences": 202,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -5179,6 +5356,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "2.909376",
       "inferenceCount": 213,
@@ -5244,6 +5424,8 @@
       "totalNegativeDelta": -9,
       "totalPositiveDrop": 9,
       "validatedInferences": 213,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -5291,6 +5473,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "1.939584",
       "inferenceCount": 10148,
@@ -5398,6 +5583,8 @@
       "totalNegativeDelta": -6,
       "totalPositiveDrop": 6,
       "validatedInferences": 10135,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -5445,6 +5632,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
       "estimatedLostGnk": "0.969792",
       "inferenceCount": 202,
@@ -5510,6 +5700,8 @@
       "totalNegativeDelta": -3,
       "totalPositiveDrop": 3,
       "validatedInferences": 202,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "small_drop"
     },
     {
@@ -5557,6 +5749,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 1958,
@@ -5626,6 +5821,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 1958,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -5673,6 +5870,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 2652,
@@ -5754,6 +5954,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 2604,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -5801,6 +6003,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 3052,
@@ -5866,6 +6071,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 3052,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -5913,6 +6120,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 1799,
@@ -6006,6 +6216,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 1799,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -6053,6 +6265,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 192,
@@ -6118,6 +6333,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 192,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -6165,6 +6382,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 754,
@@ -6230,6 +6450,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 754,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -6277,6 +6499,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 194,
@@ -6342,6 +6567,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 194,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -6389,6 +6616,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 398,
@@ -6454,6 +6684,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 398,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -6501,6 +6733,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 0,
@@ -6521,6 +6756,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 0,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -6568,6 +6805,9 @@
         }
       ],
       "claimed": false,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 0,
@@ -6588,6 +6828,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 0,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -6635,6 +6877,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 201,
@@ -6700,6 +6945,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 201,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -6747,6 +6994,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 1395,
@@ -6816,6 +7066,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 1395,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -6863,6 +7115,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 197,
@@ -6928,6 +7183,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 197,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -6975,6 +7232,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 0,
@@ -7040,6 +7300,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 0,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     },
     {
@@ -7087,6 +7349,9 @@
         }
       ],
       "claimed": true,
+      "dropLossBasis": "No e265 cPoC2 drop-loss calculation for this address.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
       "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
       "estimatedLostGnk": "0.000000",
       "inferenceCount": 1497,
@@ -7194,6 +7459,8 @@
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 1497,
+      "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
+      "vote67PaidGnk": "0.000000",
       "worstSeverity": "stable_or_gain"
     }
   ],
@@ -7216,11 +7483,13 @@
         "positiveDrop": 110599
       }
     ],
+    "dropLossTotalGnk": "27457.515490",
     "precision": "Estimate only; proof-grade per-host amount requires settlement replay.",
     "sourceCompensationBasis": "E265 source model from votkon/gonka-kimi-restitution: max(0, entry weight / total epoch weight * epoch reward - actual rewards), using GONKA denom 1e9.",
     "sourceCompensationCheckpoint": "after_cpoc_2",
     "sourceCompensationTotalGnk": "30592.104862",
-    "totalPositiveDrop": 307388
+    "totalPositiveDrop": 307388,
+    "vote67PaidTotalGnk": "30592.104862"
   },
   "warnings": [
     "Source compensation is a counterfactual model, not a direct gov-wallet remainder allocation.",

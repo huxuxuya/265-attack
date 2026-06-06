@@ -275,7 +275,7 @@ main {
 
 table {
   width: 100%;
-  min-width: 920px;
+  min-width: 1000px;
   border-collapse: collapse;
   table-layout: fixed;
   font-size: 12px;
@@ -340,12 +340,14 @@ td:nth-child(8) {
 th:nth-child(9),
 td:nth-child(9),
 th:nth-child(10),
-td:nth-child(10) {
-  width: 104px;
-}
-
+td:nth-child(10),
 th:nth-child(11),
 td:nth-child(11) {
+  width: 92px;
+}
+
+th:nth-child(12),
+td:nth-child(12) {
   width: 72px;
 }
 
