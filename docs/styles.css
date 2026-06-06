@@ -360,7 +360,7 @@ tbody tr:hover {
 }
 
 tbody tr.vote67-row td {
-  background: #fff7ed;
+  background: #ecfdf5;
 }
 
 tbody tr.high-drop-row td {
@@ -368,12 +368,12 @@ tbody tr.high-drop-row td {
 }
 
 tbody tr.high-drop-row.vote67-row td {
-  background: #fff1f2;
+  background: #ecfdf5;
 }
 
 tbody tr.vote67-row td:nth-child(8) {
-  background: #ffedd5;
-  color: #9a3412;
+  background: #dcfce7;
+  color: #166534;
 }
 
 tbody tr.high-drop-row td:nth-child(7),
@@ -382,12 +382,15 @@ tbody tr.high-drop-row td:nth-child(8) {
 }
 
 tbody tr.vote67-row td:first-child {
-  background: #fff7ed;
+  background: #ecfdf5;
 }
 
-tbody tr.high-drop-row td:first-child,
-tbody tr.high-drop-row.vote67-row td:first-child {
+tbody tr.high-drop-row td:first-child {
   background: #fff1f2;
+}
+
+tbody tr.high-drop-row.vote67-row td:first-child {
+  background: #ecfdf5;
 }
 
 tbody tr:hover td,
@@ -397,7 +400,7 @@ tbody tr.high-drop-row:hover td {
 }
 
 tbody tr.vote67-row:hover td:nth-child(8) {
-  background: #ffedd5;
+  background: #dcfce7;
 }
 
 tfoot td {
