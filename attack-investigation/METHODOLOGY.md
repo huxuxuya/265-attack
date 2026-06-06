@@ -22,6 +22,18 @@ Every node request must be handled in this order:
 The build scripts read from `raw_chain_cache/` only. They do not query the node.
 The manifest redacts the configured node host as `<base-url>` so environment-provided node URLs are not committed.
 
+## Gov Balance Check
+
+`fetch_module_balance_deltas.py` collects module accounts and historical `ngonka` balances at:
+
+- epoch `effective_block_height`;
+- epoch `last_block_height`;
+- `last_block_height + 1`.
+
+It saves raw JSON under `raw_chain_cache/*/module_balances/`, records SHA-256 values in `manifests/module_balance_manifest.md`, and writes `outputs/module_balance_deltas.csv`.
+
+The key gov-wallet test is `delta_last_to_next_gnk` for the `gov` module. A zero value means the epoch-boundary balance delta does not confirm that the settlement remainder was transferred to the gov module account at that boundary.
+
 ## Chain summary fields
 
 `build_epoch_summary.py` derives:
