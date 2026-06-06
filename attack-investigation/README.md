@@ -74,18 +74,18 @@ cPoC history and confirmation snapshots were fetched from the archive node confi
 
 Main progression table from [`outputs/model_confirmed_weight_progression_wide.csv`](outputs/model_confirmed_weight_progression_wide.csv):
 
-| epoch | checkpoint | height | UTC | Kimi entry | Qwen entry | total entry | Kimi passed/active | Qwen passed/active | total passed/active | Kimi confirmed | Qwen confirmed | total confirmed | total delta |
-|---:|---|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 265 | epoch_entry | 4,090,370 | 2026-05-15T23:22:59Z | 377,276 | 1,227,899 | 1,605,175 | 20/20 | 41/41 | 51/51 | 640,858 | 740,929 | 917,306 |  |
-| 265 | after_cpoc_0 | 4,095,963 | 2026-05-16T07:18:59Z | 377,276 | 1,227,899 | 1,605,175 | 15/20 | 38/41 | 43/51 | 487,205 | 624,122 | 739,681 | -177,625 |
-| 265 | after_cpoc_1 | 4,099,160 | 2026-05-16T11:49:56Z | 377,276 | 1,227,899 | 1,605,175 | 15/20 | 38/41 | 43/51 | 469,669 | 612,369 | 720,517 | -19,164 |
-| 265 | after_cpoc_2 | 4,103,171 | 2026-05-16T17:29:07Z | 377,276 | 1,227,899 | 1,605,175 | 14/20 | 37/41 | 41/51 | 375,972 | 508,838 | 609,918 | -110,599 |
-| 266 | epoch_entry | 4,105,761 | 2026-05-16T21:05:03Z | 59,933 | 886,097 | 946,030 | 8/8 | 40/40 | 45/45 | 115,164 | 334,904 | 393,991 |  |
-| 266 | after_cpoc_0 | 4,115,375 | 2026-05-17T10:41:34Z | 59,933 | 886,097 | 946,030 | 8/8 | 34/40 | 39/45 | 115,022 | 317,276 | 376,221 | -17,770 |
-| 266 | after_cpoc_1 | 4,117,265 | 2026-05-17T13:21:54Z | 59,933 | 886,097 | 946,030 | 8/8 | 33/40 | 38/45 | 113,940 | 313,238 | 371,996 | -4,225 |
-| 266 | after_cpoc_2 | 4,118,384 | 2026-05-17T14:56:50Z | 59,933 | 886,097 | 946,030 | 8/8 | 33/40 | 38/45 | 111,574 | 312,409 | 369,530 | -2,466 |
+| epoch | checkpoint | height | UTC | Kimi entry | Qwen entry | total entry | Kimi passed/active | Qwen passed/active | total passed/active | Kimi confirmed | Kimi Δw/Δp | Qwen confirmed | Qwen Δw/Δp | total confirmed | total Δw/Δp |
+|---:|---|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 265 | epoch_entry | 4,090,370 | 2026-05-15T23:22:59Z | 377,276 | 1,227,899 | 1,605,175 | 20/20 | 41/41 | 51/51 | 640,858 |  | 740,929 |  | 917,306 |  |
+| 265 | after_cpoc_0 | 4,095,963 | 2026-05-16T07:18:59Z | 377,276 | 1,227,899 | 1,605,175 | 15/20 | 38/41 | 43/51 | 487,205 | -153,653/-5 | 624,122 | -116,807/-3 | 739,681 | -177,625/-8 |
+| 265 | after_cpoc_1 | 4,099,160 | 2026-05-16T11:49:56Z | 377,276 | 1,227,899 | 1,605,175 | 15/20 | 38/41 | 43/51 | 469,669 | -17,536/0 | 612,369 | -11,753/0 | 720,517 | -19,164/0 |
+| 265 | after_cpoc_2 | 4,103,171 | 2026-05-16T17:29:07Z | 377,276 | 1,227,899 | 1,605,175 | 14/20 | 37/41 | 41/51 | 375,972 | -93,697/-1 | 508,838 | -103,531/-1 | 609,918 | -110,599/-2 |
+| 266 | epoch_entry | 4,105,761 | 2026-05-16T21:05:03Z | 59,933 | 886,097 | 946,030 | 8/8 | 40/40 | 45/45 | 115,164 |  | 334,904 |  | 393,991 |  |
+| 266 | after_cpoc_0 | 4,115,375 | 2026-05-17T10:41:34Z | 59,933 | 886,097 | 946,030 | 8/8 | 34/40 | 39/45 | 115,022 | -142/0 | 317,276 | -17,628/-6 | 376,221 | -17,770/-6 |
+| 266 | after_cpoc_1 | 4,117,265 | 2026-05-17T13:21:54Z | 59,933 | 886,097 | 946,030 | 8/8 | 33/40 | 38/45 | 113,940 | -1,082/0 | 313,238 | -4,038/-1 | 371,996 | -4,225/-1 |
+| 266 | after_cpoc_2 | 4,118,384 | 2026-05-17T14:56:50Z | 59,933 | 886,097 | 946,030 | 8/8 | 33/40 | 38/45 | 111,574 | -2,366/0 | 312,409 | -829/0 | 369,530 | -2,466/0 |
 
-`entry` is model subgroup PoC entry weight at epoch entry. `confirmed` is parent `validation_weights[].confirmation_weight` summed over addresses active in that model. `total` de-duplicates addresses that are active in both Kimi and Qwen, so it can be lower than `Kimi + Qwen`. The `after_cpoc_*` rows use the first saved height where the cPoC result is visible in parent chain state.
+`entry` is model subgroup PoC entry weight at epoch entry. `confirmed` is parent `validation_weights[].confirmation_weight` summed over addresses active in that model. `Δw/Δp` is confirmed-weight delta and passed-participant delta from the previous checkpoint in the same epoch. `total` de-duplicates addresses that are active in both Kimi and Qwen, so it can be lower than `Kimi + Qwen`. The `after_cpoc_*` rows use the first saved height where the cPoC result is visible in parent chain state.
 
 For the epoch 265 claim, the key row is Kimi `after_cpoc_2`: confirmed weight `469,669 -> 375,972` from the previous checkpoint, with passed participants `15 -> 14`. Address-level severe drops are in [`outputs/kimi_cpoc_confirmation_drop_265.csv`](outputs/kimi_cpoc_confirmation_drop_265.csv).
 

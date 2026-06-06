@@ -118,6 +118,12 @@ MODEL_PROGRESSION_WIDE_COLUMNS = [
     "kimi_delta",
     "qwen_delta",
     "confirmed_weight_union_delta",
+    "kimi_passed_delta",
+    "qwen_passed_delta",
+    "passed_union_delta",
+    "kimi_failed_delta",
+    "qwen_failed_delta",
+    "failed_union_delta",
     "data_basis",
 ]
 
@@ -372,22 +378,50 @@ def model_progression_checkpoints(epoch: int) -> list[tuple[str, str, int]]:
 
 def build_model_progression_wide_rows(epochs: list[int]) -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
-    previous: dict[tuple[int, str], int] = {}
+    previous_weight: dict[tuple[int, str], int] = {}
+    previous_passed: dict[tuple[int, str], int] = {}
+    previous_failed: dict[tuple[int, str], int] = {}
     for epoch in epochs:
         for checkpoint, sequence, height in model_progression_checkpoints(epoch):
             kimi = model_checkpoint(epoch, height, "Kimi")
             qwen = model_checkpoint(epoch, height, "Qwen")
             union = union_checkpoint(epoch, height)
-            current = {
+            current_weight = {
                 "Kimi": kimi["confirmed_weight"],
                 "Qwen": qwen["confirmed_weight"],
                 "Union": union["confirmed_weight"],
             }
-            deltas = {}
-            for key, value in current.items():
+            current_passed = {
+                "Kimi": kimi["passed_participants"],
+                "Qwen": qwen["passed_participants"],
+                "Union": union["passed_participants"],
+            }
+            current_failed = {
+                "Kimi": kimi["failed_participants"],
+                "Qwen": qwen["failed_participants"],
+                "Union": union["failed_participants"],
+            }
+            weight_deltas = {}
+            passed_deltas = {}
+            failed_deltas = {}
+            for key, value in current_weight.items():
                 previous_key = (epoch, key)
-                deltas[key] = "" if previous_key not in previous else str(value - previous[previous_key])
-                previous[previous_key] = value
+                weight_deltas[key] = (
+                    "" if previous_key not in previous_weight else str(value - previous_weight[previous_key])
+                )
+                previous_weight[previous_key] = value
+            for key, value in current_passed.items():
+                previous_key = (epoch, key)
+                passed_deltas[key] = (
+                    "" if previous_key not in previous_passed else str(value - previous_passed[previous_key])
+                )
+                previous_passed[previous_key] = value
+            for key, value in current_failed.items():
+                previous_key = (epoch, key)
+                failed_deltas[key] = (
+                    "" if previous_key not in previous_failed else str(value - previous_failed[previous_key])
+                )
+                previous_failed[previous_key] = value
             kimi_entry = model_entry_weight(epoch, "Kimi")
             qwen_entry = model_entry_weight(epoch, "Qwen")
             rows.append(
@@ -413,9 +447,15 @@ def build_model_progression_wide_rows(epochs: list[int]) -> list[dict[str, str]]
                     "kimi_confirmed_weight": str(kimi["confirmed_weight"]),
                     "qwen_confirmed_weight": str(qwen["confirmed_weight"]),
                     "confirmed_weight_union_total": str(union["confirmed_weight"]),
-                    "kimi_delta": deltas["Kimi"],
-                    "qwen_delta": deltas["Qwen"],
-                    "confirmed_weight_union_delta": deltas["Union"],
+                    "kimi_delta": weight_deltas["Kimi"],
+                    "qwen_delta": weight_deltas["Qwen"],
+                    "confirmed_weight_union_delta": weight_deltas["Union"],
+                    "kimi_passed_delta": passed_deltas["Kimi"],
+                    "qwen_passed_delta": passed_deltas["Qwen"],
+                    "passed_union_delta": passed_deltas["Union"],
+                    "kimi_failed_delta": failed_deltas["Kimi"],
+                    "qwen_failed_delta": failed_deltas["Qwen"],
+                    "failed_union_delta": failed_deltas["Union"],
                     "data_basis": "model subgroup membership + parent epoch_group_data confirmation_weight; union totals de-duplicate shared model participants",
                 }
             )
