@@ -56,6 +56,20 @@ This distinction matters: a gov balance jump can include multiple EndBlock trans
 
 `build_gov_endblock_transfers.py` parses saved RPC `block_results` and writes each gov `coin_received` EndBlock component to `outputs/gov_endblock_transfers.csv`.
 
+`fetch_model_group_data.py` reads the archive node from `GONKA_RPC_URL`/`GONKA_REST_URL` and saves:
+
+- model-specific `epoch_group_data/{epoch}?model_id=...` for every model listed in parent `sub_group_models`;
+- historical `preserved_nodes_snapshot` at each epoch's `poc_start_block_height` using `x-cosmos-block-height`;
+- SHA-256 entries in `manifests/model_group_data_manifest.md`.
+
+`build_model_cpoc_weight_table.py` builds:
+
+- `model_cpoc_weight_table.csv`: host-level parent weight, model subgroup entry weights, model node weights, confirmed node weights, preserved node weights, and totals;
+- `model_cpoc_weight_summary.csv`: per-epoch per-model aggregate;
+- `model_cpoc_epoch_matrix.csv`: compact Kimi/Qwen matrix.
+
+For model cPoC tables, `preserved_node_weight` is calculated by matching subgroup `ml_nodes[].node_id` against the historical `preserved_nodes_snapshot`. `confirmed_node_weight` is the remaining subgroup node `poc_weight`. Deprecated `timeslot_allocation` is not used as the source of truth when historical snapshot data is available.
+
 `build_reward_status_tables.py` builds:
 
 - `not_received_hosts_detail.csv`: every host with `rewarded_coins = 0`, the reason class, direct chain received amount, and proof-grade amount status;

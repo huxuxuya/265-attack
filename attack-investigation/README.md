@@ -68,6 +68,26 @@ Reason notes:
 - `zero_reward_no_recorded_work_status_unresolved`: no recorded work and zero reward; v0.2.13 downtime check would not zero reward when total requests are zero, so participant status/state must be replayed.
 - `zero_reward_status_unresolved`: zero reward with final weight and no obvious proof-grade reason from the saved summary fields.
 
+## Model cPoC Weights
+
+Model subgroup data was fetched from the archive node configured by `GONKA_RPC_URL`. The full host-level table is in [`outputs/model_cpoc_weight_table.csv`](outputs/model_cpoc_weight_table.csv). Compact epoch-level matrix:
+
+| epoch | Kimi participants | Qwen participants | Kimi entry weight | Qwen entry weight | Kimi confirmed node weight | Qwen confirmed node weight | Kimi preserved node weight | Qwen preserved node weight | Kimi total node weight | Qwen total node weight |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 265 | 20 | 41 | 377,276 | 1,227,899 | 336,641 | 1,106,344 | 40,635 | 121,555 | 377,276 | 1,227,899 |
+| 266 | 8 | 40 | 59,933 | 886,097 | 16,235 | 802,093 | 43,698 | 84,004 | 59,933 | 886,097 |
+
+Kimi entry weight drops from `377,276` in epoch 265 to `59,933` in epoch 266: `317,343` less, or `84.11%`. Qwen entry weight drops `27.84%` over the same comparison.
+
+Definitions:
+
+- `entry weight`: model subgroup `validation_weights[].weight`.
+- `confirmed node weight`: sum of subgroup `ml_nodes[].poc_weight` for nodes not listed in the historical `preserved_nodes_snapshot` at that epoch's `poc_start_block_height`.
+- `preserved node weight`: sum of subgroup `ml_nodes[].poc_weight` for node IDs listed in the historical `preserved_nodes_snapshot`.
+- Model participant counts are subgroup memberships, not unique epoch participants; one address can appear in multiple model subgroups.
+
+This is the table to use for the Kimi attack hypothesis: if vLLM failures stopped Kimi nodes from entering or serving, the first chain-visible place to inspect is the Kimi subgroup weight and the confirmed-vs-preserved split.
+
 ## Layout
 
 - `raw_chain_cache/epoch_265/`, `raw_chain_cache/epoch_266/`: raw node responses and request errors.
@@ -80,7 +100,7 @@ Reason notes:
 
 ```bash
 cd attack-investigation
-python3 scripts/fetch_raw_data.py --base-url http://node1.gonka.ai:8000 --epochs 265 266
+python3 scripts/fetch_raw_data.py --epochs 265 266
 python3 scripts/build_epoch_summary.py
 python3 scripts/classify_affected.py
 python3 scripts/compare_claims.py
@@ -89,6 +109,9 @@ python3 scripts/build_unpaid_miners_detail.py
 python3 scripts/fetch_gov_balance_change_points.py
 python3 scripts/fetch_settlement_evidence.py
 python3 scripts/build_gov_endblock_transfers.py
+python3 scripts/fetch_model_group_data.py
+python3 scripts/build_model_cpoc_weight_table.py
+python3 scripts/build_model_cpoc_epoch_matrix.py
 python3 scripts/build_gov_settlement_audit.py
 python3 scripts/build_reward_status_tables.py
 ```
@@ -114,6 +137,9 @@ python3 scripts/fetch_raw_data.py --epochs 265 266
 - `outputs/gov_balance_change_points.csv`: exact gov module-account balance change heights found by historical balance scan.
 - `outputs/settlement_event_summary.csv`: settlement-height block, tx-search, and RPC block-results evidence summary.
 - `outputs/gov_endblock_transfers.csv`: gov `coin_received` EndBlock transfer components from saved RPC `block_results`.
+- `outputs/model_cpoc_weight_table.csv`: host-level model subgroup PoC/cPoC weights.
+- `outputs/model_cpoc_weight_summary.csv`: per-epoch per-model aggregate weights.
+- `outputs/model_cpoc_epoch_matrix.csv`: compact per-epoch Kimi/Qwen matrix.
 - `outputs/gov_settlement_audit.csv`: comparison of formula remainder, gov balance movements, and paid rewards.
 - `outputs/not_received_hosts_detail.csv`: per-host zero-reward detail with reason and proof-grade amount status.
 - `outputs/reward_status_count_summary.csv`: per-epoch and total counts by received/not-received reason.

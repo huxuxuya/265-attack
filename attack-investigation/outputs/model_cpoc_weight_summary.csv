@@ -1,0 +1,5 @@
+epoch,model_id,model_label,participants_in_subgroup,entry_weight_sum,confirmed_node_weight_sum,preserved_node_weight_sum,node_weight_sum,subgroup_confirmation_weight_sum,voting_power_sum
+265,moonshotai/Kimi-K2.6,kimi,20,377276,336641,40635,377276,640858,842654
+265,Qwen/Qwen3-235B-A22B-Instruct-2507-FP8,qwen,41,1227899,1106344,121555,1227899,740929,891766
+266,moonshotai/Kimi-K2.6,kimi,8,59933,16235,43698,59933,115164,112386
+266,Qwen/Qwen3-235B-A22B-Instruct-2507-FP8,qwen,40,886097,802093,84004,886097,334904,319021

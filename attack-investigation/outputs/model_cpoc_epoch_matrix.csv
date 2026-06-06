@@ -1,0 +1,3 @@
+epoch,kimi_participants,qwen_participants,total_participants,kimi_entry_weight,qwen_entry_weight,total_entry_weight,kimi_confirmed_node_weight,qwen_confirmed_node_weight,total_confirmed_node_weight,kimi_preserved_node_weight,qwen_preserved_node_weight,total_preserved_node_weight,kimi_node_weight_sum,qwen_node_weight_sum,total_node_weight_sum
+265,20,41,61,377276,1227899,1605175,336641,1106344,1442985,40635,121555,162190,377276,1227899,1605175
+266,8,40,48,59933,886097,946030,16235,802093,818328,43698,84004,127702,59933,886097,946030
