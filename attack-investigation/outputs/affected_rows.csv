@@ -1,0 +1,31 @@
+source,claim_file,claim_row,epoch,address,classification,confirmation_status,source_compensation_gonka,chain_reward_gonka,chain_evidence,policy_note
+chain,,,265,gonka125n6kr5gvdup0lndfkps7t6rd6592panhrg3np,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka1830lqug50lse998x2lakk4pj5ypfumz5pasz0y,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka187tn9y92ur6tu0zf69u94hwl0q77m47y0k36hv,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka18xeqnspxpg2vncufnjne485rkaagwvz7whyn0d,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka1cuwejs77gectp3n32wg8q27hlsa4m3hqspf4ww,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka1j7x6dv42xehe9e5au4ku3wvzwtqlegfjhlvzj6,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka1mmlyd5xxu5l68yx8wzclrkxkxvm88mhq5tp5s0,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka1myu058axjs62mc3e7na9krwvqpfl9z3gtcw9es,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87,excluded_operator,confirmed,,0,address is in performance/member participant set but not validation_weights,
+chain,,,265,gonka1pllyukkeymx3hfd9mts3pryr9y6efs9eshty87,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka1qnj39ysxpzknvrr5dw9rdl7cx5q7dpkwerryrs,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka1qu9mna5xlvlnw9455ygtjq92wuzkzm237w8l08,excluded_operator,confirmed,,0,address is in performance/member participant set but not validation_weights,
+chain,,,265,gonka1qu9mna5xlvlnw9455ygtjq92wuzkzm237w8l08,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka1tl5m3vuqsx333v7095ymwjdc4vdk2wd9r5hqws,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka1ujnc662v6g69jm6fgxnr79a2m7ehzeut059239,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka1wt8sr9jxzpec65j7zkxsgh6edk3m6r8nlf5za4,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,265,gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,266,gonka13a4v8gxxjav5t4xq5y9cv9d8rfnvkjfw5adqz3,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,266,gonka14ef2pxjge75gflqftn7m2wy0xv59gq9uc7qnct,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,266,gonka187tn9y92ur6tu0zf69u94hwl0q77m47y0k36hv,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,266,gonka19f9hkpmjaldncsfly4j63sy932y8hughn4l3d8,excluded_operator,confirmed,,0,address is in performance/member participant set but not validation_weights,
+chain,,,266,gonka19f9hkpmjaldncsfly4j63sy932y8hughn4l3d8,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,266,gonka1f0u3y2wneer8zhz3ypw4x54h38cpa0qsy8ts3e,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,266,gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,266,gonka1myu058axjs62mc3e7na9krwvqpfl9z3gtcw9es,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,266,gonka1qnj39ysxpzknvrr5dw9rdl7cx5q7dpkwerryrs,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,266,gonka1ujnc662v6g69jm6fgxnr79a2m7ehzeut059239,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
+chain,,,266,gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl,excluded_operator,confirmed,,0,address is in performance/member participant set but not validation_weights,
+chain,,,266,gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl,zero_reward_reconstruction,policy-dependent,,0,address has zero rewarded_coins in performance summary,Counterfactual reward reconstruction is required.
