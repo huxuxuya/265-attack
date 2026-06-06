@@ -91,9 +91,9 @@ For the epoch 265 claim, the key row is Kimi `after_cpoc_2`: confirmed weight `4
 
 ## GitHub Pages Visualization
 
-Static visualization files are in [`../docs/`](../docs/index.html). The page shows the epoch 265 timeline, model confirmed-weight progression, operator-level drops, exact settlement totals, and per-operator estimated lost GNK.
+Static visualization files are in [`../docs/`](../docs/index.html). The page shows the epoch 265 timeline, model confirmed-weight progression, operator-level drops, exact settlement totals, and source compensation model amounts.
 
-The per-operator lost GNK values are estimates: the exact unpaid settlement pool is allocated across observed positive confirmation-weight drops. They are not proof-grade per-host settlement amounts without an exact v0.2.13 replay.
+The source compensation model is counterfactual: `max(0, entry weight / total epoch weight * epoch reward - actual rewards)`. It is not the same as allocating the gov settlement remainder.
 
 Rebuild the page data after changing raw data or derived CSVs:
 
@@ -166,6 +166,6 @@ python3 scripts/fetch_raw_data.py --epochs 265 266
 - `outputs/not_received_hosts_detail.csv`: per-host zero-reward detail with reason and proof-grade amount status.
 - `outputs/reward_status_count_summary.csv`: per-epoch and total counts by received/not-received reason.
 - `outputs/reward_status_amount_summary.csv`: per-epoch paid rewards, current-epoch unpaid pool, and unattributed settlement remainder.
-- `../docs/data/epoch_265_timeline.json`: GitHub Pages data bundle with timeline events, model series, operator drops, and estimated per-operator lost GNK.
+- `../docs/data/epoch_265_timeline.json`: GitHub Pages data bundle with timeline events, model series, operator drops, and epoch 265 source compensation model amounts.
 
 `undistributed_remainder_gonka` is formula-derived from v0.2.13 reward parameters minus paid rewards. It is treated as current-epoch settlement remainder only where it matches saved gov `coin_received` EndBlock evidence.

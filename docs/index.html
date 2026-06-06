@@ -49,7 +49,7 @@
         <div class="panel-heading">
           <div>
             <h2>Operator Impact</h2>
-            <p>Sorted by estimated lost GNK, allocated from the exact unpaid pool by observed confirmation-weight drops.</p>
+            <p>Sorted by source compensation model, with chain weight drops and actual paid rewards shown alongside it.</p>
           </div>
           <div class="controls" id="filters">
             <button type="button" data-filter="all" class="active">All</button>
@@ -57,7 +57,7 @@
             <button type="button" data-filter="Qwen">Qwen</button>
             <button type="button" data-filter="severe_drop">Severe drop</button>
             <button type="button" data-filter="not_rewarded">Not rewarded</button>
-            <button type="button" data-filter="estimated_loss">Estimated loss</button>
+            <button type="button" data-filter="compensation">Compensation</button>
           </div>
         </div>
         <div class="warning" id="warning"></div>
@@ -73,7 +73,7 @@
                 <th>cPoC 1</th>
                 <th>cPoC 2</th>
                 <th>Drop</th>
-                <th>Est. loss</th>
+                <th>Comp.</th>
                 <th>Paid</th>
                 <th>Miss/Inv</th>
               </tr>

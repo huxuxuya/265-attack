@@ -1,15 +1,16 @@
 {
   "epochTotals": {
     "epoch": 265,
-    "epochRewardPoolGnk": "284932503.735690",
+    "epochRewardPoolGnk": "284932.503736",
     "finalGroupCount": 51,
-    "govRemainderEventGnk": "99367459.994521",
+    "govRemainderEventGnk": "99367.459995",
     "notRewardedCount": 16,
-    "paidRewardsGnk": "185565043.741173",
+    "paidRewardsGnk": "185565.043741",
     "participantsTotal": 53,
     "rewardedCount": 37,
+    "sourceCompensationGnk": "30592.104862",
     "unpaidPoolBasis": "Exact chain settlement remainder; not per-host allocation.",
-    "unpaidPoolGnk": "99367459.994517"
+    "unpaidPoolGnk": "99367.459995"
   },
   "events": [
     {
@@ -26,6 +27,7 @@
       "parentZeroAfter": 0,
       "parentZeroBefore": 0,
       "positiveDrop": 0,
+      "sourceCompensationGnk": "0.000000",
       "timeUtc": "2026-05-15T23:22:59Z",
       "type": "epoch_entry"
     },
@@ -43,12 +45,13 @@
       "parentZeroAfter": 0,
       "parentZeroBefore": 0,
       "positiveDrop": 0,
+      "sourceCompensationGnk": "0.000000",
       "timeUtc": "2026-05-16T06:55:12Z",
       "type": "cpoc_generation_start"
     },
     {
       "cpocSequence": 0,
-      "estimatedLostGnk": "57419759.657261",
+      "estimatedLostGnk": "57419.759658",
       "height": 4095963,
       "key": "after_cpoc_0",
       "kimiConfirmationDelta": -153653,
@@ -60,6 +63,7 @@
       "parentZeroAfter": 8,
       "parentZeroBefore": 0,
       "positiveDrop": 177625,
+      "sourceCompensationGnk": "0.000000",
       "timeUtc": "2026-05-16T07:18:59Z",
       "type": "after_cpoc_confirmed"
     },
@@ -77,12 +81,13 @@
       "parentZeroAfter": 0,
       "parentZeroBefore": 0,
       "positiveDrop": 0,
+      "sourceCompensationGnk": "0.000000",
       "timeUtc": "2026-05-16T11:26:12Z",
       "type": "cpoc_generation_start"
     },
     {
       "cpocSequence": 1,
-      "estimatedLostGnk": "6195030.395900",
+      "estimatedLostGnk": "6195.030396",
       "height": 4099160,
       "key": "after_cpoc_1",
       "kimiConfirmationDelta": -17536,
@@ -94,6 +99,7 @@
       "parentZeroAfter": 8,
       "parentZeroBefore": 8,
       "positiveDrop": 19164,
+      "sourceCompensationGnk": "0.000000",
       "timeUtc": "2026-05-16T11:49:56Z",
       "type": "after_cpoc_confirmed"
     },
@@ -111,12 +117,13 @@
       "parentZeroAfter": 0,
       "parentZeroBefore": 0,
       "positiveDrop": 0,
+      "sourceCompensationGnk": "0.000000",
       "timeUtc": "2026-05-16T17:05:28Z",
       "type": "cpoc_generation_start"
     },
     {
       "cpocSequence": 2,
-      "estimatedLostGnk": "35752669.941356",
+      "estimatedLostGnk": "35752.669942",
       "height": 4103171,
       "key": "after_cpoc_2",
       "kimiConfirmationDelta": -93697,
@@ -128,6 +135,7 @@
       "parentZeroAfter": 10,
       "parentZeroBefore": 8,
       "positiveDrop": 110599,
+      "sourceCompensationGnk": "30592.104862",
       "timeUtc": "2026-05-16T17:29:07Z",
       "type": "after_cpoc_confirmed"
     },
@@ -145,6 +153,7 @@
       "parentZeroAfter": 0,
       "parentZeroBefore": 0,
       "positiveDrop": 0,
+      "sourceCompensationGnk": "0.000000",
       "timeUtc": "2026-05-16T21:04:58Z",
       "type": "epoch_last"
     }
@@ -238,259 +247,6 @@
   ],
   "nodes": [
     {
-      "address": "gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk",
-      "checkpoints": [
-        {
-          "checkpoint": "epoch_entry",
-          "confirmationWeight": 96900,
-          "delta": null,
-          "positiveDrop": 0,
-          "reputation": 100,
-          "severity": "entry",
-          "state": "passed",
-          "weight": 96900
-        },
-        {
-          "checkpoint": "after_cpoc_0",
-          "confirmationWeight": 7870,
-          "delta": -89030,
-          "positiveDrop": 89030,
-          "reputation": 100,
-          "severity": "severe_drop",
-          "state": "passed",
-          "weight": 96900
-        },
-        {
-          "checkpoint": "after_cpoc_1",
-          "confirmationWeight": 7870,
-          "delta": 0,
-          "positiveDrop": 0,
-          "reputation": 100,
-          "severity": "stable_or_gain",
-          "state": "passed",
-          "weight": 96900
-        },
-        {
-          "checkpoint": "after_cpoc_2",
-          "confirmationWeight": 1347,
-          "delta": -6523,
-          "positiveDrop": 6523,
-          "reputation": 100,
-          "severity": "severe_drop",
-          "state": "passed",
-          "weight": 96900
-        }
-      ],
-      "claimed": false,
-      "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "30888840.504041",
-      "inferenceCount": 22976,
-      "invalidatedInferences": 7,
-      "missedRequests": 94,
-      "modelNames": [
-        "Kimi",
-        "Qwen"
-      ],
-      "modelRows": [
-        {
-          "checkpoints": [
-            {
-              "checkpoint": "epoch_entry",
-              "confirmationWeight": 96900,
-              "delta": null,
-              "severity": "entry"
-            },
-            {
-              "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 7870,
-              "delta": -89030,
-              "severity": "severe_drop"
-            },
-            {
-              "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 7870,
-              "delta": 0,
-              "severity": "stable_or_gain"
-            },
-            {
-              "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 1347,
-              "delta": -6523,
-              "severity": "severe_drop"
-            }
-          ],
-          "entryWeight": 1068,
-          "model": "Kimi"
-        },
-        {
-          "checkpoints": [
-            {
-              "checkpoint": "epoch_entry",
-              "confirmationWeight": 96900,
-              "delta": null,
-              "severity": "entry"
-            },
-            {
-              "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 7870,
-              "delta": -89030,
-              "severity": "severe_drop"
-            },
-            {
-              "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 7870,
-              "delta": 0,
-              "severity": "stable_or_gain"
-            },
-            {
-              "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 1347,
-              "delta": -6523,
-              "severity": "severe_drop"
-            }
-          ],
-          "entryWeight": 265943,
-          "model": "Qwen"
-        }
-      ],
-      "models": [
-        {
-          "entryConfirmationWeight": 96900,
-          "entryWeight": 1068,
-          "mlNodes": [
-            {
-              "nodeId": "U11",
-              "pocWeight": 1068
-            }
-          ],
-          "model": "Kimi"
-        },
-        {
-          "entryConfirmationWeight": 96900,
-          "entryWeight": 265943,
-          "mlNodes": [
-            {
-              "nodeId": "I-1",
-              "pocWeight": 9929
-            },
-            {
-              "nodeId": "I-10",
-              "pocWeight": 9957
-            },
-            {
-              "nodeId": "I-11",
-              "pocWeight": 9985
-            },
-            {
-              "nodeId": "I-12",
-              "pocWeight": 9929
-            },
-            {
-              "nodeId": "I-13",
-              "pocWeight": 9816
-            },
-            {
-              "nodeId": "I-14",
-              "pocWeight": 9929
-            },
-            {
-              "nodeId": "I-15",
-              "pocWeight": 9079
-            },
-            {
-              "nodeId": "I-16",
-              "pocWeight": 9929
-            },
-            {
-              "nodeId": "I-17",
-              "pocWeight": 9816
-            },
-            {
-              "nodeId": "I-18",
-              "pocWeight": 9957
-            },
-            {
-              "nodeId": "I-19",
-              "pocWeight": 9873
-            },
-            {
-              "nodeId": "I-2",
-              "pocWeight": 9957
-            },
-            {
-              "nodeId": "I-20",
-              "pocWeight": 9928
-            },
-            {
-              "nodeId": "I-21",
-              "pocWeight": 9928
-            },
-            {
-              "nodeId": "I-22",
-              "pocWeight": 9928
-            },
-            {
-              "nodeId": "I-23",
-              "pocWeight": 9928
-            },
-            {
-              "nodeId": "I-25",
-              "pocWeight": 9928
-            },
-            {
-              "nodeId": "I-26",
-              "pocWeight": 9815
-            },
-            {
-              "nodeId": "I-27",
-              "pocWeight": 9928
-            },
-            {
-              "nodeId": "I-28",
-              "pocWeight": 9956
-            },
-            {
-              "nodeId": "I-3",
-              "pocWeight": 9928
-            },
-            {
-              "nodeId": "I-4",
-              "pocWeight": 9787
-            },
-            {
-              "nodeId": "I-5",
-              "pocWeight": 9984
-            },
-            {
-              "nodeId": "I-6",
-              "pocWeight": 9078
-            },
-            {
-              "nodeId": "I-7",
-              "pocWeight": 9815
-            },
-            {
-              "nodeId": "I-8",
-              "pocWeight": 9928
-            },
-            {
-              "nodeId": "I-9",
-              "pocWeight": 9928
-            }
-          ],
-          "model": "Qwen"
-        }
-      ],
-      "notRewarded": true,
-      "paidGnk": "0.000000",
-      "rewarded": false,
-      "shortAddress": "gonka1famt...4vdqnk",
-      "totalNegativeDelta": -95553,
-      "totalPositiveDrop": 95553,
-      "validatedInferences": 22969,
-      "worstSeverity": "severe_drop"
-    },
-    {
       "address": "gonka1j7x6dv42xehe9e5au4ku3wvzwtqlegfjhlvzj6",
       "checkpoints": [
         {
@@ -536,7 +292,7 @@
       ],
       "claimed": false,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "21331541.732658",
+      "estimatedLostGnk": "21331.541733",
       "inferenceCount": 45444,
       "invalidatedInferences": 7,
       "missedRequests": 12,
@@ -646,6 +402,11 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka1j7x6...hlvzj6",
+      "sourceCompensationBasis": "E265 source model: max(0, entry weight / total epoch weight * epoch reward - actual rewards).",
+      "sourceCompensationEligible": true,
+      "sourceCompensationGnk": "20896.527179",
+      "sourceCompensationWeight": 66311,
+      "sourceCorrectRewardGnk": "20896.527179",
       "totalNegativeDelta": -65988,
       "totalPositiveDrop": 65988,
       "validatedInferences": 45437,
@@ -697,7 +458,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "5585031.316529",
+      "estimatedLostGnk": "5585.031317",
       "inferenceCount": 127237,
       "invalidatedInferences": 0,
       "missedRequests": 10,
@@ -908,13 +669,392 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "54393492.283376",
+      "paidGnk": "54393.492283",
       "rewarded": true,
       "shortAddress": "gonka17pw6...fwqexu",
+      "sourceCompensationBasis": "E265 source model: max(0, entry weight / total epoch weight * epoch reward - actual rewards).",
+      "sourceCompensationEligible": true,
+      "sourceCompensationGnk": "5444.485833",
+      "sourceCompensationWeight": 189884,
+      "sourceCorrectRewardGnk": "59837.978116",
       "totalNegativeDelta": -17277,
       "totalPositiveDrop": 17277,
       "validatedInferences": 127237,
       "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1830lqug50lse998x2lakk4pj5ypfumz5pasz0y",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 14200,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 88,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 13490
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 7031,
+          "delta": -7169,
+          "positiveDrop": 7169,
+          "reputation": 88,
+          "severity": "moderate_drop",
+          "state": "passed",
+          "weight": 13490
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 7031,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 88,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 13490
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 0,
+          "delta": -7031,
+          "positiveDrop": 7031,
+          "reputation": 88,
+          "severity": "severe_drop",
+          "state": "failed",
+          "weight": 13490
+        }
+      ],
+      "claimed": false,
+      "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
+      "estimatedLostGnk": "4590.348133",
+      "inferenceCount": 5394,
+      "invalidatedInferences": 8,
+      "missedRequests": 42,
+      "modelNames": [
+        "Kimi"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 14200,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 7031,
+              "delta": -7169,
+              "severity": "moderate_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 7031,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": -7031,
+              "severity": "severe_drop"
+            }
+          ],
+          "entryWeight": 11252,
+          "model": "Kimi"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 14200,
+          "entryWeight": 11252,
+          "mlNodes": [
+            {
+              "nodeId": "node802",
+              "pocWeight": 5681
+            },
+            {
+              "nodeId": "node812",
+              "pocWeight": 5571
+            }
+          ],
+          "model": "Kimi"
+        }
+      ],
+      "notRewarded": true,
+      "paidGnk": "0.000000",
+      "rewarded": false,
+      "shortAddress": "gonka1830l...pasz0y",
+      "sourceCompensationBasis": "E265 source model: max(0, entry weight / total epoch weight * epoch reward - actual rewards).",
+      "sourceCompensationEligible": true,
+      "sourceCompensationGnk": "4251.091850",
+      "sourceCompensationWeight": 13490,
+      "sourceCorrectRewardGnk": "4251.091850",
+      "totalNegativeDelta": -14200,
+      "totalPositiveDrop": 14200,
+      "validatedInferences": 5386,
+      "worstSeverity": "severe_drop"
+    },
+    {
+      "address": "gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 96900,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 96900
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 7870,
+          "delta": -89030,
+          "positiveDrop": 89030,
+          "reputation": 100,
+          "severity": "severe_drop",
+          "state": "passed",
+          "weight": 96900
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 7870,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 96900
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 1347,
+          "delta": -6523,
+          "positiveDrop": 6523,
+          "reputation": 100,
+          "severity": "severe_drop",
+          "state": "passed",
+          "weight": 96900
+        }
+      ],
+      "claimed": false,
+      "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
+      "estimatedLostGnk": "30888.840504",
+      "inferenceCount": 22976,
+      "invalidatedInferences": 7,
+      "missedRequests": 94,
+      "modelNames": [
+        "Kimi",
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 96900,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 7870,
+              "delta": -89030,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 7870,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1347,
+              "delta": -6523,
+              "severity": "severe_drop"
+            }
+          ],
+          "entryWeight": 1068,
+          "model": "Kimi"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 96900,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 7870,
+              "delta": -89030,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 7870,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1347,
+              "delta": -6523,
+              "severity": "severe_drop"
+            }
+          ],
+          "entryWeight": 265943,
+          "model": "Qwen"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 96900,
+          "entryWeight": 1068,
+          "mlNodes": [
+            {
+              "nodeId": "U11",
+              "pocWeight": 1068
+            }
+          ],
+          "model": "Kimi"
+        },
+        {
+          "entryConfirmationWeight": 96900,
+          "entryWeight": 265943,
+          "mlNodes": [
+            {
+              "nodeId": "I-1",
+              "pocWeight": 9929
+            },
+            {
+              "nodeId": "I-10",
+              "pocWeight": 9957
+            },
+            {
+              "nodeId": "I-11",
+              "pocWeight": 9985
+            },
+            {
+              "nodeId": "I-12",
+              "pocWeight": 9929
+            },
+            {
+              "nodeId": "I-13",
+              "pocWeight": 9816
+            },
+            {
+              "nodeId": "I-14",
+              "pocWeight": 9929
+            },
+            {
+              "nodeId": "I-15",
+              "pocWeight": 9079
+            },
+            {
+              "nodeId": "I-16",
+              "pocWeight": 9929
+            },
+            {
+              "nodeId": "I-17",
+              "pocWeight": 9816
+            },
+            {
+              "nodeId": "I-18",
+              "pocWeight": 9957
+            },
+            {
+              "nodeId": "I-19",
+              "pocWeight": 9873
+            },
+            {
+              "nodeId": "I-2",
+              "pocWeight": 9957
+            },
+            {
+              "nodeId": "I-20",
+              "pocWeight": 9928
+            },
+            {
+              "nodeId": "I-21",
+              "pocWeight": 9928
+            },
+            {
+              "nodeId": "I-22",
+              "pocWeight": 9928
+            },
+            {
+              "nodeId": "I-23",
+              "pocWeight": 9928
+            },
+            {
+              "nodeId": "I-25",
+              "pocWeight": 9928
+            },
+            {
+              "nodeId": "I-26",
+              "pocWeight": 9815
+            },
+            {
+              "nodeId": "I-27",
+              "pocWeight": 9928
+            },
+            {
+              "nodeId": "I-28",
+              "pocWeight": 9956
+            },
+            {
+              "nodeId": "I-3",
+              "pocWeight": 9928
+            },
+            {
+              "nodeId": "I-4",
+              "pocWeight": 9787
+            },
+            {
+              "nodeId": "I-5",
+              "pocWeight": 9984
+            },
+            {
+              "nodeId": "I-6",
+              "pocWeight": 9078
+            },
+            {
+              "nodeId": "I-7",
+              "pocWeight": 9815
+            },
+            {
+              "nodeId": "I-8",
+              "pocWeight": 9928
+            },
+            {
+              "nodeId": "I-9",
+              "pocWeight": 9928
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": true,
+      "paidGnk": "0.000000",
+      "rewarded": false,
+      "shortAddress": "gonka1famt...4vdqnk",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 96900,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -95553,
+      "totalPositiveDrop": 95553,
+      "validatedInferences": 22969,
+      "worstSeverity": "severe_drop"
     },
     {
       "address": "gonka1myu058axjs62mc3e7na9krwvqpfl9z3gtcw9es",
@@ -962,7 +1102,7 @@
       ],
       "claimed": false,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "5013823.911522",
+      "estimatedLostGnk": "5013.823912",
       "inferenceCount": 2856,
       "invalidatedInferences": 0,
       "missedRequests": 5,
@@ -1078,6 +1218,11 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka1myu0...tcw9es",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 13184,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -15510,
       "totalPositiveDrop": 15510,
       "validatedInferences": 2856,
@@ -1129,7 +1274,7 @@
       ],
       "claimed": false,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "4860273.533832",
+      "estimatedLostGnk": "4860.273534",
       "inferenceCount": 7222,
       "invalidatedInferences": 0,
       "missedRequests": 82,
@@ -1189,6 +1334,11 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka18xeq...whyn0d",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 14284,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -15035,
       "totalPositiveDrop": 15035,
       "validatedInferences": 7222,
@@ -1240,7 +1390,7 @@
       ],
       "claimed": false,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "4719976.978216",
+      "estimatedLostGnk": "4719.976978",
       "inferenceCount": 6599,
       "invalidatedInferences": 0,
       "missedRequests": 68,
@@ -1300,120 +1450,14 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka1wt8s...lf5za4",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 12411,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -14601,
       "totalPositiveDrop": 14601,
       "validatedInferences": 6600,
-      "worstSeverity": "severe_drop"
-    },
-    {
-      "address": "gonka1830lqug50lse998x2lakk4pj5ypfumz5pasz0y",
-      "checkpoints": [
-        {
-          "checkpoint": "epoch_entry",
-          "confirmationWeight": 14200,
-          "delta": null,
-          "positiveDrop": 0,
-          "reputation": 88,
-          "severity": "entry",
-          "state": "passed",
-          "weight": 13490
-        },
-        {
-          "checkpoint": "after_cpoc_0",
-          "confirmationWeight": 7031,
-          "delta": -7169,
-          "positiveDrop": 7169,
-          "reputation": 88,
-          "severity": "moderate_drop",
-          "state": "passed",
-          "weight": 13490
-        },
-        {
-          "checkpoint": "after_cpoc_1",
-          "confirmationWeight": 7031,
-          "delta": 0,
-          "positiveDrop": 0,
-          "reputation": 88,
-          "severity": "stable_or_gain",
-          "state": "passed",
-          "weight": 13490
-        },
-        {
-          "checkpoint": "after_cpoc_2",
-          "confirmationWeight": 0,
-          "delta": -7031,
-          "positiveDrop": 7031,
-          "reputation": 88,
-          "severity": "severe_drop",
-          "state": "failed",
-          "weight": 13490
-        }
-      ],
-      "claimed": false,
-      "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "4590348.133051",
-      "inferenceCount": 5394,
-      "invalidatedInferences": 8,
-      "missedRequests": 42,
-      "modelNames": [
-        "Kimi"
-      ],
-      "modelRows": [
-        {
-          "checkpoints": [
-            {
-              "checkpoint": "epoch_entry",
-              "confirmationWeight": 14200,
-              "delta": null,
-              "severity": "entry"
-            },
-            {
-              "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 7031,
-              "delta": -7169,
-              "severity": "moderate_drop"
-            },
-            {
-              "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 7031,
-              "delta": 0,
-              "severity": "stable_or_gain"
-            },
-            {
-              "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 0,
-              "delta": -7031,
-              "severity": "severe_drop"
-            }
-          ],
-          "entryWeight": 11252,
-          "model": "Kimi"
-        }
-      ],
-      "models": [
-        {
-          "entryConfirmationWeight": 14200,
-          "entryWeight": 11252,
-          "mlNodes": [
-            {
-              "nodeId": "node802",
-              "pocWeight": 5681
-            },
-            {
-              "nodeId": "node812",
-              "pocWeight": 5571
-            }
-          ],
-          "model": "Kimi"
-        }
-      ],
-      "notRewarded": true,
-      "paidGnk": "0.000000",
-      "rewarded": false,
-      "shortAddress": "gonka1830l...pasz0y",
-      "totalNegativeDelta": -14200,
-      "totalPositiveDrop": 14200,
-      "validatedInferences": 5386,
       "worstSeverity": "severe_drop"
     },
     {
@@ -1462,7 +1506,7 @@
       ],
       "claimed": false,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "3853629.584091",
+      "estimatedLostGnk": "3853.629584",
       "inferenceCount": 3177,
       "invalidatedInferences": 39,
       "missedRequests": 70,
@@ -1538,6 +1582,11 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka187tn...0k36hv",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 10133,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -11921,
       "totalPositiveDrop": 11921,
       "validatedInferences": 3138,
@@ -1589,7 +1638,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "2953662.738851",
+      "estimatedLostGnk": "2953.662739",
       "inferenceCount": 55808,
       "invalidatedInferences": 12,
       "missedRequests": 52,
@@ -1666,9 +1715,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "25454239.664077",
+      "paidGnk": "25454.239664",
       "rewarded": true,
       "shortAddress": "gonka1q5xt...u9tugg",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 89734,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -9137,
       "totalPositiveDrop": 9137,
       "validatedInferences": 55796,
@@ -1720,7 +1774,7 @@
       ],
       "claimed": false,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "2494951.189499",
+      "estimatedLostGnk": "2494.951190",
       "inferenceCount": 2703,
       "invalidatedInferences": 0,
       "missedRequests": 24,
@@ -1818,6 +1872,11 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka1ujnc...059239",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 10081,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -7718,
       "totalPositiveDrop": 7718,
       "validatedInferences": 2703,
@@ -1869,7 +1928,7 @@
       ],
       "claimed": false,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "2447754.652356",
+      "estimatedLostGnk": "2447.754652",
       "inferenceCount": 3360,
       "invalidatedInferences": 0,
       "missedRequests": 51,
@@ -1925,6 +1984,11 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka1mmly...5tp5s0",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 7194,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -7572,
       "totalPositiveDrop": 7572,
       "validatedInferences": 3360,
@@ -1976,7 +2040,7 @@
       ],
       "claimed": false,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "2412518.881476",
+      "estimatedLostGnk": "2412.518881",
       "inferenceCount": 3193,
       "invalidatedInferences": 0,
       "missedRequests": 42,
@@ -2032,6 +2096,11 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka1tl5m...r5hqws",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 7090,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -7463,
       "totalPositiveDrop": 7463,
       "validatedInferences": 3193,
@@ -2083,7 +2152,7 @@
       ],
       "claimed": false,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "2283213.300263",
+      "estimatedLostGnk": "2283.213300",
       "inferenceCount": 2054,
       "invalidatedInferences": 0,
       "missedRequests": 55,
@@ -2139,6 +2208,11 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka125n6...hrg3np",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 6710,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -7063,
       "totalPositiveDrop": 7063,
       "validatedInferences": 2054,
@@ -2190,7 +2264,7 @@
       ],
       "claimed": false,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "2154554.246956",
+      "estimatedLostGnk": "2154.554247",
       "inferenceCount": 974,
       "invalidatedInferences": 0,
       "missedRequests": 562,
@@ -2254,6 +2328,11 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka1zsvl...76jqgl",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 5666,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -6665,
       "totalPositiveDrop": 6665,
       "validatedInferences": 974,
@@ -2305,7 +2384,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "846305.029037",
+      "estimatedLostGnk": "846.305029",
       "inferenceCount": 11620,
       "invalidatedInferences": 25,
       "missedRequests": 3,
@@ -2448,9 +2527,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "11493704.450292",
+      "paidGnk": "11493.704450",
       "rewarded": true,
       "shortAddress": "gonka17gpu...v5t34f",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 39448,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -2618,
       "totalPositiveDrop": 2618,
       "validatedInferences": 11595,
@@ -2502,7 +2586,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "817857.801170",
+      "estimatedLostGnk": "817.857801",
       "inferenceCount": 37997,
       "invalidatedInferences": 0,
       "missedRequests": 0,
@@ -2703,9 +2787,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "39847762.290873",
+      "paidGnk": "39847.762291",
       "rewarded": true,
       "shortAddress": "gonka1duua...jq7xll",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 128853,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -2530,
       "totalPositiveDrop": 2530,
       "validatedInferences": 37997,
@@ -2757,7 +2846,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "466469.884225",
+      "estimatedLostGnk": "466.469884",
       "inferenceCount": 5979,
       "invalidatedInferences": 46,
       "missedRequests": 3,
@@ -2838,9 +2927,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "6549643.662294",
+      "paidGnk": "6549.643662",
       "rewarded": true,
       "shortAddress": "gonka1tja3...dlgprt",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 25691,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -1443,
       "totalPositiveDrop": 1443,
       "validatedInferences": 5933,
@@ -2892,7 +2986,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "359146.251818",
+      "estimatedLostGnk": "359.146252",
       "inferenceCount": 2647,
       "invalidatedInferences": 0,
       "missedRequests": 5,
@@ -2969,9 +3063,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "5463078.451190",
+      "paidGnk": "5463.078451",
       "rewarded": true,
       "shortAddress": "gonka1hwve...tckwnz",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 18392,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -1111,
       "totalPositiveDrop": 1111,
       "validatedInferences": 2647,
@@ -3023,7 +3122,7 @@
       ],
       "claimed": false,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "334578.191388",
+      "estimatedLostGnk": "334.578191",
       "inferenceCount": 0,
       "invalidatedInferences": 0,
       "missedRequests": 0,
@@ -3079,6 +3178,11 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka1qnj3...erryrs",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 880,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -1035,
       "totalPositiveDrop": 1035,
       "validatedInferences": 0,
@@ -3130,7 +3234,7 @@
       ],
       "claimed": false,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "329082.704186",
+      "estimatedLostGnk": "329.082704",
       "inferenceCount": 212,
       "invalidatedInferences": 0,
       "missedRequests": 3,
@@ -3186,6 +3290,11 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka1cuwe...spf4ww",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1066,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -1018,
       "totalPositiveDrop": 1018,
       "validatedInferences": 212,
@@ -3237,7 +3346,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "127042.733541",
+      "estimatedLostGnk": "127.042734",
       "inferenceCount": 810,
       "invalidatedInferences": 0,
       "missedRequests": 0,
@@ -3290,9 +3399,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "173951.275095",
+      "paidGnk": "173.951275",
       "rewarded": true,
       "shortAddress": "gonka1uf5c...0k5a88",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 926,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -393,
       "totalPositiveDrop": 393,
       "validatedInferences": 810,
@@ -3344,7 +3458,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "99888.561487",
+      "estimatedLostGnk": "99.888561",
       "inferenceCount": 14619,
       "invalidatedInferences": 0,
       "missedRequests": 58,
@@ -3443,9 +3557,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "10553989.409830",
+      "paidGnk": "10553.989410",
       "rewarded": true,
       "shortAddress": "gonka15mun...s9qgr5",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 33800,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -309,
       "totalPositiveDrop": 309,
       "validatedInferences": 14619,
@@ -3497,7 +3616,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "84048.627788",
+      "estimatedLostGnk": "84.048628",
       "inferenceCount": 2677,
       "invalidatedInferences": 0,
       "missedRequests": 2,
@@ -3570,9 +3689,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "3492576.054138",
+      "paidGnk": "3492.576054",
       "rewarded": true,
       "shortAddress": "gonka1zktn...zskkrx",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 11305,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -260,
       "totalPositiveDrop": 260,
       "validatedInferences": 2677,
@@ -3624,7 +3748,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "81139.252211",
+      "estimatedLostGnk": "81.139252",
       "inferenceCount": 192,
       "invalidatedInferences": 0,
       "missedRequests": 3,
@@ -3677,9 +3801,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "60189.662216",
+      "paidGnk": "60.189662",
       "rewarded": true,
       "shortAddress": "gonka1w29n...egndah",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 405,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -251,
       "totalPositiveDrop": 251,
       "validatedInferences": 192,
@@ -3731,7 +3860,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "48812.856908",
+      "estimatedLostGnk": "48.812857",
       "inferenceCount": 1285,
       "invalidatedInferences": 0,
       "missedRequests": 22,
@@ -3784,9 +3913,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "2243719.345435",
+      "paidGnk": "2243.719345",
       "rewarded": true,
       "shortAddress": "gonka1wkga...gactje",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 7264,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -151,
       "totalPositiveDrop": 151,
       "validatedInferences": 1285,
@@ -3838,7 +3972,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "35559.034833",
+      "estimatedLostGnk": "35.559035",
       "inferenceCount": 484,
       "invalidatedInferences": 0,
       "missedRequests": 2,
@@ -3891,9 +4025,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "354835.390865",
+      "paidGnk": "354.835391",
       "rewarded": true,
       "shortAddress": "gonka1fvly...cesv9p",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1231,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -110,
       "totalPositiveDrop": 110,
       "validatedInferences": 484,
@@ -3945,7 +4084,7 @@
       ],
       "claimed": false,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "28770.491820",
+      "estimatedLostGnk": "28.770492",
       "inferenceCount": 215,
       "invalidatedInferences": 0,
       "missedRequests": 1,
@@ -4002,9 +4141,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "481517.297728",
+      "paidGnk": "481.517298",
       "rewarded": true,
       "shortAddress": "gonka19f9h...n4l3d8",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1604,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -89,
       "totalPositiveDrop": 89,
       "validatedInferences": 215,
@@ -4056,7 +4200,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "24891.324383",
+      "estimatedLostGnk": "24.891324",
       "inferenceCount": 2796,
       "invalidatedInferences": 0,
       "missedRequests": 3,
@@ -4151,9 +4295,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "1680898.734347",
+      "paidGnk": "1680.898734",
       "rewarded": true,
       "shortAddress": "gonka1kx9m...nm6wc5",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 5411,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -77,
       "totalPositiveDrop": 77,
       "validatedInferences": 2796,
@@ -4205,7 +4354,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "24244.796477",
+      "estimatedLostGnk": "24.244796",
       "inferenceCount": 3295,
       "invalidatedInferences": 0,
       "missedRequests": 10,
@@ -4258,9 +4407,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "1132889.191972",
+      "paidGnk": "1132.889192",
       "rewarded": true,
       "shortAddress": "gonka15p7s...jk00aq",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 3667,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -75,
       "totalPositiveDrop": 75,
       "validatedInferences": 3295,
@@ -4312,7 +4466,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "22628.476712",
+      "estimatedLostGnk": "22.628477",
       "inferenceCount": 0,
       "invalidatedInferences": 0,
       "missedRequests": 0,
@@ -4365,9 +4519,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "525320.245623",
+      "paidGnk": "525.320246",
       "rewarded": true,
       "shortAddress": "gonka14tqh...dy8ttm",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1727,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -70,
       "totalPositiveDrop": 70,
       "validatedInferences": 0,
@@ -4419,7 +4578,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "13900.349980",
+      "estimatedLostGnk": "13.900350",
       "inferenceCount": 4119,
       "invalidatedInferences": 0,
       "missedRequests": 74,
@@ -4514,9 +4673,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "2650866.170478",
+      "paidGnk": "2650.866170",
       "rewarded": true,
       "shortAddress": "gonka1f0u3...y8ts3e",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 11773,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -43,
       "totalPositiveDrop": 43,
       "validatedInferences": 4119,
@@ -4568,7 +4732,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "9051.390685",
+      "estimatedLostGnk": "9.051391",
       "inferenceCount": 1816,
       "invalidatedInferences": 0,
       "missedRequests": 2,
@@ -4621,9 +4785,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "386978.561263",
+      "paidGnk": "386.978561",
       "rewarded": true,
       "shortAddress": "gonka1wthc...l6jhsz",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1252,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -28,
       "totalPositiveDrop": 28,
       "validatedInferences": 1816,
@@ -4675,7 +4844,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "8081.598826",
+      "estimatedLostGnk": "8.081599",
       "inferenceCount": 0,
       "invalidatedInferences": 0,
       "missedRequests": 0,
@@ -4728,9 +4897,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "556833.157778",
+      "paidGnk": "556.833158",
       "rewarded": true,
       "shortAddress": "gonka1u4zx...2cehj3",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1789,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -25,
       "totalPositiveDrop": 25,
       "validatedInferences": 0,
@@ -4782,7 +4956,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "7111.806967",
+      "estimatedLostGnk": "7.111807",
       "inferenceCount": 0,
       "invalidatedInferences": 0,
       "missedRequests": 0,
@@ -4835,9 +5009,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "254939.459333",
+      "paidGnk": "254.939459",
       "rewarded": true,
       "shortAddress": "gonka1x7zh...4kpfnk",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 828,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -22,
       "totalPositiveDrop": 22,
       "validatedInferences": 0,
@@ -4889,7 +5068,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "2909.375577",
+      "estimatedLostGnk": "2.909376",
       "inferenceCount": 202,
       "invalidatedInferences": 0,
       "missedRequests": 1,
@@ -4942,9 +5121,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "196640.571847",
+      "paidGnk": "196.640572",
       "rewarded": true,
       "shortAddress": "gonka1d7p0...v9h82p",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 794,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -9,
       "totalPositiveDrop": 9,
       "validatedInferences": 202,
@@ -4996,7 +5180,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "2909.375577",
+      "estimatedLostGnk": "2.909376",
       "inferenceCount": 213,
       "invalidatedInferences": 0,
       "missedRequests": 2,
@@ -5049,9 +5233,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "351368.970528",
+      "paidGnk": "351.368971",
       "rewarded": true,
       "shortAddress": "gonka1tmk2...mwtwq2",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1124,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -9,
       "totalPositiveDrop": 9,
       "validatedInferences": 213,
@@ -5103,7 +5292,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "1939.583718",
+      "estimatedLostGnk": "1.939584",
       "inferenceCount": 10148,
       "invalidatedInferences": 13,
       "missedRequests": 7,
@@ -5198,9 +5387,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "3917370.109987",
+      "paidGnk": "3917.370110",
       "rewarded": true,
       "shortAddress": "gonka168rt...lnkns2",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 12499,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -6,
       "totalPositiveDrop": 6,
       "validatedInferences": 10135,
@@ -5252,7 +5446,7 @@
       ],
       "claimed": true,
       "estimatedLostBasis": "Estimated from exact unpaid pool allocated by observed confirmation-weight drops.",
-      "estimatedLostGnk": "969.791859",
+      "estimatedLostGnk": "0.969792",
       "inferenceCount": 202,
       "invalidatedInferences": 0,
       "missedRequests": 0,
@@ -5305,9 +5499,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "348217.679312",
+      "paidGnk": "348.217679",
       "rewarded": true,
       "shortAddress": "gonka1dkl4...y552cp",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1108,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": -3,
       "totalPositiveDrop": 3,
       "validatedInferences": 202,
@@ -5416,9 +5615,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "2176911.971667",
+      "paidGnk": "2176.911972",
       "rewarded": true,
       "shortAddress": "gonka10mmd...vqgz09",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 6908,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 1958,
@@ -5539,9 +5743,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "2851918.550027",
+      "paidGnk": "2851.918550",
       "rewarded": true,
       "shortAddress": "gonka12pcu...f9r4ra",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 9050,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 2604,
@@ -5646,9 +5855,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "2223866.210778",
+      "paidGnk": "2223.866211",
       "rewarded": true,
       "shortAddress": "gonka19cjm...m0x7m2",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 7057,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 3052,
@@ -5781,9 +5995,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "2140987.251810",
+      "paidGnk": "2140.987252",
       "rewarded": true,
       "shortAddress": "gonka19ghz...rr9kel",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 6794,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 1799,
@@ -5888,9 +6107,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "244540.198322",
+      "paidGnk": "244.540198",
       "rewarded": true,
       "shortAddress": "gonka1amlm...6f85rj",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 776,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 192,
@@ -5995,9 +6219,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "124160.873890",
+      "paidGnk": "124.160874",
       "rewarded": true,
       "shortAddress": "gonka1d694...kgsha0",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 394,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 754,
@@ -6102,9 +6331,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "109034.676056",
+      "paidGnk": "109.034676",
       "rewarded": true,
       "shortAddress": "gonka1gyk0...k8svc5",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 346,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 194,
@@ -6209,9 +6443,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "185926.181714",
+      "paidGnk": "185.926182",
       "rewarded": true,
       "shortAddress": "gonka1p2lh...k6h26m",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 590,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 398,
@@ -6274,6 +6513,11 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka1plly...shty87",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 0,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 0,
@@ -6336,6 +6580,11 @@
       "paidGnk": "0.000000",
       "rewarded": false,
       "shortAddress": "gonka1qu9m...7w8l08",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 0,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 0,
@@ -6440,9 +6689,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "169854.596515",
+      "paidGnk": "169.854597",
       "rewarded": true,
       "shortAddress": "gonka1qwfr...33xdkl",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 539,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 201,
@@ -6551,9 +6805,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "1309046.370918",
+      "paidGnk": "1309.046371",
       "rewarded": true,
       "shortAddress": "gonka1rcpc...mcr09v",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 4154,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 1395,
@@ -6658,9 +6917,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "620804.369453",
+      "paidGnk": "620.804369",
       "rewarded": true,
       "shortAddress": "gonka1tlvg...upktgg",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1970,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 197,
@@ -6765,9 +7029,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "177732.824554",
+      "paidGnk": "177.732825",
       "rewarded": true,
       "shortAddress": "gonka1vjz8...6l2feu",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 564,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 0,
@@ -6914,9 +7183,14 @@
         }
       ],
       "notRewarded": false,
-      "paidGnk": "665237.575592",
+      "paidGnk": "665.237576",
       "rewarded": true,
       "shortAddress": "gonka1y2a9...ryv5le",
+      "sourceCompensationBasis": "Not in the epoch 265 source compensation set.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 9126,
+      "sourceCorrectRewardGnk": "0.000000",
       "totalNegativeDelta": 0,
       "totalPositiveDrop": 0,
       "validatedInferences": 1497,
@@ -6928,26 +7202,29 @@
     "checkpointEstimates": [
       {
         "checkpoint": "after_cpoc_0",
-        "estimatedLostGnk": "57419759.657261",
+        "estimatedLostGnk": "57419.759658",
         "positiveDrop": 177625
       },
       {
         "checkpoint": "after_cpoc_1",
-        "estimatedLostGnk": "6195030.395900",
+        "estimatedLostGnk": "6195.030396",
         "positiveDrop": 19164
       },
       {
         "checkpoint": "after_cpoc_2",
-        "estimatedLostGnk": "35752669.941356",
+        "estimatedLostGnk": "35752.669942",
         "positiveDrop": 110599
       }
     ],
     "precision": "Estimate only; proof-grade per-host amount requires settlement replay.",
+    "sourceCompensationBasis": "E265 source model from votkon/gonka-kimi-restitution: max(0, entry weight / total epoch weight * epoch reward - actual rewards), using GONKA denom 1e9.",
+    "sourceCompensationCheckpoint": "after_cpoc_2",
+    "sourceCompensationTotalGnk": "30592.104862",
     "totalPositiveDrop": 307388
   },
   "warnings": [
-    "Per-node lost GNK is an estimate allocated from the exact unpaid pool by observed confirmed-weight drops.",
-    "Exact per-host forfeited amount requires settlement replay.",
+    "Source compensation is a counterfactual model, not a direct gov-wallet remainder allocation.",
+    "Drop-allocation estimates remain diagnostic only and are not shown as the primary compensation value.",
     "Chain data shows confirmation-weight drops and reward settlement effects; attack attribution is investigation context."
   ]
 }

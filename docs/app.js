@@ -41,12 +41,12 @@ function renderKpis(data) {
   const kimiDrop = first.kimiConfirmedWeight - last.kimiConfirmedWeight;
   const totalDrop = first.totalConfirmedWeight - last.totalConfirmedWeight;
   const cards = [
-    ["Epoch reward pool", fmtGnk(totals.epochRewardPoolGnk), "GNK scheduled for settlement"],
+    ["Epoch reward pool", fmtGnk(totals.epochRewardPoolGnk), "GONKA scheduled for settlement"],
     ["Paid to miners", fmtGnk(totals.paidRewardsGnk), "Exact rewarded_coins sum"],
     ["Not distributed", fmtGnk(totals.unpaidPoolGnk), "Exact settlement remainder"],
+    ["Source compensation", fmtGnk(totals.sourceCompensationGnk), "counterfactual model"],
     ["Participants", `${totals.finalGroupCount}/${totals.participantsTotal}`, "final group / total"],
     ["Kimi confirmed drop", fmtInt(kimiDrop), "entry to after cPoC 2"],
-    ["Total confirmed drop", fmtInt(totalDrop), "de-duplicated union"],
   ];
   document.getElementById("kpi-grid").innerHTML = cards
     .map(
@@ -66,8 +66,8 @@ function renderTimeline(data) {
     .map((event) => {
       const isDrop = num(event.parentConfirmationDelta) < 0;
       const drop = isDrop ? `<div class="event-metric negative">${fmtInt(event.parentConfirmationDelta)} weight</div>` : "";
-      const lost = num(event.estimatedLostGnk) > 0
-        ? `<div class="event-metric">Est. loss: <strong>${fmtGnk(event.estimatedLostGnk)} GNK</strong></div>`
+      const compensation = num(event.sourceCompensationGnk) > 0
+        ? `<div class="event-metric">Compensation model: <strong>${fmtGnk(event.sourceCompensationGnk)} GONKA</strong></div>`
         : "";
       return `
         <article class="event ${isDrop ? "drop" : ""}">
@@ -76,7 +76,7 @@ function renderTimeline(data) {
           <div class="event-height">height ${fmtInt(event.height)}</div>
           <div class="event-time">${event.timeUtc}</div>
           ${drop}
-          ${lost}
+          ${compensation}
         </article>
       `;
     })
@@ -163,7 +163,7 @@ function nodeMatches(node, filter) {
   if (filter === "Kimi" || filter === "Qwen") return node.modelNames.includes(filter);
   if (filter === "severe_drop") return node.worstSeverity === "severe_drop";
   if (filter === "not_rewarded") return node.notRewarded;
-  if (filter === "estimated_loss") return num(node.estimatedLostGnk) > 0;
+  if (filter === "compensation") return num(node.sourceCompensationGnk) > 0;
   return true;
 }
 
@@ -218,7 +218,7 @@ function renderNodes() {
           <td>${modelStackCell(node, "after_cpoc_1")}</td>
           <td>${modelStackCell(node, "after_cpoc_2")}</td>
           <td class="negative">${fmtInt(node.totalPositiveDrop)}</td>
-          <td><strong>${fmtGnk(node.estimatedLostGnk)}</strong></td>
+          <td title="${node.sourceCompensationBasis}"><strong>${fmtGnk(node.sourceCompensationGnk)}</strong></td>
           <td>${fmtGnk(node.paidGnk)}</td>
           <td>${fmtInt(node.missedRequests)} / ${fmtInt(node.invalidatedInferences)}</td>
         </tr>

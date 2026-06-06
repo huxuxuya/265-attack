@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import csv
 import json
-from decimal import Decimal, ROUND_HALF_UP
+from decimal import Decimal, ROUND_HALF_UP, localcontext
 from pathlib import Path
 from typing import Any
 
@@ -17,7 +17,13 @@ OUTPUTS = ROOT / "outputs"
 DOCS_DATA = REPO_ROOT / "docs" / "data"
 OUTPUT_JSON = DOCS_DATA / "epoch_265_timeline.json"
 EPOCH = 265
-DENOM_EXPONENT = Decimal("1000000")
+GONKA_DENOM = Decimal("1000000000")
+
+E265_SOURCE_COMPENSATION_ADDRESSES = {
+    "gonka1j7x6dv42xehe9e5au4ku3wvzwtqlegfjhlvzj6",
+    "gonka17pw6099q758qwzewtrqmqpf5c2lrhr97fwqexu",
+    "gonka1830lqug50lse998x2lakk4pj5ypfumz5pasz0y",
+}
 
 MODEL_FILES = {
     "Kimi": "moonshotai_kimi_k2_6.json",
@@ -54,6 +60,35 @@ def as_decimal(value: Any) -> Decimal:
 
 def money(value: Decimal) -> str:
     return format(value.quantize(Decimal("0.000001"), rounding=ROUND_HALF_UP), "f")
+
+
+def from_ngonka(value: Decimal) -> Decimal:
+    return value / GONKA_DENOM
+
+
+def decimal_param(value: Any) -> Decimal | None:
+    if isinstance(value, dict) and "value" in value and "exponent" in value:
+        parsed_value = as_decimal(value.get("value"))
+        parsed_exp = as_int(value.get("exponent"))
+        return parsed_value * (Decimal(10) ** parsed_exp)
+    if value in (None, ""):
+        return None
+    return as_decimal(value)
+
+
+def epoch_reward_raw() -> Decimal:
+    params = read_json(RAW_ROOT / f"epoch_{EPOCH}" / "params_current.json")
+    bitcoin_params = params.get("params", {}).get("bitcoin_reward_params", {})
+    initial = as_decimal(bitcoin_params.get("initial_epoch_reward"))
+    decay = decimal_param(bitcoin_params.get("decay_rate"))
+    genesis = as_decimal(bitcoin_params.get("genesis_epoch"))
+    if decay is None:
+        raise ValueError("missing bitcoin reward decay_rate")
+    epochs_since_genesis = int(Decimal(EPOCH) - genesis)
+    with localcontext() as ctx:
+        ctx.prec = 80
+        current_reward = initial * ((decay.exp()) ** epochs_since_genesis)
+    return Decimal(int(current_reward))
 
 
 def block_time(height: int) -> str:
@@ -181,12 +216,15 @@ def progression_rows() -> list[dict[str, str]]:
 def epoch_totals() -> dict[str, Any]:
     summary = next(row for row in read_csv(OUTPUTS / "epoch_summary.csv") if row["epoch"] == str(EPOCH))
     gov = next(row for row in read_csv(OUTPUTS / "gov_settlement_audit.csv") if row["epoch"] == str(EPOCH))
+    reward_raw = epoch_reward_raw()
+    paid_raw = sum(as_decimal(row.get("rewarded_coins")) for row in performance_rows().values())
+    unpaid_raw = reward_raw - paid_raw
     return {
         "epoch": EPOCH,
-        "epochRewardPoolGnk": summary["epoch_reward_pool_gnk"],
-        "paidRewardsGnk": summary["paid_rewards_gnk"],
-        "unpaidPoolGnk": summary["not_paid_rewards_gnk"],
-        "govRemainderEventGnk": gov["current_epoch_gov_remainder_event_gnk"],
+        "epochRewardPoolGnk": money(from_ngonka(reward_raw)),
+        "paidRewardsGnk": money(from_ngonka(paid_raw)),
+        "unpaidPoolGnk": money(from_ngonka(unpaid_raw)),
+        "govRemainderEventGnk": money(as_decimal(gov["current_epoch_gov_remainder_event_gnk"]) / Decimal("1000")),
         "participantsTotal": as_int(summary["participants_total"]),
         "finalGroupCount": as_int(summary["final_group_count"]),
         "rewardedCount": as_int(summary["rewarded_count"]),
@@ -298,6 +336,8 @@ def build_nodes(unpaid_pool_gnk: Decimal) -> tuple[list[dict[str, Any]], dict[st
     snapshots = snapshot_by_checkpoint()
     members = model_members()
     perf = performance_rows()
+    reward_raw = epoch_reward_raw()
+    total_epoch_weight = as_decimal(epoch_group().get("total_weight"))
     all_addresses = set(perf)
     for rows in snapshots.values():
         all_addresses.update(rows)
@@ -349,9 +389,16 @@ def build_nodes(unpaid_pool_gnk: Decimal) -> tuple[list[dict[str, Any]], dict[st
 
         perf_row = perf.get(address, {})
         rewarded_ngnk = as_decimal(perf_row.get("rewarded_coins"))
-        paid_gnk = rewarded_ngnk / DENOM_EXPONENT
+        paid_gnk = from_ngonka(rewarded_ngnk)
         not_rewarded = rewarded_ngnk == 0
         models = node_models(address, members)
+        entry_row = snapshots["epoch_entry"].get(address, {})
+        source_weight = as_decimal(entry_row.get("weight"))
+        correct_reward_raw = Decimal("0")
+        compensation_raw = Decimal("0")
+        if address in E265_SOURCE_COMPENSATION_ADDRESSES and total_epoch_weight > 0:
+            correct_reward_raw = reward_raw * source_weight / total_epoch_weight
+            compensation_raw = max(Decimal("0"), correct_reward_raw - rewarded_ngnk)
         raw_nodes.append(
             {
                 "address": address,
@@ -364,6 +411,15 @@ def build_nodes(unpaid_pool_gnk: Decimal) -> tuple[list[dict[str, Any]], dict[st
                 "totalNegativeDelta": total_negative_delta,
                 "worstSeverity": worst,
                 "paidGnk": money(paid_gnk),
+                "sourceCompensationEligible": address in E265_SOURCE_COMPENSATION_ADDRESSES,
+                "sourceCompensationWeight": int(source_weight),
+                "sourceCorrectRewardGnk": money(from_ngonka(correct_reward_raw)),
+                "sourceCompensationGnk": money(from_ngonka(compensation_raw)),
+                "sourceCompensationBasis": (
+                    "E265 source model: max(0, entry weight / total epoch weight * epoch reward - actual rewards)."
+                    if compensation_raw > 0
+                    else "Not in the epoch 265 source compensation set."
+                ),
                 "rewarded": not not_rewarded,
                 "notRewarded": not_rewarded,
                 "inferenceCount": as_int(perf_row.get("inference_count")),
@@ -401,9 +457,16 @@ def build_nodes(unpaid_pool_gnk: Decimal) -> tuple[list[dict[str, Any]], dict[st
             }
         )
 
+    source_compensation_total = sum(as_decimal(row["sourceCompensationGnk"]) for row in raw_nodes)
     return raw_nodes, {
         "totalPositiveDrop": total_positive_drop,
         "checkpointEstimates": checkpoint_estimates,
+        "sourceCompensationTotalGnk": money(source_compensation_total),
+        "sourceCompensationCheckpoint": "after_cpoc_2",
+        "sourceCompensationBasis": (
+            "E265 source model from votkon/gonka-kimi-restitution: max(0, entry weight / total epoch weight "
+            "* epoch reward - actual rewards), using GONKA denom 1e9."
+        ),
         "allocationBasis": "Exact unpaid pool allocated across address-level positive confirmation-weight drops.",
         "precision": "Estimate only; proof-grade per-host amount requires settlement replay.",
     }
@@ -421,6 +484,11 @@ def build_events(payout: dict[str, Any]) -> list[dict[str, Any]]:
         key = item["key"]
         effect = effects.get(key, {})
         estimate = payout_by_checkpoint.get(key, {})
+        source_compensation = (
+            payout["sourceCompensationTotalGnk"]
+            if key == payout["sourceCompensationCheckpoint"]
+            else "0.000000"
+        )
         events.append(
             {
                 **item,
@@ -432,6 +500,7 @@ def build_events(payout: dict[str, Any]) -> list[dict[str, Any]]:
                 "kimiZeroAfter": as_int(effect.get("kimi_zero_confirmation_after")),
                 "positiveDrop": as_int(estimate.get("positiveDrop")),
                 "estimatedLostGnk": estimate.get("estimatedLostGnk", "0.000000"),
+                "sourceCompensationGnk": source_compensation,
             }
         )
     return events
@@ -442,7 +511,15 @@ def main() -> None:
     totals = epoch_totals()
     unpaid_pool = as_decimal(totals["unpaidPoolGnk"])
     nodes, payout = build_nodes(unpaid_pool)
-    nodes.sort(key=lambda item: (as_decimal(item["estimatedLostGnk"]), item["totalPositiveDrop"]), reverse=True)
+    nodes.sort(
+        key=lambda item: (
+            as_decimal(item["sourceCompensationGnk"]),
+            as_decimal(item["estimatedLostGnk"]),
+            item["totalPositiveDrop"],
+        ),
+        reverse=True,
+    )
+    totals["sourceCompensationGnk"] = payout["sourceCompensationTotalGnk"]
     data = {
         "metadata": {
             "title": "Epoch 265 cPoC attack timeline",
@@ -455,8 +532,8 @@ def main() -> None:
         "modelSeries": model_series(),
         "nodes": nodes,
         "warnings": [
-            "Per-node lost GNK is an estimate allocated from the exact unpaid pool by observed confirmed-weight drops.",
-            "Exact per-host forfeited amount requires settlement replay.",
+            "Source compensation is a counterfactual model, not a direct gov-wallet remainder allocation.",
+            "Drop-allocation estimates remain diagnostic only and are not shown as the primary compensation value.",
             "Chain data shows confirmation-weight drops and reward settlement effects; attack attribution is investigation context.",
         ],
     }
