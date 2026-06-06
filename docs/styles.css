@@ -362,6 +362,21 @@ tbody tr:hover {
   background: #f8fafc;
 }
 
+tfoot td {
+  position: sticky;
+  bottom: 0;
+  background: #f1f5f9;
+  border-top: 1px solid var(--line);
+  font-weight: 800;
+  z-index: 1;
+}
+
+tfoot td:first-child {
+  left: 0;
+  z-index: 3;
+  background: #f1f5f9;
+}
+
 .address {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 12px;
@@ -441,6 +456,20 @@ tbody tr:hover {
 .model-delta {
   grid-column: 2;
   font-size: 10px;
+}
+
+.drop-cell {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  line-height: 1.1;
+}
+
+.drop-cell span:last-child {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
 }
 
 .state-entry,

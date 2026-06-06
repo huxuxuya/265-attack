@@ -24,6 +24,10 @@ function fmtGnk(value) {
   return formatGnk.format(num(value));
 }
 
+function fmtPct(value) {
+  return `${num(value).toFixed(1)}%`;
+}
+
 function checkpoint(node, key) {
   return node.checkpoints.find((item) => item.checkpoint === key);
 }
@@ -197,9 +201,26 @@ function modelStackCell(node, checkpointKey = null) {
 
 function renderNodes() {
   const tbody = document.getElementById("node-table");
+  const tfoot = document.getElementById("node-table-total");
   const rows = state.data.nodes.filter((node) => nodeMatches(node, state.filter));
+  const totals = rows.reduce(
+    (acc, node) => {
+      acc.drop += num(node.totalPositiveDrop);
+      acc.vote67 += num(node.vote67PaidGnk);
+      acc.dropLoss += num(node.dropLossGnk);
+      acc.paid += num(node.paidGnk);
+      acc.missed += num(node.missedRequests);
+      acc.invalidated += num(node.invalidatedInferences);
+      return acc;
+    },
+    { drop: 0, vote67: 0, dropLoss: 0, paid: 0, missed: 0, invalidated: 0 },
+  );
+  const totalEntryConfirmed = rows.reduce((acc, node) => acc + num(checkpoint(node, "epoch_entry").confirmationWeight), 0);
+  const totalDropPct = totalEntryConfirmed > 0 ? (totals.drop / totalEntryConfirmed) * 100 : 0;
   tbody.innerHTML = rows
     .map((node) => {
+      const entryConfirmed = num(checkpoint(node, "epoch_entry").confirmationWeight);
+      const dropPct = entryConfirmed > 0 ? (node.totalPositiveDrop / entryConfirmed) * 100 : 0;
       const badges = node.modelNames
         .map((name) => `<span class="badge badge-${name.toLowerCase()}">${name}</span>`)
         .join("");
@@ -218,7 +239,7 @@ function renderNodes() {
           <td>${modelStackCell(node, "after_cpoc_0")}</td>
           <td>${modelStackCell(node, "after_cpoc_1")}</td>
           <td>${modelStackCell(node, "after_cpoc_2")}</td>
-          <td class="negative">${fmtInt(node.totalPositiveDrop)}</td>
+          <td class="drop-cell"><span class="negative">${fmtInt(node.totalPositiveDrop)}</span><span>${fmtPct(dropPct)}</span></td>
           <td title="${node.vote67PaidBasis}"><strong>${fmtGnk(node.vote67PaidGnk)}</strong></td>
           <td title="${node.dropLossBasis}"><strong>${fmtGnk(node.dropLossGnk)}</strong></td>
           <td>${fmtGnk(node.paidGnk)}</td>
@@ -227,6 +248,22 @@ function renderNodes() {
       `;
     })
     .join("");
+  tfoot.innerHTML = `
+    <tr>
+      <td>Total visible</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="drop-cell"><span class="negative">${fmtInt(totals.drop)}</span><span>${fmtPct(totalDropPct)}</span></td>
+      <td>${fmtGnk(totals.vote67)}</td>
+      <td>${fmtGnk(totals.dropLoss)}</td>
+      <td>${fmtGnk(totals.paid)}</td>
+      <td>${fmtInt(totals.missed)} / ${fmtInt(totals.invalidated)}</td>
+    </tr>
+  `;
 }
 
 function bindFilters() {

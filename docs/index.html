@@ -24,32 +24,8 @@
       <section class="panel">
         <div class="panel-heading">
           <div>
-            <h2>Timeline</h2>
-            <p>UTC timestamps show when cPoC generation started and when the confirmed result became visible in chain state.</p>
-          </div>
-          <div class="legend">
-            <span><i class="dot dot-blue"></i>chain event</span>
-            <span><i class="dot dot-red"></i>confirmed weight drop</span>
-          </div>
-        </div>
-        <div id="timeline" class="timeline"></div>
-      </section>
-
-      <section class="panel chart-panel">
-        <div class="panel-heading">
-          <div>
-            <h2>Confirmed Weight Progression</h2>
-            <p>Kimi, Qwen, and de-duplicated total confirmed weight after each cPoC checkpoint.</p>
-          </div>
-        </div>
-        <svg id="weight-chart" role="img" aria-label="Confirmed weight progression chart"></svg>
-      </section>
-
-      <section class="panel">
-        <div class="panel-heading">
-          <div>
             <h2>Operator Impact</h2>
-            <p>Sorted by Vote #67 e265 amount, with observed cPoC drop-loss and actual paid rewards shown alongside it.</p>
+            <p>Sorted by Vote #67 e265 amount. `Paid` is actual chain `rewarded_coins` for epoch 265.</p>
           </div>
           <div class="controls" id="filters">
             <button type="button" data-filter="all" class="active">All</button>
@@ -80,8 +56,33 @@
               </tr>
             </thead>
             <tbody id="node-table"></tbody>
+            <tfoot id="node-table-total"></tfoot>
           </table>
         </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Timeline</h2>
+            <p>UTC timestamps show when cPoC generation started and when the confirmed result became visible in chain state.</p>
+          </div>
+          <div class="legend">
+            <span><i class="dot dot-blue"></i>chain event</span>
+            <span><i class="dot dot-red"></i>confirmed weight drop</span>
+          </div>
+        </div>
+        <div id="timeline" class="timeline"></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Confirmed Weight Progression</h2>
+            <p>Kimi, Qwen, and de-duplicated total confirmed weight after each cPoC checkpoint.</p>
+          </div>
+        </div>
+        <svg id="weight-chart" role="img" aria-label="Confirmed weight progression chart"></svg>
       </section>
     </main>
 
