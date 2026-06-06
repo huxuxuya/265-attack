@@ -248,7 +248,6 @@ function renderNodes() {
           </td>
           <td>${fmtInt(entryConfirmed)}</td>
           <td>${modelStackCell(node)}</td>
-          <td>${checkpointCell(node, "epoch_entry")}</td>
           <td>${checkpointCell(node, "after_cpoc_0")}</td>
           <td>${checkpointCell(node, "after_cpoc_1")}</td>
           <td>${checkpointCell(node, "after_cpoc_2")}</td>
@@ -265,7 +264,6 @@ function renderNodes() {
     <tr>
       <td>Total visible</td>
       <td>${fmtInt(totals.entryWeight)}</td>
-      <td></td>
       <td></td>
       <td></td>
       <td></td>
