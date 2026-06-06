@@ -237,9 +237,6 @@ function renderNodes() {
     .map((node) => {
       const entryConfirmed = num(checkpoint(node, "epoch_entry").confirmationWeight);
       const dropPct = entryConfirmed > 0 ? (node.totalPositiveDrop / entryConfirmed) * 100 : 0;
-      const badges = node.modelNames
-        .map((name) => `<span class="badge badge-${name.toLowerCase()}">${name}</span>`)
-        .join("");
       const mlNodes = node.models
         .flatMap((model) => model.mlNodes.map((ml) => `${model.model}:${ml.nodeId}:${fmtInt(ml.pocWeight)}`))
         .join(", ");
@@ -250,7 +247,6 @@ function renderNodes() {
             <div class="node-meta" title="${mlNodes || "no model ml_nodes"}">${node.notRewarded ? "not paid" : "paid"}</div>
           </td>
           <td>${fmtInt(entryConfirmed)}</td>
-          <td>${badges}</td>
           <td>${modelStackCell(node)}</td>
           <td>${checkpointCell(node, "epoch_entry")}</td>
           <td>${checkpointCell(node, "after_cpoc_0")}</td>
@@ -269,7 +265,6 @@ function renderNodes() {
     <tr>
       <td>Total visible</td>
       <td>${fmtInt(totals.entryWeight)}</td>
-      <td></td>
       <td></td>
       <td></td>
       <td></td>
