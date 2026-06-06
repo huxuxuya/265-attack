@@ -53,6 +53,22 @@ The key gov-wallet test is `delta_last_to_next_gnk` for the `gov` module. A zero
 
 `affected_rows.csv` includes chain-derived affected rows even before source claim files are loaded. Source claim rows are appended after those chain rows.
 
+`unpaid_miners_detail.csv` includes only settlement-visible participants with `rewarded_coins = 0`. Reasons are derived from saved chain fields:
+
+- final group membership from `validation_weights`;
+- `confirmation_weight` and `reputation` from `validation_weights`;
+- `poc_validation_snapshot` availability flag;
+- `claimed`;
+- `earned_coins`;
+- `missed_requests`;
+- `inference_count`;
+- `validated_inferences`;
+- `invalidated_inferences`.
+
+The current saved `poc_validation_snapshot` endpoint returns `found=false` for epochs 265 and 266, so `confirmation_poc_zero_weight` is not labeled as direct raw snapshot proof. It means the participant is present in final `validation_weights`, but has `confirmation_weight = 0` in saved chain data.
+
+`unpaid_reason_summary.csv` aggregates the address-level detail by epoch and reason class.
+
 Rows are classified into these classes:
 
 - `direct_cpoc_failure`: direct operator cPoC failure evidence is present or claimed with matching chain participation evidence.

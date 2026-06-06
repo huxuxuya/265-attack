@@ -1,0 +1,6 @@
+epoch,reason_class,count
+265,confirmation_poc_zero_weight,10
+265,excluded_from_final_group,2
+265,missed_or_invalidated_work,4
+266,confirmation_poc_zero_weight,8
+266,excluded_from_final_group,2
