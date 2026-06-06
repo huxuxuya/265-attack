@@ -237,11 +237,17 @@ function renderNodes() {
     .map((node) => {
       const entryConfirmed = num(checkpoint(node, "epoch_entry").confirmationWeight);
       const dropPct = entryConfirmed > 0 ? (node.totalPositiveDrop / entryConfirmed) * 100 : 0;
+      const rowClasses = [
+        dropPct > 55 ? "high-drop-row" : "",
+        num(node.vote67PaidGnk) > 0 ? "vote67-row" : "",
+      ]
+        .filter(Boolean)
+        .join(" ");
       const mlNodes = node.models
         .flatMap((model) => model.mlNodes.map((ml) => `${model.model}:${ml.nodeId}:${fmtInt(ml.pocWeight)}`))
         .join(", ");
       return `
-        <tr>
+        <tr class="${rowClasses}">
           <td>
             <div class="address" title="${node.address}">${node.shortAddress}</div>
             <div class="node-meta" title="${mlNodes || "no model ml_nodes"}">${node.notRewarded ? "not paid" : "paid"}</div>

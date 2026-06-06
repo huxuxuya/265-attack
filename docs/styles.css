@@ -359,6 +359,47 @@ tbody tr:hover {
   background: #f8fafc;
 }
 
+tbody tr.vote67-row td {
+  background: #fff7ed;
+}
+
+tbody tr.high-drop-row td {
+  background: #fff1f2;
+}
+
+tbody tr.high-drop-row.vote67-row td {
+  background: #fff1f2;
+}
+
+tbody tr.vote67-row td:nth-child(8) {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+tbody tr.high-drop-row td:nth-child(7),
+tbody tr.high-drop-row td:nth-child(8) {
+  font-weight: 800;
+}
+
+tbody tr.vote67-row td:first-child {
+  background: #fff7ed;
+}
+
+tbody tr.high-drop-row td:first-child,
+tbody tr.high-drop-row.vote67-row td:first-child {
+  background: #fff1f2;
+}
+
+tbody tr:hover td,
+tbody tr.vote67-row:hover td,
+tbody tr.high-drop-row:hover td {
+  background: #f8fafc;
+}
+
+tbody tr.vote67-row:hover td:nth-child(8) {
+  background: #ffedd5;
+}
+
 tfoot td {
   position: sticky;
   bottom: 0;
