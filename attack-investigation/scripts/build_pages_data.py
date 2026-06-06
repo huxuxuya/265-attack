@@ -396,16 +396,13 @@ def build_nodes(unpaid_pool_gnk: Decimal) -> tuple[list[dict[str, Any]], dict[st
         source_weight = as_decimal(entry_row.get("weight"))
         correct_reward_raw = Decimal("0")
         compensation_raw = Decimal("0")
+        drop_loss_weight = Decimal(total_positive_drop)
         drop_loss_raw = Decimal("0")
-        healthy_confirmation = Decimal("0")
-        end_confirmation = Decimal("0")
+        if total_epoch_weight > 0 and drop_loss_weight > 0:
+            drop_loss_raw = reward_raw * drop_loss_weight / total_epoch_weight
         if address in E265_SOURCE_COMPENSATION_ADDRESSES and total_epoch_weight > 0:
             correct_reward_raw = reward_raw * source_weight / total_epoch_weight
             compensation_raw = max(Decimal("0"), correct_reward_raw - rewarded_ngnk)
-            healthy_confirmation = as_decimal(snapshots["after_cpoc_1"].get(address, {}).get("confirmation_weight"))
-            end_confirmation = as_decimal(snapshots["after_cpoc_2"].get(address, {}).get("confirmation_weight"))
-            drop_loss_weight = max(Decimal("0"), healthy_confirmation - end_confirmation)
-            drop_loss_raw = reward_raw * drop_loss_weight / total_epoch_weight
         raw_nodes.append(
             {
                 "address": address,
@@ -425,12 +422,12 @@ def build_nodes(unpaid_pool_gnk: Decimal) -> tuple[list[dict[str, Any]], dict[st
                 "vote67PaidGnk": money(from_ngonka(compensation_raw)),
                 "vote67PaidBasis": "Vote #67 Kimi Restitution e265 amount from the source compensation model.",
                 "dropLossGnk": money(from_ngonka(drop_loss_raw)),
-                "dropLossWeight": int(max(Decimal("0"), healthy_confirmation - end_confirmation)),
+                "dropLossWeight": int(drop_loss_weight),
                 "dropLossBasis": (
-                    "Observed cPoC drop loss: max(0, healthy confirmation before cPoC2 - end confirmation after cPoC2) "
+                    "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints "
                     "/ total epoch weight * epoch reward."
                     if drop_loss_raw > 0
-                    else "No e265 cPoC2 drop-loss calculation for this address."
+                    else "No observed positive confirmed-weight drop across saved cPoC checkpoints."
                 ),
                 "sourceCompensationBasis": (
                     "E265 source model: max(0, entry weight / total epoch weight * epoch reward - actual rewards)."

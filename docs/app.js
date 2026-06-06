@@ -45,7 +45,7 @@ function renderKpis(data) {
     ["Paid to miners", fmtGnk(totals.paidRewardsGnk), "Exact rewarded_coins sum"],
     ["Not distributed", fmtGnk(totals.unpaidPoolGnk), "Exact settlement remainder"],
     ["Vote #67 paid", fmtGnk(totals.vote67PaidGnk), "e265 fixed amount"],
-    ["Drop loss", fmtGnk(totals.dropLossGnk), "observed cPoC2 weight loss"],
+    ["Drop loss", fmtGnk(totals.dropLossGnk), "observed cPoC weight loss"],
     ["Participants", `${totals.finalGroupCount}/${totals.participantsTotal}`, "final group / total"],
     ["Kimi confirmed drop", fmtInt(kimiDrop), "entry to after cPoC 2"],
   ];
