@@ -297,22 +297,58 @@ def node_models(address: str, members: dict[str, dict[str, dict[str, Any]]]) -> 
     return output
 
 
+def allocated_model_weights(models: list[dict[str, Any]], total_weight: int) -> dict[str, int]:
+    if not models:
+        return {}
+    if len(models) == 1:
+        return {models[0]["model"]: total_weight}
+
+    model_entry_total = sum(as_int(model.get("entryWeight")) for model in models)
+    if model_entry_total <= 0:
+        return {model["model"]: 0 for model in models}
+
+    allocated: dict[str, int] = {}
+    remainders: list[tuple[Decimal, str]] = []
+    assigned = 0
+    for model in models:
+        exact = Decimal(total_weight) * Decimal(as_int(model.get("entryWeight"))) / Decimal(model_entry_total)
+        whole = int(exact)
+        allocated[model["model"]] = whole
+        assigned += whole
+        remainders.append((exact - Decimal(whole), model["model"]))
+
+    for _, model_name in sorted(remainders, reverse=True)[: max(total_weight - assigned, 0)]:
+        allocated[model_name] += 1
+    return allocated
+
+
 def node_model_rows(models: list[dict[str, Any]], checkpoints: list[dict[str, Any]]) -> list[dict[str, Any]]:
     output: list[dict[str, Any]] = []
+    model_weights_by_checkpoint = {
+        checkpoint["checkpoint"]: allocated_model_weights(models, checkpoint["confirmationWeight"])
+        for checkpoint in checkpoints
+    }
     for model in models:
+        previous_weight: int | None = None
+        checkpoint_rows: list[dict[str, Any]] = []
+        for checkpoint in checkpoints:
+            current = model_weights_by_checkpoint[checkpoint["checkpoint"]].get(model["model"], 0)
+            delta = None if previous_weight is None else current - previous_weight
+            checkpoint_rows.append(
+                {
+                    "checkpoint": checkpoint["checkpoint"],
+                    "confirmationWeight": current,
+                    "delta": delta,
+                    "severity": "entry" if previous_weight is None else severity(previous_weight, current),
+                }
+            )
+            previous_weight = current
         output.append(
             {
                 "model": model["model"],
                 "entryWeight": model["entryWeight"],
-                "checkpoints": [
-                    {
-                        "checkpoint": checkpoint["checkpoint"],
-                        "confirmationWeight": checkpoint["confirmationWeight"],
-                        "delta": checkpoint["delta"],
-                        "severity": checkpoint["severity"],
-                    }
-                    for checkpoint in checkpoints
-                ],
+                "splitBasis": "exact" if len(models) == 1 else "allocated_by_entry_split",
+                "checkpoints": checkpoint_rows,
             }
         )
     return output

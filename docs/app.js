@@ -248,9 +248,9 @@ function renderNodes() {
           </td>
           <td>${fmtInt(entryConfirmed)}</td>
           <td>${modelStackCell(node)}</td>
-          <td>${checkpointCell(node, "after_cpoc_0")}</td>
-          <td>${checkpointCell(node, "after_cpoc_1")}</td>
-          <td>${checkpointCell(node, "after_cpoc_2")}</td>
+          <td>${modelStackCell(node, "after_cpoc_0")}</td>
+          <td>${modelStackCell(node, "after_cpoc_1")}</td>
+          <td>${modelStackCell(node, "after_cpoc_2")}</td>
           <td class="drop-cell"><span class="drop-stack"><span class="negative">${fmtInt(node.totalPositiveDrop)}</span><span>${fmtPct(dropPct)}</span></span></td>
           <td title="${node.vote67PaidBasis}"><strong>${fmtGnk(node.vote67PaidGnk)}</strong></td>
           <td title="${node.dropLossBasis}"><strong>${fmtGnk(node.dropLossGnk)}</strong></td>

@@ -310,61 +310,63 @@
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 66311,
+              "confirmationWeight": 65161,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 66311,
+              "confirmationWeight": 65161,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 66311,
+              "confirmationWeight": 65161,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 323,
-              "delta": -65988,
+              "confirmationWeight": 317,
+              "delta": -64844,
               "severity": "severe_drop"
             }
           ],
           "entryWeight": 52279,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "allocated_by_entry_split"
         },
         {
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 66311,
+              "confirmationWeight": 1150,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 66311,
+              "confirmationWeight": 1150,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 66311,
+              "confirmationWeight": 1150,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 323,
-              "delta": -65988,
+              "confirmationWeight": 6,
+              "delta": -1144,
               "severity": "severe_drop"
             }
           ],
           "entryWeight": 923,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "allocated_by_entry_split"
         }
       ],
       "models": [
@@ -481,61 +483,63 @@
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 189884,
+              "confirmationWeight": 138288,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 189121,
-              "delta": -763,
+              "confirmationWeight": 137732,
+              "delta": -556,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 186719,
-              "delta": -2402,
+              "confirmationWeight": 135983,
+              "delta": -1749,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 172607,
-              "delta": -14112,
+              "confirmationWeight": 125706,
+              "delta": -10277,
               "severity": "small_drop"
             }
           ],
           "entryWeight": 136007,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "allocated_by_entry_split"
         },
         {
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 189884,
+              "confirmationWeight": 51596,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 189121,
-              "delta": -763,
+              "confirmationWeight": 51389,
+              "delta": -207,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 186719,
-              "delta": -2402,
+              "confirmationWeight": 50736,
+              "delta": -653,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 172607,
-              "delta": -14112,
+              "confirmationWeight": 46901,
+              "delta": -3835,
               "severity": "small_drop"
             }
           ],
           "entryWeight": 50745,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "allocated_by_entry_split"
         }
       ],
       "models": [
@@ -779,7 +783,8 @@
             }
           ],
           "entryWeight": 11252,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -877,61 +882,63 @@
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 96900,
+              "confirmationWeight": 388,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 7870,
-              "delta": -89030,
+              "confirmationWeight": 31,
+              "delta": -357,
               "severity": "severe_drop"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 7870,
+              "confirmationWeight": 31,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 1347,
-              "delta": -6523,
+              "confirmationWeight": 5,
+              "delta": -26,
               "severity": "severe_drop"
             }
           ],
           "entryWeight": 1068,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "allocated_by_entry_split"
         },
         {
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 96900,
+              "confirmationWeight": 96512,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 7870,
-              "delta": -89030,
+              "confirmationWeight": 7839,
+              "delta": -88673,
               "severity": "severe_drop"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 7870,
+              "confirmationWeight": 7839,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 1347,
-              "delta": -6523,
+              "confirmationWeight": 1342,
+              "delta": -6497,
               "severity": "severe_drop"
             }
           ],
           "entryWeight": 265943,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "allocated_by_entry_split"
         }
       ],
       "models": [
@@ -1163,7 +1170,8 @@
             }
           ],
           "entryWeight": 43169,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -1340,7 +1348,8 @@
             }
           ],
           "entryWeight": 11913,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -1461,7 +1470,8 @@
             }
           ],
           "entryWeight": 11569,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -1582,7 +1592,8 @@
             }
           ],
           "entryWeight": 33180,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -1719,7 +1730,8 @@
             }
           ],
           "entryWeight": 72507,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -1837,61 +1849,63 @@
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 10081,
+              "confirmationWeight": 4857,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 10081,
+              "confirmationWeight": 4857,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 2363,
-              "delta": -7718,
+              "confirmationWeight": 1138,
+              "delta": -3719,
               "severity": "moderate_drop"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 2363,
+              "confirmationWeight": 1138,
               "delta": 0,
               "severity": "stable_or_gain"
             }
           ],
           "entryWeight": 6116,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "allocated_by_entry_split"
         },
         {
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 10081,
+              "confirmationWeight": 5224,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 10081,
+              "confirmationWeight": 5224,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 2363,
-              "delta": -7718,
+              "confirmationWeight": 1225,
+              "delta": -3999,
               "severity": "moderate_drop"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 2363,
+              "confirmationWeight": 1225,
               "delta": 0,
               "severity": "stable_or_gain"
             }
           ],
           "entryWeight": 6578,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "allocated_by_entry_split"
         }
       ],
       "models": [
@@ -2019,7 +2033,8 @@
             }
           ],
           "entryWeight": 6000,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -2136,7 +2151,8 @@
             }
           ],
           "entryWeight": 5914,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -2253,7 +2269,8 @@
             }
           ],
           "entryWeight": 5597,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -2370,7 +2387,8 @@
             }
           ],
           "entryWeight": 18551,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -2472,61 +2490,63 @@
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 39091,
+              "confirmationWeight": 384,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 36473,
-              "delta": -2618,
+              "confirmationWeight": 358,
+              "delta": -26,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 36473,
+              "confirmationWeight": 358,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 36473,
+              "confirmationWeight": 358,
               "delta": 0,
               "severity": "stable_or_gain"
             }
           ],
           "entryWeight": 1042,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "allocated_by_entry_split"
         },
         {
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 39091,
+              "confirmationWeight": 38707,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 36473,
-              "delta": -2618,
+              "confirmationWeight": 36115,
+              "delta": -2592,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 36473,
+              "confirmationWeight": 36115,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 36473,
+              "confirmationWeight": 36115,
               "delta": 0,
               "severity": "stable_or_gain"
             }
           ],
           "entryWeight": 105138,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "allocated_by_entry_split"
         }
       ],
       "models": [
@@ -2702,7 +2722,8 @@
             }
           ],
           "entryWeight": 377497,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -2967,7 +2988,8 @@
             }
           ],
           "entryWeight": 61863,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -3112,7 +3134,8 @@
             }
           ],
           "entryWeight": 53883,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -3253,7 +3276,8 @@
             }
           ],
           "entryWeight": 2882,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -3370,7 +3394,8 @@
             }
           ],
           "entryWeight": 3491,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -3487,7 +3512,8 @@
             }
           ],
           "entryWeight": 2712,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -3581,61 +3607,63 @@
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 33800,
+              "confirmationWeight": 19508,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 33491,
-              "delta": -309,
+              "confirmationWeight": 19330,
+              "delta": -178,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 33491,
+              "confirmationWeight": 19330,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 33491,
+              "confirmationWeight": 19330,
               "delta": 0,
               "severity": "stable_or_gain"
             }
           ],
           "entryWeight": 22160,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "allocated_by_entry_split"
         },
         {
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 33800,
+              "confirmationWeight": 14292,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 33491,
-              "delta": -309,
+              "confirmationWeight": 14161,
+              "delta": -131,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 33491,
+              "confirmationWeight": 14161,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 33491,
+              "confirmationWeight": 14161,
               "delta": 0,
               "severity": "stable_or_gain"
             }
           ],
           "entryWeight": 16235,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "allocated_by_entry_split"
         }
       ],
       "models": [
@@ -3767,7 +3795,8 @@
             }
           ],
           "entryWeight": 37016,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -3904,7 +3933,8 @@
             }
           ],
           "entryWeight": 1327,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -4021,7 +4051,8 @@
             }
           ],
           "entryWeight": 6059,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -4138,7 +4169,8 @@
             }
           ],
           "entryWeight": 3606,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -4255,7 +4287,8 @@
             }
           ],
           "entryWeight": 5250,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -4353,61 +4386,63 @@
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 5411,
+              "confirmationWeight": 1627,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 5339,
-              "delta": -72,
+              "confirmationWeight": 1605,
+              "delta": -22,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 5334,
-              "delta": -5,
+              "confirmationWeight": 1604,
+              "delta": -1,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 5334,
+              "confirmationWeight": 1604,
               "delta": 0,
               "severity": "stable_or_gain"
             }
           ],
           "entryWeight": 2580,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "allocated_by_entry_split"
         },
         {
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 5411,
+              "confirmationWeight": 3784,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 5339,
-              "delta": -72,
+              "confirmationWeight": 3734,
+              "delta": -50,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 5334,
-              "delta": -5,
+              "confirmationWeight": 3730,
+              "delta": -4,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 5334,
+              "confirmationWeight": 3730,
               "delta": 0,
               "severity": "stable_or_gain"
             }
           ],
           "entryWeight": 6000,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "allocated_by_entry_split"
         }
       ],
       "models": [
@@ -4535,7 +4570,8 @@
             }
           ],
           "entryWeight": 3058,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -4652,7 +4688,8 @@
             }
           ],
           "entryWeight": 5655,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -4746,61 +4783,63 @@
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 8455,
+              "confirmationWeight": 5758,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 8412,
-              "delta": -43,
+              "confirmationWeight": 5729,
+              "delta": -29,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 8412,
+              "confirmationWeight": 5729,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 8412,
+              "confirmationWeight": 5729,
               "delta": 0,
               "severity": "stable_or_gain"
             }
           ],
           "entryWeight": 5912,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "allocated_by_entry_split"
         },
         {
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 8455,
+              "confirmationWeight": 2697,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 8412,
-              "delta": -43,
+              "confirmationWeight": 2683,
+              "delta": -14,
               "severity": "small_drop"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 8412,
+              "confirmationWeight": 2683,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 8412,
+              "confirmationWeight": 2683,
               "delta": 0,
               "severity": "stable_or_gain"
             }
           ],
           "entryWeight": 2769,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "allocated_by_entry_split"
         }
       ],
       "models": [
@@ -4928,7 +4967,8 @@
             }
           ],
           "entryWeight": 4097,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -5045,7 +5085,8 @@
             }
           ],
           "entryWeight": 5857,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -5162,7 +5203,8 @@
             }
           ],
           "entryWeight": 2712,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -5279,7 +5321,8 @@
             }
           ],
           "entryWeight": 1764,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -5396,7 +5439,8 @@
             }
           ],
           "entryWeight": 3294,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -5490,61 +5534,63 @@
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 12437,
+              "confirmationWeight": 10964,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 12437,
+              "confirmationWeight": 10964,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 12437,
+              "confirmationWeight": 10964,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 12431,
-              "delta": -6,
+              "confirmationWeight": 10959,
+              "delta": -5,
               "severity": "small_drop"
             }
           ],
           "entryWeight": 9492,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "allocated_by_entry_split"
         },
         {
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 12437,
+              "confirmationWeight": 1473,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 12437,
+              "confirmationWeight": 1473,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 12437,
+              "confirmationWeight": 1473,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 12431,
-              "delta": -6,
+              "confirmationWeight": 1472,
+              "delta": -1,
               "severity": "small_drop"
             }
           ],
           "entryWeight": 1275,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "allocated_by_entry_split"
         }
       ],
       "models": [
@@ -5672,7 +5718,8 @@
             }
           ],
           "entryWeight": 3247,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -5789,7 +5836,8 @@
             }
           ],
           "entryWeight": 22620,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -5910,7 +5958,8 @@
             }
           ],
           "entryWeight": 26514,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -6043,7 +6092,8 @@
             }
           ],
           "entryWeight": 5886,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -6160,7 +6210,8 @@
             }
           ],
           "entryWeight": 19904,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -6305,7 +6356,8 @@
             }
           ],
           "entryWeight": 2539,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -6422,7 +6474,8 @@
             }
           ],
           "entryWeight": 1290,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -6539,7 +6592,8 @@
             }
           ],
           "entryWeight": 1014,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -6656,7 +6710,8 @@
             }
           ],
           "entryWeight": 1731,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -6917,7 +6972,8 @@
             }
           ],
           "entryWeight": 1764,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -7034,7 +7090,8 @@
             }
           ],
           "entryWeight": 13601,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -7155,7 +7212,8 @@
             }
           ],
           "entryWeight": 5770,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -7272,7 +7330,8 @@
             }
           ],
           "entryWeight": 1652,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "exact"
         }
       ],
       "models": [
@@ -7366,61 +7425,63 @@
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 2111,
+              "confirmationWeight": 493,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 2111,
+              "confirmationWeight": 493,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 2111,
+              "confirmationWeight": 493,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 2111,
+              "confirmationWeight": 493,
               "delta": 0,
               "severity": "stable_or_gain"
             }
           ],
           "entryWeight": 865,
-          "model": "Kimi"
+          "model": "Kimi",
+          "splitBasis": "allocated_by_entry_split"
         },
         {
           "checkpoints": [
             {
               "checkpoint": "epoch_entry",
-              "confirmationWeight": 2111,
+              "confirmationWeight": 1618,
               "delta": null,
               "severity": "entry"
             },
             {
               "checkpoint": "after_cpoc_0",
-              "confirmationWeight": 2111,
+              "confirmationWeight": 1618,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_1",
-              "confirmationWeight": 2111,
+              "confirmationWeight": 1618,
               "delta": 0,
               "severity": "stable_or_gain"
             },
             {
               "checkpoint": "after_cpoc_2",
-              "confirmationWeight": 2111,
+              "confirmationWeight": 1618,
               "delta": 0,
               "severity": "stable_or_gain"
             }
           ],
           "entryWeight": 2841,
-          "model": "Qwen"
+          "model": "Qwen",
+          "splitBasis": "allocated_by_entry_split"
         }
       ],
       "models": [
