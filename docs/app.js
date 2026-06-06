@@ -202,9 +202,17 @@ function modelStackCell(node, checkpointKey = null) {
 function renderNodes() {
   const tbody = document.getElementById("node-table");
   const tfoot = document.getElementById("node-table-total");
-  const rows = state.data.nodes.filter((node) => nodeMatches(node, state.filter));
+  const rows = state.data.nodes
+    .filter((node) => nodeMatches(node, state.filter))
+    .slice()
+    .sort(
+      (left, right) =>
+        num(checkpoint(right, "epoch_entry").confirmationWeight) -
+        num(checkpoint(left, "epoch_entry").confirmationWeight),
+    );
   const totals = rows.reduce(
     (acc, node) => {
+      acc.entryWeight += num(checkpoint(node, "epoch_entry").confirmationWeight);
       acc.drop += num(node.totalPositiveDrop);
       acc.vote67 += num(node.vote67PaidGnk);
       acc.dropLoss += num(node.dropLossGnk);
@@ -213,10 +221,9 @@ function renderNodes() {
       acc.invalidated += num(node.invalidatedInferences);
       return acc;
     },
-    { drop: 0, vote67: 0, dropLoss: 0, paid: 0, missed: 0, invalidated: 0 },
+    { entryWeight: 0, drop: 0, vote67: 0, dropLoss: 0, paid: 0, missed: 0, invalidated: 0 },
   );
-  const totalEntryConfirmed = rows.reduce((acc, node) => acc + num(checkpoint(node, "epoch_entry").confirmationWeight), 0);
-  const totalDropPct = totalEntryConfirmed > 0 ? (totals.drop / totalEntryConfirmed) * 100 : 0;
+  const totalDropPct = totals.entryWeight > 0 ? (totals.drop / totals.entryWeight) * 100 : 0;
   tbody.innerHTML = rows
     .map((node) => {
       const entryConfirmed = num(checkpoint(node, "epoch_entry").confirmationWeight);
@@ -233,6 +240,7 @@ function renderNodes() {
             <div class="address" title="${node.address}">${node.shortAddress}</div>
             <div class="node-meta" title="${mlNodes || "no model ml_nodes"}">${node.notRewarded ? "not paid" : "paid"}</div>
           </td>
+          <td>${fmtInt(entryConfirmed)}</td>
           <td>${badges}</td>
           <td>${modelStackCell(node)}</td>
           <td>${modelStackCell(node, "epoch_entry")}</td>
@@ -251,6 +259,7 @@ function renderNodes() {
   tfoot.innerHTML = `
     <tr>
       <td>Total visible</td>
+      <td>${fmtInt(totals.entryWeight)}</td>
       <td></td>
       <td></td>
       <td></td>

@@ -317,44 +317,46 @@ th:nth-child(1) {
   background: #f8fafc;
 }
 
-th:nth-child(2),
-td:nth-child(2) {
+th:nth-child(3),
+td:nth-child(3) {
   width: 80px;
 }
 
-th:nth-child(3),
-td:nth-child(3) {
+th:nth-child(2),
+td:nth-child(2),
+th:nth-child(4),
+td:nth-child(4) {
   width: 92px;
 }
 
-th:nth-child(n + 4):nth-child(-n + 7),
-td:nth-child(n + 4):nth-child(-n + 7) {
+th:nth-child(n + 5):nth-child(-n + 8),
+td:nth-child(n + 5):nth-child(-n + 8) {
   width: 86px;
 }
 
-th:nth-child(8),
-td:nth-child(8) {
+th:nth-child(9),
+td:nth-child(9) {
   width: 74px;
 }
 
-th:nth-child(9),
-td:nth-child(9),
 th:nth-child(10),
 td:nth-child(10),
 th:nth-child(11),
-td:nth-child(11) {
+td:nth-child(11),
+th:nth-child(12),
+td:nth-child(12) {
   width: 92px;
 }
 
-th:nth-child(12),
-td:nth-child(12) {
+th:nth-child(13),
+td:nth-child(13) {
   width: 72px;
 }
 
 th:first-child,
 td:first-child,
-th:nth-child(2),
-td:nth-child(2) {
+th:nth-child(3),
+td:nth-child(3) {
   text-align: left;
 }
 
