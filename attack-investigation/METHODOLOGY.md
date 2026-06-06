@@ -46,6 +46,20 @@ The key gov-wallet test is `delta_last_to_next_gnk` for the `gov` module. A zero
 
 This distinction matters: formula remainder is not the same measurement as a gov balance transfer. If they differ, the direct balance movement is the chain fact and the formula remainder is a model output that needs explanation.
 
+`build_reward_status_tables.py` builds:
+
+- `not_received_hosts_detail.csv`: every host with `rewarded_coins = 0`, the reason class, direct chain received amount, and reconstructed not-received amount when possible;
+- `reward_status_count_summary.csv`: counts by epoch and reason, including rewarded hosts;
+- `reward_status_amount_summary.csv`: paid rewards, direct main gov jump, reconstructed not-received amounts by reason, and residual amount that still needs a model.
+
+Per-host `reconstructed_not_received_gnk` is counterfactual, not a direct chain transfer. The script uses the highest observed full reward rate among paid hosts in the epoch and saved final weights:
+
+- `confirmation_poc_zero_weight`: `weight * full_rate`, because actual settlement effective weight is zero;
+- `missed_or_invalidated_work`: `min(weight, confirmation_weight) * full_rate`;
+- `excluded_from_final_group`: no reconstructed amount from current raw data, because excluded hosts do not have final `validation_weights`.
+
+The direct chain-observed unpaid pool remains the largest gov balance jump found inside the epoch. Any residual between that direct chain amount and per-host reconstruction requires a compensation model or additional raw/source data.
+
 ## Chain summary fields
 
 `build_epoch_summary.py` derives:

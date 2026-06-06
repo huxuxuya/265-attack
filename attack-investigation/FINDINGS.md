@@ -8,6 +8,8 @@ Current findings from saved raw chain data and currently available source claim 
 - Epoch 265: 53 settlement-visible participants, 37 rewarded, 16 not rewarded, 51 final group members, 2 chain-derived excluded participants, 185565043.741173 GNK paid to miners, 99367459.994521 GNK main gov balance jump at height 4105641, 99367460.084386 GNK full gov balance increase during the epoch, 0 GNK burned.
 - Epoch 266: 48 settlement-visible participants, 38 rewarded, 10 not rewarded, 46 final group members, 2 chain-derived excluded participants, 261173638.858560 GNK paid to miners, 26427696.577043 GNK main gov balance jump at height 4121032, 26427646.580643 GNK full gov balance increase during the epoch, 0 GNK burned.
 - The base reward formula currently used by `build_epoch_summary.py` does not match the chain-observed `paid rewards + main gov jump`: epoch 265 differs by 8488.564042 GNK, and epoch 266 differs by 2812659.171158 GNK.
+- Across epochs 265 and 266, 75 hosts received rewards and 26 hosts received zero reward: 18 `confirmation_poc_zero_weight`, 4 `missed_or_invalidated_work`, and 4 `excluded_from_final_group`.
+- The chain-observed unpaid pool is 125795156.571564 GNK across both epochs, measured as the sum of the main gov jumps. The current per-host reconstruction covers 38208047.615338 GNK and leaves 87587108.956226 GNK requiring an additional compensation model or source data.
 
 ## Not Confirmed
 

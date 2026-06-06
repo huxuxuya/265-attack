@@ -44,6 +44,38 @@ The earlier `formula remainder` and `full gov delta` values differ because they 
 
 So the error was treating `formula reward - paid rewards` as the exact amount sent to gov. The chain balance scan shows the gov movement directly, and it is larger than the formula remainder in both epochs.
 
+## Correct Unpaid Reward Data
+
+The correct chain-observed unpaid reward pool is `main gov jump`, not `formula remainder`.
+
+Per-host missing amounts are not directly stored in chain settlement rows. The detailed host table therefore separates:
+
+- `chain_received_gnk`: direct settlement fact; all rows in the detail table are `0.000000`;
+- `reconstructed_not_received_gnk`: counterfactual estimate from saved final weights where possible;
+- `reconstruction_status`: whether the amount is an estimate or still requires a compensation model.
+
+Full per-host detail for the 26 hosts that received zero reward is in [`outputs/not_received_hosts_detail.csv`](outputs/not_received_hosts_detail.csv).
+
+Reward status counts:
+
+| epoch | total hosts | received reward | confirmation PoC zero weight | missed / invalidated work | excluded from final group |
+|---:|---:|---:|---:|---:|---:|
+| 265 | 53 | 37 | 10 | 4 | 2 |
+| 266 | 48 | 38 | 8 | 0 | 2 |
+| TOTAL | 101 | 75 | 18 | 4 | 4 |
+
+Reward status amounts:
+
+| epoch | paid to rewarded hosts, GNK | chain unpaid pool / main gov jump, GNK | reconstructed not received, GNK | residual needing model, GNK | confirmation PoC zero weight, GNK | missed / invalidated work, GNK | excluded from final group, GNK |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 265 | 185,565,043.741173 | 99,367,459.994521 | 30,035,271.704050 | 69,332,188.290471 | 28,689,985.484153 | 1,345,286.219897 | 0.000000 |
+| 266 | 261,173,638.858560 | 26,427,696.577043 | 8,172,775.911288 | 18,254,920.665755 | 8,172,775.911288 | 0.000000 | 0.000000 |
+| TOTAL | 446,738,682.599733 | 125,795,156.571564 | 38,208,047.615338 | 87,587,108.956226 | 36,862,761.395441 | 1,345,286.219897 | 0.000000 |
+
+`excluded_from_final_group` currently has `0.000000` reconstructed amount because the saved raw data does not contain final settlement weights for excluded hosts. That does not mean they had no loss; it means a separate model or additional source data is required.
+
+No transaction IDs are listed for the gov movement. The current evidence is historical module-account balance changes at heights `4,105,641` and `4,121,032`; the saved REST balance scan does not expose a user transaction hash for those module-account balance jumps.
+
 ## Unpaid Miner Reasons
 
 Current reason breakdown for participants with `rewarded_coins = 0`. Full address-level detail is in [`outputs/unpaid_miners_detail.csv`](outputs/unpaid_miners_detail.csv); the summary below is from [`outputs/unpaid_reason_summary.csv`](outputs/unpaid_reason_summary.csv).
@@ -85,6 +117,7 @@ python3 scripts/fetch_module_balance_deltas.py
 python3 scripts/build_unpaid_miners_detail.py
 python3 scripts/fetch_gov_balance_change_points.py
 python3 scripts/build_gov_settlement_audit.py
+python3 scripts/build_reward_status_tables.py
 ```
 
 If `GONKA_REST_URL` is set, `fetch_raw_data.py` uses it as the default base URL. If only
@@ -107,5 +140,8 @@ python3 scripts/fetch_raw_data.py --epochs 265 266
 - `outputs/unpaid_reason_summary.csv`: per-epoch counts by zero-reward reason.
 - `outputs/gov_balance_change_points.csv`: exact gov module-account balance change heights found by historical balance scan.
 - `outputs/gov_settlement_audit.csv`: comparison of formula remainder, gov balance movements, and paid rewards.
+- `outputs/not_received_hosts_detail.csv`: per-host zero-reward detail with reason and reconstructed amount status.
+- `outputs/reward_status_count_summary.csv`: per-epoch and total counts by received/not-received reason.
+- `outputs/reward_status_amount_summary.csv`: per-epoch and total amounts by received/not-received reason.
 
 `undistributed_remainder_gonka` is currently formula-derived from base reward parameters minus paid rewards. It is not evidence that the same amount went to a government wallet unless a direct wallet balance delta is separately verified.
