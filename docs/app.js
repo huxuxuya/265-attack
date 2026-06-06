@@ -182,6 +182,10 @@ function checkpointCell(node, checkpointKey) {
   return item ? weightCell(item) : '<span class="muted">none</span>';
 }
 
+function modelClass(modelName) {
+  return modelName.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+}
+
 function modelStackCell(node, checkpointKey = null) {
   if (!node.modelRows.length) return '<span class="muted">none</span>';
   const rows = node.modelRows.map((modelRow) => {
@@ -194,7 +198,7 @@ function modelStackCell(node, checkpointKey = null) {
       : "";
     const severityClass = checkpointKey ? ` state-${item.severity}` : "";
     return `
-      <div class="model-line${severityClass}" title="${modelRow.model}: ${fmtInt(value)}">
+      <div class="model-line model-${modelClass(modelRow.model)}${severityClass}" title="${modelRow.model}: ${fmtInt(value)}">
         <span class="model-key">${modelRow.model}</span>
         <span class="model-value">${fmtInt(value)}</span>
         ${delta}
@@ -281,6 +285,7 @@ function renderNodes() {
 }
 
 function bindFilters() {
+  if (!document.getElementById("filters")) return;
   document.querySelectorAll("#filters button").forEach((button) => {
     button.addEventListener("click", () => {
       document.querySelectorAll("#filters button").forEach((item) => item.classList.remove("active"));
