@@ -95,7 +95,7 @@ For model cPoC tables, `preserved_node_weight` is calculated by matching subgrou
 - `epoch_entry_context.csv`: epoch `effective_block_height`, UTC start time, participant counts, reward status counts, and Kimi/Qwen entry weights;
 - `cpoc_events.csv`: one row per confirmation cPoC event with epoch start and UTC block times;
 - `cpoc_history_endpoint_summary.csv`: one row per fetched endpoint with record counts and `found=false`/empty-list notes.
-- `cpoc_event_model_weight_matrix.csv`: cPoC event rows joined with UTC block times and the epoch-level Kimi/Qwen confirmed, preserved, and total weight matrix.
+- `cpoc_event_model_weight_matrix.csv`: cPoC event rows joined with UTC block times and the epoch-level Kimi/Qwen non-preserved/preserved `poc_weight` matrix.
 
 These tables distinguish available event-level cPoC history from missing stage-level participant validation/commit rows. Empty endpoint responses are reported as data availability facts, not converted into host-level failure reasons.
 The model weights repeat for cPoC events inside the same epoch because the available chain data gives event history and epoch model snapshots, but not per-event participant validation rows.
@@ -105,6 +105,7 @@ The model weights repeat for cPoC events inside the same epoch because the avail
 `build_cpoc_confirmation_history.py` builds:
 
 - `cpoc_confirmation_weight_history.csv`: parent and Kimi-subset sums of `validation_weights[].confirmation_weight` at each saved height;
+- `per_cpoc_confirmation_effects.csv`: before/after confirmed-weight deltas for every cPoC, where before is the generation-start snapshot and after is the next saved parent snapshot where the cPoC result is visible;
 - `kimi_cpoc_confirmation_drop_265.csv`: address-level Kimi `confirmation_weight` deltas from height `4102892` to claimed drop height `4103171`.
 
 This is separate from model subgroup `poc_weight` and preserved-node tables. A cPoC confirmation degradation can appear in parent `confirmation_weight` while model subgroup entry `poc_weight` remains unchanged.

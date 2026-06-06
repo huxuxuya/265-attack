@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 RAW_ROOT = ROOT / "raw_chain_cache"
 OUTPUT_HISTORY = ROOT / "outputs" / "cpoc_confirmation_weight_history.csv"
 OUTPUT_KIMI_DELTA = ROOT / "outputs" / "kimi_cpoc_confirmation_drop_265.csv"
+OUTPUT_EFFECTS = ROOT / "outputs" / "per_cpoc_confirmation_effects.csv"
 
 HISTORY_COLUMNS = [
     "epoch",
@@ -39,6 +40,29 @@ KIMI_DELTA_COLUMNS = [
     "weight_at_after_height",
     "reputation_at_after_height",
     "severity",
+]
+
+EFFECT_COLUMNS = [
+    "epoch",
+    "cpoc_sequence",
+    "before_height",
+    "before_time_utc",
+    "before_stage",
+    "after_height",
+    "after_time_utc",
+    "after_stage",
+    "parent_confirmation_before",
+    "parent_confirmation_after",
+    "parent_confirmation_delta",
+    "parent_zero_confirmation_before",
+    "parent_zero_confirmation_after",
+    "kimi_confirmation_before",
+    "kimi_confirmation_after",
+    "kimi_confirmation_delta",
+    "kimi_zero_confirmation_before",
+    "kimi_zero_confirmation_after",
+    "kimi_severe_drop_count",
+    "data_basis",
 ]
 
 CLAIM_DROP_BEFORE = 4102892
@@ -207,6 +231,87 @@ def build_kimi_delta_rows() -> list[dict[str, str]]:
     return rows
 
 
+def stage_snapshot(epoch: int, height: int) -> dict[str, Any]:
+    kimi = kimi_addresses(epoch)
+    snapshot = snapshot_rows(epoch, height)
+    by_addr = {str(row["member_address"]): row for row in snapshot if row.get("member_address")}
+    kimi_rows = [by_addr[address] for address in kimi if address in by_addr]
+    return {
+        "parent_confirmation": sum(confirmation_weight(row) for row in snapshot),
+        "parent_zero": sum(1 for row in snapshot if confirmation_weight(row) == 0),
+        "kimi_confirmation": sum(confirmation_weight(row) for row in kimi_rows),
+        "kimi_zero": sum(1 for row in kimi_rows if confirmation_weight(row) == 0),
+        "rows_by_address": by_addr,
+        "kimi_addresses": kimi,
+    }
+
+
+def severe_drop_count(epoch: int, before_height: int, after_height: int) -> int:
+    before = stage_snapshot(epoch, before_height)
+    after = stage_snapshot(epoch, after_height)
+    count = 0
+    for address in before["kimi_addresses"]:
+        before_row = before["rows_by_address"].get(address)
+        after_row = after["rows_by_address"].get(address)
+        if not before_row or not after_row:
+            continue
+        before_weight = confirmation_weight(before_row)
+        after_weight = confirmation_weight(after_row)
+        if severity(before_weight, after_weight) == "severe_drop":
+            count += 1
+    return count
+
+
+def cpoc_sequence_from_stage(stage: str) -> str:
+    if stage.startswith("cpoc_") and "_generation_start" in stage:
+        return stage.split("_", 2)[1]
+    return ""
+
+
+def build_effect_rows(epochs: list[int]) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    for epoch in epochs:
+        ordered = [
+            (height, stage)
+            for height, stage in snapshot_heights(epoch).items()
+            if stage.startswith("cpoc_") or stage in {"claimed_drop_height", "epoch_last"}
+        ]
+        for index, (before_height, before_stage) in enumerate(ordered):
+            sequence = cpoc_sequence_from_stage(before_stage)
+            if sequence == "":
+                continue
+            if index + 1 >= len(ordered):
+                continue
+            after_height, after_stage = ordered[index + 1]
+            before = stage_snapshot(epoch, before_height)
+            after = stage_snapshot(epoch, after_height)
+            rows.append(
+                {
+                    "epoch": str(epoch),
+                    "cpoc_sequence": sequence,
+                    "before_height": str(before_height),
+                    "before_time_utc": block_time_utc(epoch, before_height),
+                    "before_stage": before_stage,
+                    "after_height": str(after_height),
+                    "after_time_utc": block_time_utc(epoch, after_height),
+                    "after_stage": after_stage,
+                    "parent_confirmation_before": str(before["parent_confirmation"]),
+                    "parent_confirmation_after": str(after["parent_confirmation"]),
+                    "parent_confirmation_delta": str(after["parent_confirmation"] - before["parent_confirmation"]),
+                    "parent_zero_confirmation_before": str(before["parent_zero"]),
+                    "parent_zero_confirmation_after": str(after["parent_zero"]),
+                    "kimi_confirmation_before": str(before["kimi_confirmation"]),
+                    "kimi_confirmation_after": str(after["kimi_confirmation"]),
+                    "kimi_confirmation_delta": str(after["kimi_confirmation"] - before["kimi_confirmation"]),
+                    "kimi_zero_confirmation_before": str(before["kimi_zero"]),
+                    "kimi_zero_confirmation_after": str(after["kimi_zero"]),
+                    "kimi_severe_drop_count": str(severe_drop_count(epoch, before_height, after_height)),
+                    "data_basis": "parent epoch_group_data snapshots before/after cPoC result application",
+                }
+            )
+    return rows
+
+
 def write_csv(path: Path, columns: list[str], rows: list[dict[str, str]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="") as fh:
@@ -218,10 +323,13 @@ def write_csv(path: Path, columns: list[str], rows: list[dict[str, str]]) -> Non
 def main() -> int:
     history_rows = build_history_rows([265, 266])
     delta_rows = build_kimi_delta_rows()
+    effect_rows = build_effect_rows([265, 266])
     write_csv(OUTPUT_HISTORY, HISTORY_COLUMNS, history_rows)
     write_csv(OUTPUT_KIMI_DELTA, KIMI_DELTA_COLUMNS, delta_rows)
+    write_csv(OUTPUT_EFFECTS, EFFECT_COLUMNS, effect_rows)
     print(f"Wrote {OUTPUT_HISTORY.relative_to(ROOT)} with {len(history_rows)} rows.")
     print(f"Wrote {OUTPUT_KIMI_DELTA.relative_to(ROOT)} with {len(delta_rows)} rows.")
+    print(f"Wrote {OUTPUT_EFFECTS.relative_to(ROOT)} with {len(effect_rows)} rows.")
     return 0
 
 
