@@ -177,6 +177,11 @@ function weightCell(item) {
   return `<span class="cell-state state-${item.severity}"><span>${fmtInt(item.confirmationWeight)}</span>${delta}</span>`;
 }
 
+function checkpointCell(node, checkpointKey) {
+  const item = checkpoint(node, checkpointKey);
+  return item ? weightCell(item) : '<span class="muted">none</span>';
+}
+
 function modelStackCell(node, checkpointKey = null) {
   if (!node.modelRows.length) return '<span class="muted">none</span>';
   const rows = node.modelRows.map((modelRow) => {
@@ -243,11 +248,11 @@ function renderNodes() {
           <td>${fmtInt(entryConfirmed)}</td>
           <td>${badges}</td>
           <td>${modelStackCell(node)}</td>
-          <td>${modelStackCell(node, "epoch_entry")}</td>
-          <td>${modelStackCell(node, "after_cpoc_0")}</td>
-          <td>${modelStackCell(node, "after_cpoc_1")}</td>
-          <td>${modelStackCell(node, "after_cpoc_2")}</td>
-          <td class="drop-cell"><span class="negative">${fmtInt(node.totalPositiveDrop)}</span><span>${fmtPct(dropPct)}</span></td>
+          <td>${checkpointCell(node, "epoch_entry")}</td>
+          <td>${checkpointCell(node, "after_cpoc_0")}</td>
+          <td>${checkpointCell(node, "after_cpoc_1")}</td>
+          <td>${checkpointCell(node, "after_cpoc_2")}</td>
+          <td class="drop-cell"><span class="drop-stack"><span class="negative">${fmtInt(node.totalPositiveDrop)}</span><span>${fmtPct(dropPct)}</span></span></td>
           <td title="${node.vote67PaidBasis}"><strong>${fmtGnk(node.vote67PaidGnk)}</strong></td>
           <td title="${node.dropLossBasis}"><strong>${fmtGnk(node.dropLossGnk)}</strong></td>
           <td>${fmtGnk(node.paidGnk)}</td>
@@ -266,7 +271,7 @@ function renderNodes() {
       <td></td>
       <td></td>
       <td></td>
-      <td class="drop-cell"><span class="negative">${fmtInt(totals.drop)}</span><span>${fmtPct(totalDropPct)}</span></td>
+      <td class="drop-cell"><span class="drop-stack"><span class="negative">${fmtInt(totals.drop)}</span><span>${fmtPct(totalDropPct)}</span></span></td>
       <td>${fmtGnk(totals.vote67)}</td>
       <td>${fmtGnk(totals.dropLoss)}</td>
       <td>${fmtGnk(totals.paid)}</td>
