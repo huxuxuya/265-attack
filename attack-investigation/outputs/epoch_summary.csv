@@ -1,3 +1,3 @@
-epoch,participants_total,final_group_count,excluded_count,zero_reward_count,affected_rows,affected_unique_addresses,actual_rewarded_gonka,burned_gonka,undistributed_remainder_gonka,source_compensation_gonka,difference
-265,53,51,2,16,18,16,185565043.741173,0,,,
-266,48,46,2,10,12,10,261173638.85856,0,,,
+epoch,participants_total,final_group_count,rewarded_count,not_rewarded_count,excluded_count,zero_reward_count,epoch_reward_pool_gnk,paid_rewards_gnk,not_paid_rewards_gnk,affected_rows,affected_unique_addresses,actual_rewarded_gonka,burned_gonka,undistributed_remainder_gonka,source_compensation_gonka,difference
+265,53,51,37,16,2,16,284924015.171652,185565043.741173,99358971.430479,18,16,185565043.741173,0.000000,99358971.430479,,
+266,48,46,38,10,2,10,284788676.264445,261173638.858560,23615037.405885,12,10,261173638.858560,0.000000,23615037.405885,,

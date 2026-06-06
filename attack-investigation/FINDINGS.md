@@ -5,13 +5,13 @@ Current findings from saved raw chain data and currently available source claim 
 ## Confirmed
 
 - Raw data was saved for epochs 265 and 266 from the configured archive REST node with SHA-256 entries in `manifests/raw_chain_cache_manifest.md`.
-- Epoch 265: 53 settlement-visible participants, 51 final group members, 2 chain-derived excluded participants, 16 zero-reward addresses, 185565043.741173 GONKA rewarded, 0 burned GONKA.
-- Epoch 266: 48 settlement-visible participants, 46 final group members, 2 chain-derived excluded participants, 10 zero-reward addresses, 261173638.85856 GONKA rewarded, 0 burned GONKA.
+- Epoch 265: 53 settlement-visible participants, 37 rewarded, 16 not rewarded, 51 final group members, 2 chain-derived excluded participants, 284924015.171652 GNK reward pool, 185565043.741173 GNK paid to miners, 99358971.430479 GNK not paid by settlement, 0 GNK burned.
+- Epoch 266: 48 settlement-visible participants, 38 rewarded, 10 not rewarded, 46 final group members, 2 chain-derived excluded participants, 284788676.264445 GNK reward pool, 261173638.858560 GNK paid to miners, 23615037.405885 GNK not paid by settlement, 0 GNK burned.
 
 ## Not Confirmed
 
 - No source claim files are currently present under `source_claims/votkon/` or `source_claims/case3/`, so no individual claim rows have been confirmed or rejected yet.
-- `undistributed_remainder_gonka` is not computed yet because the saved raw data has not exposed an expected settlement reward value that the script can safely subtract from actual rewarded settlement.
+- Direct gov-wallet balance delta has not been checked yet, so the undistributed remainder should not be described as a verified gov-wallet receipt.
 
 ## Policy-Dependent
 

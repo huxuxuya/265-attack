@@ -21,8 +21,13 @@ SUMMARY_COLUMNS = [
     "epoch",
     "participants_total",
     "final_group_count",
+    "rewarded_count",
+    "not_rewarded_count",
     "excluded_count",
     "zero_reward_count",
+    "epoch_reward_pool_gnk",
+    "paid_rewards_gnk",
+    "not_paid_rewards_gnk",
     "affected_rows",
     "affected_unique_addresses",
     "actual_rewarded_gonka",
@@ -109,6 +114,23 @@ def to_gonka(value: Decimal | None, denom_exponent: int) -> str:
         return ""
     scaled = value / (Decimal(10) ** denom_exponent)
     return format(scaled.normalize(), "f")
+
+
+def to_gnk_6(value: Decimal | None, denom_exponent: int) -> str:
+    if value is None:
+        return ""
+    scaled = value / (Decimal(10) ** denom_exponent)
+    return format(scaled.quantize(Decimal("0.000001")), "f")
+
+
+def decimal_param(value: Any) -> Decimal | None:
+    if isinstance(value, dict) and "value" in value and "exponent" in value:
+        parsed_value = decimal_or_none(value.get("value"))
+        parsed_exp = decimal_or_none(value.get("exponent"))
+        if parsed_value is None or parsed_exp is None:
+            return None
+        return parsed_value * (Decimal(10) ** int(parsed_exp))
+    return decimal_or_none(value)
 
 
 def first_key(obj: Any, keys: set[str]) -> Any | None:
@@ -218,6 +240,23 @@ def expected_reward(data_items: list[Any]) -> Decimal | None:
     return None
 
 
+def calculated_epoch_reward_from_params(params: Any, epoch: int) -> Decimal | None:
+    bitcoin_params = first_key(params, {"bitcoin_reward_params", "bitcoinRewardParams"})
+    if not isinstance(bitcoin_params, dict):
+        return None
+
+    initial = decimal_or_none(bitcoin_params.get("initial_epoch_reward"))
+    decay = decimal_param(bitcoin_params.get("decay_rate"))
+    genesis = decimal_or_none(bitcoin_params.get("genesis_epoch"))
+    if initial is None or decay is None or genesis is None:
+        return None
+
+    epochs_since_genesis = int(Decimal(epoch) - genesis)
+    if epochs_since_genesis < 0:
+        return None
+    return initial * ((Decimal(1) + decay) ** epochs_since_genesis)
+
+
 def load_epoch(epoch_dir: Path, denom_exponent: int) -> dict[str, str]:
     epoch = epoch_dir.name.replace("epoch_", "")
     perf = read_json(epoch_dir / "epoch_performance_summary.json")
@@ -266,6 +305,8 @@ def load_epoch(epoch_dir: Path, denom_exponent: int) -> dict[str, str]:
         participant_addresses = {address_from(row) for row in member_rows if address_from(row)}
 
     expected = expected_reward([group, params, perf])
+    if expected is None:
+        expected = calculated_epoch_reward_from_params(params, int(epoch))
     remainder = expected - total_reward if expected is not None else None
 
     affected_unique = {addr for addr in zero_reward_addresses | excluded_addresses if addr}
@@ -275,13 +316,18 @@ def load_epoch(epoch_dir: Path, denom_exponent: int) -> dict[str, str]:
         "epoch": epoch,
         "participants_total": str(len(participant_addresses) or len(perf_rows)),
         "final_group_count": str(final_group_count(group)),
+        "rewarded_count": str(len(rewarded_addresses)),
+        "not_rewarded_count": str(len(zero_reward_addresses)),
         "excluded_count": str(len(excluded_addresses)),
         "zero_reward_count": str(len(zero_reward_addresses)),
+        "epoch_reward_pool_gnk": to_gnk_6(expected, denom_exponent),
+        "paid_rewards_gnk": to_gnk_6(total_reward, denom_exponent),
+        "not_paid_rewards_gnk": to_gnk_6(remainder, denom_exponent),
         "affected_rows": str(affected_rows),
         "affected_unique_addresses": str(len(affected_unique)),
-        "actual_rewarded_gonka": to_gonka(total_reward, denom_exponent),
-        "burned_gonka": to_gonka(total_burned, denom_exponent),
-        "undistributed_remainder_gonka": to_gonka(remainder, denom_exponent),
+        "actual_rewarded_gonka": to_gnk_6(total_reward, denom_exponent),
+        "burned_gonka": to_gnk_6(total_burned, denom_exponent),
+        "undistributed_remainder_gonka": to_gnk_6(remainder, denom_exponent),
         "source_compensation_gonka": "",
         "difference": "",
     }

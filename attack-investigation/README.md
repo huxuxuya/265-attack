@@ -10,21 +10,22 @@ The investigation separates:
 
 The main rule is: save raw data first, calculate later.
 
-## Current Results
+## Main Numbers
 
-Current summary from [`outputs/epoch_summary.csv`](outputs/epoch_summary.csv):
+All money values are in GNK, not nGNK. Current summary from [`outputs/epoch_summary.csv`](outputs/epoch_summary.csv):
 
-| epoch | participants_total | final_group_count | excluded_count | zero_reward_count | affected_rows | affected_unique_addresses | actual_rewarded_gonka | burned_gonka | undistributed_remainder_gonka | source_compensation_gonka | difference |
-|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---|---|
-| 265 | 53 | 51 | 2 | 16 | 18 | 16 | 185565043.741173 | 0 | not computed | not loaded | not computed |
-| 266 | 48 | 46 | 2 | 10 | 12 | 10 | 261173638.85856 | 0 | not computed | not loaded | not computed |
+| epoch | participants | received reward | did not receive | final group | excluded | reward pool, GNK | paid to miners, GNK | not paid / gov remainder candidate, GNK | burned, GNK |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 265 | 53 | 37 | 16 | 51 | 2 | 284924015.171652 | 185565043.741173 | 99358971.430479 | 0.000000 |
+| 266 | 48 | 38 | 10 | 46 | 2 | 284788676.264445 | 261173638.858560 | 23615037.405885 | 0.000000 |
 
 Notes:
 
-- `affected_rows` can be greater than `affected_unique_addresses` because one address can have multiple classes, for example `excluded_operator` and `zero_reward_reconstruction`.
+- `reward pool` is calculated from saved chain `bitcoin_reward_params`: `initial_epoch_reward`, `decay_rate`, and `genesis_epoch`.
+- `not paid / gov remainder candidate` is `reward pool - paid to miners`. It is not a verified gov-wallet balance delta yet.
+- `did not receive` is the number of participants with `rewarded_coins = 0` in settlement data.
+- `affected_rows` can be greater than unique affected addresses because one address can have multiple classes, for example `excluded_operator` and `zero_reward_reconstruction`.
 - `source_compensation_gonka` is not loaded yet because no source claim files are present under `source_claims/votkon/` or `source_claims/case3/`.
-- `undistributed_remainder_gonka` is left as `not computed` until an expected settlement reward is confirmed from raw chain data or a separately documented reward formula.
-- `undistributed_remainder_gonka` means "not distributed to participants by settlement"; it is not evidence of a government wallet balance delta.
 
 ## Layout
 

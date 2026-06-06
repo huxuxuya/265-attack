@@ -30,11 +30,12 @@ The manifest redacts the configured node host as `<base-url>` so environment-pro
 - final group count from `epoch_group_data` validation/member arrays when present;
 - excluded count from saved participant API data when available. If that endpoint fails, it uses a chain-derived fallback: `(performance summary participants union epoch group members) - validation_weights`;
 - zero reward count from performance summary rows with `rewarded_coins == 0`;
+- reward pool from explicit settlement reward fields when present, otherwise from saved `bitcoin_reward_params` using `initial_epoch_reward * (1 + decay_rate) ^ (epoch - genesis_epoch)`;
 - burned amount from the sum of `burned_coins`;
 - actual rewarded amount from the sum of `rewarded_coins`;
-- undistributed remainder only when an expected settlement reward can be found in saved raw data.
+- undistributed remainder as reward pool minus actual rewarded amount.
 
-If expected settlement reward is not discoverable in saved data, `undistributed_remainder_gonka` is left blank.
+`undistributed_remainder_gonka` is a settlement accounting value. It is not labeled as a verified gov-wallet transfer unless a separate balance-delta check is performed.
 
 ## Classification classes
 
