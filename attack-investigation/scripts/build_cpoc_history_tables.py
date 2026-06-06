@@ -14,7 +14,9 @@ RAW_ROOT = ROOT / "raw_chain_cache"
 OUTPUT_EVENTS = ROOT / "outputs" / "cpoc_events.csv"
 OUTPUT_ENDPOINTS = ROOT / "outputs" / "cpoc_history_endpoint_summary.csv"
 OUTPUT_MODEL_MATRIX = ROOT / "outputs" / "cpoc_event_model_weight_matrix.csv"
+OUTPUT_EPOCH_ENTRY = ROOT / "outputs" / "epoch_entry_context.csv"
 MODEL_EPOCH_MATRIX = ROOT / "outputs" / "model_cpoc_epoch_matrix.csv"
+EPOCH_SUMMARY = ROOT / "outputs" / "epoch_summary.csv"
 
 EVENT_COLUMNS = [
     "epoch",
@@ -65,6 +67,30 @@ MODEL_MATRIX_COLUMNS = [
     "data_basis",
 ]
 
+EPOCH_ENTRY_COLUMNS = [
+    "epoch",
+    "epoch_start_height",
+    "epoch_start_time_utc",
+    "epoch_last_height",
+    "poc_start_block_height",
+    "poc_start_time_utc",
+    "participants_total",
+    "final_group_count",
+    "rewarded_count",
+    "zero_reward_count",
+    "kimi_participants",
+    "qwen_participants",
+    "total_model_memberships",
+    "kimi_entry_weight",
+    "qwen_entry_weight",
+    "total_entry_weight",
+    "kimi_confirmed_node_weight",
+    "kimi_preserved_node_weight",
+    "qwen_confirmed_node_weight",
+    "qwen_preserved_node_weight",
+    "data_basis",
+]
+
 ARTIFACT_KEYS = {
     "confirmation_poc_events": "events",
     "poc_validation_snapshot_by_stage_start": "snapshot",
@@ -102,6 +128,17 @@ def epoch_start_height(epoch: int) -> str:
     if not isinstance(group, dict):
         return ""
     value = group.get("effective_block_height")
+    return "" if value is None else str(value)
+
+
+def epoch_last_height(epoch: int) -> str:
+    data = read_json(RAW_ROOT / f"epoch_{epoch}" / "epoch_group_data.json")
+    if not isinstance(data, dict):
+        return ""
+    group = data.get("epoch_group_data")
+    if not isinstance(group, dict):
+        return ""
+    value = group.get("last_block_height")
     return "" if value is None else str(value)
 
 
@@ -197,6 +234,51 @@ def model_weight_by_epoch() -> dict[str, dict[str, str]]:
         return {row["epoch"]: row for row in csv.DictReader(fh)}
 
 
+def epoch_summary_by_epoch() -> dict[str, dict[str, str]]:
+    if not EPOCH_SUMMARY.exists():
+        return {}
+    with EPOCH_SUMMARY.open(newline="") as fh:
+        return {row["epoch"]: row for row in csv.DictReader(fh)}
+
+
+def build_epoch_entry_rows(epochs: list[int]) -> list[dict[str, str]]:
+    weights = model_weight_by_epoch()
+    summaries = epoch_summary_by_epoch()
+    rows: list[dict[str, str]] = []
+    for epoch in epochs:
+        epoch_key = str(epoch)
+        epoch_start = epoch_start_height(epoch)
+        poc_start = poc_start_height(epoch)
+        weight = weights.get(epoch_key, {})
+        summary = summaries.get(epoch_key, {})
+        rows.append(
+            {
+                "epoch": epoch_key,
+                "epoch_start_height": epoch_start,
+                "epoch_start_time_utc": block_time_utc(epoch, epoch_start),
+                "epoch_last_height": epoch_last_height(epoch),
+                "poc_start_block_height": poc_start,
+                "poc_start_time_utc": block_time_utc(epoch, poc_start),
+                "participants_total": summary.get("participants_total", ""),
+                "final_group_count": summary.get("final_group_count", ""),
+                "rewarded_count": summary.get("rewarded_count", ""),
+                "zero_reward_count": summary.get("zero_reward_count", ""),
+                "kimi_participants": weight.get("kimi_participants", ""),
+                "qwen_participants": weight.get("qwen_participants", ""),
+                "total_model_memberships": weight.get("total_participants", ""),
+                "kimi_entry_weight": weight.get("kimi_entry_weight", ""),
+                "qwen_entry_weight": weight.get("qwen_entry_weight", ""),
+                "total_entry_weight": weight.get("total_entry_weight", ""),
+                "kimi_confirmed_node_weight": weight.get("kimi_confirmed_node_weight", ""),
+                "kimi_preserved_node_weight": weight.get("kimi_preserved_node_weight", ""),
+                "qwen_confirmed_node_weight": weight.get("qwen_confirmed_node_weight", ""),
+                "qwen_preserved_node_weight": weight.get("qwen_preserved_node_weight", ""),
+                "data_basis": "epoch_group_data + epoch_summary + model weight snapshot",
+            }
+        )
+    return rows
+
+
 def build_model_matrix_rows(event_rows: list[dict[str, str]]) -> list[dict[str, str]]:
     weights = model_weight_by_epoch()
     rows: list[dict[str, str]] = []
@@ -239,6 +321,7 @@ def main() -> int:
     for epoch in epochs:
         event_rows.extend(build_events(epoch))
         endpoint_rows.extend(build_endpoint_rows(epoch))
+    epoch_entry_rows = build_epoch_entry_rows(epochs)
     model_matrix_rows = build_model_matrix_rows(event_rows)
 
     with OUTPUT_EVENTS.open("w", newline="") as fh:
@@ -256,9 +339,15 @@ def main() -> int:
         writer.writeheader()
         writer.writerows(model_matrix_rows)
 
+    with OUTPUT_EPOCH_ENTRY.open("w", newline="") as fh:
+        writer = csv.DictWriter(fh, fieldnames=EPOCH_ENTRY_COLUMNS)
+        writer.writeheader()
+        writer.writerows(epoch_entry_rows)
+
     print(f"Wrote {OUTPUT_EVENTS.relative_to(ROOT)} with {len(event_rows)} rows.")
     print(f"Wrote {OUTPUT_ENDPOINTS.relative_to(ROOT)} with {len(endpoint_rows)} rows.")
     print(f"Wrote {OUTPUT_MODEL_MATRIX.relative_to(ROOT)} with {len(model_matrix_rows)} rows.")
+    print(f"Wrote {OUTPUT_EPOCH_ENTRY.relative_to(ROOT)} with {len(epoch_entry_rows)} rows.")
     return 0
 
 

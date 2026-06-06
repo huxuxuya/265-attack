@@ -92,6 +92,15 @@ This is the table to use for the Kimi attack hypothesis: if vLLM failures stoppe
 
 cPoC history was fetched from the archive node configured by `GONKA_RPC_URL`; fetch scripts do not use any public-node fallback. Raw artifacts and SHA-256 hashes are recorded in [`manifests/cpoc_history_manifest.md`](manifests/cpoc_history_manifest.md) and [`manifests/cpoc_block_headers_manifest.md`](manifests/cpoc_block_headers_manifest.md).
 
+Epoch start and entry context from [`outputs/epoch_entry_context.csv`](outputs/epoch_entry_context.csv):
+
+| epoch | epoch start height | epoch start UTC | epoch last height | PoC start height | PoC start UTC | participants | final group | rewarded | zero reward | Kimi participants | Qwen participants | Kimi entry weight | Qwen entry weight | total entry weight |
+|---:|---:|---|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 265 | 4,090,370 | 2026-05-15T23:22:59.307709486Z | 4,105,760 | 4,089,970 | 2026-05-15T22:48:39.749969021Z | 53 | 51 | 37 | 16 | 20 | 41 | 377,276 | 1,227,899 | 1,605,175 |
+| 266 | 4,105,761 | 2026-05-16T21:05:03.752208771Z | 4,121,151 | 4,105,361 | 2026-05-16T20:31:35.236757476Z | 48 | 46 | 38 | 10 | 8 | 40 | 59,933 | 886,097 | 946,030 |
+
+`epoch start height` is `effective_block_height` from `epoch_group_data`. `PoC start height` is shown separately because PoC setup starts before the epoch becomes effective.
+
 Per-cPoC event table from [`outputs/cpoc_events.csv`](outputs/cpoc_events.csv):
 
 | epoch | epoch start height | epoch start UTC | PoC start height | PoC start UTC | event | trigger height | trigger UTC | generation start height | generation start UTC | phase |
@@ -180,6 +189,7 @@ python3 scripts/fetch_raw_data.py --epochs 265 266
 - `outputs/model_cpoc_weight_table.csv`: host-level model subgroup PoC/cPoC weights.
 - `outputs/model_cpoc_weight_summary.csv`: per-epoch per-model aggregate weights.
 - `outputs/model_cpoc_epoch_matrix.csv`: compact per-epoch Kimi/Qwen matrix.
+- `outputs/epoch_entry_context.csv`: epoch start times, participants, and entry model weights.
 - `outputs/cpoc_events.csv`: per-cPoC confirmation event history with epoch start and UTC block times.
 - `outputs/cpoc_history_endpoint_summary.csv`: cPoC endpoint availability and record counts.
 - `outputs/cpoc_event_model_weight_matrix.csv`: per-cPoC event rows with UTC times and epoch-level Kimi/Qwen confirmed, preserved, and total weights.

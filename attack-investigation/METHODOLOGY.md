@@ -92,6 +92,7 @@ For model cPoC tables, `preserved_node_weight` is calculated by matching subgrou
 
 `build_cpoc_history_tables.py` builds:
 
+- `epoch_entry_context.csv`: epoch `effective_block_height`, UTC start time, participant counts, reward status counts, and Kimi/Qwen entry weights;
 - `cpoc_events.csv`: one row per confirmation cPoC event with epoch start and UTC block times;
 - `cpoc_history_endpoint_summary.csv`: one row per fetched endpoint with record counts and `found=false`/empty-list notes.
 - `cpoc_event_model_weight_matrix.csv`: cPoC event rows joined with UTC block times and the epoch-level Kimi/Qwen confirmed, preserved, and total weight matrix.
