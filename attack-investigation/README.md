@@ -89,6 +89,18 @@ Main progression table from [`outputs/model_confirmed_weight_progression_wide.cs
 
 For the epoch 265 claim, the key row is Kimi `after_cpoc_2`: confirmed weight `469,669 -> 375,972` from the previous checkpoint, with passed participants `15 -> 14`. Address-level severe drops are in [`outputs/kimi_cpoc_confirmation_drop_265.csv`](outputs/kimi_cpoc_confirmation_drop_265.csv).
 
+## GitHub Pages Visualization
+
+Static visualization files are in [`../docs/`](../docs/index.html). The page shows the epoch 265 timeline, model confirmed-weight progression, operator-level drops, exact settlement totals, and per-operator estimated lost GNK.
+
+The per-operator lost GNK values are estimates: the exact unpaid settlement pool is allocated across observed positive confirmation-weight drops. They are not proof-grade per-host settlement amounts without an exact v0.2.13 replay.
+
+Rebuild the page data after changing raw data or derived CSVs:
+
+```bash
+python3 scripts/build_pages_data.py
+```
+
 ## Layout
 
 - `raw_chain_cache/epoch_265/`, `raw_chain_cache/epoch_266/`: raw node responses and request errors.
@@ -120,6 +132,7 @@ python3 scripts/fetch_cpoc_confirmation_snapshots.py
 python3 scripts/build_cpoc_confirmation_history.py
 python3 scripts/build_gov_settlement_audit.py
 python3 scripts/build_reward_status_tables.py
+python3 scripts/build_pages_data.py
 ```
 
 If `GONKA_REST_URL` is set, `fetch_raw_data.py` uses it as the default base URL. If only
@@ -153,5 +166,6 @@ python3 scripts/fetch_raw_data.py --epochs 265 266
 - `outputs/not_received_hosts_detail.csv`: per-host zero-reward detail with reason and proof-grade amount status.
 - `outputs/reward_status_count_summary.csv`: per-epoch and total counts by received/not-received reason.
 - `outputs/reward_status_amount_summary.csv`: per-epoch paid rewards, current-epoch unpaid pool, and unattributed settlement remainder.
+- `../docs/data/epoch_265_timeline.json`: GitHub Pages data bundle with timeline events, model series, operator drops, and estimated per-operator lost GNK.
 
 `undistributed_remainder_gonka` is formula-derived from v0.2.13 reward parameters minus paid rewards. It is treated as current-epoch settlement remainder only where it matches saved gov `coin_received` EndBlock evidence.

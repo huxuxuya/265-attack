@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Epoch 265 cPoC Attack Timeline</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">GONKA epoch 265 investigation</p>
+        <h1>cPoC attack timeline, weight loss, and settlement impact</h1>
+      </div>
+      <div class="basis-box">
+        <strong>Data basis</strong>
+        <span>Saved archive-node raw chain snapshots and derived CSV outputs.</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="kpi-grid" id="kpi-grid" aria-label="Epoch totals"></section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Timeline</h2>
+            <p>UTC timestamps show when cPoC generation started and when the confirmed result became visible in chain state.</p>
+          </div>
+          <div class="legend">
+            <span><i class="dot dot-blue"></i>chain event</span>
+            <span><i class="dot dot-red"></i>confirmed weight drop</span>
+          </div>
+        </div>
+        <div id="timeline" class="timeline"></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Confirmed Weight Progression</h2>
+            <p>Kimi, Qwen, and de-duplicated total confirmed weight after each cPoC checkpoint.</p>
+          </div>
+        </div>
+        <svg id="weight-chart" role="img" aria-label="Confirmed weight progression chart"></svg>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Operator Impact</h2>
+            <p>Sorted by estimated lost GNK, allocated from the exact unpaid pool by observed confirmation-weight drops.</p>
+          </div>
+          <div class="controls" id="filters">
+            <button type="button" data-filter="all" class="active">All</button>
+            <button type="button" data-filter="Kimi">Kimi</button>
+            <button type="button" data-filter="Qwen">Qwen</button>
+            <button type="button" data-filter="severe_drop">Severe drop</button>
+            <button type="button" data-filter="not_rewarded">Not rewarded</button>
+            <button type="button" data-filter="estimated_loss">Estimated loss</button>
+          </div>
+        </div>
+        <div class="warning" id="warning"></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Operator</th>
+                <th>Models</th>
+                <th>Model entry weight</th>
+                <th>Epoch entry confirmed</th>
+                <th>After cPoC 0</th>
+                <th>After cPoC 1</th>
+                <th>After cPoC 2</th>
+                <th>Total drop</th>
+                <th>Est. lost GNK</th>
+                <th>Paid GNK</th>
+                <th>Missed / invalid</th>
+              </tr>
+            </thead>
+            <tbody id="node-table"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
