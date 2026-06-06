@@ -20,7 +20,10 @@ ROOT = Path(__file__).resolve().parents[1]
 RAW_ROOT = ROOT / "raw_chain_cache"
 MANIFEST = ROOT / "manifests" / "cpoc_confirmation_snapshots_manifest.md"
 ENV_PATHS = [ROOT / ".env", ROOT.parent / ".env"]
-CLAIM_CHECK_HEIGHTS = {265: [4103171]}
+CONFIRMATION_CHANGE_HEIGHTS = {
+    265: [4095963, 4099160, 4103171],
+    266: [4115375, 4117265, 4118384],
+}
 
 
 @dataclass(frozen=True)
@@ -170,7 +173,7 @@ def snapshot_heights(epoch: int) -> list[int]:
         if value not in (None, ""):
             heights.add(int(value))
     heights.update(event_generation_heights(epoch))
-    heights.update(CLAIM_CHECK_HEIGHTS.get(epoch, []))
+    heights.update(CONFIRMATION_CHANGE_HEIGHTS.get(epoch, []))
     return sorted(heights)
 
 

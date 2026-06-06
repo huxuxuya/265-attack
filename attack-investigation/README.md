@@ -68,103 +68,34 @@ Reason notes:
 - `zero_reward_no_recorded_work_status_unresolved`: no recorded work and zero reward; v0.2.13 downtime check would not zero reward when total requests are zero, so participant status/state must be replayed.
 - `zero_reward_status_unresolved`: zero reward with final weight and no obvious proof-grade reason from the saved summary fields.
 
-## Model cPoC Weights
-
-Model subgroup data was fetched from the archive node configured by `GONKA_RPC_URL`. The full host-level table is in [`outputs/model_cpoc_weight_table.csv`](outputs/model_cpoc_weight_table.csv). Compact epoch-level matrix:
-
-| epoch | Kimi participants | Qwen participants | Kimi entry weight | Qwen entry weight | Kimi confirmed node weight | Qwen confirmed node weight | Kimi preserved node weight | Qwen preserved node weight | Kimi total node weight | Qwen total node weight |
-|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 265 | 20 | 41 | 377,276 | 1,227,899 | 336,641 | 1,106,344 | 40,635 | 121,555 | 377,276 | 1,227,899 |
-| 266 | 8 | 40 | 59,933 | 886,097 | 16,235 | 802,093 | 43,698 | 84,004 | 59,933 | 886,097 |
-
-Kimi entry weight drops from `377,276` in epoch 265 to `59,933` in epoch 266: `317,343` less, or `84.11%`. Qwen entry weight drops `27.84%` over the same comparison.
-
-Definitions:
-
-- `entry weight`: model subgroup `validation_weights[].weight`.
-- `confirmed node weight`: sum of subgroup `ml_nodes[].poc_weight` for nodes not listed in the historical `preserved_nodes_snapshot` at that epoch's `poc_start_block_height`. This is not the same field as parent `validation_weights[].confirmation_weight`.
-- `preserved node weight`: sum of subgroup `ml_nodes[].poc_weight` for node IDs listed in the historical `preserved_nodes_snapshot`.
-- Model participant counts are subgroup memberships, not unique epoch participants; one address can appear in multiple model subgroups.
-
-This is the table to use for the Kimi attack hypothesis: if vLLM failures stopped Kimi nodes from entering or serving, the first chain-visible place to inspect is the Kimi subgroup weight and the confirmed-vs-preserved split.
-
 ## cPoC History
 
-cPoC history was fetched from the archive node configured by `GONKA_RPC_URL`; fetch scripts do not use any public-node fallback. Raw artifacts and SHA-256 hashes are recorded in [`manifests/cpoc_history_manifest.md`](manifests/cpoc_history_manifest.md) and [`manifests/cpoc_block_headers_manifest.md`](manifests/cpoc_block_headers_manifest.md).
+cPoC history and confirmation snapshots were fetched from the archive node configured by `GONKA_RPC_URL`; fetch scripts do not use any public-node fallback. Raw artifacts and SHA-256 hashes are recorded in [`manifests/cpoc_history_manifest.md`](manifests/cpoc_history_manifest.md), [`manifests/cpoc_block_headers_manifest.md`](manifests/cpoc_block_headers_manifest.md), and [`manifests/cpoc_confirmation_snapshots_manifest.md`](manifests/cpoc_confirmation_snapshots_manifest.md).
 
-Epoch start and entry context from [`outputs/epoch_entry_context.csv`](outputs/epoch_entry_context.csv):
+Main progression table from [`outputs/model_confirmed_weight_progression.csv`](outputs/model_confirmed_weight_progression.csv):
 
-| epoch | epoch start height | epoch start UTC | epoch last height | PoC start height | PoC start UTC | participants | final group | rewarded | zero reward | Kimi participants | Qwen participants | Kimi entry weight | Qwen entry weight | total entry weight |
-|---:|---:|---|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 265 | 4,090,370 | 2026-05-15T23:22:59.307709486Z | 4,105,760 | 4,089,970 | 2026-05-15T22:48:39.749969021Z | 53 | 51 | 37 | 16 | 20 | 41 | 377,276 | 1,227,899 | 1,605,175 |
-| 266 | 4,105,761 | 2026-05-16T21:05:03.752208771Z | 4,121,151 | 4,105,361 | 2026-05-16T20:31:35.236757476Z | 48 | 46 | 38 | 10 | 8 | 40 | 59,933 | 886,097 | 946,030 |
+| epoch | checkpoint | height | UTC | model | entry weight | active | passed | failed | confirmed weight | delta |
+|---:|---|---:|---|---|---:|---:|---:|---:|---:|---:|
+| 265 | epoch_entry | 4,090,370 | 2026-05-15T23:22:59Z | Kimi | 377,276 | 20 | 20 | 0 | 640,858 |  |
+| 265 | epoch_entry | 4,090,370 | 2026-05-15T23:22:59Z | Qwen | 1,227,899 | 41 | 41 | 0 | 740,929 |  |
+| 265 | after_cpoc_0 | 4,095,963 | 2026-05-16T07:18:59Z | Kimi | 377,276 | 20 | 15 | 5 | 487,205 | -153,653 |
+| 265 | after_cpoc_0 | 4,095,963 | 2026-05-16T07:18:59Z | Qwen | 1,227,899 | 41 | 38 | 3 | 624,122 | -116,807 |
+| 265 | after_cpoc_1 | 4,099,160 | 2026-05-16T11:49:56Z | Kimi | 377,276 | 20 | 15 | 5 | 469,669 | -17,536 |
+| 265 | after_cpoc_1 | 4,099,160 | 2026-05-16T11:49:56Z | Qwen | 1,227,899 | 41 | 38 | 3 | 612,369 | -11,753 |
+| 265 | after_cpoc_2 | 4,103,171 | 2026-05-16T17:29:07Z | Kimi | 377,276 | 20 | 14 | 6 | 375,972 | -93,697 |
+| 265 | after_cpoc_2 | 4,103,171 | 2026-05-16T17:29:07Z | Qwen | 1,227,899 | 41 | 37 | 4 | 508,838 | -103,531 |
+| 266 | epoch_entry | 4,105,761 | 2026-05-16T21:05:03Z | Kimi | 59,933 | 8 | 8 | 0 | 115,164 |  |
+| 266 | epoch_entry | 4,105,761 | 2026-05-16T21:05:03Z | Qwen | 886,097 | 40 | 40 | 0 | 334,904 |  |
+| 266 | after_cpoc_0 | 4,115,375 | 2026-05-17T10:41:34Z | Kimi | 59,933 | 8 | 8 | 0 | 115,022 | -142 |
+| 266 | after_cpoc_0 | 4,115,375 | 2026-05-17T10:41:34Z | Qwen | 886,097 | 40 | 34 | 6 | 317,276 | -17,628 |
+| 266 | after_cpoc_1 | 4,117,265 | 2026-05-17T13:21:54Z | Kimi | 59,933 | 8 | 8 | 0 | 113,940 | -1,082 |
+| 266 | after_cpoc_1 | 4,117,265 | 2026-05-17T13:21:54Z | Qwen | 886,097 | 40 | 33 | 7 | 313,238 | -4,038 |
+| 266 | after_cpoc_2 | 4,118,384 | 2026-05-17T14:56:50Z | Kimi | 59,933 | 8 | 8 | 0 | 111,574 | -2,366 |
+| 266 | after_cpoc_2 | 4,118,384 | 2026-05-17T14:56:50Z | Qwen | 886,097 | 40 | 33 | 7 | 312,409 | -829 |
 
-`epoch start height` is `effective_block_height` from `epoch_group_data`. `PoC start height` is shown separately because PoC setup starts before the epoch becomes effective.
+`entry weight` is the model subgroup PoC entry weight at epoch entry. `confirmed weight` is the parent epoch group's `validation_weights[].confirmation_weight` summed over the addresses active in that model. `passed` means active model participants with `confirmation_weight > 0` at that checkpoint. The `after_cpoc_*` rows use the first saved height where the cPoC result is visible in parent chain state.
 
-Per-cPoC event table from [`outputs/cpoc_events.csv`](outputs/cpoc_events.csv):
-
-| epoch | epoch start height | epoch start UTC | PoC start height | PoC start UTC | event | trigger height | trigger UTC | generation start height | generation start UTC | phase |
-|---:|---:|---|---:|---|---:|---:|---|---:|---|---|
-| 265 | 4,090,370 | 2026-05-15T23:22:59.307709486Z | 4,089,970 | 2026-05-15T22:48:39.749969021Z | 0 | 4,095,682 | 2026-05-16T06:55:01.082396994Z | 4,095,684 | 2026-05-16T06:55:12.342855969Z | CONFIRMATION_POC_COMPLETED |
-| 265 | 4,090,370 | 2026-05-15T23:22:59.307709486Z | 4,089,970 | 2026-05-15T22:48:39.749969021Z | 1 | 4,098,879 | 2026-05-16T11:26:01.538574339Z | 4,098,881 | 2026-05-16T11:26:12.807058766Z | CONFIRMATION_POC_COMPLETED |
-| 265 | 4,090,370 | 2026-05-15T23:22:59.307709486Z | 4,089,970 | 2026-05-15T22:48:39.749969021Z | 2 | 4,102,890 | 2026-05-16T17:05:17.376272472Z | 4,102,892 | 2026-05-16T17:05:28.860049742Z | CONFIRMATION_POC_COMPLETED |
-| 266 | 4,105,761 | 2026-05-16T21:05:03.752208771Z | 4,105,361 | 2026-05-16T20:31:35.236757476Z | 0 | 4,115,094 | 2026-05-17T10:17:35.985273381Z | 4,115,096 | 2026-05-17T10:17:47.361110040Z | CONFIRMATION_POC_COMPLETED |
-| 266 | 4,105,761 | 2026-05-16T21:05:03.752208771Z | 4,105,361 | 2026-05-16T20:31:35.236757476Z | 1 | 4,116,984 | 2026-05-17T12:58:00.256207082Z | 4,116,986 | 2026-05-17T12:58:08.366589465Z | CONFIRMATION_POC_COMPLETED |
-| 266 | 4,105,761 | 2026-05-16T21:05:03.752208771Z | 4,105,361 | 2026-05-16T20:31:35.236757476Z | 2 | 4,118,103 | 2026-05-17T14:32:57.269081652Z | 4,118,105 | 2026-05-17T14:33:05.401916199Z | CONFIRMATION_POC_COMPLETED |
-
-Per-cPoC confirmed weight effect from [`outputs/per_cpoc_confirmation_effects.csv`](outputs/per_cpoc_confirmation_effects.csv):
-
-| epoch | cPoC | before height | before UTC | after height | after UTC | parent confirmed before | parent confirmed after | parent delta | Kimi confirmed before | Kimi confirmed after | Kimi delta | Kimi severe drops |
-|---:|---:|---:|---|---:|---|---:|---:|---:|---:|---:|---:|---:|
-| 265 | 0 | 4,095,684 | 2026-05-16T06:55:12.342855969Z | 4,098,881 | 2026-05-16T11:26:12.807058766Z | 917,306 | 739,681 | -177,625 | 640,858 | 487,205 | -153,653 | 6 |
-| 265 | 1 | 4,098,881 | 2026-05-16T11:26:12.807058766Z | 4,102,892 | 2026-05-16T17:05:28.860049742Z | 739,681 | 720,517 | -19,164 | 487,205 | 469,669 | -17,536 | 0 |
-| 265 | 2 | 4,102,892 | 2026-05-16T17:05:28.860049742Z | 4,103,171 | 2026-05-16T17:29:07.824615184Z | 720,517 | 609,918 | -110,599 | 469,669 | 375,972 | -93,697 | 3 |
-| 266 | 0 | 4,115,096 | 2026-05-17T10:17:47.361110040Z | 4,116,986 | 2026-05-17T12:58:08.366589465Z | 393,991 | 376,221 | -17,770 | 115,164 | 115,022 | -142 | 0 |
-| 266 | 1 | 4,116,986 | 2026-05-17T12:58:08.366589465Z | 4,118,105 | 2026-05-17T14:33:05.401916199Z | 376,221 | 371,996 | -4,225 | 115,022 | 113,940 | -1,082 | 0 |
-| 266 | 2 | 4,118,105 | 2026-05-17T14:33:05.401916199Z | 4,121,151 | 2026-05-17T18:51:39.177841027Z | 371,996 | 369,530 | -2,466 | 113,940 | 111,574 | -2,366 | 0 |
-
-For this table, `before` is the cPoC generation-start parent group snapshot. `after` is the next saved parent group snapshot where the cPoC result is visible. For epoch 265 cPoC 2, that after-state is the claimed drop height `4,103,171`, so the confirmed-weight fall is visible in the per-cPoC table.
-
-## cPoC Confirmation Weight Drop
-
-The model weight tables above use model subgroup `poc_weight` and preserved-node snapshots. The claimed epoch 265 CPoC degradation is visible in the parent epoch group's `validation_weights[].confirmation_weight`, not in the model subgroup `poc_weight` totals. Historical parent snapshots were saved under `raw_chain_cache/*/cpoc_confirmation_snapshots/` and hashed in [`manifests/cpoc_confirmation_snapshots_manifest.md`](manifests/cpoc_confirmation_snapshots_manifest.md).
-
-Confirmation-weight history from [`outputs/cpoc_confirmation_weight_history.csv`](outputs/cpoc_confirmation_weight_history.csv):
-
-| epoch | height | UTC | stage | parent confirmation weight | parent zero confirmation | Kimi confirmation weight | Kimi zero confirmation |
-|---:|---:|---|---|---:|---:|---:|---:|
-| 265 | 4,090,370 | 2026-05-15T23:22:59.307709486Z | epoch_start | 917,306 | 0 | 640,858 | 0 |
-| 265 | 4,095,684 | 2026-05-16T06:55:12.342855969Z | cpoc_0_generation_start | 917,306 | 0 | 640,858 | 0 |
-| 265 | 4,098,881 | 2026-05-16T11:26:12.807058766Z | cpoc_1_generation_start | 739,681 | 8 | 487,205 | 5 |
-| 265 | 4,102,892 | 2026-05-16T17:05:28.860049742Z | cpoc_2_generation_start | 720,517 | 8 | 469,669 | 5 |
-| 265 | 4,103,171 | 2026-05-16T17:29:07.824615184Z | claimed_drop_height | 609,918 | 10 | 375,972 | 6 |
-| 265 | 4,105,760 | 2026-05-16T21:04:58.191657980Z | epoch_last | 609,918 | 10 | 375,972 | 6 |
-| 266 | 4,105,761 | 2026-05-16T21:05:03.752208771Z | epoch_start | 393,991 | 1 | 115,164 | 0 |
-| 266 | 4,115,096 | 2026-05-17T10:17:47.361110040Z | cpoc_0_generation_start | 393,991 | 1 | 115,164 | 0 |
-| 266 | 4,116,986 | 2026-05-17T12:58:08.366589465Z | cpoc_1_generation_start | 376,221 | 7 | 115,022 | 0 |
-| 266 | 4,118,105 | 2026-05-17T14:33:05.401916199Z | cpoc_2_generation_start | 371,996 | 8 | 113,940 | 0 |
-| 266 | 4,121,151 | 2026-05-17T18:51:39.177841027Z | epoch_last | 369,530 | 8 | 111,574 | 0 |
-
-At the claimed epoch 265 height `4,103,171`, parent confirmation weight drops `720,517 -> 609,918` from the previous cPoC generation snapshot. Kimi confirmation weight drops `469,669 -> 375,972`.
-
-Severe Kimi drops at `4,103,171` from [`outputs/kimi_cpoc_confirmation_drop_265.csv`](outputs/kimi_cpoc_confirmation_drop_265.csv):
-
-| address | before height | before confirmation | after height | after confirmation | delta | drop pct | after weight | after reputation |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| gonka1830lqug50lse998x2lakk4pj5ypfumz5pasz0y | 4,102,892 | 7,031 | 4,103,171 | 0 | -7,031 | 100.000000% | 13,490 | 88 |
-| gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk | 4,102,892 | 7,870 | 4,103,171 | 1,347 | -6,523 | 82.884400% | 96,900 | 100 |
-| gonka1j7x6dv42xehe9e5au4ku3wvzwtqlegfjhlvzj6 | 4,102,892 | 66,311 | 4,103,171 | 323 | -65,988 | 99.512900% | 66,311 | 16 |
-
-This matches the "3 participants affected" claim if "affected" means severe Kimi `confirmation_weight` degradation at the claimed height. It does not mean the Kimi `poc_weight` entry total dropped inside epoch 265; that entry weight remains stable in the model subgroup table.
-
-Endpoint availability summary from [`outputs/cpoc_history_endpoint_summary.csv`](outputs/cpoc_history_endpoint_summary.csv):
-
-| epoch | poc start height | confirmation events | validation snapshot | v2 validations | v2 commits | weight distributions | batches | legacy validations |
-|---:|---:|---:|---|---:|---:|---:|---:|---:|
-| 265 | 4,089,970 | 3 | found=false | 0 | 0 | 0 | 0 | 0 |
-| 266 | 4,105,361 | 3 | found=false | 0 | 0 | 0 | 0 | 0 |
-
-So the archive node gives proof-grade confirmation cPoC event history for these epochs, but the fetched stage-level participant/commit endpoints returned empty lists or `found=false`. That means host-level cPoC failure reasons still need either exact v0.2.13 replay or additional indexed logs; the saved chain endpoints alone do not currently provide per-host cPoC validation rows.
+For the epoch 265 claim, the key row is Kimi `after_cpoc_2`: confirmed weight `469,669 -> 375,972` from the previous checkpoint, with passed participants `15 -> 14`. Address-level severe drops are in [`outputs/kimi_cpoc_confirmation_drop_265.csv`](outputs/kimi_cpoc_confirmation_drop_265.csv).
 
 ## Layout
 
@@ -223,13 +154,8 @@ python3 scripts/fetch_raw_data.py --epochs 265 266
 - `outputs/model_cpoc_weight_table.csv`: host-level model subgroup PoC/cPoC weights.
 - `outputs/model_cpoc_weight_summary.csv`: per-epoch per-model aggregate weights.
 - `outputs/model_cpoc_epoch_matrix.csv`: compact per-epoch Kimi/Qwen matrix.
-- `outputs/epoch_entry_context.csv`: epoch start times, participants, and entry model weights.
-- `outputs/cpoc_events.csv`: per-cPoC confirmation event history with epoch start and UTC block times.
-- `outputs/cpoc_history_endpoint_summary.csv`: cPoC endpoint availability and record counts.
-- `outputs/cpoc_event_model_weight_matrix.csv`: per-cPoC event rows joined with epoch-level Kimi/Qwen non-preserved/preserved `poc_weight` snapshot data.
-- `outputs/cpoc_confirmation_weight_history.csv`: historical parent/Kimi `confirmation_weight` sums across cPoC heights.
-- `outputs/per_cpoc_confirmation_effects.csv`: per-cPoC before/after parent and Kimi confirmed-weight deltas.
-- `outputs/kimi_cpoc_confirmation_drop_265.csv`: address-level Kimi `confirmation_weight` deltas around the claimed epoch 265 drop height.
+- `outputs/model_confirmed_weight_progression.csv`: main cPoC progression by epoch, model, checkpoint, height, active/passed participants, entry weight, and confirmed weight.
+- `outputs/epoch_entry_context.csv`, `outputs/cpoc_events.csv`, `outputs/cpoc_history_endpoint_summary.csv`, `outputs/cpoc_event_model_weight_matrix.csv`, `outputs/cpoc_confirmation_weight_history.csv`, `outputs/per_cpoc_confirmation_effects.csv`, `outputs/kimi_cpoc_confirmation_drop_265.csv`: audit/detail tables behind the main progression table.
 - `outputs/gov_settlement_audit.csv`: comparison of formula remainder, gov balance movements, and paid rewards.
 - `outputs/not_received_hosts_detail.csv`: per-host zero-reward detail with reason and proof-grade amount status.
 - `outputs/reward_status_count_summary.csv`: per-epoch and total counts by received/not-received reason.

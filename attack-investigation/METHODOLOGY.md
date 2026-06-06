@@ -104,6 +104,7 @@ The model weights repeat for cPoC events inside the same epoch because the avail
 
 `build_cpoc_confirmation_history.py` builds:
 
+- `model_confirmed_weight_progression.csv`: the main cPoC progression table by epoch, model, checkpoint, first visible after-cPoC height, active/passed/failed participant counts, model entry weight, and confirmed weight;
 - `cpoc_confirmation_weight_history.csv`: parent and Kimi-subset sums of `validation_weights[].confirmation_weight` at each saved height;
 - `per_cpoc_confirmation_effects.csv`: before/after confirmed-weight deltas for every cPoC, where before is the generation-start snapshot and after is the next saved parent snapshot where the cPoC result is visible;
 - `kimi_cpoc_confirmation_drop_265.csv`: address-level Kimi `confirmation_weight` deltas from height `4102892` to claimed drop height `4103171`.

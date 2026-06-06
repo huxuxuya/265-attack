@@ -14,6 +14,17 @@ RAW_ROOT = ROOT / "raw_chain_cache"
 OUTPUT_HISTORY = ROOT / "outputs" / "cpoc_confirmation_weight_history.csv"
 OUTPUT_KIMI_DELTA = ROOT / "outputs" / "kimi_cpoc_confirmation_drop_265.csv"
 OUTPUT_EFFECTS = ROOT / "outputs" / "per_cpoc_confirmation_effects.csv"
+OUTPUT_MODEL_PROGRESSION = ROOT / "outputs" / "model_confirmed_weight_progression.csv"
+
+MODEL_FILES = {
+    "Kimi": "moonshotai_kimi_k2_6.json",
+    "Qwen": "qwen_qwen3_235b_a22b_instruct_2507_fp8.json",
+}
+
+AFTER_CPOC_HEIGHTS = {
+    265: {0: 4095963, 1: 4099160, 2: 4103171},
+    266: {0: 4115375, 1: 4117265, 2: 4118384},
+}
 
 HISTORY_COLUMNS = [
     "epoch",
@@ -65,6 +76,22 @@ EFFECT_COLUMNS = [
     "data_basis",
 ]
 
+MODEL_PROGRESSION_COLUMNS = [
+    "epoch",
+    "checkpoint",
+    "cpoc_sequence",
+    "height",
+    "time_utc_seconds",
+    "model",
+    "entry_weight",
+    "active_participants",
+    "passed_participants",
+    "failed_participants",
+    "confirmed_weight",
+    "confirmed_weight_delta_from_previous_checkpoint",
+    "data_basis",
+]
+
 CLAIM_DROP_BEFORE = 4102892
 CLAIM_DROP_AFTER = 4103171
 
@@ -100,8 +127,34 @@ def block_time_utc(epoch: int, height: int) -> str:
     return ""
 
 
+def time_utc_seconds(epoch: int, height: int) -> str:
+    value = block_time_utc(epoch, height)
+    if "." in value:
+        return value.split(".", 1)[0] + "Z"
+    return value
+
+
+def model_group(epoch: int, model: str) -> dict[str, Any]:
+    data = read_json(RAW_ROOT / f"epoch_{epoch}" / "model_group_data" / MODEL_FILES[model])
+    return data.get("epoch_group_data", {}) if isinstance(data, dict) else {}
+
+
+def model_addresses(epoch: int, model: str) -> set[str]:
+    group = model_group(epoch, model)
+    rows = group.get("validation_weights", [])
+    return {str(row["member_address"]) for row in rows if isinstance(row, dict) and row.get("member_address")}
+
+
+def model_entry_weight(epoch: int, model: str) -> int:
+    group = model_group(epoch, model)
+    if group.get("total_weight") not in (None, ""):
+        return int(group["total_weight"])
+    rows = group.get("validation_weights", [])
+    return sum(int(row.get("weight") or 0) for row in rows if isinstance(row, dict))
+
+
 def kimi_addresses(epoch: int) -> set[str]:
-    data = read_json(RAW_ROOT / f"epoch_{epoch}" / "model_group_data" / "moonshotai_kimi_k2_6.json")
+    data = read_json(RAW_ROOT / f"epoch_{epoch}" / "model_group_data" / MODEL_FILES["Kimi"])
     group = data.get("epoch_group_data", {}) if isinstance(data, dict) else {}
     rows = group.get("validation_weights", [])
     return {str(row["member_address"]) for row in rows if isinstance(row, dict) and row.get("member_address")}
@@ -127,8 +180,8 @@ def snapshot_heights(epoch: int) -> dict[int, str]:
     if group.get("effective_block_height") not in (None, ""):
         heights[int(group["effective_block_height"])] = "epoch_start"
     heights.update(event_generation_heights(epoch))
-    if epoch == 265:
-        heights[CLAIM_DROP_AFTER] = "claimed_drop_height"
+    for sequence, height in AFTER_CPOC_HEIGHTS.get(epoch, {}).items():
+        heights[height] = f"cpoc_{sequence}_after_confirmed"
     if group.get("last_block_height") not in (None, ""):
         heights[int(group["last_block_height"])] = "epoch_last"
     return dict(sorted(heights.items()))
@@ -246,6 +299,62 @@ def stage_snapshot(epoch: int, height: int) -> dict[str, Any]:
     }
 
 
+def model_checkpoint(epoch: int, height: int, model: str) -> dict[str, int]:
+    addresses = model_addresses(epoch, model)
+    snapshot = snapshot_rows(epoch, height)
+    by_addr = {str(row["member_address"]): row for row in snapshot if row.get("member_address")}
+    model_rows = [by_addr[address] for address in addresses if address in by_addr]
+    passed = sum(1 for row in model_rows if confirmation_weight(row) > 0)
+    active = len(model_rows)
+    return {
+        "active_participants": active,
+        "passed_participants": passed,
+        "failed_participants": active - passed,
+        "confirmed_weight": sum(confirmation_weight(row) for row in model_rows),
+    }
+
+
+def model_progression_checkpoints(epoch: int) -> list[tuple[str, str, int]]:
+    group = parent_group(epoch)
+    rows: list[tuple[str, str, int]] = []
+    if group.get("effective_block_height") not in (None, ""):
+        rows.append(("epoch_entry", "", int(group["effective_block_height"])))
+    for sequence, height in sorted(AFTER_CPOC_HEIGHTS.get(epoch, {}).items()):
+        rows.append((f"after_cpoc_{sequence}", str(sequence), height))
+    return rows
+
+
+def build_model_progression_rows(epochs: list[int]) -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    previous: dict[tuple[int, str], int] = {}
+    for epoch in epochs:
+        for checkpoint, sequence, height in model_progression_checkpoints(epoch):
+            for model in MODEL_FILES:
+                stats = model_checkpoint(epoch, height, model)
+                current = stats["confirmed_weight"]
+                previous_key = (epoch, model)
+                delta = "" if previous_key not in previous else str(current - previous[previous_key])
+                previous[previous_key] = current
+                rows.append(
+                    {
+                        "epoch": str(epoch),
+                        "checkpoint": checkpoint,
+                        "cpoc_sequence": sequence,
+                        "height": str(height),
+                        "time_utc_seconds": time_utc_seconds(epoch, height),
+                        "model": model,
+                        "entry_weight": str(model_entry_weight(epoch, model)),
+                        "active_participants": str(stats["active_participants"]),
+                        "passed_participants": str(stats["passed_participants"]),
+                        "failed_participants": str(stats["failed_participants"]),
+                        "confirmed_weight": str(current),
+                        "confirmed_weight_delta_from_previous_checkpoint": delta,
+                        "data_basis": "model subgroup membership + parent epoch_group_data confirmation_weight",
+                    }
+                )
+    return rows
+
+
 def severe_drop_count(epoch: int, before_height: int, after_height: int) -> int:
     before = stage_snapshot(epoch, before_height)
     after = stage_snapshot(epoch, after_height)
@@ -271,18 +380,18 @@ def cpoc_sequence_from_stage(stage: str) -> str:
 def build_effect_rows(epochs: list[int]) -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
     for epoch in epochs:
-        ordered = [
-            (height, stage)
+        generation = {
+            int(stage.split("_", 2)[1]): height
             for height, stage in snapshot_heights(epoch).items()
-            if stage.startswith("cpoc_") or stage in {"claimed_drop_height", "epoch_last"}
-        ]
-        for index, (before_height, before_stage) in enumerate(ordered):
-            sequence = cpoc_sequence_from_stage(before_stage)
-            if sequence == "":
+            if stage.startswith("cpoc_") and stage.endswith("_generation_start")
+        }
+        for sequence_int, before_height in sorted(generation.items()):
+            if sequence_int not in AFTER_CPOC_HEIGHTS.get(epoch, {}):
                 continue
-            if index + 1 >= len(ordered):
-                continue
-            after_height, after_stage = ordered[index + 1]
+            sequence = str(sequence_int)
+            before_stage = f"cpoc_{sequence}_generation_start"
+            after_height = AFTER_CPOC_HEIGHTS[epoch][sequence_int]
+            after_stage = f"cpoc_{sequence}_after_confirmed"
             before = stage_snapshot(epoch, before_height)
             after = stage_snapshot(epoch, after_height)
             rows.append(
@@ -324,12 +433,15 @@ def main() -> int:
     history_rows = build_history_rows([265, 266])
     delta_rows = build_kimi_delta_rows()
     effect_rows = build_effect_rows([265, 266])
+    model_progression_rows = build_model_progression_rows([265, 266])
     write_csv(OUTPUT_HISTORY, HISTORY_COLUMNS, history_rows)
     write_csv(OUTPUT_KIMI_DELTA, KIMI_DELTA_COLUMNS, delta_rows)
     write_csv(OUTPUT_EFFECTS, EFFECT_COLUMNS, effect_rows)
+    write_csv(OUTPUT_MODEL_PROGRESSION, MODEL_PROGRESSION_COLUMNS, model_progression_rows)
     print(f"Wrote {OUTPUT_HISTORY.relative_to(ROOT)} with {len(history_rows)} rows.")
     print(f"Wrote {OUTPUT_KIMI_DELTA.relative_to(ROOT)} with {len(delta_rows)} rows.")
     print(f"Wrote {OUTPUT_EFFECTS.relative_to(ROOT)} with {len(effect_rows)} rows.")
+    print(f"Wrote {OUTPUT_MODEL_PROGRESSION.relative_to(ROOT)} with {len(model_progression_rows)} rows.")
     return 0
 
 

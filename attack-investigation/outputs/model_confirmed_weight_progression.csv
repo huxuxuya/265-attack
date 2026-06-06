@@ -1,0 +1,17 @@
+epoch,checkpoint,cpoc_sequence,height,time_utc_seconds,model,entry_weight,active_participants,passed_participants,failed_participants,confirmed_weight,confirmed_weight_delta_from_previous_checkpoint,data_basis
+265,epoch_entry,,4090370,2026-05-15T23:22:59Z,Kimi,377276,20,20,0,640858,,model subgroup membership + parent epoch_group_data confirmation_weight
+265,epoch_entry,,4090370,2026-05-15T23:22:59Z,Qwen,1227899,41,41,0,740929,,model subgroup membership + parent epoch_group_data confirmation_weight
+265,after_cpoc_0,0,4095963,2026-05-16T07:18:59Z,Kimi,377276,20,15,5,487205,-153653,model subgroup membership + parent epoch_group_data confirmation_weight
+265,after_cpoc_0,0,4095963,2026-05-16T07:18:59Z,Qwen,1227899,41,38,3,624122,-116807,model subgroup membership + parent epoch_group_data confirmation_weight
+265,after_cpoc_1,1,4099160,2026-05-16T11:49:56Z,Kimi,377276,20,15,5,469669,-17536,model subgroup membership + parent epoch_group_data confirmation_weight
+265,after_cpoc_1,1,4099160,2026-05-16T11:49:56Z,Qwen,1227899,41,38,3,612369,-11753,model subgroup membership + parent epoch_group_data confirmation_weight
+265,after_cpoc_2,2,4103171,2026-05-16T17:29:07Z,Kimi,377276,20,14,6,375972,-93697,model subgroup membership + parent epoch_group_data confirmation_weight
+265,after_cpoc_2,2,4103171,2026-05-16T17:29:07Z,Qwen,1227899,41,37,4,508838,-103531,model subgroup membership + parent epoch_group_data confirmation_weight
+266,epoch_entry,,4105761,2026-05-16T21:05:03Z,Kimi,59933,8,8,0,115164,,model subgroup membership + parent epoch_group_data confirmation_weight
+266,epoch_entry,,4105761,2026-05-16T21:05:03Z,Qwen,886097,40,40,0,334904,,model subgroup membership + parent epoch_group_data confirmation_weight
+266,after_cpoc_0,0,4115375,2026-05-17T10:41:34Z,Kimi,59933,8,8,0,115022,-142,model subgroup membership + parent epoch_group_data confirmation_weight
+266,after_cpoc_0,0,4115375,2026-05-17T10:41:34Z,Qwen,886097,40,34,6,317276,-17628,model subgroup membership + parent epoch_group_data confirmation_weight
+266,after_cpoc_1,1,4117265,2026-05-17T13:21:54Z,Kimi,59933,8,8,0,113940,-1082,model subgroup membership + parent epoch_group_data confirmation_weight
+266,after_cpoc_1,1,4117265,2026-05-17T13:21:54Z,Qwen,886097,40,33,7,313238,-4038,model subgroup membership + parent epoch_group_data confirmation_weight
+266,after_cpoc_2,2,4118384,2026-05-17T14:56:50Z,Kimi,59933,8,8,0,111574,-2366,model subgroup membership + parent epoch_group_data confirmation_weight
+266,after_cpoc_2,2,4118384,2026-05-17T14:56:50Z,Qwen,886097,40,33,7,312409,-829,model subgroup membership + parent epoch_group_data confirmation_weight
