@@ -39,26 +39,30 @@ The key gov-wallet test is `delta_last_to_next_gnk` for the `gov` module. A zero
 `build_gov_settlement_audit.py` compares:
 
 - direct paid rewards from `epoch_performance_summary`;
-- base reward formula from `bitcoin_reward_params`;
+- base reward formula from `bitcoin_reward_params` using the v0.2.13 formula `initial_reward * exp(decay_rate)^epochs_since_genesis`;
 - formula remainder as `base reward formula - paid rewards`;
 - largest direct gov balance jump inside the epoch;
+- current-epoch gov EndBlock transfer components from `outputs/gov_endblock_transfers.csv`;
 - full gov balance delta from `effective_block_height` to `last_block_height`.
 
-This distinction matters: formula remainder is not the same measurement as a gov balance transfer. If they differ, the direct balance movement is the chain fact and the formula remainder is a model output that needs explanation.
+This distinction matters: a gov balance jump can include multiple EndBlock transfers. The current-epoch settlement remainder is accepted as a chain fact only when the v0.2.13 formula remainder matches a saved gov `coin_received` EndBlock event. Same-height extra inference-to-gov transfers are reported separately.
+
+`fetch_settlement_evidence.py` saves:
+
+- node info, current upgrade plan, and module versions;
+- settlement-height block headers;
+- tx search for all txs and gov-recipient txs at settlement heights;
+- RPC `block_results` for settlement heights.
+
+`build_gov_endblock_transfers.py` parses saved RPC `block_results` and writes each gov `coin_received` EndBlock component to `outputs/gov_endblock_transfers.csv`.
 
 `build_reward_status_tables.py` builds:
 
-- `not_received_hosts_detail.csv`: every host with `rewarded_coins = 0`, the reason class, direct chain received amount, and reconstructed not-received amount when possible;
+- `not_received_hosts_detail.csv`: every host with `rewarded_coins = 0`, the reason class, direct chain received amount, and proof-grade amount status;
 - `reward_status_count_summary.csv`: counts by epoch and reason, including rewarded hosts;
-- `reward_status_amount_summary.csv`: paid rewards, direct main gov jump, reconstructed not-received amounts by reason, and residual amount that still needs a model.
+- `reward_status_amount_summary.csv`: paid rewards, current-epoch unpaid pool, other same-height gov transfers, and unattributed current-epoch unpaid pool.
 
-Per-host `reconstructed_not_received_gnk` is counterfactual, not a direct chain transfer. The script uses the highest observed full reward rate among paid hosts in the epoch and saved final weights:
-
-- `confirmation_poc_zero_weight`: `weight * full_rate`, because actual settlement effective weight is zero;
-- `missed_or_invalidated_work`: `min(weight, confirmation_weight) * full_rate`;
-- `excluded_from_final_group`: no reconstructed amount from current raw data, because excluded hosts do not have final `validation_weights`.
-
-The direct chain-observed unpaid pool remains the largest gov balance jump found inside the epoch. Any residual between that direct chain amount and per-host reconstruction requires a compensation model or additional raw/source data.
+The script deliberately does not allocate GNK amounts to individual zero-reward hosts. Chain settlement stores `rewarded_coins`, but not each host's counterfactual forfeited amount. Per-host amount allocation requires exact v0.2.13 settlement replay, including participant status, power cap, and downtime test results.
 
 ## Chain summary fields
 
@@ -68,12 +72,12 @@ The direct chain-observed unpaid pool remains the largest gov balance jump found
 - final group count from `epoch_group_data` validation/member arrays when present;
 - excluded count from saved participant API data when available. If that endpoint fails, it uses a chain-derived fallback: `(performance summary participants union epoch group members) - validation_weights`;
 - zero reward count from performance summary rows with `rewarded_coins == 0`;
-- base reward formula from explicit settlement reward fields when present, otherwise from saved `bitcoin_reward_params` using `initial_epoch_reward * (1 + decay_rate) ^ (epoch - genesis_epoch)`;
+- base reward formula from explicit settlement reward fields when present, otherwise from saved `bitcoin_reward_params` using v0.2.13 `initial_epoch_reward * exp(decay_rate) ^ (epoch - genesis_epoch)`;
 - burned amount from the sum of `burned_coins`;
 - actual rewarded amount from the sum of `rewarded_coins`;
 - formula remainder as base reward formula minus actual rewarded amount.
 
-`undistributed_remainder_gonka` is a formula-derived accounting value in the current script. It is not labeled as a verified gov-wallet transfer unless a separate balance-delta check is performed.
+`undistributed_remainder_gonka` is a formula-derived accounting value. It is labeled as current-epoch settlement remainder only where saved RPC block-results show a matching gov `coin_received` EndBlock event.
 
 ## Classification classes
 
@@ -91,7 +95,7 @@ The direct chain-observed unpaid pool remains the largest gov balance jump found
 - `validated_inferences`;
 - `invalidated_inferences`.
 
-The current saved `poc_validation_snapshot` endpoint returns `found=false` for epochs 265 and 266, so `confirmation_poc_zero_weight` is not labeled as direct raw snapshot proof. It means the participant is present in final `validation_weights`, but has `confirmation_weight = 0` in saved chain data.
+The current saved `poc_validation_snapshot` endpoint returns `found=false` for epochs 265 and 266. Also, the observed v0.2.13 settlement code skips confirmation rescale when `confirmation_weight_scales` is empty. Therefore `confirmation_weight = 0` is not used as a proof-grade zero-reward reason by itself.
 
 `unpaid_reason_summary.csv` aggregates the address-level detail by epoch and reason class.
 

@@ -1,6 +1,8 @@
 epoch,reason_class,count
-265,confirmation_poc_zero_weight,10
-265,excluded_from_final_group,2
-265,missed_or_invalidated_work,4
-266,confirmation_poc_zero_weight,8
-266,excluded_from_final_group,2
+265,downtime_punishment_candidate,13
+265,no_final_validation_weight,2
+265,zero_reward_no_recorded_work_status_unresolved,1
+266,downtime_punishment_candidate,6
+266,no_final_validation_weight,2
+266,zero_reward_no_recorded_work_status_unresolved,1
+266,zero_reward_status_unresolved,1

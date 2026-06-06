@@ -22,12 +22,10 @@ DENOM_EXPONENT = 6
 
 REASON_CLASSES = [
     "received_reward",
-    "confirmation_poc_zero_weight",
-    "missed_or_invalidated_work",
-    "excluded_from_final_group",
-    "no_recorded_work",
-    "not_claimed_zero_earned",
-    "zero_reward_unresolved",
+    "no_final_validation_weight",
+    "downtime_punishment_candidate",
+    "zero_reward_no_recorded_work_status_unresolved",
+    "zero_reward_status_unresolved",
 ]
 
 DETAIL_COLUMNS = [
@@ -35,13 +33,12 @@ DETAIL_COLUMNS = [
     "address",
     "reason_class",
     "chain_received_gnk",
-    "reconstructed_not_received_gnk",
-    "reconstruction_status",
-    "reconstruction_basis",
+    "proof_grade_not_received_gnk",
+    "amount_status",
+    "amount_basis",
     "weight",
     "confirmation_weight",
-    "settlement_effective_weight",
-    "epoch_full_rate_ngnk_per_weight",
+    "settlement_effective_weight_status",
     "earned_gnk",
     "inference_count",
     "missed_requests",
@@ -56,10 +53,10 @@ COUNT_COLUMNS = ["epoch", "total_hosts", *REASON_CLASSES]
 AMOUNT_COLUMNS = [
     "epoch",
     "chain_paid_to_received_hosts_gnk",
-    "chain_main_gov_jump_gnk",
-    "reconstructed_not_received_total_gnk",
-    "reconstruction_residual_vs_main_gov_jump_gnk",
-    *[f"{reason}_gnk" for reason in REASON_CLASSES],
+    "current_epoch_unpaid_pool_gnk",
+    "other_same_height_gov_transfers_gnk",
+    "proof_grade_allocated_to_zero_reward_hosts_gnk",
+    "unattributed_current_epoch_unpaid_pool_gnk",
 ]
 
 
@@ -121,7 +118,6 @@ def reason_for(row: dict[str, Any], final_row: dict[str, Any] | None) -> tuple[s
     inferences = decimal_or_zero(row.get("inference_count"))
     validated = decimal_or_zero(row.get("validated_inferences"))
     earned = decimal_or_zero(row.get("earned_coins"))
-    confirmation_weight = decimal_or_zero(final_row.get("confirmation_weight")) if final_row else Decimal(0)
     claimed = row.get("claimed")
 
     details: list[str] = []
@@ -143,60 +139,12 @@ def reason_for(row: dict[str, Any], final_row: dict[str, Any] | None) -> tuple[s
         details.append("earned_coins=0")
 
     if final_row is None:
-        return "excluded_from_final_group", "; ".join(details)
-    if confirmation_weight == 0:
-        return "confirmation_poc_zero_weight", "; ".join(details)
+        return "no_final_validation_weight", "; ".join(details)
     if missed > 0 or invalidated > 0:
-        return "missed_or_invalidated_work", "; ".join(details)
+        return "downtime_punishment_candidate", "; ".join(details)
     if inferences == 0 and validated == 0:
-        return "no_recorded_work", "; ".join(details)
-    if claimed is False and earned == 0:
-        return "not_claimed_zero_earned", "; ".join(details)
-    return "zero_reward_unresolved", "; ".join(details)
-
-
-def full_rate(perf_rows: list[dict[str, Any]], final_rows: dict[str, dict[str, Any]]) -> Decimal:
-    rates: list[Decimal] = []
-    for row in perf_rows:
-        reward = decimal_or_zero(row.get("rewarded_coins"))
-        if reward <= 0:
-            continue
-        final_row = final_rows.get(str(row.get("participant_id", "")))
-        if not final_row:
-            continue
-        weight = decimal_or_zero(final_row.get("weight"))
-        confirmation_weight = decimal_or_zero(final_row.get("confirmation_weight"))
-        effective_weight = min(weight, confirmation_weight)
-        if effective_weight > 0:
-            rates.append(reward / effective_weight)
-    return max(rates) if rates else Decimal(0)
-
-
-def reconstructed_amount(
-    reason_class: str,
-    final_row: dict[str, Any] | None,
-    rate: Decimal,
-) -> tuple[Decimal, str, str]:
-    if final_row is None:
-        return Decimal(0), "requires_model", "excluded host has no final validation weight in saved chain data"
-
-    weight = decimal_or_zero(final_row.get("weight"))
-    confirmation_weight = decimal_or_zero(final_row.get("confirmation_weight"))
-    effective_weight = min(weight, confirmation_weight)
-
-    if reason_class == "confirmation_poc_zero_weight":
-        return (
-            weight * rate,
-            "counterfactual_estimate",
-            "full-rate estimate using final weight; actual settlement effective weight is zero",
-        )
-    if reason_class == "missed_or_invalidated_work":
-        return (
-            effective_weight * rate,
-            "counterfactual_estimate",
-            "full-rate estimate using min(weight, confirmation_weight)",
-        )
-    return Decimal(0), "requires_policy_or_model", "no reliable per-host amount from saved chain fields"
+        return "zero_reward_no_recorded_work_status_unresolved", "; ".join(details)
+    return "zero_reward_status_unresolved", "; ".join(details)
 
 
 def total_row(rows: list[dict[str, str]]) -> dict[str, str]:
@@ -229,12 +177,9 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
         group = read_json(epoch_dir / "epoch_group_data.json")
         perf_rows = rows_from_performance(performance)
         final_rows = final_group_index(group)
-        rate = full_rate(perf_rows, final_rows)
 
         counts: Counter[str] = Counter()
-        amount_by_reason: defaultdict[str, Decimal] = defaultdict(Decimal)
         paid_total = Decimal(0)
-        reconstructed_total = Decimal(0)
 
         for row in perf_rows:
             address = str(row.get("participant_id", ""))
@@ -243,32 +188,25 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
             if reward > 0:
                 counts["received_reward"] += 1
                 paid_total += reward / (Decimal(10) ** DENOM_EXPONENT)
-                amount_by_reason["received_reward"] += reward / (Decimal(10) ** DENOM_EXPONENT)
                 continue
 
             reason_class, reason_detail = reason_for(row, final_row)
-            estimated_ngonk, reconstruction_status, reconstruction_basis = reconstructed_amount(reason_class, final_row, rate)
-            reconstructed_gnk = estimated_ngonk / (Decimal(10) ** DENOM_EXPONENT)
-            reconstructed_total += reconstructed_gnk
-            amount_by_reason[reason_class] += reconstructed_gnk
             counts[reason_class] += 1
 
             weight = decimal_or_zero(final_row.get("weight")) if final_row else Decimal(0)
             confirmation_weight = decimal_or_zero(final_row.get("confirmation_weight")) if final_row else Decimal(0)
-            effective_weight = min(weight, confirmation_weight) if final_row else Decimal(0)
             detail_rows.append(
                 {
                     "epoch": epoch,
                     "address": address,
                     "reason_class": reason_class,
                     "chain_received_gnk": to_gnk(reward),
-                    "reconstructed_not_received_gnk": fmt_gnk_value(reconstructed_gnk),
-                    "reconstruction_status": reconstruction_status,
-                    "reconstruction_basis": reconstruction_basis,
+                    "proof_grade_not_received_gnk": "",
+                    "amount_status": "requires_exact_v0_2_13_settlement_replay",
+                    "amount_basis": "chain stores rewarded_coins but does not store per-host forfeited counterfactual amount",
                     "weight": str(weight) if final_row else "",
                     "confirmation_weight": str(confirmation_weight) if final_row else "",
-                    "settlement_effective_weight": str(effective_weight) if final_row else "",
-                    "epoch_full_rate_ngnk_per_weight": format(rate.quantize(Decimal("0.000001")), "f"),
+                    "settlement_effective_weight_status": "not_replayed",
                     "earned_gnk": to_gnk(decimal_or_zero(row.get("earned_coins"))),
                     "inference_count": str(row.get("inference_count", "")),
                     "missed_requests": str(row.get("missed_requests", "")),
@@ -284,16 +222,16 @@ def build() -> tuple[list[dict[str, str]], list[dict[str, str]], list[dict[str, 
             count_row[reason] = str(counts[reason])
         count_rows.append(count_row)
 
-        main_gov_jump = decimal_or_zero(gov_audit.get(epoch, {}).get("main_gov_jump_gnk"))
+        current_epoch_pool = decimal_or_zero(gov_audit.get(epoch, {}).get("current_epoch_gov_remainder_event_gnk"))
+        other_same_height = decimal_or_zero(gov_audit.get(epoch, {}).get("other_same_height_gov_transfers_gnk"))
         amount_row = {
             "epoch": epoch,
             "chain_paid_to_received_hosts_gnk": fmt_gnk_value(paid_total),
-            "chain_main_gov_jump_gnk": fmt_gnk_value(main_gov_jump),
-            "reconstructed_not_received_total_gnk": fmt_gnk_value(reconstructed_total),
-            "reconstruction_residual_vs_main_gov_jump_gnk": fmt_gnk_value(main_gov_jump - reconstructed_total),
+            "current_epoch_unpaid_pool_gnk": fmt_gnk_value(current_epoch_pool),
+            "other_same_height_gov_transfers_gnk": fmt_gnk_value(other_same_height),
+            "proof_grade_allocated_to_zero_reward_hosts_gnk": fmt_gnk_value(Decimal(0)),
+            "unattributed_current_epoch_unpaid_pool_gnk": fmt_gnk_value(current_epoch_pool),
         }
-        for reason in REASON_CLASSES:
-            amount_row[f"{reason}_gnk"] = fmt_gnk_value(amount_by_reason[reason])
         amount_rows.append(amount_row)
 
     if count_rows:

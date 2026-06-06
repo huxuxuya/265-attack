@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-from decimal import Decimal, InvalidOperation
+from decimal import Decimal, InvalidOperation, localcontext
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -254,7 +254,10 @@ def calculated_epoch_reward_from_params(params: Any, epoch: int) -> Decimal | No
     epochs_since_genesis = int(Decimal(epoch) - genesis)
     if epochs_since_genesis < 0:
         return None
-    return initial * ((Decimal(1) + decay) ** epochs_since_genesis)
+    with localcontext() as ctx:
+        ctx.prec = 80
+        current_reward = initial * ((decay.exp()) ** epochs_since_genesis)
+    return Decimal(int(current_reward))
 
 
 def load_epoch(epoch_dir: Path, denom_exponent: int) -> dict[str, str]:

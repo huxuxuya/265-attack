@@ -126,17 +126,13 @@ def reason_for(
         reasons.append("earned_coins=0")
 
     if not in_final_group:
-        reason_class = "excluded_from_final_group"
-    elif confirmation_weight == 0:
-        reason_class = "confirmation_poc_zero_weight"
+        reason_class = "no_final_validation_weight"
     elif missed > 0 or invalidated > 0:
-        reason_class = "missed_or_invalidated_work"
+        reason_class = "downtime_punishment_candidate"
     elif inferences == 0 and validated == 0:
-        reason_class = "no_recorded_work"
-    elif claimed is False and earned == 0:
-        reason_class = "not_claimed_zero_earned"
+        reason_class = "zero_reward_no_recorded_work_status_unresolved"
     else:
-        reason_class = "zero_reward_unresolved"
+        reason_class = "zero_reward_status_unresolved"
 
     return reason_class, "; ".join(reasons)
 

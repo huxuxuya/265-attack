@@ -1,4 +1,4 @@
-epoch,total_hosts,received_reward,confirmation_poc_zero_weight,missed_or_invalidated_work,excluded_from_final_group,no_recorded_work,not_claimed_zero_earned,zero_reward_unresolved
-265,53,37,10,4,2,0,0,0
-266,48,38,8,0,2,0,0,0
-TOTAL,101,75,18,4,4,0,0,0
+epoch,total_hosts,received_reward,no_final_validation_weight,downtime_punishment_candidate,zero_reward_no_recorded_work_status_unresolved,zero_reward_status_unresolved
+265,53,37,2,13,1,0
+266,48,38,2,6,1,1
+TOTAL,101,75,4,19,2,1

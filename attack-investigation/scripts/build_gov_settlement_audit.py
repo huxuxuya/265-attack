@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SUMMARY = ROOT / "outputs" / "epoch_summary.csv"
 GOV_CHANGES = ROOT / "outputs" / "gov_balance_change_points.csv"
 MODULE_DELTAS = ROOT / "outputs" / "module_balance_deltas.csv"
+GOV_ENDBLOCK_TRANSFERS = ROOT / "outputs" / "gov_endblock_transfers.csv"
 OUTPUT = ROOT / "outputs" / "gov_settlement_audit.csv"
 
 
@@ -21,10 +22,13 @@ COLUMNS = [
     "paid_rewards_gnk",
     "base_reward_formula_gnk",
     "formula_remainder_gnk",
+    "current_epoch_gov_remainder_event_gnk",
+    "other_same_height_gov_transfers_gnk",
     "main_gov_jump_gnk",
     "other_gov_changes_gnk",
     "gov_delta_during_epoch_gnk",
     "main_gov_jump_minus_formula_remainder_gnk",
+    "current_epoch_event_minus_formula_remainder_gnk",
     "gov_delta_minus_formula_remainder_gnk",
     "paid_plus_main_gov_jump_gnk",
     "paid_plus_main_gov_jump_minus_base_formula_gnk",
@@ -68,10 +72,27 @@ def main_gov_jumps(path: Path) -> dict[str, dict[str, str]]:
     return jumps
 
 
+def gov_endblock_components(path: Path) -> dict[str, dict[str, Decimal]]:
+    values: dict[str, dict[str, Decimal]] = {}
+    if not path.exists():
+        return values
+    with path.open() as fh:
+        for row in csv.DictReader(fh):
+            epoch = row["epoch"]
+            amount = decimal_or_zero(row.get("amount_gnk"))
+            bucket = values.setdefault(epoch, {"current": Decimal(0), "other": Decimal(0)})
+            if row.get("inferred_role") == "current_epoch_bitcoin_reward_remainder":
+                bucket["current"] += amount
+            else:
+                bucket["other"] += amount
+    return values
+
+
 def main() -> int:
     summaries = read_by_epoch(SUMMARY)
     gov_deltas = read_gov_delta_by_epoch(MODULE_DELTAS)
     jumps = main_gov_jumps(GOV_CHANGES)
+    components = gov_endblock_components(GOV_ENDBLOCK_TRANSFERS)
 
     rows: list[dict[str, str]] = []
     for epoch in sorted(summaries, key=int):
@@ -81,6 +102,8 @@ def main() -> int:
         base_reward = decimal_or_zero(summary.get("epoch_reward_pool_gnk"))
         formula_remainder = decimal_or_zero(summary.get("not_paid_rewards_gnk"))
         main_jump = decimal_or_zero(jump.get("delta_gnk"))
+        current_epoch_event = components.get(epoch, {}).get("current", Decimal(0))
+        other_same_height = components.get(epoch, {}).get("other", Decimal(0))
         gov_delta = gov_deltas.get(epoch, Decimal(0))
         paid_plus_main_jump = paid + main_jump
         rows.append(
@@ -90,10 +113,13 @@ def main() -> int:
                 "paid_rewards_gnk": fmt(paid),
                 "base_reward_formula_gnk": fmt(base_reward),
                 "formula_remainder_gnk": fmt(formula_remainder),
+                "current_epoch_gov_remainder_event_gnk": fmt(current_epoch_event),
+                "other_same_height_gov_transfers_gnk": fmt(other_same_height),
                 "main_gov_jump_gnk": fmt(main_jump),
                 "other_gov_changes_gnk": fmt(gov_delta - main_jump),
                 "gov_delta_during_epoch_gnk": fmt(gov_delta),
                 "main_gov_jump_minus_formula_remainder_gnk": fmt(main_jump - formula_remainder),
+                "current_epoch_event_minus_formula_remainder_gnk": fmt(current_epoch_event - formula_remainder),
                 "gov_delta_minus_formula_remainder_gnk": fmt(gov_delta - formula_remainder),
                 "paid_plus_main_gov_jump_gnk": fmt(paid_plus_main_jump),
                 "paid_plus_main_gov_jump_minus_base_formula_gnk": fmt(paid_plus_main_jump - base_reward),
