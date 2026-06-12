@@ -166,6 +166,7 @@ python3 scripts/fetch_raw_data.py --epochs 265 266
 - `outputs/not_received_hosts_detail.csv`: per-host zero-reward detail with reason and proof-grade amount status.
 - `outputs/reward_status_count_summary.csv`: per-epoch and total counts by received/not-received reason.
 - `outputs/reward_status_amount_summary.csv`: per-epoch paid rewards, current-epoch unpaid pool, and unattributed settlement remainder.
-- `../docs/data/epoch_265_timeline.json`: GitHub Pages data bundle with timeline events, model series, operator drops, and epoch 265 source compensation model amounts.
+- `../docs/data/epoch_<N>_timeline.json`: per-epoch GitHub Pages data bundles with timeline events, model series, operator drops, and per-epoch details.
+- `../docs/data/epochs_timeline.json`: multi-epoch bundle with shared membership transitions between consecutive epochs and epoch-by-epoch data for selector-based navigation.
 
 `undistributed_remainder_gonka` is formula-derived from v0.2.13 reward parameters minus paid rewards. It is treated as current-epoch settlement remainder only where it matches saved gov `coin_received` EndBlock evidence.

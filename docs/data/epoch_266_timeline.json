@@ -1,0 +1,6489 @@
+{
+  "epochTotals": {
+    "capFactor": "0.750000",
+    "capFactorBasis": "delegation_params.cap_factor = {'value': '75', 'exponent': -2}",
+    "dropLossGnk": "20785.430608",
+    "epoch": 266,
+    "epochRewardPoolGnk": "284797.192935",
+    "finalGroupCount": 46,
+    "govRemainderEventGnk": "23623.554077",
+    "notRewardedCount": 10,
+    "paidRewardsGnk": "261173.638859",
+    "participantsTotal": 48,
+    "rewardedCount": 38,
+    "sourceCompensationGnk": "0.000000",
+    "unpaidPoolBasis": "Derived from epoch_summary. Fallback: epoch reward minus paid rewards.",
+    "unpaidPoolGnk": "23623.554077",
+    "vote67PaidGnk": "0.000000"
+  },
+  "events": [
+    {
+      "cpocSequence": null,
+      "estimatedLostGnk": "0.000000",
+      "height": 4105761,
+      "key": "epoch_entry",
+      "kimiConfirmationDelta": 0,
+      "kimiZeroAfter": 0,
+      "kimiZeroBefore": 0,
+      "label": "Epoch entry",
+      "order": 0,
+      "parentConfirmationDelta": 0,
+      "parentZeroAfter": 0,
+      "parentZeroBefore": 0,
+      "positiveDrop": 0,
+      "sourceCompensationGnk": "0.000000",
+      "timeUtc": "2026-05-16T21:05:03Z",
+      "type": "epoch_entry"
+    },
+    {
+      "cpocSequence": 0,
+      "estimatedLostGnk": "0.000000",
+      "height": 4115096,
+      "key": "cpoc_0_generation_start",
+      "kimiConfirmationDelta": -142,
+      "kimiZeroAfter": 0,
+      "kimiZeroBefore": 0,
+      "label": "cpoc_0_generation_start",
+      "order": 1,
+      "parentConfirmationDelta": -17770,
+      "parentZeroAfter": 7,
+      "parentZeroBefore": 1,
+      "positiveDrop": 0,
+      "sourceCompensationGnk": "0.000000",
+      "timeUtc": "2026-05-17T10:17:47.361110040Z",
+      "type": "cpoc_generation_start"
+    },
+    {
+      "cpocSequence": 0,
+      "estimatedLostGnk": "0.000000",
+      "height": 4115375,
+      "key": "after_cpoc_0",
+      "kimiConfirmationDelta": -142,
+      "kimiZeroAfter": 0,
+      "kimiZeroBefore": 0,
+      "label": "cpoc_0_after_confirmed",
+      "order": 2,
+      "parentConfirmationDelta": -17770,
+      "parentZeroAfter": 7,
+      "parentZeroBefore": 1,
+      "positiveDrop": 17770,
+      "sourceCompensationGnk": "0.000000",
+      "timeUtc": "2026-05-17T10:41:34.397959828Z",
+      "type": "after_cpoc_confirmed"
+    },
+    {
+      "cpocSequence": 1,
+      "estimatedLostGnk": "0.000000",
+      "height": 4116986,
+      "key": "cpoc_1_generation_start",
+      "kimiConfirmationDelta": -1082,
+      "kimiZeroAfter": 0,
+      "kimiZeroBefore": 0,
+      "label": "cpoc_1_generation_start",
+      "order": 3,
+      "parentConfirmationDelta": -4225,
+      "parentZeroAfter": 8,
+      "parentZeroBefore": 7,
+      "positiveDrop": 0,
+      "sourceCompensationGnk": "0.000000",
+      "timeUtc": "2026-05-17T12:58:08.366589465Z",
+      "type": "cpoc_generation_start"
+    },
+    {
+      "cpocSequence": 1,
+      "estimatedLostGnk": "0.000000",
+      "height": 4117265,
+      "key": "after_cpoc_1",
+      "kimiConfirmationDelta": -1082,
+      "kimiZeroAfter": 0,
+      "kimiZeroBefore": 0,
+      "label": "cpoc_1_after_confirmed",
+      "order": 4,
+      "parentConfirmationDelta": -4225,
+      "parentZeroAfter": 8,
+      "parentZeroBefore": 7,
+      "positiveDrop": 4225,
+      "sourceCompensationGnk": "0.000000",
+      "timeUtc": "2026-05-17T13:21:54.058748195Z",
+      "type": "after_cpoc_confirmed"
+    },
+    {
+      "cpocSequence": 2,
+      "estimatedLostGnk": "0.000000",
+      "height": 4118105,
+      "key": "cpoc_2_generation_start",
+      "kimiConfirmationDelta": -2366,
+      "kimiZeroAfter": 0,
+      "kimiZeroBefore": 0,
+      "label": "cpoc_2_generation_start",
+      "order": 5,
+      "parentConfirmationDelta": -2466,
+      "parentZeroAfter": 8,
+      "parentZeroBefore": 8,
+      "positiveDrop": 0,
+      "sourceCompensationGnk": "0.000000",
+      "timeUtc": "2026-05-17T14:33:05.401916199Z",
+      "type": "cpoc_generation_start"
+    },
+    {
+      "cpocSequence": 2,
+      "estimatedLostGnk": "0.000000",
+      "height": 4118384,
+      "key": "after_cpoc_2",
+      "kimiConfirmationDelta": -2366,
+      "kimiZeroAfter": 0,
+      "kimiZeroBefore": 0,
+      "label": "cpoc_2_after_confirmed",
+      "order": 6,
+      "parentConfirmationDelta": -2466,
+      "parentZeroAfter": 8,
+      "parentZeroBefore": 8,
+      "positiveDrop": 2466,
+      "sourceCompensationGnk": "0.000000",
+      "timeUtc": "2026-05-17T14:56:50.289047234Z",
+      "type": "after_cpoc_confirmed"
+    },
+    {
+      "cpocSequence": null,
+      "estimatedLostGnk": "0.000000",
+      "height": 4121151,
+      "key": "epoch_last",
+      "kimiConfirmationDelta": 0,
+      "kimiZeroAfter": 0,
+      "kimiZeroBefore": 0,
+      "label": "Epoch last block",
+      "order": 7,
+      "parentConfirmationDelta": 0,
+      "parentZeroAfter": 0,
+      "parentZeroBefore": 0,
+      "positiveDrop": 0,
+      "sourceCompensationGnk": "0.000000",
+      "timeUtc": "2026-05-17T18:51:39Z",
+      "type": "epoch_last"
+    }
+  ],
+  "metadata": {
+    "epoch": 266,
+    "generatedFrom": "saved raw chain cache and derived CSV outputs",
+    "title": "Epoch 266 cPoC timeline"
+  },
+  "modelSeries": [
+    {
+      "checkpoint": "epoch_entry",
+      "height": 4105761,
+      "kimiActive": 8,
+      "kimiConfirmedWeight": 115164,
+      "kimiDelta": 0,
+      "kimiPassed": 8,
+      "kimiPassedDelta": 0,
+      "qwenActive": 40,
+      "qwenConfirmedWeight": 334904,
+      "qwenDelta": 0,
+      "qwenPassed": 40,
+      "qwenPassedDelta": 0,
+      "timeUtc": "2026-05-16T21:05:03Z",
+      "totalActive": 45,
+      "totalConfirmedWeight": 393991,
+      "totalDelta": 0,
+      "totalPassed": 45,
+      "totalPassedDelta": 0
+    },
+    {
+      "checkpoint": "after_cpoc_0",
+      "height": 4115375,
+      "kimiActive": 8,
+      "kimiConfirmedWeight": 115022,
+      "kimiDelta": -142,
+      "kimiPassed": 8,
+      "kimiPassedDelta": 0,
+      "qwenActive": 40,
+      "qwenConfirmedWeight": 317276,
+      "qwenDelta": -17628,
+      "qwenPassed": 34,
+      "qwenPassedDelta": -6,
+      "timeUtc": "2026-05-17T10:41:34Z",
+      "totalActive": 45,
+      "totalConfirmedWeight": 376221,
+      "totalDelta": -17770,
+      "totalPassed": 39,
+      "totalPassedDelta": -6
+    },
+    {
+      "checkpoint": "after_cpoc_1",
+      "height": 4117265,
+      "kimiActive": 8,
+      "kimiConfirmedWeight": 113940,
+      "kimiDelta": -1082,
+      "kimiPassed": 8,
+      "kimiPassedDelta": 0,
+      "qwenActive": 40,
+      "qwenConfirmedWeight": 313238,
+      "qwenDelta": -4038,
+      "qwenPassed": 33,
+      "qwenPassedDelta": -1,
+      "timeUtc": "2026-05-17T13:21:54Z",
+      "totalActive": 45,
+      "totalConfirmedWeight": 371996,
+      "totalDelta": -4225,
+      "totalPassed": 38,
+      "totalPassedDelta": -1
+    },
+    {
+      "checkpoint": "after_cpoc_2",
+      "height": 4118384,
+      "kimiActive": 8,
+      "kimiConfirmedWeight": 111574,
+      "kimiDelta": -2366,
+      "kimiPassed": 8,
+      "kimiPassedDelta": 0,
+      "qwenActive": 40,
+      "qwenConfirmedWeight": 312409,
+      "qwenDelta": -829,
+      "qwenPassed": 33,
+      "qwenPassedDelta": 0,
+      "timeUtc": "2026-05-17T14:56:50Z",
+      "totalActive": 45,
+      "totalConfirmedWeight": 369530,
+      "totalDelta": -2466,
+      "totalPassed": 38,
+      "totalPassedDelta": 0
+    }
+  ],
+  "nodes": [
+    {
+      "address": "gonka1duuaqdx06sx8v2dzggltwwmqyuw8lvjkjq7xll",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 136705,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 53,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 101383
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 133371,
+          "delta": -3334,
+          "positiveDrop": 3334,
+          "reputation": 53,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 101383
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 131531,
+          "delta": -1840,
+          "positiveDrop": 1840,
+          "reputation": 53,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 101383
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 131531,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 53,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 101383
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "4396.542167",
+      "dropLossWeight": 5174,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 1340,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 136705,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 133371,
+              "delta": -3334,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 131531,
+              "delta": -1840,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 131531,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 380478,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 136705,
+          "entryWeight": 380478,
+          "mlNodes": [
+            {
+              "nodeId": "FT-1",
+              "pocWeight": 10063
+            },
+            {
+              "nodeId": "FT-10",
+              "pocWeight": 10005
+            },
+            {
+              "nodeId": "FT-11",
+              "pocWeight": 10034
+            },
+            {
+              "nodeId": "FT-12",
+              "pocWeight": 9976
+            },
+            {
+              "nodeId": "FT-13",
+              "pocWeight": 10005
+            },
+            {
+              "nodeId": "FT-14",
+              "pocWeight": 10034
+            },
+            {
+              "nodeId": "FT-15",
+              "pocWeight": 10034
+            },
+            {
+              "nodeId": "FT-16",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-17",
+              "pocWeight": 9975
+            },
+            {
+              "nodeId": "FT-18",
+              "pocWeight": 10033
+            },
+            {
+              "nodeId": "FT-19",
+              "pocWeight": 10033
+            },
+            {
+              "nodeId": "FT-2",
+              "pocWeight": 10033
+            },
+            {
+              "nodeId": "FT-20",
+              "pocWeight": 10033
+            },
+            {
+              "nodeId": "FT-21",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-22",
+              "pocWeight": 10033
+            },
+            {
+              "nodeId": "FT-23",
+              "pocWeight": 9975
+            },
+            {
+              "nodeId": "FT-24",
+              "pocWeight": 10033
+            },
+            {
+              "nodeId": "FT-25",
+              "pocWeight": 9975
+            },
+            {
+              "nodeId": "FT-26",
+              "pocWeight": 10033
+            },
+            {
+              "nodeId": "FT-27",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-28",
+              "pocWeight": 10033
+            },
+            {
+              "nodeId": "FT-29",
+              "pocWeight": 10033
+            },
+            {
+              "nodeId": "FT-3",
+              "pocWeight": 10033
+            },
+            {
+              "nodeId": "FT-30",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-31",
+              "pocWeight": 10033
+            },
+            {
+              "nodeId": "FT-32",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-33",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-34",
+              "pocWeight": 9975
+            },
+            {
+              "nodeId": "FT-35",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-36",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-37",
+              "pocWeight": 9975
+            },
+            {
+              "nodeId": "FT-38",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-4",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-5",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-6",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-7",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-8",
+              "pocWeight": 10004
+            },
+            {
+              "nodeId": "FT-9",
+              "pocWeight": 10033
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "78351.751763",
+      "rewarded": true,
+      "shortAddress": "gonka1duua...jq7xll",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 101383,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -5174,
+      "totalPositiveDrop": 5174,
+      "validatedInferences": 1340,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka187tn9y92ur6tu0zf69u94hwl0q77m47y0k36hv",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 3244,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 2758
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 0,
+          "delta": -3244,
+          "positiveDrop": 3244,
+          "reputation": 100,
+          "severity": "severe_drop",
+          "state": "failed",
+          "weight": 2758
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 2758
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 2758
+        }
+      ],
+      "claimed": false,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "2756.548665",
+      "dropLossWeight": 3244,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 21,
+      "invalidatedInferences": 0,
+      "missedRequests": 16,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 3244,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -3244,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 9030,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 3244,
+          "entryWeight": 9030,
+          "mlNodes": [
+            {
+              "nodeId": "ice-2",
+              "pocWeight": 3029
+            },
+            {
+              "nodeId": "ice-5",
+              "pocWeight": 6001
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": true,
+      "paidGnk": "0.000000",
+      "rewarded": false,
+      "shortAddress": "gonka187tn...0k36hv",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 2758,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -3244,
+      "totalPositiveDrop": 3244,
+      "validatedInferences": 21,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "severe_drop"
+    },
+    {
+      "address": "gonka12pcu9mcrpa4w4sjd9y3dsksnvu495ss6f9r4ra",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 13726,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 11668
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 11137,
+          "delta": -2589,
+          "positiveDrop": 2589,
+          "reputation": 100,
+          "severity": "moderate_drop",
+          "state": "passed",
+          "weight": 11668
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 11137,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 11668
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 11073,
+          "delta": -64,
+          "positiveDrop": 64,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 11668
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "2254.353763",
+      "dropLossWeight": 2653,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 138,
+      "invalidatedInferences": 2,
+      "missedRequests": 2,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 13726,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 11137,
+              "delta": -2589,
+              "severity": "moderate_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 11137,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 11073,
+              "delta": -64,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 38203,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 13726,
+          "entryWeight": 38203,
+          "mlNodes": [
+            {
+              "nodeId": "node10",
+              "pocWeight": 7635
+            },
+            {
+              "nodeId": "node6",
+              "pocWeight": 7635
+            },
+            {
+              "nodeId": "node7",
+              "pocWeight": 7664
+            },
+            {
+              "nodeId": "node8",
+              "pocWeight": 7606
+            },
+            {
+              "nodeId": "node9",
+              "pocWeight": 7663
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "7997.729973",
+      "rewarded": true,
+      "shortAddress": "gonka12pcu...f9r4ra",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 11668,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -2653,
+      "totalPositiveDrop": 2653,
+      "validatedInferences": 136,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "moderate_drop"
+    },
+    {
+      "address": "gonka1ujnc662v6g69jm6fgxnr79a2m7ehzeut059239",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 2363,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 2009
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 0,
+          "delta": -2363,
+          "positiveDrop": 2363,
+          "reputation": 100,
+          "severity": "severe_drop",
+          "state": "failed",
+          "weight": 2009
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 2009
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 2009
+        }
+      ],
+      "claimed": false,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "2007.929869",
+      "dropLossWeight": 2363,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 5,
+      "invalidatedInferences": 0,
+      "missedRequests": 10,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 2363,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -2363,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 6578,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 2363,
+          "entryWeight": 6578,
+          "mlNodes": [
+            {
+              "nodeId": "node100-2",
+              "pocWeight": 6578
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": true,
+      "paidGnk": "0.000000",
+      "rewarded": false,
+      "shortAddress": "gonka1ujnc...059239",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 2009,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -2363,
+      "totalPositiveDrop": 2363,
+      "validatedInferences": 5,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "severe_drop"
+    },
+    {
+      "address": "gonka13a4v8gxxjav5t4xq5y9cv9d8rfnvkjfw5adqz3",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 1844,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 1568
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 0,
+          "delta": -1844,
+          "positiveDrop": 1844,
+          "reputation": 0,
+          "severity": "severe_drop",
+          "state": "failed",
+          "weight": 1568
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 1568
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 1568
+        }
+      ],
+      "claimed": false,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "1566.916072",
+      "dropLossWeight": 1844,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 26,
+      "invalidatedInferences": 0,
+      "missedRequests": 13,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1844,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -1844,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 5133,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 1844,
+          "entryWeight": 5133,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 5133
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": true,
+      "paidGnk": "0.000000",
+      "rewarded": false,
+      "shortAddress": "gonka13a4v...5adqz3",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1568,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -1844,
+      "totalPositiveDrop": 1844,
+      "validatedInferences": 26,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "severe_drop"
+    },
+    {
+      "address": "gonka1830lqug50lse998x2lakk4pj5ypfumz5pasz0y",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 7031,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 92,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 5977
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 6889,
+          "delta": -142,
+          "positiveDrop": 142,
+          "reputation": 92,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 5977
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 6889,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 92,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 5977
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 5299,
+          "delta": -1590,
+          "positiveDrop": 1590,
+          "reputation": 92,
+          "severity": "moderate_drop",
+          "state": "passed",
+          "weight": 5977
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "1471.745465",
+      "dropLossWeight": 1732,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 2398,
+      "invalidatedInferences": 0,
+      "missedRequests": 2,
+      "modelNames": [
+        "Kimi"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 7031,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 6889,
+              "delta": -142,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 6889,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 5299,
+              "delta": -1590,
+              "severity": "moderate_drop"
+            }
+          ],
+          "entryWeight": 5571,
+          "model": "Kimi",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 7031,
+          "entryWeight": 5571,
+          "mlNodes": [
+            {
+              "nodeId": "node812",
+              "pocWeight": 5571
+            }
+          ],
+          "model": "Kimi"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "3827.217998",
+      "rewarded": true,
+      "shortAddress": "gonka1830l...pasz0y",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 5977,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -1732,
+      "totalPositiveDrop": 1732,
+      "validatedInferences": 2398,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "moderate_drop"
+    },
+    {
+      "address": "gonka17gpuntq09zsaqtmpe544gc32tk4424dwv5t34f",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 38248,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 38583
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 38248,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 38583
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 37353,
+          "delta": -895,
+          "positiveDrop": 895,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 38583
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 36701,
+          "delta": -652,
+          "positiveDrop": 652,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 38583
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "1314.544015",
+      "dropLossWeight": 1547,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 1076,
+      "invalidatedInferences": 11,
+      "missedRequests": 0,
+      "modelNames": [
+        "Kimi",
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 384,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 384,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 375,
+              "delta": -9,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 368,
+              "delta": -7,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 1042,
+          "model": "Kimi",
+          "splitBasis": "allocated_by_entry_split"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 37864,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 37864,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 36978,
+              "delta": -886,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 36333,
+              "delta": -645,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 102792,
+          "model": "Qwen",
+          "splitBasis": "allocated_by_entry_split"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 38248,
+          "entryWeight": 1042,
+          "mlNodes": [
+            {
+              "nodeId": "B9",
+              "pocWeight": 1042
+            }
+          ],
+          "model": "Kimi"
+        },
+        {
+          "entryConfirmationWeight": 38248,
+          "entryWeight": 102792,
+          "mlNodes": [
+            {
+              "nodeId": "D3",
+              "pocWeight": 9633
+            },
+            {
+              "nodeId": "D6",
+              "pocWeight": 9322
+            },
+            {
+              "nodeId": "G1",
+              "pocWeight": 10000
+            },
+            {
+              "nodeId": "G2",
+              "pocWeight": 10000
+            },
+            {
+              "nodeId": "G4",
+              "pocWeight": 9972
+            },
+            {
+              "nodeId": "G5",
+              "pocWeight": 9944
+            },
+            {
+              "nodeId": "U10",
+              "pocWeight": 7542
+            },
+            {
+              "nodeId": "U20",
+              "pocWeight": 7570
+            },
+            {
+              "nodeId": "U2a",
+              "pocWeight": 2400
+            },
+            {
+              "nodeId": "U2b",
+              "pocWeight": 2598
+            },
+            {
+              "nodeId": "U3",
+              "pocWeight": 7711
+            },
+            {
+              "nodeId": "U48",
+              "pocWeight": 8022
+            },
+            {
+              "nodeId": "node57",
+              "pocWeight": 8078
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "31186.218415",
+      "rewarded": true,
+      "shortAddress": "gonka17gpu...v5t34f",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 38583,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -1547,
+      "totalPositiveDrop": 1547,
+      "validatedInferences": 1065,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1f0u3y2wneer8zhz3ypw4x54h38cpa0qsy8ts3e",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 1372,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 1538
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 0,
+          "delta": -1372,
+          "positiveDrop": 1372,
+          "reputation": 100,
+          "severity": "severe_drop",
+          "state": "failed",
+          "weight": 1538
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 1538
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 1538
+        }
+      ],
+      "claimed": false,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "1165.839941",
+      "dropLossWeight": 1372,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 5,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1372,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -1372,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 3820,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 1372,
+          "entryWeight": 3820,
+          "mlNodes": [
+            {
+              "nodeId": "node207",
+              "pocWeight": 3820
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": true,
+      "paidGnk": "0.000000",
+      "rewarded": false,
+      "shortAddress": "gonka1f0u3...y8ts3e",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1538,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -1372,
+      "totalPositiveDrop": 1372,
+      "validatedInferences": 5,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "severe_drop"
+    },
+    {
+      "address": "gonka1qnj39ysxpzknvrr5dw9rdl7cx5q7dpkwerryrs",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 1035,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 39,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 880
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 0,
+          "delta": -1035,
+          "positiveDrop": 1035,
+          "reputation": 39,
+          "severity": "severe_drop",
+          "state": "failed",
+          "weight": 880
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 39,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 880
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 39,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 880
+        }
+      ],
+      "claimed": false,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "879.478381",
+      "dropLossWeight": 1035,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 8,
+      "invalidatedInferences": 0,
+      "missedRequests": 12,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1035,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -1035,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 2882,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 1035,
+          "entryWeight": 2882,
+          "mlNodes": [
+            {
+              "nodeId": "node-ML",
+              "pocWeight": 2882
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": true,
+      "paidGnk": "0.000000",
+      "rewarded": false,
+      "shortAddress": "gonka1qnj3...erryrs",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 880,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -1035,
+      "totalPositiveDrop": 1035,
+      "validatedInferences": 8,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "severe_drop"
+    },
+    {
+      "address": "gonka14ef2pxjge75gflqftn7m2wy0xv59gq9uc7qnct",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 921,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 156
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 921,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 156
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 0,
+          "delta": -921,
+          "positiveDrop": 921,
+          "reputation": 0,
+          "severity": "severe_drop",
+          "state": "failed",
+          "weight": 156
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 156
+        }
+      ],
+      "claimed": false,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "782.608298",
+      "dropLossWeight": 921,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 24,
+      "invalidatedInferences": 0,
+      "missedRequests": 1,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 921,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 921,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": -921,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 2566,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 921,
+          "entryWeight": 2566,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 2566
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": true,
+      "paidGnk": "0.000000",
+      "rewarded": false,
+      "shortAddress": "gonka14ef2...c7qnct",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 156,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -921,
+      "totalPositiveDrop": 921,
+      "validatedInferences": 24,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "severe_drop"
+    },
+    {
+      "address": "gonka1myu058axjs62mc3e7na9krwvqpfl9z3gtcw9es",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 833,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 709
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 0,
+          "delta": -833,
+          "positiveDrop": 833,
+          "reputation": 100,
+          "severity": "severe_drop",
+          "state": "failed",
+          "weight": 709
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 709
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 709
+        }
+      ],
+      "claimed": false,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "707.831393",
+      "dropLossWeight": 833,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 7,
+      "invalidatedInferences": 0,
+      "missedRequests": 8,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 833,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 0,
+              "delta": -833,
+              "severity": "severe_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 0,
+              "delta": 0,
+              "severity": "not_applicable"
+            }
+          ],
+          "entryWeight": 2321,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 833,
+          "entryWeight": 2321,
+          "mlNodes": [
+            {
+              "nodeId": "node-21",
+              "pocWeight": 2321
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": true,
+      "paidGnk": "0.000000",
+      "rewarded": false,
+      "shortAddress": "gonka1myu0...tcw9es",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 709,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -833,
+      "totalPositiveDrop": 833,
+      "validatedInferences": 7,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "severe_drop"
+    },
+    {
+      "address": "gonka1zktn8j65wlys8a8e38hqhf4y3x6m4x04zskkrx",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 13391,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 11383
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 13131,
+          "delta": -260,
+          "positiveDrop": 260,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 11383
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 12881,
+          "delta": -250,
+          "positiveDrop": 250,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 11383
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 12881,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 11383
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "433.366159",
+      "dropLossWeight": 510,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 162,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 13391,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 13131,
+              "delta": -260,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 12881,
+              "delta": -250,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 12881,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 37270,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 13391,
+          "entryWeight": 37270,
+          "mlNodes": [
+            {
+              "nodeId": "gpc_1",
+              "pocWeight": 7566
+            },
+            {
+              "nodeId": "lmo_1",
+              "pocWeight": 7653
+            },
+            {
+              "nodeId": "lmo_2",
+              "pocWeight": 7595
+            },
+            {
+              "nodeId": "lmo_3",
+              "pocWeight": 7652
+            },
+            {
+              "nodeId": "lmo_4",
+              "pocWeight": 5768
+            },
+            {
+              "nodeId": "ovh_ma",
+              "pocWeight": 1036
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "9303.776612",
+      "rewarded": true,
+      "shortAddress": "gonka1zktn...zskkrx",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 11383,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -510,
+      "totalPositiveDrop": 510,
+      "validatedInferences": 162,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1uf5cg7ef0ns6877nl27y0s6rt06cdmn40k5a88",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 986,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 66,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 839
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 581,
+          "delta": -405,
+          "positiveDrop": 405,
+          "reputation": 66,
+          "severity": "moderate_drop",
+          "state": "passed",
+          "weight": 839
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 581,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 66,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 839
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 581,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 66,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 839
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "344.143714",
+      "dropLossWeight": 405,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 0,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 986,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 581,
+              "delta": -405,
+              "severity": "moderate_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 581,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 581,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 2746,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 986,
+          "entryWeight": 2746,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 2746
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "419.770358",
+      "rewarded": true,
+      "shortAddress": "gonka1uf5c...0k5a88",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 839,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -405,
+      "totalPositiveDrop": 405,
+      "validatedInferences": 0,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "moderate_drop"
+    },
+    {
+      "address": "gonka1mmlyd5xxu5l68yx8wzclrkxkxvm88mhq5tp5s0",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 7572,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 5,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 6437
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 7572,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 5,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 6437
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 7385,
+          "delta": -187,
+          "positiveDrop": 187,
+          "reputation": 5,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 6437
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 7385,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 5,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 6437
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "158.900925",
+      "dropLossWeight": 187,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 4523,
+      "invalidatedInferences": 0,
+      "missedRequests": 9,
+      "modelNames": [
+        "Kimi"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 7572,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 7572,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 7385,
+              "delta": -187,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 7385,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 6000,
+          "model": "Kimi",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 7572,
+          "entryWeight": 6000,
+          "mlNodes": [
+            {
+              "nodeId": "node606",
+              "pocWeight": 6000
+            }
+          ],
+          "model": "Kimi"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "5334.652440",
+      "rewarded": true,
+      "shortAddress": "gonka1mmly...5tp5s0",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 6437,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -187,
+      "totalPositiveDrop": 187,
+      "validatedInferences": 4523,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1fvly5jrewyjmjfgwah3khy9rttq4cqajcesv9p",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 1340,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 1139
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 1217,
+          "delta": -123,
+          "positiveDrop": 123,
+          "reputation": 0,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 1139
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 1217,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1139
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 1217,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1139
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "104.517721",
+      "dropLossWeight": 123,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 22,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1340,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 1217,
+              "delta": -123,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1217,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1217,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 3731,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 1340,
+          "entryWeight": 3731,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 3731
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "878.628643",
+      "rewarded": true,
+      "shortAddress": "gonka1fvly...cesv9p",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1139,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -123,
+      "totalPositiveDrop": 123,
+      "validatedInferences": 22,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1rcpc45n6zch9qlkn4m3cwngekad89xu8mcr09v",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 4908,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 4172
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 4856,
+          "delta": -52,
+          "positiveDrop": 52,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 4172
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 4820,
+          "delta": -36,
+          "positiveDrop": 36,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 4172
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 4820,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 4172
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "74.776906",
+      "dropLossWeight": 88,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 18,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 4908,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 4856,
+              "delta": -52,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 4820,
+              "delta": -36,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 4820,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 13661,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 4908,
+          "entryWeight": 13661,
+          "mlNodes": [
+            {
+              "nodeId": "node-1",
+              "pocWeight": 6984
+            },
+            {
+              "nodeId": "node-101",
+              "pocWeight": 6677
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "3481.374809",
+      "rewarded": true,
+      "shortAddress": "gonka1rcpc...mcr09v",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 4172,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -88,
+      "totalPositiveDrop": 88,
+      "validatedInferences": 18,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1cuwejs77gectp3n32wg8q27hlsa4m3hqspf4ww",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 1275,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 3,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 1084
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 1196,
+          "delta": -79,
+          "positiveDrop": 79,
+          "reputation": 3,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 1084
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 1196,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 3,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1084
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 1196,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 3,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1084
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "67.129268",
+      "dropLossWeight": 79,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 20,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1275,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 1196,
+              "delta": -79,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1196,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1196,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 3551,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 1275,
+          "entryWeight": 3551,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 3551
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "863.333367",
+      "rewarded": true,
+      "shortAddress": "gonka1cuwe...spf4ww",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1084,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -79,
+      "totalPositiveDrop": 79,
+      "validatedInferences": 20,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1kx9mca3xm8u8ypzfuhmxey66u0ufxhs7nm6wc5",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 5379,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 5379
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 5379,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 5379
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 5379,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 5379
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 5302,
+          "delta": -77,
+          "positiveDrop": 77,
+          "reputation": 0,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 5379
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "65.429793",
+      "dropLossWeight": 77,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 1675,
+      "invalidatedInferences": 0,
+      "missedRequests": 3,
+      "modelNames": [
+        "Kimi",
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1635,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 1635,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1635,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1611,
+              "delta": -24,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 2580,
+          "model": "Kimi",
+          "splitBasis": "allocated_by_entry_split"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 3744,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 3744,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 3744,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 3691,
+              "delta": -53,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 5909,
+          "model": "Qwen",
+          "splitBasis": "allocated_by_entry_split"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 5379,
+          "entryWeight": 2580,
+          "mlNodes": [
+            {
+              "nodeId": "node2-4xB200",
+              "pocWeight": 2580
+            }
+          ],
+          "model": "Kimi"
+        },
+        {
+          "entryConfirmationWeight": 5379,
+          "entryWeight": 5909,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 5909
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "4505.308576",
+      "rewarded": true,
+      "shortAddress": "gonka1kx9m...nm6wc5",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 5379,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -77,
+      "totalPositiveDrop": 77,
+      "validatedInferences": 1675,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1u4zxypjgcr8khlzefwjr0vwdaj2uzruw2cehj3",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 2112,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 1796
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 2069,
+          "delta": -43,
+          "positiveDrop": 43,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 1796
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 2038,
+          "delta": -31,
+          "positiveDrop": 31,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 1796
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 2038,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1796
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "62.880580",
+      "dropLossWeight": 74,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 6,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 2112,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 2069,
+              "delta": -43,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 2038,
+              "delta": -31,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 2038,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 5880,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 2112,
+          "entryWeight": 5880,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 5880
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "1472.595202",
+      "rewarded": true,
+      "shortAddress": "gonka1u4zx...2cehj3",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1796,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -74,
+      "totalPositiveDrop": 74,
+      "validatedInferences": 6,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1qwfrtz9c7kcrfkrrlne2pkcye74mj6ce33xdkl",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 621,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 528
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 570,
+          "delta": -51,
+          "positiveDrop": 51,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 528
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 570,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 528
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 570,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 528
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "43.336616",
+      "dropLossWeight": 51,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 0,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 621,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 570,
+              "delta": -51,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 570,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 570,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 1731,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 621,
+          "entryWeight": 1731,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 1731
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "411.272982",
+      "rewarded": true,
+      "shortAddress": "gonka1qwfr...33xdkl",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 528,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -51,
+      "totalPositiveDrop": 51,
+      "validatedInferences": 0,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka19cjm4c5mt3j3qdr8vhytmm4hef3pnkvkm0x7m2",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 7428,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 68,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 7057
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 7428,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 68,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 7057
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 7428,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 68,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 7057
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 7381,
+          "delta": -47,
+          "positiveDrop": 47,
+          "reputation": 68,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 7057
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "39.937666",
+      "dropLossWeight": 47,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 4508,
+      "invalidatedInferences": 0,
+      "missedRequests": 22,
+      "modelNames": [
+        "Kimi"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 7428,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 7428,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 7428,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 7381,
+              "delta": -47,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 5886,
+          "model": "Kimi",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 7428,
+          "entryWeight": 5886,
+          "mlNodes": [
+            {
+              "nodeId": "node218",
+              "pocWeight": 5886
+            }
+          ],
+          "model": "Kimi"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "5958.359814",
+      "rewarded": true,
+      "shortAddress": "gonka19cjm...m0x7m2",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 7057,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -47,
+      "totalPositiveDrop": 47,
+      "validatedInferences": 4508,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1qu9mna5xlvlnw9455ygtjq92wuzkzm237w8l08",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 2005,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 89,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 1048
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 2004,
+          "delta": -1,
+          "positiveDrop": 1,
+          "reputation": 89,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 1048
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 1964,
+          "delta": -40,
+          "positiveDrop": 40,
+          "reputation": 89,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 1048
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 1964,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 89,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1048
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "34.839240",
+      "dropLossWeight": 41,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 16,
+      "invalidatedInferences": 0,
+      "missedRequests": 1,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 2005,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 2004,
+              "delta": -1,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1964,
+              "delta": -40,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1964,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 5581,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 2005,
+          "entryWeight": 5581,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 5581
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "871.830743",
+      "rewarded": true,
+      "shortAddress": "gonka1qu9m...7w8l08",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1048,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -41,
+      "totalPositiveDrop": 41,
+      "validatedInferences": 16,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1tja3g2da45efhe2p83gk3whtussmgmtsdlgprt",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 21243,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 18057
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 21243,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 18057
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 21243,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 18057
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 21219,
+          "delta": -24,
+          "positiveDrop": 24,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 18057
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "20.393702",
+      "dropLossWeight": 24,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 153,
+      "invalidatedInferences": 0,
+      "missedRequests": 1,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 21243,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 21243,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 21243,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 21219,
+              "delta": -24,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 59126,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 21243,
+          "entryWeight": 59126,
+          "mlNodes": [
+            {
+              "nodeId": "at001",
+              "pocWeight": 7388
+            },
+            {
+              "nodeId": "at003",
+              "pocWeight": 7388
+            },
+            {
+              "nodeId": "at004",
+              "pocWeight": 7415
+            },
+            {
+              "nodeId": "at009",
+              "pocWeight": 7387
+            },
+            {
+              "nodeId": "at010",
+              "pocWeight": 7387
+            },
+            {
+              "nodeId": "at012",
+              "pocWeight": 7387
+            },
+            {
+              "nodeId": "at013",
+              "pocWeight": 7387
+            },
+            {
+              "nodeId": "at014",
+              "pocWeight": 7387
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "15325.866743",
+      "rewarded": true,
+      "shortAddress": "gonka1tja3...dlgprt",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 18057,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -24,
+      "totalPositiveDrop": 24,
+      "validatedInferences": 153,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1tmk2tzdneht6smu34pkmqdvu7p34qavvmwtwq2",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 1183,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 56,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 1006
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 1183,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 56,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1006
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 1168,
+          "delta": -15,
+          "positiveDrop": 15,
+          "reputation": 56,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 1006
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 1168,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 56,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1006
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "12.746063",
+      "dropLossWeight": 15,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 32,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1183,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 1183,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1168,
+              "delta": -15,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1168,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 3294,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 1183,
+          "entryWeight": 3294,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 3294
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "843.789403",
+      "rewarded": true,
+      "shortAddress": "gonka1tmk2...mwtwq2",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1006,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -15,
+      "totalPositiveDrop": 15,
+      "validatedInferences": 32,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1gyk0aahvr3qeju4zx0nplfreej6cy4jjk8svc5",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 364,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 310
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 364,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 310
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 360,
+          "delta": -4,
+          "positiveDrop": 4,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 310
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 355,
+          "delta": -5,
+          "positiveDrop": 5,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 310
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "7.647638",
+      "dropLossWeight": 9,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 0,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 364,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 364,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 360,
+              "delta": -4,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 355,
+              "delta": -5,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 1014,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 364,
+          "entryWeight": 1014,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 1014
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "256.620745",
+      "rewarded": true,
+      "shortAddress": "gonka1gyk0...k8svc5",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 310,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -9,
+      "totalPositiveDrop": 9,
+      "validatedInferences": 0,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1amlmhjym02shahjv8ldmupg4cx0qc66q6f85rj",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 912,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 776
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 912,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 776
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 912,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 776
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 905,
+          "delta": -7,
+          "positiveDrop": 7,
+          "reputation": 100,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 776
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "5.948163",
+      "dropLossWeight": 7,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 11,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 912,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 912,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 912,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 905,
+              "delta": -7,
+              "severity": "small_drop"
+            }
+          ],
+          "entryWeight": 2539,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 912,
+          "entryWeight": 2539,
+          "mlNodes": [
+            {
+              "nodeId": "node-1",
+              "pocWeight": 2539
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "654.297926",
+      "rewarded": true,
+      "shortAddress": "gonka1amlm...6f85rj",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 776,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -7,
+      "totalPositiveDrop": 7,
+      "validatedInferences": 11,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka1p2lhgng7tcqju7emk989s5fpdr7k2c3ek6h26m",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 621,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 590
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 621,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 590
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 615,
+          "delta": -6,
+          "positiveDrop": 6,
+          "reputation": 0,
+          "severity": "small_drop",
+          "state": "passed",
+          "weight": 590
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 615,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 0,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 590
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "Observed cPoC drop loss: sum of positive confirmed-weight drops across saved cPoC checkpoints / total epoch weight * epoch reward.",
+      "dropLossGnk": "5.098425",
+      "dropLossWeight": 6,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 0,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 621,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 621,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 615,
+              "delta": -6,
+              "severity": "small_drop"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 615,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 1731,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 621,
+          "entryWeight": 1731,
+          "mlNodes": [
+            {
+              "nodeId": "node2",
+              "pocWeight": 1731
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "496.246739",
+      "rewarded": true,
+      "shortAddress": "gonka1p2lh...k6h26m",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 590,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": -6,
+      "totalPositiveDrop": 6,
+      "validatedInferences": 0,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "small_drop"
+    },
+    {
+      "address": "gonka10mmdjau4dnj8krs7sh7t7635ttnmq9u3vqgz09",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 8127,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 6908
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 8127,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 6908
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 8127,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 6908
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 8127,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 6908
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 81,
+      "invalidatedInferences": 1,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 8127,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 8127,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 8127,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 8127,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 22620,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 8127,
+          "entryWeight": 22620,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 11395
+            },
+            {
+              "nodeId": "node7",
+              "pocWeight": 11225
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "5869.987107",
+      "rewarded": true,
+      "shortAddress": "gonka10mmd...vqgz09",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 6908,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 80,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka14tqh62mangwzrma2lgg2dm375rcjzn2ydy8ttm",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 2080,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 1768
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 2080,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1768
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 2080,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1768
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 2080,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1768
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 15,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 2080,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 2080,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 2080,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 2080,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 5790,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 2080,
+          "entryWeight": 5790,
+          "mlNodes": [
+            {
+              "nodeId": "main",
+              "pocWeight": 5790
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "1502.336017",
+      "rewarded": true,
+      "shortAddress": "gonka14tqh...dy8ttm",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1768,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 15,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka15munkmx6x7k6rqqeexjet4556p7at39ks9qgr5",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 33197,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 69,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 31538
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 33197,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 69,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 31538
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 33197,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 69,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 31538
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 33197,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 69,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 31538
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 17145,
+      "invalidatedInferences": 0,
+      "missedRequests": 13,
+      "modelNames": [
+        "Kimi"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 33197,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 33197,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 33197,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 33197,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 26304,
+          "model": "Kimi",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 33197,
+          "entryWeight": 26304,
+          "mlNodes": [
+            {
+              "nodeId": "ml3",
+              "pocWeight": 16235
+            },
+            {
+              "nodeId": "ml8",
+              "pocWeight": 10069
+            }
+          ],
+          "model": "Kimi"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "26799.023361",
+      "rewarded": true,
+      "shortAddress": "gonka15mun...s9qgr5",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 31538,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 17145,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka15p7s7w2hx0y8095lddd4ummm2y0kwpwljk00aq",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 3859,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 3667
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 3859,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 3667
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 3859,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 3667
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 3859,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 3667
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 2279,
+      "invalidatedInferences": 25,
+      "missedRequests": 0,
+      "modelNames": [
+        "Kimi"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 3859,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 3859,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 3859,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 3859,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 3058,
+          "model": "Kimi",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 3859,
+          "entryWeight": 3058,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 3058
+            }
+          ],
+          "model": "Kimi"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "3115.987655",
+      "rewarded": true,
+      "shortAddress": "gonka15p7s...jk00aq",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 3667,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 2254,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka168rtjfkszuhcggg4dfyse4yh7xn9zwfglnkns2",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 12450,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 14194
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 12450,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 14194
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 12450,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 14194
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 12450,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 14194
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 5210,
+      "invalidatedInferences": 22,
+      "missedRequests": 2,
+      "modelNames": [
+        "Kimi",
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 10937,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 10937,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 10937,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 10937,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 9492,
+          "model": "Kimi",
+          "splitBasis": "allocated_by_entry_split"
+        },
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1513,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 1513,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1513,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1513,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 1313,
+          "model": "Qwen",
+          "splitBasis": "allocated_by_entry_split"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 12450,
+          "entryWeight": 9492,
+          "mlNodes": [
+            {
+              "nodeId": "mlnode-201",
+              "pocWeight": 9492
+            }
+          ],
+          "model": "Kimi"
+        },
+        {
+          "entryConfirmationWeight": 12450,
+          "entryWeight": 1313,
+          "mlNodes": [
+            {
+              "nodeId": "mlnode-000",
+              "pocWeight": 1313
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "10579.232699",
+      "rewarded": true,
+      "shortAddress": "gonka168rt...lnkns2",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 14194,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 5188,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka17pw6099q758qwzewtrqmqpf5c2lrhr97fwqexu",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 19868,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 16888
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 19868,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 16888
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 19868,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 16888
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 19868,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 16888
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 11542,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 19868,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 19868,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 19868,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 19868,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 55297,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 19868,
+          "entryWeight": 55297,
+          "mlNodes": [
+            {
+              "nodeId": "co-wm-a100-1",
+              "pocWeight": 2736
+            },
+            {
+              "nodeId": "la-aa-qwen-1",
+              "pocWeight": 2591
+            },
+            {
+              "nodeId": "la-aa-qwen-2",
+              "pocWeight": 2591
+            },
+            {
+              "nodeId": "la-aa-qwen-3",
+              "pocWeight": 2678
+            },
+            {
+              "nodeId": "la-is-4h100-1",
+              "pocWeight": 2591
+            },
+            {
+              "nodeId": "la-is-8h100-1",
+              "pocWeight": 5182
+            },
+            {
+              "nodeId": "la-is-a100-1",
+              "pocWeight": 2678
+            },
+            {
+              "nodeId": "la-is-a100-2",
+              "pocWeight": 2678
+            },
+            {
+              "nodeId": "la-ku-qwen-1",
+              "pocWeight": 2677
+            },
+            {
+              "nodeId": "la-ku-qwen-2",
+              "pocWeight": 2299
+            },
+            {
+              "nodeId": "la-ku-qwen-3",
+              "pocWeight": 2677
+            },
+            {
+              "nodeId": "la-xm-qwen-1-n",
+              "pocWeight": 2590
+            },
+            {
+              "nodeId": "la-xm-qwen-2-n",
+              "pocWeight": 2590
+            },
+            {
+              "nodeId": "la-xm-qwen-3-n",
+              "pocWeight": 2590
+            },
+            {
+              "nodeId": "la-xm-qwen-4-n",
+              "pocWeight": 2677
+            },
+            {
+              "nodeId": "la-xm-qwen-5-n",
+              "pocWeight": 2590
+            },
+            {
+              "nodeId": "la-xm-qwen-6-n",
+              "pocWeight": 2677
+            },
+            {
+              "nodeId": "vul-kol-A100-1",
+              "pocWeight": 2735
+            },
+            {
+              "nodeId": "vul-kol-A100-2",
+              "pocWeight": 2735
+            },
+            {
+              "nodeId": "vul-kol-A100-3",
+              "pocWeight": 2735
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "14350.368017",
+      "rewarded": true,
+      "shortAddress": "gonka17pw6...fwqexu",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 16888,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 11542,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka19f9hkpmjaldncsfly4j63sy932y8hughn4l3d8",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 0,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": null,
+          "severity": "entry",
+          "state": "missing",
+          "weight": 0
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": null,
+          "severity": "not_applicable",
+          "state": "missing",
+          "weight": 0
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": null,
+          "severity": "not_applicable",
+          "state": "missing",
+          "weight": 0
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": null,
+          "severity": "not_applicable",
+          "state": "missing",
+          "weight": 0
+        }
+      ],
+      "claimed": false,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 0,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [],
+      "modelRows": [],
+      "models": [],
+      "notRewarded": true,
+      "paidGnk": "0.000000",
+      "rewarded": false,
+      "shortAddress": "gonka19f9h...n4l3d8",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 0,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 0,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka19ghzvgfr065s3fr5awuvs3nhy9fq4n7wrr9kel",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 6714,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 6379
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 6714,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 6379
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 6714,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 6379
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 6714,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 6379
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 76,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 6714,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 6714,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 6714,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 6714,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 18688,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 6714,
+          "entryWeight": 18688,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 2336
+            },
+            {
+              "nodeId": "node2",
+              "pocWeight": 2336
+            },
+            {
+              "nodeId": "node3",
+              "pocWeight": 2336
+            },
+            {
+              "nodeId": "node4",
+              "pocWeight": 2336
+            },
+            {
+              "nodeId": "node5",
+              "pocWeight": 2336
+            },
+            {
+              "nodeId": "node6",
+              "pocWeight": 2336
+            },
+            {
+              "nodeId": "node7",
+              "pocWeight": 2336
+            },
+            {
+              "nodeId": "node8",
+              "pocWeight": 2336
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "5420.475935",
+      "rewarded": true,
+      "shortAddress": "gonka19ghz...rr9kel",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 6379,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 76,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka1d694r00czmq75txghwjcuk07lxvc8d4ekgsha0",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 477,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 454
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 477,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 454
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 477,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 454
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 477,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 454
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 0,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 477,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 477,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 477,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 477,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 1328,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 477,
+          "entryWeight": 1328,
+          "mlNodes": [
+            {
+              "nodeId": "mlnode-039",
+              "pocWeight": 1328
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "385.780855",
+      "rewarded": true,
+      "shortAddress": "gonka1d694...kgsha0",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 454,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 0,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka1d7p03cu2y2yt3vytq9wlfm6tlz0lfhlgv9h82p",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 621,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 782
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 621,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 782
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 621,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 782
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 621,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 782
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 13,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 621,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 621,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 621,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 621,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 1731,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 621,
+          "entryWeight": 1731,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 1731
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "527.687029",
+      "rewarded": true,
+      "shortAddress": "gonka1d7p0...v9h82p",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 782,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 13,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka1dkl4mah5erqggvhqkpc8j3qs5tyuetgdy552cp",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 1166,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 992
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 1166,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 992
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 1166,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 992
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 1166,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 992
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 6,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1166,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 1166,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1166,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1166,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 3247,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 1166,
+          "entryWeight": 3247,
+          "mlNodes": [
+            {
+              "nodeId": "node-235-1",
+              "pocWeight": 3247
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "842.939666",
+      "rewarded": true,
+      "shortAddress": "gonka1dkl4...y552cp",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 992,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 6,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka1famtxh54kad6ylwtm60j6d7h6unpc08d4vdqnk",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 0,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "failed",
+          "weight": 0
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 0
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 0
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "not_applicable",
+          "state": "failed",
+          "weight": 0
+        }
+      ],
+      "claimed": false,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 0,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [],
+      "modelRows": [],
+      "models": [],
+      "notRewarded": true,
+      "paidGnk": "0.000000",
+      "rewarded": false,
+      "shortAddress": "gonka1famt...4vdqnk",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 0,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 0,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka1hwvel7n3zuk6wruefuzc356l9myske9stckwnz",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 18541,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 15760
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 18541,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 15760
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 18541,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 15760
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 18541,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 15760
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 154,
+      "invalidatedInferences": 0,
+      "missedRequests": 1,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 18541,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 18541,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 18541,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 18541,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 51604,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 18541,
+          "entryWeight": 51604,
+          "mlNodes": [
+            {
+              "nodeId": "fp001",
+              "pocWeight": 7367
+            },
+            {
+              "nodeId": "fp002",
+              "pocWeight": 7404
+            },
+            {
+              "nodeId": "fp003",
+              "pocWeight": 7367
+            },
+            {
+              "nodeId": "fp004",
+              "pocWeight": 7367
+            },
+            {
+              "nodeId": "fp005",
+              "pocWeight": 7367
+            },
+            {
+              "nodeId": "fp006",
+              "pocWeight": 7366
+            },
+            {
+              "nodeId": "fp007",
+              "pocWeight": 7366
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "13391.864043",
+      "rewarded": true,
+      "shortAddress": "gonka1hwve...tckwnz",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 15760,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 154,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka1j7x6dv42xehe9e5au4ku3wvzwtqlegfjhlvzj6",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 331,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 20,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 282
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 331,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 20,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 282
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 331,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 20,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 282
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 331,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 20,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 282
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 1900,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 331,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 331,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 331,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 331,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 923,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 331,
+          "entryWeight": 923,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 923
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "239.625994",
+      "rewarded": true,
+      "shortAddress": "gonka1j7x6...hlvzj6",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 282,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 1900,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka1tlvg4kjx7ljd5thgd5fkgh39q6lu8cmxupktgg",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 2073,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 1763
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 2073,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1763
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 2073,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1763
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 2073,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 1763
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 30,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 2073,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 2073,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 2073,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 2073,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 5770,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 2073,
+          "entryWeight": 5770,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 5770
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "1498.087329",
+      "rewarded": true,
+      "shortAddress": "gonka1tlvg...upktgg",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 1763,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 30,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka1vjz8csqsr0ph0lv0yylc4auypnzrld7y6l2feu",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 611,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 56,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 520
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 611,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 56,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 520
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 611,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 56,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 520
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 611,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 56,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 520
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 10,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 611,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 611,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 611,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 611,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 1701,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 611,
+          "entryWeight": 1701,
+          "mlNodes": [
+            {
+              "nodeId": "U18",
+              "pocWeight": 1701
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "441.863534",
+      "rewarded": true,
+      "shortAddress": "gonka1vjz8...6l2feu",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 520,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 10,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka1w29nvdy6caqtrw30whz9h6ghl0xszwh3egndah",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 235,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 200
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 235,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 200
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 235,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 200
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 235,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 200
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 0,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 235,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 235,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 235,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 235,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 656,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 235,
+          "entryWeight": 656,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 656
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "169.947513",
+      "rewarded": true,
+      "shortAddress": "gonka1w29n...egndah",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 200,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 0,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka1wthc28t25pg63hzvl07rl8e8r6km6hesl6jhsz",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 2973,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 2528
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 2973,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 2528
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 2973,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 2528
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 2973,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 2528
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 23,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 2973,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 2973,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 2973,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 2973,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 8275,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 2973,
+          "entryWeight": 8275,
+          "mlNodes": [
+            {
+              "nodeId": "biz-qwen-01",
+              "pocWeight": 4097
+            },
+            {
+              "nodeId": "team-qwen-01",
+              "pocWeight": 4178
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "2148.136567",
+      "rewarded": true,
+      "shortAddress": "gonka1wthc...l6jhsz",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 2528,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 23,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka1x7zh2277spp7jfqjhv0g5mnezg290xdr4kpfnk",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 986,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 839
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 986,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 839
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 986,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 839
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 986,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 839
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 8,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 986,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 986,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 986,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 986,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 2746,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 986,
+          "entryWeight": 2746,
+          "mlNodes": [
+            {
+              "nodeId": "node1",
+              "pocWeight": 2746
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "712.929818",
+      "rewarded": true,
+      "shortAddress": "gonka1x7zh...4kpfnk",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 839,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 8,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka1y2a9p56kv044327uycmqdexl7zs82fs5ryv5le",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 1020,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "entry",
+          "state": "passed",
+          "weight": 867
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 1020,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 867
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 1020,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 867
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 1020,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": 100,
+          "severity": "stable_or_gain",
+          "state": "passed",
+          "weight": 867
+        }
+      ],
+      "claimed": true,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 1001,
+      "invalidatedInferences": 0,
+      "missedRequests": 5,
+      "modelNames": [
+        "Qwen"
+      ],
+      "modelRows": [
+        {
+          "checkpoints": [
+            {
+              "checkpoint": "epoch_entry",
+              "confirmationWeight": 1020,
+              "delta": null,
+              "severity": "entry"
+            },
+            {
+              "checkpoint": "after_cpoc_0",
+              "confirmationWeight": 1020,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_1",
+              "confirmationWeight": 1020,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            },
+            {
+              "checkpoint": "after_cpoc_2",
+              "confirmationWeight": 1020,
+              "delta": 0,
+              "severity": "stable_or_gain"
+            }
+          ],
+          "entryWeight": 2841,
+          "model": "Qwen",
+          "splitBasis": "exact"
+        }
+      ],
+      "models": [
+        {
+          "entryConfirmationWeight": 1020,
+          "entryWeight": 2841,
+          "mlNodes": [
+            {
+              "nodeId": "node-235b",
+              "pocWeight": 2841
+            }
+          ],
+          "model": "Qwen"
+        }
+      ],
+      "notRewarded": false,
+      "paidGnk": "736.722470",
+      "rewarded": true,
+      "shortAddress": "gonka1y2a9...ryv5le",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 867,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 1001,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    },
+    {
+      "address": "gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl",
+      "checkpoints": [
+        {
+          "checkpoint": "epoch_entry",
+          "confirmationWeight": 0,
+          "delta": null,
+          "positiveDrop": 0,
+          "reputation": null,
+          "severity": "entry",
+          "state": "missing",
+          "weight": 0
+        },
+        {
+          "checkpoint": "after_cpoc_0",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": null,
+          "severity": "not_applicable",
+          "state": "missing",
+          "weight": 0
+        },
+        {
+          "checkpoint": "after_cpoc_1",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": null,
+          "severity": "not_applicable",
+          "state": "missing",
+          "weight": 0
+        },
+        {
+          "checkpoint": "after_cpoc_2",
+          "confirmationWeight": 0,
+          "delta": 0,
+          "positiveDrop": 0,
+          "reputation": null,
+          "severity": "not_applicable",
+          "state": "missing",
+          "weight": 0
+        }
+      ],
+      "claimed": false,
+      "dropLossBasis": "No observed positive confirmed-weight drop across saved cPoC checkpoints.",
+      "dropLossGnk": "0.000000",
+      "dropLossWeight": 0,
+      "estimatedLostBasis": "No observed positive confirmation-weight drop allocation.",
+      "estimatedLostGnk": "0.000000",
+      "inferenceCount": 0,
+      "invalidatedInferences": 0,
+      "missedRequests": 0,
+      "modelNames": [],
+      "modelRows": [],
+      "models": [],
+      "notRewarded": true,
+      "paidGnk": "0.000000",
+      "rewarded": false,
+      "shortAddress": "gonka1zsvl...76jqgl",
+      "sourceCompensationBasis": "Not in source-compensation set for this epoch.",
+      "sourceCompensationEligible": false,
+      "sourceCompensationGnk": "0.000000",
+      "sourceCompensationWeight": 0,
+      "sourceCorrectRewardGnk": "0.000000",
+      "totalNegativeDelta": 0,
+      "totalPositiveDrop": 0,
+      "validatedInferences": 0,
+      "vote67PaidBasis": "",
+      "vote67PaidGnk": "0.000000",
+      "worstSeverity": "stable_or_gain"
+    }
+  ],
+  "payoutEstimates": {
+    "allocationBasis": "Exact unpaid pool allocated across address-level positive confirmation-weight drops.",
+    "checkpointEstimates": [
+      {
+        "checkpoint": "after_cpoc_0",
+        "estimatedLostGnk": "0.000000",
+        "positiveDrop": 17770
+      },
+      {
+        "checkpoint": "after_cpoc_1",
+        "estimatedLostGnk": "0.000000",
+        "positiveDrop": 4225
+      },
+      {
+        "checkpoint": "after_cpoc_2",
+        "estimatedLostGnk": "0.000000",
+        "positiveDrop": 2466
+      },
+      {
+        "checkpoint": "epoch_entry",
+        "estimatedLostGnk": "0.000000",
+        "positiveDrop": 0
+      }
+    ],
+    "dropLossTotalGnk": "20785.430608",
+    "precision": "Estimate only; proof-grade per-host amount requires settlement replay.",
+    "sourceCompensationBasis": "No source-compensation addresses detected for this epoch.",
+    "sourceCompensationCheckpoint": "after_cpoc_2",
+    "sourceCompensationTotalGnk": "0.000000",
+    "totalPositiveDrop": 24461,
+    "vote67PaidTotalGnk": "0.000000"
+  },
+  "transitionFromPrevious": {
+    "added": [
+      {
+        "address": "gonka13a4v8gxxjav5t4xq5y9cv9d8rfnvkjfw5adqz3",
+        "confirmationWeight": 0,
+        "currentModels": [
+          "Qwen"
+        ],
+        "shortAddress": "gonka13a4v...5adqz3",
+        "weight": 1568
+      },
+      {
+        "address": "gonka14ef2pxjge75gflqftn7m2wy0xv59gq9uc7qnct",
+        "confirmationWeight": 0,
+        "currentModels": [
+          "Qwen"
+        ],
+        "shortAddress": "gonka14ef2...c7qnct",
+        "weight": 156
+      },
+      {
+        "address": "gonka1qu9mna5xlvlnw9455ygtjq92wuzkzm237w8l08",
+        "confirmationWeight": 1964,
+        "currentModels": [
+          "Qwen"
+        ],
+        "shortAddress": "gonka1qu9m...7w8l08",
+        "weight": 1048
+      }
+    ],
+    "addedCount": 3,
+    "currentCount": 46,
+    "dropped": [
+      {
+        "address": "gonka125n6kr5gvdup0lndfkps7t6rd6592panhrg3np",
+        "confirmationWeight": 0,
+        "previousModels": [
+          "Kimi"
+        ],
+        "shortAddress": "gonka125n6...hrg3np",
+        "weight": 6710
+      },
+      {
+        "address": "gonka18xeqnspxpg2vncufnjne485rkaagwvz7whyn0d",
+        "confirmationWeight": 0,
+        "previousModels": [
+          "Kimi"
+        ],
+        "shortAddress": "gonka18xeq...whyn0d",
+        "weight": 14284
+      },
+      {
+        "address": "gonka19f9hkpmjaldncsfly4j63sy932y8hughn4l3d8",
+        "confirmationWeight": 1797,
+        "previousModels": [
+          "Qwen"
+        ],
+        "shortAddress": "gonka19f9h...n4l3d8",
+        "weight": 1604
+      },
+      {
+        "address": "gonka1q5xt54wncgzk7dxv9x64uln68455g83wu9tugg",
+        "confirmationWeight": 82373,
+        "previousModels": [
+          "Kimi"
+        ],
+        "shortAddress": "gonka1q5xt...u9tugg",
+        "weight": 89734
+      },
+      {
+        "address": "gonka1tl5m3vuqsx333v7095ymwjdc4vdk2wd9r5hqws",
+        "confirmationWeight": 0,
+        "previousModels": [
+          "Kimi"
+        ],
+        "shortAddress": "gonka1tl5m...r5hqws",
+        "weight": 7090
+      },
+      {
+        "address": "gonka1wkgawwdzj623ss8eywayzdj6qcgr2llygactje",
+        "confirmationWeight": 7495,
+        "previousModels": [
+          "Kimi"
+        ],
+        "shortAddress": "gonka1wkga...gactje",
+        "weight": 7264
+      },
+      {
+        "address": "gonka1wt8sr9jxzpec65j7zkxsgh6edk3m6r8nlf5za4",
+        "confirmationWeight": 0,
+        "previousModels": [
+          "Kimi"
+        ],
+        "shortAddress": "gonka1wt8s...lf5za4",
+        "weight": 12411
+      },
+      {
+        "address": "gonka1zsvl7ujlc8z3a35v2q6e3nml7ftyk23v76jqgl",
+        "confirmationWeight": 0,
+        "previousModels": [
+          "Qwen"
+        ],
+        "shortAddress": "gonka1zsvl...76jqgl",
+        "weight": 5666
+      }
+    ],
+    "droppedCount": 8,
+    "fromEpoch": 265,
+    "fromWeights": {
+      "droppedMax": 89734,
+      "droppedMin": 1604
+    },
+    "modelBreakdown": {
+      "added": {
+        "Kimi": 0,
+        "Qwen": 3,
+        "both": 0,
+        "none": 0
+      },
+      "dropped": {
+        "Kimi": 6,
+        "Qwen": 2,
+        "both": 0,
+        "none": 0
+      }
+    },
+    "previousCount": 51,
+    "retainedCount": 43,
+    "toEpoch": 266,
+    "toWeights": {
+      "addedMax": 1568,
+      "addedMin": 156
+    }
+  },
+  "warnings": [
+    "epoch summary rows and performance rewards agree; source compensation is a counterfactual model.",
+    "Source compensation is a counterfactual model, not a direct gov-wallet remainder allocation.",
+    "Drop-allocation estimates remain diagnostic only and are not shown as primary compensation values.",
+    "Chain data shows confirmation-weight drops and settlement effects; attack attribution is investigation context."
+  ]
+}

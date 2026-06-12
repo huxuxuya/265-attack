@@ -1,25 +1,53 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Epoch 265 cPoC Attack Timeline</title>
+  <title>GONKA cPoC Attack Timeline</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="page-header">
       <div>
-        <p class="eyebrow">GONKA epoch 265 investigation</p>
+        <p class="eyebrow">GONKA epoch investigation</p>
         <h1>cPoC attack timeline, weight loss, and settlement impact</h1>
       </div>
-      <div class="basis-box">
+      <div class="header-controls">
+        <div class="basis-box">
         <strong>Data basis</strong>
         <span>Saved archive-node raw chain snapshots and derived CSV outputs.</span>
+        </div>
+        <div class="controls epoch-nav">
+          <button type="button" id="prev-epoch" disabled>◀ Prev</button>
+          <select id="epoch-select" aria-label="Select epoch"></select>
+          <button type="button" id="next-epoch" disabled>Next ▶</button>
+        </div>
       </div>
     </header>
 
     <main>
       <section class="kpi-grid" id="kpi-grid" aria-label="Epoch totals"></section>
+
+      <section class="panel transition-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Epoch transition</h2>
+            <p>Compare final member-set transitions from the previous epoch. Weights are shown as <strong>final weight / final confirmation weight</strong> for the source epoch.</p>
+          </div>
+        </div>
+        <div id="transition-summary" class="panel-subnote"></div>
+        <div id="transition-model-breakdown" class="panel-subnote"></div>
+        <div class="transition-grid">
+          <article class="transition-card">
+            <h3>Dropped from prev epoch</h3>
+            <div id="transition-dropped" class="address-list"></div>
+          </article>
+          <article class="transition-card">
+            <h3>Added in this epoch</h3>
+            <div id="transition-added" class="address-list"></div>
+          </article>
+        </div>
+      </section>
 
       <section class="panel">
         <div class="panel-heading">
@@ -27,6 +55,13 @@
             <h2>Operator Impact</h2>
             <p>Sorted by epoch-entry total weight descending. cPoC columns show model-level confirmed weight; dual-model rows are allocated by entry K/Q split.</p>
           </div>
+        </div>
+        <div id="filters" class="controls" role="group" aria-label="Node filters">
+          <button type="button" data-filter="all" class="active">All</button>
+          <button type="button" data-filter="Kimi">Kimi</button>
+          <button type="button" data-filter="Qwen">Qwen</button>
+          <button type="button" data-filter="severe_drop">Severe drop</button>
+          <button type="button" data-filter="not_rewarded">No reward</button>
         </div>
         <div class="warning" id="warning"></div>
         <div class="table-wrap">
