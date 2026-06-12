@@ -46,7 +46,7 @@ function renderKpis(data) {
   const totalDrop = first.totalConfirmedWeight - last.totalConfirmedWeight;
   const cards = [
     ["Epoch reward pool", fmtGnk(totals.epochRewardPoolGnk), "GONKA scheduled for settlement"],
-    ["Paid to miners", fmtGnk(totals.paidRewardsGnk), "Exact rewarded_coins sum"],
+    ["Rewarded (chain, epoch 265)", fmtGnk(totals.paidRewardsGnk), "Exact rewarded_coins sum"],
     ["Not distributed", fmtGnk(totals.unpaidPoolGnk), "Exact settlement remainder"],
     ["Vote #67 paid", fmtGnk(totals.vote67PaidGnk), "e265 fixed amount"],
     ["Drop loss", fmtGnk(totals.dropLossGnk), "observed cPoC weight loss"],
